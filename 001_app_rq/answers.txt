@@ -1,6 +1,5 @@
+D
 C
-C
-B
 B
 C
 A
