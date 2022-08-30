@@ -1,9 +1,9 @@
 a is 3
 b is 8
 a * i + b = 8
-a * i + b = 11
-a * i + b = 14
-a * i + b = 17
+a * i + b = 12
+a * i + b = 16
+a * i + b = 20
 a is 5
 b is 6
 
