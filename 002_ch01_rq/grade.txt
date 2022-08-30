@@ -1,12 +1,6 @@
-Grading at 08/30/2022:01:39:42.677159
-For commit ID b3a989038267d972b0f9f275b52e8c6b9ea19160
-Grading at Mon Aug 29 09:39:42 PM EDT 2022
+Grading at 08/30/2022:02:12:58.614169
+For commit ID b06de50c9320c2266e47fa7edcd0ead1abb7c94f
+Grading at Mon Aug 29 10:12:58 PM EDT 2022
 Reading your quiz answers from answers.txt
-You got 2 questions incorrect.
-You might want to review these concepts:
-------------
-How to approach developing an algorithm
-The introduction to Chapter 1
-------------
 
-Overall Grade: FAILED
+Overall Grade: PASSED
