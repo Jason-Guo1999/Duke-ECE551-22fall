@@ -1,0 +1,8 @@
+
+
+missing ;
+undeclared variable
+
+
+
+missing }
