@@ -1,7 +1,5 @@
-1. int 3
-
+int 3
 2. double 7.4
-
 3. int 2
 4. double 3.4
 5. char 'f'
