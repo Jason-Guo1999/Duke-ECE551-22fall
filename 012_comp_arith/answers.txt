@@ -1,8 +1,8 @@
-int 3
-double 7.4
-int 2
-double 3.4
-char 'f'
-int 4
-unsigned int 2147483652
-double 101.4
+1. int 3
+2. double 7.4
+3. int 2
+4. double 3.4
+5. char 'f'
+6. int 4
+7. overflow
+8. double 101.4
