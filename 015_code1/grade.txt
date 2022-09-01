@@ -1,0 +1,11 @@
+Grading at 09/01/2022:01:49:06.234000
+For commit ID 414103644dde4a2014caf376cc55e7d6beb0a6a9
+Grading at Wed Aug 31 09:49:06 PM EDT 2022
+Checking code1.c for legal syntax
+Checking for int max (int num1, int num2)
+not found
+Checking for int main(void)
+not found
+You seem to have removed the functions we gave you!
+
+Overall Grade: F
