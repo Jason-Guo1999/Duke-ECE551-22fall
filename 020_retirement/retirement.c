@@ -28,7 +28,7 @@ void retirement(int startAge, double initial, retire_info working, retire_info r
   return;
 }
 
-void main() {
+int main() {
   retire_info working;
   retire_info retired;
   working.months = 489;
@@ -40,5 +40,5 @@ void main() {
   int startAge = 327;
   double initial = 21345;
   retirement(startAge, initial, working, retired);
-  return;
+  return 0;
 }
