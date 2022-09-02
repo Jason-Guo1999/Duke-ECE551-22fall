@@ -1,0 +1,11 @@
+Grading at 09/02/2022:20:18:43.417072
+For commit ID 8932ce4d00c9001a5d3490cf2e6abb76af7d06ae
+Grading at Fri Sep  2 04:18:43 PM EDT 2022
+Attempting to compile retirement.c
+retirement.c:31:6: error: return type of ‘main’ is not ‘int’ [-Werror=main]
+   31 | void main() {
+      |      ^~~~
+cc1: all warnings being treated as errors
+The code did not compile!
+
+Overall Grade: F
