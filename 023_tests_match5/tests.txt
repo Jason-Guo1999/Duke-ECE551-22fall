@@ -10,6 +10,6 @@ aaa aaaaaaaa
 a a a a a
 %%%aa $$$$$
 aabbb bbaaa
-bbbaa aaabb
+bbbaa aaabbbb
 abbcc cbabc
-abcde abcdedfg
+abcde abcde
