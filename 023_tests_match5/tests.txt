@@ -11,5 +11,5 @@ a a a a a
 %%%aa $$$$$
 aabbb bbaaa
 bbbaa aaabbbb
-abbcc cbabc
+abbcc cbab
 abcde abcde
