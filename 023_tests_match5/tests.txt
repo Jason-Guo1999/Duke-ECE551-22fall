@@ -12,3 +12,4 @@ a a a a a
 aabbb bbaaa
 bbbaa aaabb
 abbcc cbabc
+abcde abcde
