@@ -1,10 +1,10 @@
-Grading at 09/05/2022:18:33:37.251257
-For commit ID 66ea07949454908b0f9d6974f0bca94d82191a0d
-Grading at Mon Sep  5 02:33:36 PM EDT 2022
+Grading at 09/05/2022:18:50:08.174306
+For commit ID b5407e289ab400e00be8aeeda42c14ac24345ca8
+Grading at Mon Sep  5 02:50:07 PM EDT 2022
 **Testing broken implementation 10 **
 -------------------------------------
 
-Umm, something wrong with the function :(, input was base:3, exponent:3
+Umm, something wrong with the function :(, input was base:2, exponent:2
 **Testing broken implementation 11 **
 -------------------------------------
 
@@ -16,7 +16,7 @@ Umm, something wrong with the function :(, input was base:0, exponent:1
 **Testing broken implementation 2 **
 -------------------------------------
 
-Umm, something wrong with the function :(, input was base:0, exponent:1
+Umm, something wrong with the function :(, input was base:1, exponent:0
 **Testing broken implementation 3 **
 -------------------------------------
 
@@ -24,6 +24,32 @@ Umm, something wrong with the function :(, input was base:0, exponent:0
 **Testing broken implementation 4 **
 -------------------------------------
 
-Your test program did not identify /usr/local/ece551/power/power4.o as broken!
+Umm, something wrong with the function :(, input was base:4294967295, exponent:1
+**Testing broken implementation 5 **
+-------------------------------------
 
-Overall Grade: FAILED
+Umm, something wrong with the function :(, input was base:2, exponent:2
+**Testing broken implementation 6 **
+-------------------------------------
+
+Umm, something wrong with the function :(, input was base:1, exponent:1
+**Testing broken implementation 7 **
+-------------------------------------
+
+Umm, something wrong with the function :(, input was base:1, exponent:1
+**Testing broken implementation 8 **
+-------------------------------------
+
+Umm, something wrong with the function :(, input was base:3, exponent:3
+**Testing broken implementation 9 **
+-------------------------------------
+
+Umm, something wrong with the function :(, input was base:1, exponent:1
+**Testing correct implementation **
+-------------------------------------
+
+
+All tests were ok.
+
+
+Overall Grade: PASSED
