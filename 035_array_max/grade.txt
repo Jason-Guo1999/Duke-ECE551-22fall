@@ -1,14 +1,11 @@
-Grading at 09/07/2022:22:05:10.660658
-For commit ID 9b51910aa2852d14b95b0b4a1ea895aeb77f97b8
-Grading at Wed Sep  7 06:05:10 PM EDT 2022
+Grading at 09/07/2022:22:08:41.044971
+For commit ID 9362a9543995464f441879d6c448bc853527979e
+Grading at Wed Sep  7 06:08:40 PM EDT 2022
 Attempting to compile arrayMax.c 
 #################################################
 testcase1:
-Line_2_did_not_match
-Line_4_did_not_match
-Line_6_did_not_match
-Your file did not match the expected ouput
-Your output did not match what we expected.
+Your file matched the expected output
+Your output matched what we expected
 Removing your main() and replacing it with our own to run more tests...
 #################################################
 testcase2:
@@ -18,9 +15,9 @@ testcase3:
 array size:1 was Correct
 #################################################
 testcase4:
-array size:100 was Incorrect
+array size:100 was Correct
 #################################################
 testcase5:
-array size:5000 was Incorrect
+array size:5000 was Correct
 
-Overall Grade: F
+Overall Grade: A
