@@ -1,11 +1,11 @@
+#include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
-
 int * arrayMax(int * array, int n) {
   if (n == 0) {
     return NULL;
   }
-  int maxVal = array[0];
+  int maxVal = INT_MIN;
   int * ans = array;
   for (int i = 0; i < n; i++) {
     if (array[i] > maxVal) {
