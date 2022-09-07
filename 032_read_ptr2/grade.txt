@@ -1,15 +1,11 @@
-Grading at 09/07/2022:21:02:33.498557
-For commit ID 3e90c9614d16bef61ad7a12dda04a7ea5854476d
-Grading at Wed Sep  7 05:02:33 PM EDT 2022
+Grading at 09/07/2022:21:06:23.742458
+For commit ID bd42bf2f6e1b06073d5dc2b4c36045cf38502a34
+Grading at Wed Sep  7 05:06:23 PM EDT 2022
 Attempting to compile test.c
 gcc  -c test.c
 gcc -o test test.o
 compiled
-Line_4_did_not_match
-Line_5_did_not_match
-Line_6_did_not_match
-Line_7_did_not_match
-Your file did not match the expected ouput
-Your output did not match what we expected.
+Your file matched the expected output
+Your output matched what we expected
 
-Overall Grade: FAILED
+Overall Grade: PASSED
