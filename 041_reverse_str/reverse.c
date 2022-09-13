@@ -15,14 +15,14 @@ void reverse(char * str) {
     str[ptr1] = str[ptr2];
     str[ptr2] = temp;
     ptr1++;
-    ptr2 = ptr2 - 1;
+    ptr2--;
   }
   return;
 }
 
 int main(void) {
   char str0[] = "";
-  char str1[] = "123";
+  char str1[] = "1";
   char str2[] = "abcd";
   char str3[] = "Captain's log, Stardate 42523.7";
   char str4[] = "Hello, my name is Inigo Montoya.";
