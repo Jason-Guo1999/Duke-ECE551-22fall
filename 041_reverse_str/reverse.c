@@ -4,9 +4,9 @@
 
 void reverse(char * str) {
   //WRITE ME!
-  //  if (!str) {
-  //return;
-  //}
+  if (!str) {
+    return;
+  }
   size_t ptr1 = 0;
   size_t ptr2 = strlen(str);
   ptr2 = ptr2 - 1;
@@ -22,7 +22,7 @@ void reverse(char * str) {
 
 int main(void) {
   char str0[] = "";
-  char str1[] = "1";
+  char str1[] = "123";
   char str2[] = "abcd";
   char str3[] = "Captain's log, Stardate 42523.7";
   char str4[] = "Hello, my name is Inigo Montoya.";
