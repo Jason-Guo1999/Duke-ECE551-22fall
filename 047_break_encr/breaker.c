@@ -35,7 +35,7 @@ int main(int argc, char * argv[]) {
   }
 
   int key = breaker(f);
-  printf("Successfully break the cipher! key is %d.\n", key);
+  printf("%d\n", key);
   fclose(f);
   return EXIT_SUCCESS;
 }
