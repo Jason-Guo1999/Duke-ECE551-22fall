@@ -3,15 +3,18 @@
 #include <stdlib.h>
 
 int breaker(FILE * f) {
-  int fre[26];
+  int fre[26] = {0};
   int maxFre = 0;
   int key = 0;
-  while (fgetc(f) != EOF) {
-    int index = fgetc(f) - 'a';
-    fre[index]++;
-    if (fre[index] > maxFre) {
-      maxFre = fre[index];
-      key = (index + 22) % 26;
+  int temp;
+  while ((temp = fgetc(f)) != EOF) {
+    if (isalpha(temp)) {
+      int index = tolower(temp) - 'a';
+      fre[index]++;
+      if (fre[index] > maxFre) {
+        maxFre = fre[index];
+        key = (index + 22) % 26;
+      }
     }
   }
   return key;
