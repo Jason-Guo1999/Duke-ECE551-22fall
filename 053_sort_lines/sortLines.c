@@ -16,18 +16,26 @@ void sortData(char ** data, size_t count) {
 
 void Mysort(FILE * f) {
   char ** lines = malloc(sizeof(*lines));
+  if (lines == NULL) {
+    perror("No memory to allocate!");
+    exit(EXIT_FAILURE);
+  }
   size_t lsize = 0;
   size_t numOflines = 0;
-  char * l = 0;
+  char * l = NULL;
   while (getline(&l, &lsize, f) >= 0) {
     lines = realloc(lines, (numOflines + 1) * (sizeof(*lines)));
+    if (lines == NULL) {
+      perror("No memory to allocate!");
+      exit(EXIT_FAILURE);
+    }
     lines[numOflines] = l;
     numOflines++;
-    l = 0;
+    l = NULL;
   }
   sortData(lines, numOflines);
   for (int i = 0; i < (int)numOflines; i++) {
-    printf("%s\n", lines[i]);
+    printf("%s,", lines[i]);
     free(lines[i]);
   }
   free(l);
@@ -43,10 +51,10 @@ int main(int argc, char ** argv) {
     }
     FILE * f = stdin;
     Mysort(f);
-    if (fclose(stdin) != 0) {
-      fprintf(stderr, "failed to close stdin\n");
-      exit(EXIT_FAILURE);
-    }
+    // if (fclose(stdin) != 0) {
+    //fprintf(stderr, "failed to close stdin\n");
+    //exit(EXIT_FAILURE);
+    //}
   }
   else {
     for (int i = 0; i < argc - 1; i++) {
@@ -55,7 +63,9 @@ int main(int argc, char ** argv) {
         fprintf(stderr, "failed to open file %s\n", argv[i]);
         exit(EXIT_FAILURE);
       }
-      Mysort(f);
+      else {
+        Mysort(f);
+      }
       if (fclose(f) != 0) {
         fprintf(stderr, "failed to close file %s\n", argv[i]);
         exit(EXIT_FAILURE);
