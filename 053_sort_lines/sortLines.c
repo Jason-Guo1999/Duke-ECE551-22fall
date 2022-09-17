@@ -14,58 +14,56 @@ void sortData(char ** data, size_t count) {
   qsort(data, count, sizeof(char *), stringOrder);
 }
 
-void Mysort(FILE * f) {
+void mySort(FILE * f) {
   char ** lines = malloc(sizeof(*lines));
   if (lines == NULL) {
-    perror("No memory to allocate!");
+    fprintf(stderr, "No memory to allocate!");
     exit(EXIT_FAILURE);
   }
   size_t lsize = 0;
   size_t numOflines = 0;
-  char * l = NULL;
+  char * l = 0;
   while (getline(&l, &lsize, f) >= 0) {
-    lines = realloc(lines, (numOflines + 1) * (sizeof(*lines)));
+    lines = realloc(lines, (numOflines + 1) * sizeof(*lines));
     if (lines == NULL) {
       perror("No memory to allocate!");
       exit(EXIT_FAILURE);
     }
     lines[numOflines] = l;
     numOflines++;
-    l = NULL;
+    l = 0;
   }
   sortData(lines, numOflines);
-  for (int i = 0; i < (int)numOflines; i++) {
-    printf("%s,", lines[i]);
+  for (size_t i = 0; i < numOflines; i++) {
+    printf("%s", lines[i]);
     free(lines[i]);
   }
-  free(l);
   free(lines);
+  free(l);
   return;
 }
 int main(int argc, char ** argv) {
   //WRITE YOUR CODE HERE!
   if (argc == 1) {
-    if (stdin == NULL) {
-      fprintf(stderr, "falied to open stdin\n");
+    FILE * f = stdin;
+    if (f == NULL) {
+      fprintf(stderr, "Can not open file!");
       exit(EXIT_FAILURE);
     }
-    FILE * f = stdin;
-    Mysort(f);
-    // if (fclose(stdin) != 0) {
-    //fprintf(stderr, "failed to close stdin\n");
-    //exit(EXIT_FAILURE);
-    //}
+    mySort(f);
+    if (fclose(stdin) != 0) {
+      fprintf(stderr, "failed to close stdin\n");
+      exit(EXIT_FAILURE);
+    }
   }
-  else {
-    for (int i = 0; i < argc - 1; i++) {
+  if (argc > 1) {
+    for (int i = 1; i < argc; i++) {
       FILE * f = fopen(argv[i], "r");
       if (f == NULL) {
-        fprintf(stderr, "failed to open file %s\n", argv[i]);
+        fprintf(stderr, "Can not open file");
         exit(EXIT_FAILURE);
       }
-      else {
-        Mysort(f);
-      }
+      mySort(f);
       if (fclose(f) != 0) {
         fprintf(stderr, "failed to close file %s\n", argv[i]);
         exit(EXIT_FAILURE);
