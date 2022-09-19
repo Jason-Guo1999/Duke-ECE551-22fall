@@ -120,7 +120,7 @@ int countMines(board_t * b, int x, int y) {
   for (int i = 0; i < 8; i++) {
     int tempx = x + directions[i][0];
     int tempy = y + directions[i][1];
-    if (tempx < 0 || tempy < 0 || tempx >= b->height || tempy >= b->width) {
+    if (tempx < 0 || tempy < 0 || tempx >= b->width || tempy >= b->height) {
       continue;
     }
     else {
