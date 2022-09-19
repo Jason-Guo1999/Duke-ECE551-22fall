@@ -51,9 +51,9 @@ board_t * makeBoard(int w, int h, int numMines) {
   b->width = w;
   b->height = h;
   b->totalMines = numMines;
-  for (int i = 0; i < h; i++) {
-    for (int j = 0; j < w; j++) {
-      b->board[i][j] = UNKNOWN;
+  for (int i = 0; i < w; i++) {
+    for (int j = 0; j < h; j++) {
+      b->board[j][i] = UNKNOWN;
     }
   }
   // Call randomMine //
@@ -124,7 +124,7 @@ int countMines(board_t * b, int x, int y) {
       continue;
     }
     else {
-      if (IS_MINE(b->board[tempx][tempy])) {
+      if (IS_MINE(b->board[tempy][tempx])) {
         mines++;
       }
     }
