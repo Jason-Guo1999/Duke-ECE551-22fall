@@ -1,22 +1,84 @@
+#include "kv.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "kv.h"
-
-
 
 kvarray_t * readKVs(const char * fname) {
   //WRITE ME
+  FILE * f = fopen(fname, "r");
+  if (f == NULL) {
+    perror("no such file");
+    exit(EXIT_FAILURE);
+  }
+
+  kvarray_t * myKv = malloc(sizeof(*myKv));
+  // Initialize //
+  myKv->num = 0;
+  myKv->pairArray = NULL;
+  // read line by line //
+  char * line = NULL;
+  size_t l = 0;
+  size_t len = 0;
+  while (getline(&line, &l, f)) {
+    myKv->num++;
+    myKv->pairArray = realloc(myKv->pairArray, myKv->num * sizeof(*myKv->pairArray));
+    if (myKv->pairArray == NULL) {
+      perror("Failed to allocate memory!");
+      exit(EXIT_FAILURE);
+    }
+    kvpair_t * pair = malloc(sizeof(*pair));
+    char * ptr = strchr(line, '=');
+    pair->key = line;
+    if (ptr != NULL) {
+      pair->value = ptr + 1;
+      *ptr = '\0';
+      char * ptr2 = strchr(line, '\n');
+      if (ptr2 != NULL) {
+        *ptr2 = '\0';
+      }
+    }
+
+    myKv->pairArray[len] = pair;
+    len++;
+    line = NULL;
+    free(pair);
+  }
+  fclose(f);
+  if (fclose(f) == EOF) {
+    perror("failed to close");
+    exit(EXIT_FAILURE);
+  }
+  free(line);
+  return myKv;
 }
 
 void freeKVs(kvarray_t * pairs) {
   //WRITE ME
+  for (int i = 0; i < pairs->num; i++) {
+    // free(pairs->pairArray[i]->key);
+    //free(pairs->pairArray[i]->value);
+    free(pairs->pairArray[i]);
+  }
+  free(pairs->pairArray);
+  free(pairs);
 }
 
 void printKVs(kvarray_t * pairs) {
   //WRITE ME
+  for (int i = 0; i < pairs->num; i++) {
+    printf("key = '%s' value = '%s'\n",
+           pairs->pairArray[i]->key,
+           pairs->pairArray[i]->value);
+  }
 }
 
 char * lookupValue(kvarray_t * pairs, const char * key) {
   //WRITE ME
+  for (int i = 0; i < pairs->num; i++) {
+    if (pairs->pairArray[i]->key == key) {
+      return pairs->pairArray[i]->value;
+    }
+  }
+  return NULL;
 }
