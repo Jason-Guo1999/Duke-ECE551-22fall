@@ -13,6 +13,10 @@ kvarray_t * readKVs(const char * fname) {
   }
 
   kvarray_t * myKv = malloc(sizeof(*myKv));
+  if (myKv == NULL) {
+    perror("Failed to malloc");
+    exit(EXIT_FAILURE);
+  }
   // Initialize //
   myKv->num = 0;
   myKv->pairArray = NULL;
@@ -26,7 +30,7 @@ kvarray_t * readKVs(const char * fname) {
     myKv->num++;
     myKv->pairArray = realloc(myKv->pairArray, myKv->num * sizeof(*myKv->pairArray));
     if (myKv->pairArray == NULL) {
-      perror("Failed to allocate memory!");
+      perror("Failed to reallocate!");
       exit(EXIT_FAILURE);
     }
     kvpair_t * pair = malloc(sizeof(*pair));
@@ -35,28 +39,22 @@ kvarray_t * readKVs(const char * fname) {
     if (ptr != NULL) {
       pair->value = ptr + 1;
       *ptr = '\0';
-      ptr2 = strchr(line, '\n');
+      ptr2 = strchr(pair->value, '\n');
       if (ptr2 != NULL) {
         *ptr2 = '\0';
       }
-      else {
-        fprintf(stderr, "invalid input\n");
-        exit(EXIT_FAILURE);
-      }
+      // else {
+      //fprintf(stderr, "invalid input(ptr2)\n");
+      //exit(EXIT_FAILURE);
+      //}
     }
     else {
-      fprintf(stderr, "invalid input\n");
+      fprintf(stderr, "invalid input(ptr)\n");
       exit(EXIT_FAILURE);
     }
-
     myKv->pairArray[len] = pair;
     len++;
     line = NULL;
-    free(pair);
-  }
-  if (!feof(f)) {
-    perror("invalid input");
-    exit(EXIT_FAILURE);
   }
   fclose(f);
   free(line);
