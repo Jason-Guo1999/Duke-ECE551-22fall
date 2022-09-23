@@ -9,14 +9,10 @@ kvarray_t * readKVs(const char * fname) {
   FILE * f = fopen(fname, "r");
   if (f == NULL) {
     perror("no such file");
-    exit(EXIT_FAILURE);
+    return NULL;
   }
 
   kvarray_t * myKv = malloc(sizeof(*myKv));
-  if (myKv == NULL) {
-    perror("Failed to malloc");
-    exit(EXIT_FAILURE);
-  }
   // Initialize //
   myKv->num = 0;
   myKv->pairArray = NULL;
@@ -29,10 +25,6 @@ kvarray_t * readKVs(const char * fname) {
     char * ptr2;
     myKv->num++;
     myKv->pairArray = realloc(myKv->pairArray, myKv->num * sizeof(*myKv->pairArray));
-    if (myKv->pairArray == NULL) {
-      perror("Failed to reallocate!");
-      exit(EXIT_FAILURE);
-    }
     kvpair_t * pair = malloc(sizeof(*pair));
     ptr = strchr(line, '=');
     pair->key = line;
