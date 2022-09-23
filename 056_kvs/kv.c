@@ -39,19 +39,15 @@ kvarray_t * readKVs(const char * fname) {
     if (ptr != NULL) {
       pair->value = ptr + 1;
       *ptr = '\0';
-      ptr2 = strchr(pair->value, '\n');
-      if (ptr2 != NULL) {
-        *ptr2 = '\0';
-      }
-      // else {
-      //fprintf(stderr, "invalid input(ptr2)\n");
-      //exit(EXIT_FAILURE);
-      //}
     }
-    else {
-      fprintf(stderr, "invalid input(ptr)\n");
-      exit(EXIT_FAILURE);
+    ptr2 = strchr(pair->value, '\n');
+    if (ptr2 != NULL) {
+      *ptr2 = '\0';
     }
+    // else {
+    //fprintf(stderr, "invalid input(ptr2)\n");
+    //exit(EXIT_FAILURE);
+    //}
     myKv->pairArray[len] = pair;
     len++;
     line = NULL;
