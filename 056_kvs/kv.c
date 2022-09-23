@@ -29,9 +29,9 @@ kvarray_t * readKVs(const char * fname) {
     ptr = strchr(line, '=');
     pair->key = line;
     if (ptr != NULL) {
-      pair->value = ptr + 1;
       *ptr = '\0';
     }
+    pair->value = ptr + 1;
     ptr2 = strchr(pair->value, '\n');
     if (ptr2 != NULL) {
       *ptr2 = '\0';
