@@ -51,7 +51,7 @@ kvarray_t * readKVs(const char * fname) {
 
 void freeKVs(kvarray_t * pairs) {
   //WRITE ME
-  for (int i = 0; i < pairs->num; i++) {
+  for (int i = 0; i < (pairs->num); i++) {
     free(pairs->pairArray[i]->key);
     free(pairs->pairArray[i]);
   }
@@ -71,7 +71,7 @@ void printKVs(kvarray_t * pairs) {
 char * lookupValue(kvarray_t * pairs, const char * key) {
   //WRITE ME
   for (int i = 0; i < pairs->num; i++) {
-    if (strcmp(key, pairs->pairArray[i]->key)) {
+    if (strcmp(pairs->pairArray[i]->key, key) == 0) {
       return pairs->pairArray[i]->value;
     }
   }
