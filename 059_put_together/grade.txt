@@ -1,6 +1,6 @@
-Grading at 09/25/2022:15:38:14.418630
-For commit ID c30d8cad75962cf7ee60fe8d6ad6ff4940115a04
-Grading at Sun Sep 25 11:38:09 AM EDT 2022
+Grading at 09/25/2022:15:40:19.352498
+For commit ID 1339f2e8476a9fa1f2e4f8ec2e4cffcec3a2f455
+Grading at Sun Sep 25 11:40:14 AM EDT 2022
 Attempting to compile:
 rm -f  counts.o  kv.o  main.o  outname.o count_values *~
 gcc -c -Wall -Werror -std=gnu99 -pedantic -ggdb3 counts.c
@@ -10,7 +10,9 @@ gcc -c -Wall -Werror -std=gnu99 -pedantic -ggdb3 outname.c
 gcc -Wall -Werror -std=gnu99 -pedantic -ggdb3 -o count_values  counts.o  kv.o  main.o  outname.o
 #################################################
 testcase1:
-valgrind reported memory errors
+testcase1 passed, your program successfully indicated a failure
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 #################################################
 testcase2:
 Your file matched the expected output
@@ -42,4 +44,4 @@ Your output is correct
   - Valgrind was clean (no errors, no memory leaks)
 valgrind was clean
 
-Overall Grade: B
+Overall Grade: A
