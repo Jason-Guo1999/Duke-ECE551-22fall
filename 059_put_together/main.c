@@ -10,15 +10,13 @@ counts_t * countFile(const char * filename, kvarray_t * kvPairs) {
   //WRITE ME
   FILE * f = fopen(filename, "r");
   counts_t * ans = createCounts();
-  char * key = NULL;
+  //  char * key = NULL;
   char * line = NULL;
-  size_t size;
+  size_t size = 0;
   while (getline(&line, &size, f) >= 0) {
     char * p = strchr(line, '\n');
     *p = '\0';
-    key = line;
-    char * value = lookupValue(kvPairs, key);
-    addCount(ans, value);
+    addCount(ans, lookupValue(kvPairs, line));
   }
   free(line);
   fclose(f);
