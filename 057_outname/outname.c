@@ -10,6 +10,6 @@ char * computeOutputFileName(const char * inputName) {
   unsigned length = strlen(inputName) + 8;
   char * ans = malloc(length * sizeof(*ans));
   ans = strcpy(ans, inputName);
-  ans = strcat(ans, ".counts");
+  ans = strcat(ans, ".counts\0");
   return ans;
 }
