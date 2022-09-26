@@ -4,15 +4,10 @@
 #define row 10
 #define col 10
 
-void getError(const char * msg) {
-  fprintf(stderr, "Encounter some error: %s\n", msg);
-  exit(EXIT_FAILURE);
-}
-
 void rotate(char matrix[row][col]) {
   for (int i = 0; i < row; i++) {
-    for (int j = 0; j < col; j++) {
-      printf("%c", matrix[col - 1 - j][i]);
+    for (int j = col - 1; j >= 0; j--) {
+      printf("%c", matrix[j][i]);
     }
     printf("\n");
   }
@@ -26,7 +21,8 @@ void readLine(char line[], FILE * f) {
     ch = fgetc(f);
     if (ch == '\n') {
       if (numOfchar != col) {
-        getError("invalid input of matrix (too short row)");
+        fprintf(stderr, "Invalid input");
+        exit(EXIT_FAILURE);
       }
       else {
         line[numOfchar] = '\0';
@@ -34,26 +30,32 @@ void readLine(char line[], FILE * f) {
       }
     }
     else if (ch == EOF) {
-      if (numOfchar == col) {
-        getError("invalid input of matrix (EOF)");
-      }
-      else {
-        getError("invalid input of matrix (too short row)");
-      }
+      fprintf(stderr, "Invalid input");
+      exit(EXIT_FAILURE);
+    }
+    else if (ch < 0 || ch > 255) {
+      fprintf(stderr, "Invalid input");
+      exit(EXIT_FAILURE);
     }
     else {
       if (numOfchar >= col) {
-        getError("invalid input of matrix (too long row)");
+        fprintf(stderr, "INvalid input");
+        exit(EXIT_FAILURE);
       }
       else {
-        line[numOfchar] = (char)ch;
+        line[numOfchar] = ch;
         numOfchar++;
       }
     }
   }
   return;
 }
-
+void readfile(char target[row][col], FILE * f) {
+  for (int i = 0; i < row; i++) {
+    readLine(target[i], f);
+  }
+  return;
+}
 int main(int argc, char * argv[]) {
   char matrix[row][col];
   FILE * f;
@@ -63,20 +65,24 @@ int main(int argc, char * argv[]) {
     exit(EXIT_FAILURE);
   }
   if ((f = fopen(argv[1], "r")) == 0) {
-    getError("Can't open the file");
+    fprintf(stderr, "can't open file");
+    exit(EXIT_FAILURE);
   }
-  // read line by line //
-  for (int i = 0; i < row; i++) {
-    readLine(matrix[i], f);
-  }
+  // read //
+  readfile(matrix, f);
 
   // test redundant input row//
   if ((ch = fgetc(f)) != EOF) {
-    getError("Error format of input matrix\n");
+    fprintf(stderr, "Invalid input");
+    exit(EXIT_FAILURE);
   }
-
+  int j;
+  j = fclose(f);
+  if (j != 0) {
+    perror("can't close");
+    exit(EXIT_FAILURE);
+  }
   rotate(matrix);
-  fclose(f);
 
-  return (EXIT_SUCCESS);
+  return EXIT_SUCCESS;
 }
