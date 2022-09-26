@@ -46,16 +46,15 @@ board_t * makeBoard(int w, int h, int numMines) {
   b->board = malloc(h * sizeof(*b->board));
   for (int i = 0; i < h; i++) {
     b->board[i] = malloc(w * sizeof(*b->board[i]));
+    if (b->board[i] == NULL) {
+      perror("No memory");
+      exit(EXIT_FAILURE);
+    }
   }
   // Initialize //
   b->width = w;
   b->height = h;
   b->totalMines = numMines;
-  for (int i = 0; i < w; i++) {
-    for (int j = 0; j < h; j++) {
-      b->board[j][i] = UNKNOWN;
-    }
-  }
   // Call randomMine //
   for (int j = 0; j < numMines; j++) {
     addRandomMine(b);
