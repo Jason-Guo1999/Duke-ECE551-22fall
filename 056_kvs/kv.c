@@ -3,7 +3,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+void readPair(kvpair_t * pair, char * line) {
+  char * ptr;
+  char * ptr1;
+  ptr = strchr(line, '=');
+  pair->key = line;
+  pair->value = ptr + 1;
+  ptr1 = strchr(line, '\n');
+  *ptr = '\0';
+  *ptr1 = '\0';
+}
 kvarray_t * readKVs(const char * fname) {
   //WRITE ME
   FILE * f = fopen(fname, "r");
@@ -11,30 +20,16 @@ kvarray_t * readKVs(const char * fname) {
   kvarray_t * myKv = malloc(sizeof(*myKv));
   // Initialize //
   myKv->num = 0;
-  myKv->pairArray = NULL;
+  myKv->pairArray = malloc(sizeof(*myKv->pairArray));
   // read line by line //
   char * line = NULL;
   size_t l = 0;
   size_t len = 0;
   while (getline(&line, &l, f) >= 0) {
-    char * ptr;
-    char * ptr2;
     myKv->num++;
     myKv->pairArray = realloc(myKv->pairArray, myKv->num * sizeof(*myKv->pairArray));
     kvpair_t * pair = malloc(sizeof(*pair));
-    ptr = strchr(line, '=');
-    pair->key = line;
-    if (ptr != NULL) {
-      *ptr = '\0';
-    }
-    pair->value = ptr + 1;
-    ptr2 = strchr(pair->value, '\n');
-    if (ptr2 != NULL) {
-      *ptr2 = '\0';
-    }
-    // else {
-    //fprintf(stderr, "invalid input(ptr2)\n");
-    //exit(EXIT_FAILURE);
+    readPair(pair, line);
     myKv->pairArray[len] = pair;
     len++;
     line = NULL;
