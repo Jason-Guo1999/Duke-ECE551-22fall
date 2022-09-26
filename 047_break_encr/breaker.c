@@ -3,7 +3,10 @@
 #include <stdlib.h>
 
 int breaker(FILE * f) {
-  int fre[26] = {0};
+  int fre[26];
+  for (int i = 0; i < 26; i++) {
+    fre[i] = 0;
+  }
   int maxFre = 0;
   int key = 0;
   int temp;
@@ -17,6 +20,10 @@ int breaker(FILE * f) {
       }
     }
   }
+  if (maxFre == 0) {
+    fprintf(stderr, "Invalid input");
+    exit(EXIT_FAILURE);
+  }
   return key;
 }
 
@@ -25,17 +32,21 @@ int main(int argc, char * argv[]) {
 
   if (argc != 2) {
     fprintf(stderr, "Usage %s file\n", argv[0]);
-    exit(EXIT_FAILURE);
+    return EXIT_FAILURE;
   }
 
   f = fopen(argv[1], "r");
   if (f == NULL) {
     fprintf(stderr, "Failed to open %s file\n", argv[1]);
-    exit(EXIT_FAILURE);
+    return EXIT_FAILURE;
   }
 
   int key = breaker(f);
   printf("%d\n", key);
-  fclose(f);
+  int j = fclose(f);
+  if (j != 0) {
+    perror("failed close");
+    return EXIT_FAILURE;
+  }
   return EXIT_SUCCESS;
 }
