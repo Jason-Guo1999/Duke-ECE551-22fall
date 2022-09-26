@@ -55,6 +55,11 @@ board_t * makeBoard(int w, int h, int numMines) {
   b->width = w;
   b->height = h;
   b->totalMines = numMines;
+  for (int i = 0; i < h; i++) {
+    for (int j = 0; j < w; j++) {
+      b->board[i][j] = UNKNOWN;
+    }
+  }
   // Call randomMine //
   for (int j = 0; j < numMines; j++) {
     addRandomMine(b);
