@@ -29,10 +29,6 @@ void readLine(char line[], FILE * f) {
         return;
       }
     }
-    else if (ch == EOF) {
-      fprintf(stderr, "Invalid input");
-      exit(EXIT_FAILURE);
-    }
     else if (ch < 0 || ch > 255) {
       fprintf(stderr, "Invalid input");
       exit(EXIT_FAILURE);
