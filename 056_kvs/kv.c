@@ -7,10 +7,6 @@
 kvarray_t * readKVs(const char * fname) {
   //WRITE ME
   FILE * f = fopen(fname, "r");
-  if (f == NULL) {
-    perror("no such file");
-    return NULL;
-  }
 
   kvarray_t * myKv = malloc(sizeof(*myKv));
   // Initialize //
@@ -39,7 +35,6 @@ kvarray_t * readKVs(const char * fname) {
     // else {
     //fprintf(stderr, "invalid input(ptr2)\n");
     //exit(EXIT_FAILURE);
-    //}
     myKv->pairArray[len] = pair;
     len++;
     line = NULL;
