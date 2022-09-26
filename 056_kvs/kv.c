@@ -43,7 +43,7 @@ void freeKVs(kvarray_t * pairs) {
   //WRITE ME
   for (int i = 0; i < (pairs->num); i++) {
     free(pairs->pairArray[i]->key);
-    free(pairs->pairArray[i]->value);
+    free(pairs->pairArray[i]);
   }
   free(pairs->pairArray);
   free(pairs);
