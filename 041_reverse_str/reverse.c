@@ -10,7 +10,7 @@ void reverse(char * str) {
   size_t ptr1 = 0;
   size_t ptr2 = strlen(str);
   ptr2 = ptr2 - 1;
-  while (ptr1 < ptr2 && ptr2 >= 0 && ptr1 < strlen(str)) {
+  while (ptr1 < ptr2 && ptr1 < strlen(str)) {
     char temp = str[ptr1];
     str[ptr1] = str[ptr2];
     str[ptr2] = temp;
