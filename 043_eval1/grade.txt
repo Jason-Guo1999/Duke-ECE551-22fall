@@ -1,6 +1,6 @@
-Grading at 09/28/2022:22:37:03.938394
-For commit ID 53f44601631081a18c458549e8f3902832b9b2c5
-Grading at Wed Sep 28 06:37:00 PM EDT 2022
+Grading at 09/28/2022:22:39:08.834765
+For commit ID cb0c8f44dddf4070705f00709c19fd6fff2f1ca9
+Grading at Wed Sep 28 06:39:04 PM EDT 2022
 
 Compiling 
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
@@ -23,6 +23,12 @@ Test case printCountries population.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printDailyMax population.csv daily_small.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printCumulative population.csv daily_small.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printRunningAvg population.csv daily_small.csv
 Your file matched the expected output
 
 You have PASSED all of your test cases
