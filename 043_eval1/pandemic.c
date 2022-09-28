@@ -65,6 +65,7 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
     sum -= data[sz - 1];
     sum += data[sz + 6];
     avg[sz] = sum / 7;
+    sz++;
   }
   return;
 }
