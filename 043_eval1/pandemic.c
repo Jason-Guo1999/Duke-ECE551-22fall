@@ -53,6 +53,9 @@ country_t parseLine(char * line) {
 
 void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   //WRITE ME
+  if (data == NULL) {
+    callError("invalid input");
+  }
   size_t sz = 1;
   double sum = 0;
   // initialize //
@@ -73,6 +76,9 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
 void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) {
   //WRITE ME
   double casesNow = 0;
+  if (data == NULL) {
+    callError("Invalid input");
+  }
   for (size_t i = 0; i < n_days; i++) {
     casesNow += data[i];
     cum[i] = casesNow * base / pop;
@@ -85,6 +91,12 @@ void printCountryWithMax(country_t * countries,
                          unsigned ** data,
                          size_t n_days) {
   //WRITE ME
+  if (countries == NULL) {
+    callError("Invalid input");
+  }
+  if (data == NULL) {
+    callError("Invalid input");
+  }
   char * country_name;
   unsigned number_cases;
   unsigned * maxNum = malloc(n_countries * sizeof(*maxNum));
@@ -110,7 +122,7 @@ void printCountryWithMax(country_t * countries,
       temp = maxNum[i];
     }
   }
-
+  free(maxNum);
   // output //
   printf("%s has the most daily cases with %u\n", country_name, number_cases);
   return;
