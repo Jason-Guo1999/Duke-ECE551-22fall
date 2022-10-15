@@ -1,0 +1,10 @@
+Grading at 10/15/2022:04:04:50.670903
+For commit ID 2691b326681c579b3e68e816deed17e013c900c8
+Grading at Sat Oct 15 12:04:49 AM EDT 2022
+Attempting to compile:
+rm -f  main.o points *~
+g++ -c -Wall -Werror -std=gnu++98 -pedantic -ggdb3 main.cpp
+g++ -Wall -Werror -std=gnu++98 -pedantic -ggdb3 -o points  main.o
+valgrind reported memory errors
+
+Overall Grade: FAILED
