@@ -5,6 +5,7 @@ class Point {
   double y;
 
  public:
+  Point() : x(0), y(0) {}
   void move(double dx, double dy) {
     this->x += dx;
     this->y += dy;
