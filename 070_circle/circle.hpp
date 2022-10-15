@@ -1,7 +1,7 @@
 #include <cmath>
 
 #include "point.hpp"
-#define PI 3.1415926536
+#define PI 3.1415926535
 class Circle {
  private:
   Point center;
@@ -28,12 +28,12 @@ class Circle {
     else {
       double a1 = 2 * acos((dis * dis + this->radius * this->radius -
                             otherCircle.radius * otherCircle.radius) /
-                           (2 * dis * this->radius));
+                           (2.0 * dis * this->radius));
       double a2 = 2 * acos((dis * dis + otherCircle.radius * otherCircle.radius -
                             this->radius * this->radius) /
-                           (2 * dis * otherCircle.radius));
-      double s1 = 1 / 2 * this->radius * this->radius * sin(a1) +
-                  1 / 2 * otherCircle.radius * otherCircle.radius * sin(a2);
+                           (2.0 * dis * otherCircle.radius));
+      double s1 = 0.5 * this->radius * this->radius * sin(a1) +
+                  0.5 * otherCircle.radius * otherCircle.radius * sin(a2);
       double s2 = a1 / 2 * this->radius * this->radius +
                   a2 / 2 * otherCircle.radius * otherCircle.radius;
       return s2 - s1;
