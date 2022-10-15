@@ -26,17 +26,16 @@ class Circle {
       }
     }
     else {
-      double a1 = 2 * acos((dis * dis + this->radius * this->radius -
-                            otherCircle.radius * otherCircle.radius) /
-                           (2.0 * dis * this->radius));
-      double a2 = 2 * acos((dis * dis + otherCircle.radius * otherCircle.radius -
-                            this->radius * this->radius) /
-                           (2.0 * dis * otherCircle.radius));
-      double s1 = 0.5 * this->radius * this->radius * sin(a1) +
-                  0.5 * otherCircle.radius * otherCircle.radius * sin(a2);
-      double s2 = a1 / 2 * this->radius * this->radius +
-                  a2 / 2 * otherCircle.radius * otherCircle.radius;
-      return s2 - s1;
+      double a1 = 2.0 * acos((dis * dis + this->radius * this->radius -
+                              otherCircle.radius * otherCircle.radius) /
+                             (2.0 * dis * this->radius));
+      double a2 = 2.0 * acos((dis * dis + otherCircle.radius * otherCircle.radius -
+                              this->radius * this->radius) /
+                             (2.0 * dis * otherCircle.radius));
+      double s1 = a1 * pow(this->radius, 2) / 2 - sin(a1) * pow(this->radius, 2) / 2;
+      double s2 =
+          a2 * pow(otherCircle.radius, 2) / 2 - sin(a2) * pow(otherCircle.radius, 2) / 2;
+      return s1 + s2;
     }
   }
 };
