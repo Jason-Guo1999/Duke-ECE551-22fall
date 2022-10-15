@@ -24,14 +24,14 @@ kvarray_t * readKVs(const char * fname) {
   // read line by line //
   char * line = NULL;
   size_t l = 0;
-  size_t len = 0;
+  //size_t len = 0;
   while (getline(&line, &l, f) >= 0) {
     myKv->num++;
     myKv->pairArray = realloc(myKv->pairArray, myKv->num * sizeof(*myKv->pairArray));
     kvpair_t * pair = malloc(sizeof(*pair));
     readPair(pair, line);
-    myKv->pairArray[len] = pair;
-    len++;
+    myKv->pairArray[myKv->num - 1] = pair;
+    //len++;
     line = NULL;
   }
   fclose(f);
