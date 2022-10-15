@@ -10,6 +10,6 @@ class Point {
     this->y += dy;
   }
   double distanceFrom(const Point & p) {
-    return sqrt((this->x - p.x) * (this->x - p.x) + (this->y - p.y) * (this->y - p.y));
+    return sqrt(pow(this->x - p.x, 2) + pow(this->y - p.y, 2));
   }
 };
