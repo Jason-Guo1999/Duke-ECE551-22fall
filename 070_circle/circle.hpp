@@ -17,12 +17,12 @@ class Circle {
     if (dis >= this->radius + otherCircle.radius) {
       return 0.0;
     }
-    else if (dis >= 0 && dis <= std::abs(this->radius - otherCircle.radius)) {
+    else if (dis <= std::abs(this->radius - otherCircle.radius)) {
       if (this->radius > otherCircle.radius) {
-        return PI * pow(this->radius, 2);
+        return PI * pow(otherCircle.radius, 2);
       }
       else {
-        return PI * pow(otherCircle.radius, 2);
+        return PI * pow(this->radius, 2);
       }
     }
     else {
