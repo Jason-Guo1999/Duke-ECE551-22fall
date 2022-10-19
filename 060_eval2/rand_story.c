@@ -13,11 +13,11 @@ void callError(char * message) {
 void validLineStep2(char * line) {
   // helper function to validate line
   char * ptr1 = strchr(line, ':');
-  //if (ptr1 == NULL) {
-  // can't find ':'
-  //callError("Invalid line, miss ':'!");
-  //}
-  if (ptr1 - line == 0) {
+  if (ptr1 == NULL) {
+    // can't find ':'
+    callError("Invalid line, miss ':'!");
+  }
+  else if (ptr1 - line == 0) {
     // can't find name
     callError("Invalid line, empty name!");
   }
