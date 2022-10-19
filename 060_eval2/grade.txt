@@ -1,6 +1,6 @@
-Grading at 10/19/2022:21:46:39.973318
-For commit ID 89e7f40ea36c660bd073e6aed724aa23436b6903
-Grading at Wed Oct 19 05:46:38 PM EDT 2022
+Grading at 10/19/2022:21:48:42.580023
+For commit ID e3b9e7af6ed437d67c5ab56fa750401f8159b270
+Grading at Wed Oct 19 05:48:40 PM EDT 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -52,9 +52,9 @@ Now running YOUR tests for step 3
 
 3.1: Current test is story-step3 words.txt story2.txt
 -----------------------------
-You considered this a failure case:
-Invalid line, miss ':'!: Success
-But we did not.
+Your output looks good. Lets check valgrind
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean
 
 Step 4
 Checking that story-step4 compiles
