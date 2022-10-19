@@ -9,13 +9,13 @@ int main(int argc, char ** argv) {
     callError("Invalid command line!");
   }
   // open file1 (step1)
-  FILE * f1 = fopen(argv[1], "r");
-  if (f1 == NULL) {
+  FILE * f2 = fopen(argv[1], "r");
+  if (f2 == NULL) {
     callError("Can't open file 1!");
   }
   // open file2 (step2)
-  FILE * f2 = fopen(argv[2], "r");
-  if (f2 == NULL) {
+  FILE * f1 = fopen(argv[2], "r");
+  if (f1 == NULL) {
     callError("Can't open file 2!");
   }
 
