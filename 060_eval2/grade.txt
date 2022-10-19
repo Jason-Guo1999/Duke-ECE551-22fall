@@ -1,11 +1,11 @@
-Grading at 10/19/2022:18:56:37.031144
-For commit ID 01bc71cefb42a91c2a4318257b630f583642e67e
-Grading at Wed Oct 19 02:56:35 PM EDT 2022
+Grading at 10/19/2022:21:41:15.766640
+For commit ID dd3c52b8ae860fdd78edbcd2c9d6ba6c831339f0
+Grading at Wed Oct 19 05:41:13 PM EDT 2022
 Doing some basic checking for your submission
 
 Step 1
 Checking that story-step1 compiles
-rm -f *~ story-step2  story-step2.o rand_story.o
+rm -f *~ story-step1 story-step2 story-step3  story-step1.o story-step2.o story-step3.o rand_story.o
 gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
 gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step1.c
 gcc -o story-step1 story-step1.o rand_story.o provided.o
@@ -24,7 +24,7 @@ Valgrind was clean
 
 Step 2
 Checking that story-step2 compiles
-rm -f *~ story-step2  story-step2.o rand_story.o
+rm -f *~ story-step1 story-step2 story-step3  story-step1.o story-step2.o story-step3.o rand_story.o
 gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
 gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step2.c
 gcc -o story-step2 story-step2.o rand_story.o provided.o
@@ -41,7 +41,24 @@ Valgrind was clean
 
 Step 3
 Checking that story-step3 compiles
-rm -f *~ story-step2  story-step2.o rand_story.o
+rm -f *~ story-step1 story-step2 story-step3  story-step1.o story-step2.o story-step3.o rand_story.o
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
+The code compiled (good)
+Executable story-step3 exists (good)
+Now running YOUR tests for step 3
+
+3.1: Current test is story-step3 words.txt story2.txt
+-----------------------------
+You considered this a failure case:
+Invalid line, miss ':'!: Success
+But we did not.
+
+Step 4
+Checking that story-step4 compiles
+rm -f *~ story-step1 story-step2 story-step3  story-step1.o story-step2.o story-step3.o rand_story.o
 The code did not compile!
 
 Overall Grade: NO GRADE YET
