@@ -8,20 +8,24 @@ void validLine(char * line) {
   // helper function to validate line
   char * ptr1 = strchr(line, ':');
   if (ptr1 == NULL) {
+    // can't find ':'
     callError("Invalid line, miss ':'!");
   }
   else if (ptr1 - line == 0) {
+    // can't find name
     callError("Invalid line, empty name!");
   }
   ptr1++;
   char * ptr2 = strchr(ptr1, '\n');
   if (ptr2 != NULL) {
     if (ptr2 - ptr1 == 0) {
+      // can't find word
       callError("Invalid line, empty word!");
     }
   }
   else {
     if (strlen(line) - (ptr1 - line - 1) == 1) {
+      // can't find word
       callError("Invalid line, empty word!");
     }
   }
@@ -32,9 +36,17 @@ catarray_t * getCatArray(FILE * f) {
   char * line = NULL;
   size_t sz = 0;
   catarray_t * catArray = malloc(sizeof(*catArray));
+  if (catArray == NULL) {
+    callError("Failed to allocate!");
+  }
   catArray->arr = malloc(sizeof(*catArray->arr));
+  if (catArray->arr == NULL) {
+    callError("Failed to allocate!");
+  }
   catArray->n = 0;
+  // read line
   while (getline(&line, &sz, f) >= 0) {
+    // call helperfunction to validate line
     validLine(line);
     char * ptr1 = strchr(line, ':');
     char * tempName = strndup(line, ptr1 - line);
@@ -57,6 +69,9 @@ catarray_t * getCatArray(FILE * f) {
       newCat->n_words = 1;
       newCat->name = tempName;
       newCat->words = malloc(sizeof(*newCat->words));
+      if (newCat->words == NULL) {
+        callError("Failed to allocate!");
+      }
       newCat->words[0] = tempWord;
       // add category to catArray
       catArray->arr = realloc(catArray->arr, (catArray->n + 1) * sizeof(*catArray->arr));
@@ -72,6 +87,9 @@ catarray_t * getCatArray(FILE * f) {
       free(tempName);
       target->words =
           realloc(target->words, (target->n_words + 1) * sizeof(*target->words));
+      if (target->words == NULL) {
+        callError("Failed to reallocate");
+      }
       target->words[target->n_words] = tempWord;
       target->n_words++;
     }
