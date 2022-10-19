@@ -1,6 +1,6 @@
-Grading at 10/19/2022:15:28:36.077367
-For commit ID 72a61d49d37e4fd588e6c8da33c2c4069a1139a0
-Grading at Wed Oct 19 11:28:35 AM EDT 2022
+Grading at 10/19/2022:15:31:27.149451
+For commit ID 0c9fab96e9455dc6398dd2c7a607b065f99c6170
+Grading at Wed Oct 19 11:31:26 AM EDT 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -13,20 +13,14 @@ rm story-step1.o
 The code compiled (good)
 Executable story-step1 exists (good)
 Checking with provided test case story.txt
-Line_1_did_not_match
-Line_2_did_not_match
-Your file did not match the expected ouput
+Your file matched the expected output
 Now running YOUR tests for step 1
 
 1.1: Current test is story-step1 story.txt
 -----------------------------
-It looks like you got different output from us on that case.
-Here is the diff (yours on left, ours on right):
-
-Once upon a time, there was a cats who lived in a very cats   |	Once upon a time, there was a cat who lived in a very cat
-cats. 							      |	cat. 
-Your file did not match the expected ouput
-
+Your output looks good. Lets check valgrind
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean
 
 Step 2
 Checking that story-step2 compiles
