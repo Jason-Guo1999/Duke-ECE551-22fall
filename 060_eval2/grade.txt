@@ -1,6 +1,6 @@
-Grading at 10/19/2022:21:41:15.766640
-For commit ID dd3c52b8ae860fdd78edbcd2c9d6ba6c831339f0
-Grading at Wed Oct 19 05:41:13 PM EDT 2022
+Grading at 10/19/2022:21:43:07.933434
+For commit ID 6d8431aed2f5ac1331f84a1886314f22bcb21b2f
+Grading at Wed Oct 19 05:43:05 PM EDT 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -53,7 +53,7 @@ Now running YOUR tests for step 3
 3.1: Current test is story-step3 words.txt story2.txt
 -----------------------------
 You considered this a failure case:
-Invalid line, miss ':'!: Success
+timeout: the monitored command dumped core
 But we did not.
 
 Step 4
