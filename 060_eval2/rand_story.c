@@ -44,7 +44,7 @@ void replaceTemplate(file * temp, int flag) {
 
       //Todo:
       //char * word = findWord(target, flag);
-      char * word = "cats";
+      char * word = "cat";
       size_t w = strlen(word);
       // string cat: result = part1+word+part2
       part1 = realloc(part1, (p1 + p2 + w + 1) * sizeof(*part1));
