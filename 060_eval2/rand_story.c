@@ -9,7 +9,21 @@ void callError(char * message) {
   perror(message);
   exit(EXIT_FAILURE);
 }
-
+category_t * findName(catarray_t * catArray, char * tempName) {
+  // helper function to find if tempName is already existing
+  category_t * ans = NULL;
+  if (catArray->n == 0) {
+    // we don't have any catgory yet!
+    return ans;
+  }
+  for (size_t i = 0; i < catArray->n; i++) {
+    if (strcmp(tempName, catArray->arr[i].name) == 0) {
+      ans = &catArray->arr[i];
+      break;
+    }
+  }
+  return ans;
+}
 //char * findword(char * target, int flag) {
 
 //}
