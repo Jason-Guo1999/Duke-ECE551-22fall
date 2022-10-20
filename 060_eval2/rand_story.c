@@ -219,7 +219,9 @@ void replaceTemplate(file * temp, catarray_t * catArray, int flag) {
       free(part1);
       free(part2);
       free(target);
-      free(word);
+      if (flag != 0) {
+        free(word);
+      }
     }
   }
   // free previous
