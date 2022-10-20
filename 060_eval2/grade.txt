@@ -1,11 +1,11 @@
-Grading at 10/19/2022:21:48:42.580023
-For commit ID e3b9e7af6ed437d67c5ab56fa750401f8159b270
-Grading at Wed Oct 19 05:48:40 PM EDT 2022
+Grading at 10/20/2022:03:25:47.755240
+For commit ID 6c280c427183c9d7d68d08b73affd06de9c76dd9
+Grading at Wed Oct 19 11:25:44 PM EDT 2022
 Doing some basic checking for your submission
 
 Step 1
 Checking that story-step1 compiles
-rm -f *~ story-step1 story-step2 story-step3  story-step1.o story-step2.o story-step3.o rand_story.o
+rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
 gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
 gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step1.c
 gcc -o story-step1 story-step1.o rand_story.o provided.o
@@ -24,7 +24,7 @@ Valgrind was clean
 
 Step 2
 Checking that story-step2 compiles
-rm -f *~ story-step1 story-step2 story-step3  story-step1.o story-step2.o story-step3.o rand_story.o
+rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
 gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
 gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step2.c
 gcc -o story-step2 story-step2.o rand_story.o provided.o
@@ -41,7 +41,7 @@ Valgrind was clean
 
 Step 3
 Checking that story-step3 compiles
-rm -f *~ story-step1 story-step2 story-step3  story-step1.o story-step2.o story-step3.o rand_story.o
+rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
 gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
 gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
 gcc -o story-step3 story-step3.o rand_story.o provided.o
@@ -58,7 +58,73 @@ Valgrind was clean
 
 Step 4
 Checking that story-step4 compiles
-rm -f *~ story-step1 story-step2 story-step3  story-step1.o story-step2.o story-step3.o rand_story.o
-The code did not compile!
+rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step4.c
+gcc -o story-step4 story-step4.o rand_story.o provided.o
+rm story-step4.o
+The code compiled (good)
+Executable story-step4 exists (good)
+Now running YOUR tests for step 4
+
+4.1: Current test is story-step4 words.txt story2.txt
+-----------------------------
+Your output looks good. Lets check valgrind
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean
+
+4.2: Current test is story-step4 -n words.txt story2.txt
+-----------------------------
+Your output looks good. Lets check valgrind
+  - Valgrind reported errors
+Valgrind reported errors or memory leaks:
+==1386677== Memcheck, a memory error detector
+==1386677== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1386677== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1386677== Command: ./story-step4 -n words.txt story2.txt
+==1386677== Parent PID: 1386676
+==1386677== 
+==1386677== 
+==1386677== HEAP SUMMARY:
+==1386677==     in use at exit: 74 bytes in 9 blocks
+==1386677==   total heap usage: 105 allocs, 96 frees, 16,029 bytes allocated
+==1386677== 
+==1386677== 13 (8 direct, 5 indirect) bytes in 1 blocks are definitely lost in loss record 3 of 6
+==1386677==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1386677==    by 0x109851: getCatArray (rand_story.c:79)
+==1386677==    by 0x109540: main (story-step4.c:39)
+==1386677== 
+==1386677== 16 bytes in 2 blocks are definitely lost in loss record 4 of 6
+==1386677==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1386677==    by 0x490B60E: strdup (strdup.c:42)
+==1386677==    by 0x10987D: getCatArray (rand_story.c:83)
+==1386677==    by 0x109540: main (story-step4.c:39)
+==1386677== 
+==1386677== 22 bytes in 3 blocks are definitely lost in loss record 5 of 6
+==1386677==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1386677==    by 0x490B60E: strdup (strdup.c:42)
+==1386677==    by 0x10998E: getCatArray (rand_story.c:104)
+==1386677==    by 0x109540: main (story-step4.c:39)
+==1386677== 
+==1386677== 23 (16 direct, 7 indirect) bytes in 1 blocks are definitely lost in loss record 6 of 6
+==1386677==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1386677==    by 0x10A081: deleteWord (rand_story.c:233)
+==1386677==    by 0x10A25D: findWord (rand_story.c:271)
+==1386677==    by 0x109EB9: replaceTemplate (rand_story.c:205)
+==1386677==    by 0x10955A: main (story-step4.c:41)
+==1386677== 
+==1386677== LEAK SUMMARY:
+==1386677==    definitely lost: 62 bytes in 7 blocks
+==1386677==    indirectly lost: 12 bytes in 2 blocks
+==1386677==      possibly lost: 0 bytes in 0 blocks
+==1386677==    still reachable: 0 bytes in 0 blocks
+==1386677==         suppressed: 0 bytes in 0 blocks
+==1386677== 
+==1386677== For lists of detected and suppressed errors, rerun with: -s
+==1386677== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 0 from 0)
+
+You have NOT passed your test cases!
+You should go and figure out/understand where thing went wrong
+And fix the problem(s) before the deadline
 
 Overall Grade: NO GRADE YET
