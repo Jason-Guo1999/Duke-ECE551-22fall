@@ -15,10 +15,7 @@ void callError(char * message);
 void replaceTemplate(file * temp, catarray_t * catArray, int flag);
 
 // find  word in target string
-const char * findWord(char * target,
-                      catarray_t * catArray,
-                      category_t * previous,
-                      int flag);
+char * findWord(char * target, catarray_t * catArray, category_t * previous, int flag);
 
 // validate a line (step2)
 void validLineStep2(char * line);
@@ -35,7 +32,7 @@ file * getTemplate(FILE * f);
 // find tempName in catArray (step1)
 category_t * findName(catarray_t * catArray, char * tempName);
 
-void addToPrevious(const char * target, category_t * previous);
+void addToPrevious(char * target, category_t * previous);
 
 // helperfunction to print (step1)
 void helperPrintStep1(file * temp);

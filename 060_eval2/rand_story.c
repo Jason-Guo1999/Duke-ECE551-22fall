@@ -60,14 +60,17 @@ catarray_t * getCatArray(FILE * f) {
     tempName = strndup(line, ptr1 - line);
     ptr1++;
     char * ptr2 = strchr(line, '\n');
-    size_t szWord = 0;
+    //size_t szWord = 0;
     if (ptr2 != NULL) {
-      szWord = ptr2 - ptr1;
+      *ptr2 = '\0';
+      //szWord = ptr2 - ptr1;
+      tempWord = strdup(ptr1);
     }
     else {
-      szWord = strlen(line) - (ptr1 - line - 1);
+      //szWord = strlen(line) - (ptr1 - line - 1);
+      tempWord = strdup(ptr1);
     }
-    tempWord = strndup(ptr1, szWord);
+    //tempWord = strndup(ptr1, szWord);
     // only if we can't find a NAME, realloc catArray->arr
     category_t * target = findName(catArray, tempName);
     if (target == NULL) {
@@ -123,6 +126,7 @@ void helperFreeStep2(catarray_t * catArray) {
     }
     free(catArray->arr[i].words);
     free(catArray->arr[i].name);
+    //free(&catArray->arr[i]);
   }
   free(catArray->arr);
   free(catArray);
@@ -174,10 +178,10 @@ void replaceTemplate(file * temp, catarray_t * catArray, int flag) {
   // flag==0 : default, replace by "cat"
 
   // create a "previously used" category
-  category_t * previous = malloc(sizeof(*previous));
-  previous->name = NULL;
-  previous->n_words = 0;
-  previous->words = malloc(sizeof(*previous->words));
+  category_t previous;
+  previous.name = "previous";
+  previous.n_words = 0;
+  previous.words = NULL;
   for (size_t i = 0; i < temp->nums; i++) {
     // for each line, replace _XXX_
     // algo: line -> part1 + _XXX_ + part2
@@ -202,59 +206,62 @@ void replaceTemplate(file * temp, catarray_t * catArray, int flag) {
       char * part1 = strndup(line, p1);
       char * part2 = strndup(ptr2 + 1, p2);
 
-      const char * word = findWord(target, catArray, previous, flag);
+      char * word = findWord(target, catArray, &previous, flag);
       //
+      //word += '\0';
       size_t w = strlen(word);
       // string cat: result = part1+word+part2
-      part1 = realloc(part1, (p1 + p2 + w + 1) * sizeof(*part1));
+      part1 = realloc(part1, (p1 + p2 + w + 2) * sizeof(*part1));
       part1 = strcat(part1, word);
       char * result = strcat(part1, part2);
       free(temp->lines[i]);
-      temp->lines[i] = strndup(result, p1 + p2 + w);
+      temp->lines[i] = strdup(result);
       free(part1);
       free(part2);
       free(target);
+      free(word);
     }
   }
   // free previous
-  for (size_t i = 0; i < previous->n_words; i++) {
-    free(previous->words[i]);
+  for (size_t i = 0; i < previous.n_words; i++) {
+    if (previous.words[i] != NULL) {
+      free(previous.words[i]);
+    }
   }
-  free(previous->words);
-  free(previous);
+  free(previous.words);
+  //free(previous);
   return;
 }
-char ** deleteWord(const char * target, category_t * cat) {
+category_t deleteWord(const char * target, category_t cate) {
   // deep copy, lengh--
-  if (cat->n_words == 1) {
-    cat->n_words--;
-    return NULL;
+  category_t cat;
+  cat.name = strdup(cate.name);
+  if (cate.n_words == 1) {
+    cat.n_words = 0;
+    cat.words = malloc(sizeof(*cat.words));
+    return cat;
   }
-  char ** ans = malloc((cat->n_words) * sizeof(*ans));
+  cat.n_words = cate.n_words - 1;
+  cat.words = malloc((cat.n_words) * sizeof(*cat.words));
   size_t ptr = 0;
   //char * pointer = NULL;
-  for (size_t j = 0; j < cat->n_words; j++) {
-    if (strcmp(cat->words[j], target) != 0) {
-      ans[ptr] = strdup(cat->words[j]);
+  for (size_t j = 0; j < cate.n_words; j++) {
+    if (strcmp(cate.words[j], target) != 0) {
+      cat.words[ptr] = strdup(cate.words[j]);
       ptr++;
     }
     //else {
     //free(cat->words[j]);
     //}
   }
-  free(cat->words);
-  cat->n_words--;
-  return ans;
+  return cat;
 }
 
-const char * findWord(char * target,
-                      catarray_t * catArray,
-                      category_t * previous,
-                      int flag) {
+char * findWord(char * target, catarray_t * catArray, category_t * previous, int flag) {
   if (flag == 0) {
     return "cat";
   }
-  const char * ans = NULL;
+  char * ans = NULL;
   // first: find target in catArray, if compatible, return random word, add it to previous word
   for (size_t i = 0; i < catArray->n; i++) {
     if (strcmp(target, catArray->arr[i].name) == 0) {
@@ -262,13 +269,22 @@ const char * findWord(char * target,
       if (catArray->arr[i].n_words == 0) {
         callError("Insufficient word to use!");
       }
-      ans = chooseWord(target, catArray);
+      //char * ans = NULL;
+      const char * anss = chooseWord(target, catArray);
+      ans = strdup(anss);
       addToPrevious(ans, previous);
       // if flag==2 (can't reuse)
       // 1.delete this word from current category
       // 2.shorten the length, if length==0, delete category
       if (flag == 2) {
-        catArray->arr[i].words = deleteWord(ans, &catArray->arr[i]);
+        category_t t = deleteWord(ans, catArray->arr[i]);
+        // free
+        for (size_t k = 0; k < catArray->arr[i].n_words; k++) {
+          free(catArray->arr[i].words[k]);
+        }
+        free(catArray->arr[i].name);
+        free(catArray->arr[i].words);
+        catArray->arr[i] = t;
       }
       return ans;
     }
@@ -293,13 +309,13 @@ const char * findWord(char * target,
   if (tempInt > previous->n_words || tempInt == 0) {
     callError("Invalid category! previous overflow");
   }
-  ans = previous->words[previous->n_words - tempInt];
+  ans = strdup(previous->words[previous->n_words - tempInt]);
   // add ans to previous used string
   addToPrevious(ans, previous);
   return ans;
 }
 
-void addToPrevious(const char * target, category_t * previous) {
+void addToPrevious(char * target, category_t * previous) {
   previous->words =
       realloc(previous->words, (previous->n_words + 1) * sizeof(*previous->words));
   if (previous == NULL) {
