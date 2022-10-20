@@ -1,6 +1,6 @@
-Grading at 10/20/2022:05:54:18.332051
-For commit ID 54be06c58275e54fba75afbc9ccf7f31811159e0
-Grading at Thu Oct 20 01:54:14 AM EDT 2022
+Grading at 10/20/2022:05:57:02.347215
+For commit ID 091500cc3aea62d3f7a991a13948fd51ec408959
+Grading at Thu Oct 20 01:56:58 AM EDT 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -13,17 +13,14 @@ rm story-step1.o
 The code compiled (good)
 Executable story-step1 exists (good)
 Checking with provided test case story.txt
-Line_1_did_not_match
-Line_2_did_not_match
-Your file did not match the expected ouput
+Your file matched the expected output
 Now running YOUR tests for step 1
 
 1.1: Current test is story-step1 story.txt
 -----------------------------
-You considered this a failure case:
-munmap_chunk(): invalid pointer
-timeout: the monitored command dumped core
-But we did not.
+Your output looks good. Lets check valgrind
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean
 
 Step 2
 Checking that story-step2 compiles
@@ -82,8 +79,8 @@ Your output looks good. Lets check valgrind
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean
 
-You have NOT passed your test cases!
-You should go and figure out/understand where thing went wrong
-And fix the problem(s) before the deadline
+You have passed the test cases YOU provided
+If your tests are good, this is great. 
+If your tests are insufficient, you should do much more testing
 
 Overall Grade: NO GRADE YET
