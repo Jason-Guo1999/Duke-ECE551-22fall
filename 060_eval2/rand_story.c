@@ -50,12 +50,14 @@ catarray_t * getCatArray(FILE * f) {
     callError("Failed to allocate!");
   }
   catArray->n = 0;
+  char * tempName = NULL;
+  char * tempWord = NULL;
   // read line
   while (getline(&line, &sz, f) >= 0) {
     // call helperfunction to validate line
     validLineStep2(line);
     char * ptr1 = strchr(line, ':');
-    char * tempName = strndup(line, ptr1 - line);
+    tempName = strndup(line, ptr1 - line);
     ptr1++;
     char * ptr2 = strchr(line, '\n');
     size_t szWord = 0;
@@ -65,55 +67,66 @@ catarray_t * getCatArray(FILE * f) {
     else {
       szWord = strlen(line) - (ptr1 - line - 1);
     }
-    char * tempWord = strndup(ptr1, szWord);
+    tempWord = strndup(ptr1, szWord);
     // only if we can't find a NAME, realloc catArray->arr
     category_t * target = findName(catArray, tempName);
     if (target == NULL) {
       // we find a new name! allocate space for it!
       // initialize a new category
-      category_t * newCat = malloc(sizeof(*newCat));
-      newCat->n_words = 1;
-      newCat->name = tempName;
-      newCat->words = malloc(sizeof(*newCat->words));
-      if (newCat->words == NULL) {
+      category_t newCat;
+      newCat.n_words = 1;
+      newCat.name = strdup(tempName);
+      newCat.words = malloc(sizeof(*newCat.words));
+      if (newCat.words == NULL) {
         callError("Failed to allocate!");
       }
-      newCat->words[0] = tempWord;
+      newCat.words[0] = strdup(tempWord);
       // add category to catArray
       catArray->arr = realloc(catArray->arr, (catArray->n + 1) * sizeof(*catArray->arr));
       if (catArray->arr == NULL) {
         callError("Failed to allocate!");
       }
-      catArray->arr[catArray->n] = *newCat;
-      free(newCat);
+      catArray->arr[catArray->n] = newCat;
+      //free(newCat->name);
+      //free(newCat->words[0]);
+      //free(newCat->words);
+      //free(newCat);
       catArray->n++;
     }
     else {
       // we could find an exist name, just add new category to it
-      free(tempName);
+
       target->words =
           realloc(target->words, (target->n_words + 1) * sizeof(*target->words));
       if (target->words == NULL) {
         callError("Failed to reallocate");
       }
-      target->words[target->n_words] = tempWord;
+      target->words[target->n_words] = strdup(tempWord);
       target->n_words++;
     }
+    free(tempName);
+    free(tempWord);
   }
+  //free(tempName);
+  //free(tempWord);
   free(line);
   return catArray;
 }
 void helperFreeStep2(catarray_t * catArray) {
   // helper function to free memory
+  //if (catArray != NULL) {
   for (size_t i = 0; i < catArray->n; i++) {
-    for (size_t j = 0; j < catArray->arr[i].n_words; j++) {
-      free(catArray->arr[i].words[j]);
+    if (catArray->arr[i].n_words != 0) {
+      for (size_t j = 0; j < catArray->arr[i].n_words; j++) {
+        free(catArray->arr[i].words[j]);
+      }
     }
-    free(catArray->arr[i].name);
     free(catArray->arr[i].words);
+    free(catArray->arr[i].name);
   }
   free(catArray->arr);
   free(catArray);
+  //}
   return;
 }
 
@@ -211,6 +224,29 @@ void replaceTemplate(file * temp, catarray_t * catArray, int flag) {
   free(previous);
   return;
 }
+char ** deleteWord(const char * target, category_t * cat) {
+  // deep copy, lengh--
+  if (cat->n_words == 1) {
+    cat->n_words--;
+    return NULL;
+  }
+  char ** ans = malloc((cat->n_words) * sizeof(*ans));
+  size_t ptr = 0;
+  //char * pointer = NULL;
+  for (size_t j = 0; j < cat->n_words; j++) {
+    if (strcmp(cat->words[j], target) != 0) {
+      ans[ptr] = strdup(cat->words[j]);
+      ptr++;
+    }
+    //else {
+    //free(cat->words[j]);
+    //}
+  }
+  free(cat->words);
+  cat->n_words--;
+  return ans;
+}
+
 const char * findWord(char * target,
                       catarray_t * catArray,
                       category_t * previous,
@@ -222,8 +258,18 @@ const char * findWord(char * target,
   // first: find target in catArray, if compatible, return random word, add it to previous word
   for (size_t i = 0; i < catArray->n; i++) {
     if (strcmp(target, catArray->arr[i].name) == 0) {
+      // if the category is already used up, error
+      if (catArray->arr[i].n_words == 0) {
+        callError("Insufficient word to use!");
+      }
       ans = chooseWord(target, catArray);
       addToPrevious(ans, previous);
+      // if flag==2 (can't reuse)
+      // 1.delete this word from current category
+      // 2.shorten the length, if length==0, delete category
+      if (flag == 2) {
+        catArray->arr[i].words = deleteWord(ans, &catArray->arr[i]);
+      }
       return ans;
     }
   }

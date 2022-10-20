@@ -13,7 +13,9 @@ int main(int argc, char ** argv) {
   if (f == NULL) {
     callError("Invalid input file!");
   }
+  // get template
   file * template = getTemplate(f);
+  // close file
   int close = fclose(f);
   if (close != 0) {
     callError("Can't close file!");

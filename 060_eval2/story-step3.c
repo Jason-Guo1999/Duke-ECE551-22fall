@@ -5,7 +5,7 @@
 #include "rand_story.h"
 
 int main(int argc, char ** argv) {
-  if (argc < 3) {
+  if (argc != 3) {
     callError("Invalid command line!");
   }
   // open file1 (step1)
@@ -30,6 +30,7 @@ int main(int argc, char ** argv) {
   // free memory
   helperFreeStep1(temp);
   helperFreeStep2(catArray);
+  // close file
   int c1 = fclose(f1);
   if (c1 != 0) {
     callError("Can't close file 1!");
