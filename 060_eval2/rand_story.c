@@ -219,9 +219,8 @@ void replaceTemplate(file * temp, catarray_t * catArray, int flag) {
       free(part1);
       free(part2);
       free(target);
-      if (flag != 0) {
-        free(word);
-      }
+      //if (flag != 0) {
+      free(word);
     }
   }
   // free previous
@@ -260,10 +259,14 @@ category_t deleteWord(const char * target, category_t cate) {
 }
 
 char * findWord(char * target, catarray_t * catArray, category_t * previous, int flag) {
-  if (flag == 0) {
-    return "cat";
-  }
   char * ans = NULL;
+  if (flag == 0) {
+    const char * anss = chooseWord(target, NULL);
+    //const char * anss = "cat";
+    ans = strdup(anss);
+    return ans;
+  }
+
   // first: find target in catArray, if compatible, return random word, add it to previous word
   for (size_t i = 0; i < catArray->n; i++) {
     if (strcmp(target, catArray->arr[i].name) == 0) {
@@ -300,7 +303,7 @@ char * findWord(char * target, catarray_t * catArray, category_t * previous, int
     target++;
   }
   target = sentinel;
-  size_t tempInt = atoll(target);
+  int tempInt = atoi(target);
   if (tempInt > INT_MAX) {
     callError("Invalid category! integer overflow");
   }
@@ -308,7 +311,7 @@ char * findWord(char * target, catarray_t * catArray, category_t * previous, int
     callError("Invalid category! negative");
   }
   // third : valid integer, find in previous category
-  if (tempInt > previous->n_words || tempInt == 0) {
+  if ((size_t)tempInt > previous->n_words || tempInt == 0) {
     callError("Invalid category! previous overflow");
   }
   ans = strdup(previous->words[previous->n_words - tempInt]);
