@@ -4,7 +4,7 @@
 
 IntMatrix::IntMatrix() : numRows(0), numColumns(0), rows(NULL) {
 }
-IntMatrix::IntMatrix(int r, int c) : numRows(r), numColumns(c), rows(NULL) {
+IntMatrix::IntMatrix(int r, int c) : numRows(r), numColumns(c), rows(new IntArray *[r]) {
 }
 IntMatrix::IntMatrix(const IntMatrix & rhs) :
     numRows(rhs.numRows), numColumns(rhs.numColumns) {
@@ -68,13 +68,13 @@ bool IntMatrix::operator==(const IntMatrix & rhs) const {
 
 IntMatrix IntMatrix::operator+(const IntMatrix & rhs) const {
   assert(numRows == rhs.numRows && numColumns == rhs.numColumns);
-  IntMatrix * ans = new IntMatrix(numRows, numColumns);
+  IntMatrix ans(numRows, numColumns);
   for (int i = 0; i < numRows; i++) {
     for (int j = 0; j < numColumns; j++) {
-      ans->rows[i][j] = (*this)[i][j] + rhs[i][j];
+      ans.rows[i][j] = (*this)[i][j] + rhs[i][j];
     }
   }
-  return *ans;
+  return ans;
 }
 
 std::ostream & operator<<(std::ostream & s, const IntMatrix & rhs) {
