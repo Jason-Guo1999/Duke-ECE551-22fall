@@ -93,7 +93,7 @@ ostream & operator<<(ostream & s, const Matrix<T> & rhs) {
   else {
     s << "[";
     for (int i = 0; i < rhs.getRows() - 1; i++) {
-      s << rhs[i] << ",";
+      s << rhs[i] << "," << endl;
     }
     s << rhs[rhs.getRows() - 1] << "]";
   }
