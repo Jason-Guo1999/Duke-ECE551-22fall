@@ -13,7 +13,7 @@ class NumExpression : public Expression {
 
  public:
   NumExpression(long _number) : number(_number) {}
-  virtual std::string toString() const {
+  std::string toString() const {
     std::stringstream s;
     s << number;
     return s.str();
@@ -28,12 +28,12 @@ class PlusExpression : public Expression {
 
  public:
   PlusExpression(Expression * _lhs, Expression * _rhs) : lhs(_lhs), rhs(_rhs) {}
-  virtual std::string toString() const {
+  std::string toString() const {
     std::stringstream s;
     s << "(" << lhs->toString() << " + " << rhs->toString() << ")";
     return s.str();
   }
-  virtual ~PlusExpression() {
+  ~PlusExpression() {
     delete lhs;
     delete rhs;
   }
