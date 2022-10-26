@@ -14,7 +14,7 @@ void callError(char * message);
 // according to different mode, replace template with target word
 void replaceTemplate(file * temp, catarray_t * catArray, int flag);
 
-// find  word in target string
+// find word in target string
 char * findWord(char * target, catarray_t * catArray, category_t * previous, int flag);
 
 // validate a line (step2)
@@ -34,9 +34,9 @@ category_t * findName(catarray_t * catArray, char * tempName);
 
 void addToPrevious(char * target, category_t * previous);
 
-// helperfunction to print (step1)
+// helper function to print (step1)
 void helperPrintStep1(file * temp);
 
-// helperfunction to free memory
+// helper function to free template
 void helperFreeStep1(file * temp);
 #endif

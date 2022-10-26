@@ -5,7 +5,7 @@
 #include "rand_story.h"
 
 int main(int argc, char ** argv) {
-  // input check
+  // input command check
   if (argc != 2) {
     callError("Invalid command line!");
   }

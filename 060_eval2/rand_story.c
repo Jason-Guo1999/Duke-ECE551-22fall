@@ -5,11 +5,12 @@
 #include <stdlib.h>
 #include <string.h>
 void callError(char * message) {
-  // common function to report error //
+  // common function to report and descript error //
   perror(message);
   exit(EXIT_FAILURE);
 }
 
+/* This function is used to validate each line in template */
 void validLineStep2(char * line) {
   // helper function to validate line
   char * ptr1 = strchr(line, ':');
@@ -23,6 +24,7 @@ void validLineStep2(char * line) {
   }
   ptr1++;
   char * ptr2 = strchr(ptr1, '\n');
+  // deal with last line in file (without '\n')
   if (ptr2 != NULL) {
     if (ptr2 - ptr1 == 0) {
       // can't find word
@@ -38,6 +40,7 @@ void validLineStep2(char * line) {
   return;
 }
 
+/* This function is used to parse input words.txt to get category*/
 catarray_t * getCatArray(FILE * f) {
   char * line = NULL;
   size_t sz = 0;
@@ -106,6 +109,8 @@ catarray_t * getCatArray(FILE * f) {
   free(line);
   return catArray;
 }
+
+/* This function is used to free memory allocated in step2 (get category) */
 void helperFreeStep2(catarray_t * catArray) {
   // helper function to free memory of catgory
   for (size_t i = 0; i < catArray->n; i++) {
@@ -122,6 +127,7 @@ void helperFreeStep2(catarray_t * catArray) {
   return;
 }
 
+/* This function is used to get template from input story.txt */
 file * getTemplate(FILE * f) {
   // helper function to get template from given input file
   char * line = NULL;
@@ -146,6 +152,7 @@ file * getTemplate(FILE * f) {
   return temp;
 }
 
+/* This function is to find proper name to replacec the _XXX_ */
 category_t * findName(catarray_t * catArray, char * tempName) {
   // helper function to find if tempName is already existing
   category_t * ans = NULL;
@@ -162,6 +169,7 @@ category_t * findName(catarray_t * catArray, char * tempName) {
   return ans;
 }
 
+/* This function is used to replace _XXX_ with word we find */
 void replaceTemplate(file * temp, catarray_t * catArray, int mode) {
   // replace _XXX_ to some contents //
   // flag==0 : default, replace by "cat"
@@ -190,16 +198,17 @@ void replaceTemplate(file * temp, catarray_t * catArray, int mode) {
       }
       // duplicate parts of the string
       size_t targetSz = ptr2 - ptr1 - 1;
-      size_t p1 = ptr1 - line;
-      size_t p2 = strlen(line) - p1 - targetSz - 2;
+      size_t p1Sz = ptr1 - line;
+      size_t p2Sz = strlen(line) - p1Sz - targetSz - 2;
+
       char * target = strndup(ptr1 + 1, targetSz);
-      char * part1 = strndup(line, p1);
-      char * part2 = strndup(ptr2 + 1, p2);
+      char * part1 = strndup(line, p1Sz);
+      char * part2 = strndup(ptr2 + 1, p2Sz);
 
       char * word = findWord(target, catArray, &previous, mode);
       size_t w = strlen(word);
       // string cat: result = part1+word+part2
-      part1 = realloc(part1, (p1 + p2 + w + 2) * sizeof(*part1));
+      part1 = realloc(part1, (p1Sz + p2Sz + w + 2) * sizeof(*part1));
       part1 = strcat(part1, word);
       char * result = strcat(part1, part2);
       free(temp->lines[i]);
@@ -220,6 +229,7 @@ void replaceTemplate(file * temp, catarray_t * catArray, int mode) {
   free(previous.words);
   return;
 }
+/* This function is used to delete previously used words (step4, with -n command) */
 category_t deleteWord(const char * target, category_t cate) {
   // deep copy, lengh--
   category_t cat;
@@ -232,7 +242,7 @@ category_t deleteWord(const char * target, category_t cate) {
   cat.n_words = cate.n_words - 1;
   cat.words = malloc((cat.n_words) * sizeof(*cat.words));
   size_t ptr = 0;
-
+  // copy other contents except the used one
   for (size_t j = 0; j < cate.n_words; j++) {
     if (strcmp(cate.words[j], target) != 0) {
       cat.words[ptr] = strdup(cate.words[j]);
@@ -242,6 +252,7 @@ category_t deleteWord(const char * target, category_t cate) {
   return cat;
 }
 
+/* This function is used to find proper words according to different working modes */
 char * findWord(char * target, catarray_t * catArray, category_t * previous, int mode) {
   char * ans = NULL;
   if (mode == 0) {
@@ -250,7 +261,7 @@ char * findWord(char * target, catarray_t * catArray, category_t * previous, int
     return ans;
   }
 
-  // first: find target in catArray, if compatible, return random word, add it to previous word
+  // first: find target in catArray, if strcmp==0, return random word, add it to previous word
   for (size_t i = 0; i < catArray->n; i++) {
     if (strcmp(target, catArray->arr[i].name) == 0) {
       // if the category is already used up, error
@@ -277,7 +288,7 @@ char * findWord(char * target, catarray_t * catArray, category_t * previous, int
     }
   }
   // second: can't find in catArray, test if it is valid integer
-  // 01 -> invalid
+  // 01 -> invalid; -1->invalid; 1asff->invalid
   char * sentinel = target;
   if (*sentinel == '0') {
     callError("Invalid category! integer start with 0");
@@ -306,6 +317,7 @@ char * findWord(char * target, catarray_t * catArray, category_t * previous, int
   return ans;
 }
 
+/* This function is used to add the word into previously used array */
 void addToPrevious(char * target, category_t * previous) {
   // helper function to add word into previously used array
   previous->words =
@@ -318,6 +330,7 @@ void addToPrevious(char * target, category_t * previous) {
   return;
 }
 
+/* This function helps us print the story */
 void helperPrintStep1(file * temp) {
   // print each line
   for (size_t i = 0; i < temp->nums; i++) {
@@ -325,7 +338,7 @@ void helperPrintStep1(file * temp) {
   }
   return;
 }
-
+/* This function helps us free the template */
 void helperFreeStep1(file * temp) {
   // helper function to free template
   for (size_t i = 0; i < temp->nums; i++) {
