@@ -1,5 +1,5 @@
-animal:dragon
-animal:walrus
+-1:dragon
+-1:walrus
 place:toilet
 adjective:peculiar
 adjective:scary

@@ -60,17 +60,14 @@ catarray_t * getCatArray(FILE * f) {
     tempName = strndup(line, ptr1 - line);
     ptr1++;
     char * ptr2 = strchr(line, '\n');
-    //size_t szWord = 0;
+    // check the last line (without '\n')
     if (ptr2 != NULL) {
       *ptr2 = '\0';
-      //szWord = ptr2 - ptr1;
       tempWord = strdup(ptr1);
     }
     else {
-      //szWord = strlen(line) - (ptr1 - line - 1);
       tempWord = strdup(ptr1);
     }
-    //tempWord = strndup(ptr1, szWord);
     // only if we can't find a NAME, realloc catArray->arr
     category_t * target = findName(catArray, tempName);
     if (target == NULL) {
@@ -90,14 +87,10 @@ catarray_t * getCatArray(FILE * f) {
         callError("Failed to allocate!");
       }
       catArray->arr[catArray->n] = newCat;
-      //free(newCat->name);
-      //free(newCat->words[0]);
-      //free(newCat->words);
-      //free(newCat);
       catArray->n++;
     }
     else {
-      // we could find an exist name, just add new category to it
+      // we can find an exist name, just add new category to it
 
       target->words =
           realloc(target->words, (target->n_words + 1) * sizeof(*target->words));
@@ -110,14 +103,11 @@ catarray_t * getCatArray(FILE * f) {
     free(tempName);
     free(tempWord);
   }
-  //free(tempName);
-  //free(tempWord);
   free(line);
   return catArray;
 }
 void helperFreeStep2(catarray_t * catArray) {
-  // helper function to free memory
-  //if (catArray != NULL) {
+  // helper function to free memory of catgory
   for (size_t i = 0; i < catArray->n; i++) {
     if (catArray->arr[i].n_words != 0) {
       for (size_t j = 0; j < catArray->arr[i].n_words; j++) {
@@ -126,11 +116,9 @@ void helperFreeStep2(catarray_t * catArray) {
     }
     free(catArray->arr[i].words);
     free(catArray->arr[i].name);
-    //free(&catArray->arr[i]);
   }
   free(catArray->arr);
   free(catArray);
-  //}
   return;
 }
 
@@ -144,6 +132,7 @@ file * getTemplate(FILE * f) {
   if (temp == NULL) {
     callError("Failed to malloc!");
   }
+  // parse each line
   while (getline(&line, &sz, f) >= 0) {
     temp->lines = realloc(temp->lines, (temp->nums + 1) * sizeof(*temp->lines));
     if (temp->lines == NULL) {
@@ -173,10 +162,11 @@ category_t * findName(catarray_t * catArray, char * tempName) {
   return ans;
 }
 
-void replaceTemplate(file * temp, catarray_t * catArray, int flag) {
+void replaceTemplate(file * temp, catarray_t * catArray, int mode) {
   // replace _XXX_ to some contents //
   // flag==0 : default, replace by "cat"
-
+  // flag==1 : find word in correlating category
+  // flag==2 : delete word after use
   // create a "previously used" category
   category_t previous;
   previous.name = "previous";
@@ -186,7 +176,7 @@ void replaceTemplate(file * temp, catarray_t * catArray, int flag) {
     // for each line, replace _XXX_
     // algo: line -> part1 + _XXX_ + part2
     // replace: line -> part1 + word + part2
-
+    // concatenate
     while (1) {
       char * ptr1 = strchr(temp->lines[i], '_');
       char * line = temp->lines[i];
@@ -206,9 +196,7 @@ void replaceTemplate(file * temp, catarray_t * catArray, int flag) {
       char * part1 = strndup(line, p1);
       char * part2 = strndup(ptr2 + 1, p2);
 
-      char * word = findWord(target, catArray, &previous, flag);
-      //
-      //word += '\0';
+      char * word = findWord(target, catArray, &previous, mode);
       size_t w = strlen(word);
       // string cat: result = part1+word+part2
       part1 = realloc(part1, (p1 + p2 + w + 2) * sizeof(*part1));
@@ -216,10 +204,10 @@ void replaceTemplate(file * temp, catarray_t * catArray, int flag) {
       char * result = strcat(part1, part2);
       free(temp->lines[i]);
       temp->lines[i] = strdup(result);
+      // free
       free(part1);
       free(part2);
       free(target);
-      //if (flag != 0) {
       free(word);
     }
   }
@@ -230,7 +218,6 @@ void replaceTemplate(file * temp, catarray_t * catArray, int flag) {
     }
   }
   free(previous.words);
-  //free(previous);
   return;
 }
 category_t deleteWord(const char * target, category_t cate) {
@@ -245,25 +232,21 @@ category_t deleteWord(const char * target, category_t cate) {
   cat.n_words = cate.n_words - 1;
   cat.words = malloc((cat.n_words) * sizeof(*cat.words));
   size_t ptr = 0;
-  //char * pointer = NULL;
+
   for (size_t j = 0; j < cate.n_words; j++) {
     if (strcmp(cate.words[j], target) != 0) {
       cat.words[ptr] = strdup(cate.words[j]);
       ptr++;
     }
-    //else {
-    //free(cat->words[j]);
-    //}
   }
   return cat;
 }
 
-char * findWord(char * target, catarray_t * catArray, category_t * previous, int flag) {
+char * findWord(char * target, catarray_t * catArray, category_t * previous, int mode) {
   char * ans = NULL;
-  if (flag == 0) {
-    const char * anss = chooseWord(target, NULL);
-    //const char * anss = "cat";
-    ans = strdup(anss);
+  if (mode == 0) {
+    const char * tempAns = chooseWord(target, NULL);
+    ans = strdup(tempAns);
     return ans;
   }
 
@@ -274,16 +257,15 @@ char * findWord(char * target, catarray_t * catArray, category_t * previous, int
       if (catArray->arr[i].n_words == 0) {
         callError("Insufficient word to use!");
       }
-      //char * ans = NULL;
-      const char * anss = chooseWord(target, catArray);
-      ans = strdup(anss);
+      const char * tempAns = chooseWord(target, catArray);
+      ans = strdup(tempAns);
       addToPrevious(ans, previous);
-      // if flag==2 (can't reuse)
+      // if mode==2 (can't reuse)
       // 1.delete this word from current category
       // 2.shorten the length, if length==0, delete category
-      if (flag == 2) {
+      if (mode == 2) {
         category_t t = deleteWord(ans, catArray->arr[i]);
-        // free
+        // delete
         for (size_t k = 0; k < catArray->arr[i].n_words; k++) {
           free(catArray->arr[i].words[k]);
         }
@@ -295,7 +277,11 @@ char * findWord(char * target, catarray_t * catArray, category_t * previous, int
     }
   }
   // second: can't find in catArray, test if it is valid integer
+  // 01 -> invalid
   char * sentinel = target;
+  if (*sentinel == '0') {
+    callError("Invalid category! integer start with 0");
+  }
   while (*target != '\0') {
     if (*target < '0' || *target > '9') {
       callError("Invalid category! invalid integer");
@@ -321,6 +307,7 @@ char * findWord(char * target, catarray_t * catArray, category_t * previous, int
 }
 
 void addToPrevious(char * target, category_t * previous) {
+  // helper function to add word into previously used array
   previous->words =
       realloc(previous->words, (previous->n_words + 1) * sizeof(*previous->words));
   if (previous == NULL) {
