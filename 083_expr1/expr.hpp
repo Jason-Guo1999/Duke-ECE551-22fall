@@ -3,6 +3,7 @@
 #include <string>
 class Expression {
  public:
+  Expression() {}
   virtual std::string toString() const = 0;
   virtual ~Expression() {}
 };
