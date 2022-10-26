@@ -260,8 +260,17 @@ char * findWord(char * target, catarray_t * catArray, category_t * previous, int
     ans = strdup(tempAns);
     return ans;
   }
-
-  // first: find target in catArray, if strcmp==0, return random word, add it to previous word
+  int tempInt = atoi(target);
+  // first: test if tempInt is a valid positive number, if so, find in previous
+  if (*target > '0' && *target <= '9' && tempInt > 0) {
+    if ((size_t)tempInt > previous->n_words) {
+      callError("Invalid category! previous overflow");
+    }
+    ans = strdup(previous->words[previous->n_words - tempInt]);
+    addToPrevious(ans, previous);
+    return ans;
+  }
+  // second: find target in catArray, if strcmp==0, return random word, add it to previous word
   for (size_t i = 0; i < catArray->n; i++) {
     if (strcmp(target, catArray->arr[i].name) == 0) {
       // if the category is already used up, error
@@ -287,34 +296,8 @@ char * findWord(char * target, catarray_t * catArray, category_t * previous, int
       return ans;
     }
   }
-  // second: can't find in catArray, test if it is valid integer
-  // 01 -> invalid; -1->invalid; 1asff->invalid
-  char * sentinel = target;
-  if (*sentinel == '0') {
-    callError("Invalid category! integer start with 0");
-  }
-  while (*target != '\0') {
-    if (*target < '0' || *target > '9') {
-      callError("Invalid category! invalid integer");
-    }
-    target++;
-  }
-  target = sentinel;
-  int tempInt = atoi(target);
-  if (tempInt > INT_MAX) {
-    callError("Invalid category! integer overflow");
-  }
-  if (tempInt < 0) {
-    callError("Invalid category! negative");
-  }
-  // third : valid integer, find in previous category
-  if ((size_t)tempInt > previous->n_words || tempInt == 0) {
-    callError("Invalid category! previous overflow");
-  }
-  ans = strdup(previous->words[previous->n_words - tempInt]);
-  // add ans to previous used string
-  addToPrevious(ans, previous);
-  return ans;
+  callError("Invalid number");
+  return NULL;
 }
 
 /* This function is used to add the word into previously used array */

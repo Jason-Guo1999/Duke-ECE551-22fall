@@ -1,5 +1,5 @@
--1:dragon
--1:walrus
+-1:dr:agon
+-1:wa:lrus
 place:toilet
 adjective:peculiar
 adjective:scary
