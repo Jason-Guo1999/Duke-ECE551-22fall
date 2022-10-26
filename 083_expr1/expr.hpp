@@ -31,7 +31,7 @@ class PlusExpression : public Expression {
   virtual std::string toString() const {
     std::string string1 = lhs->toString();
     std::string string2 = rhs->toString();
-    return string1 + "+" + string2;
+    return "(" + string1 + "+" + string2 + ")";
   }
   virtual ~PlusExpression() {
     delete lhs;
