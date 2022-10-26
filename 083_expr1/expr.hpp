@@ -3,7 +3,6 @@
 #include <string>
 class Expression {
  public:
-  Expression() {}
   virtual std::string toString() const = 0;
   virtual ~Expression() {}
 };
@@ -30,9 +29,9 @@ class PlusExpression : public Expression {
  public:
   PlusExpression(Expression * _lhs, Expression * _rhs) : lhs(_lhs), rhs(_rhs) {}
   virtual std::string toString() const {
-    std::string string1 = lhs->toString();
-    std::string string2 = rhs->toString();
-    return "(" + string1 + " + " + string2 + ")";
+    std::stringstream s;
+    s << "(" << lhs->toString() << " + " << rhs->toString() << ")";
+    return s.str();
   }
   virtual ~PlusExpression() {
     delete lhs;
