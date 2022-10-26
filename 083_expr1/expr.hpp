@@ -1,7 +1,4 @@
-#ifndef _EXPR_HPP_
-#define _EXPR_HPP_
 #include <cstdlib>
-#include <iostream>
 #include <sstream>
 #include <string>
 class Expression {
@@ -36,10 +33,8 @@ class PlusExpression : public Expression {
     s << "(" << lhs->toString() << " + " << rhs->toString() << ")";
     return s.str();
   }
-  ~PlusExpression() {
+  virtual ~PlusExpression() {
     delete lhs;
     delete rhs;
   }
 };
-
-#endif
