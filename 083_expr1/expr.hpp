@@ -1,4 +1,7 @@
+#ifndef _EXPR_HPP_
+#define _EXPR_HPP_
 #include <cstdlib>
+#include <iostream>
 #include <sstream>
 #include <string>
 class Expression {
@@ -38,3 +41,5 @@ class PlusExpression : public Expression {
     delete rhs;
   }
 };
+
+#endif
