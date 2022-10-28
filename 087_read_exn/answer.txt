@@ -12,8 +12,8 @@ Something(99)
 ~Something(99)
 Something(99)
 ~Something(99)
-"A domain error (Division by zero) occured!"
+A domain error (Division by zero) occured!
 ~Something(7)
-"At the end of main "
+At the end of main 
 ~Something(1)
 
