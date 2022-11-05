@@ -18,31 +18,29 @@ class myException : public std::exception {
 
 template<typename T>
 
-class dll {
+class LinkedList {
  private:
   class Node {
-   private:
+   public:
     T val;
     Node * next;
     Node * prev;
-
-   public:
     Node() : val(0), prev(NULL), next(NULL) {}
-    Node(T & item) : val(item), next(NULL), prev(NULL) {}
-    Node(T & item, Node * n1, Node * n2) : val(item), next(n1), prev(n2) {}
+    Node(const T & item) : val(item), next(NULL), prev(NULL) {}
+    Node(const T & item, Node * n1, Node * n2) : val(item), next(n1), prev(n2) {}
   };
   Node * head;
   Node * tail;
   int len;
 
  public:
-  dll() {
+  LinkedList() {
     head = NULL;
     tail = NULL;
     len = 0;
   }
 
-  dll(dll & rhs) {
+  LinkedList(const LinkedList & rhs) {
     head = NULL;
     tail = NULL;
     len = 0;
@@ -53,7 +51,7 @@ class dll {
     }
   }
 
-  dll & operator=(dll & rhs) {
+  LinkedList & operator=(const LinkedList & rhs) {
     while (head != NULL) {
       Node * temp = head;
       head = head->next;
@@ -175,8 +173,9 @@ class dll {
     }
     return -1;
   }
-  int getSize() { return this->len; }
-  ~dll() {
+  int getSize() const { return len; }
+
+  ~LinkedList() {
     while (head != NULL) {
       Node * temp = head;
       head = head->next;
