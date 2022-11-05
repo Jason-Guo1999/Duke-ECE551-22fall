@@ -1,0 +1,128 @@
+Grading at 11/05/2022:15:53:52.620382
+For commit ID 8ed67300302d26ef7d4e52b3b36fef217a0a0776
+Grading at Sat Nov  5 11:53:52 AM EDT 2022
+-----------------------------------------------
+testcase 1 : Testing with LinkedList<int>
+...compiling...
+tester.cpp:42:9: error: ‘LinkedList’ does not name a type
+   42 | typedef LinkedList<TEST_TYPE> LLTy;
+      |         ^~~~~~~~~~
+tester.cpp:44:22: error: ‘LinkedList’ does not name a type
+   44 | void printList(const LinkedList<T> & lst) {
+      |                      ^~~~~~~~~~
+tester.cpp:44:32: error: expected ‘,’ or ‘...’ before ‘<’ token
+   44 | void printList(const LinkedList<T> & lst) {
+      |                                ^
+tester.cpp: In function ‘void printList(int)’:
+tester.cpp:45:28: error: ‘lst’ was not declared in this scope
+   45 |   for (int i =0 ; i < (int)lst.getSize(); i++) {
+      |                            ^~~
+tester.cpp: In function ‘int main()’:
+tester.cpp:62:3: error: ‘LLTy’ was not declared in this scope
+   62 |   LLTy lst;
+      |   ^~~~
+tester.cpp:65:7: error: ‘lst’ was not declared in this scope
+   65 |       lst.addFront(thing<TEST_TYPE>(i,j));
+      |       ^~~
+tester.cpp:69:13: error: ‘lst’ was not declared in this scope
+   69 |   printList(lst);
+      |             ^~~
+tester.cpp:77:7: error: expected ‘;’ before ‘lst2’
+   77 |   LLTy lst2(lst);
+      |       ^~~~~
+      |       ;
+tester.cpp:78:16: error: ‘lst2’ was not declared in this scope
+   78 |   std::cout << lst2[5] << "\n";
+      |                ^~~~
+tester.cpp:91:9: error: expected ‘;’ before ‘l3’
+   91 |     LLTy l3;
+      |         ^~~
+      |         ;
+tester.cpp:92:5: error: ‘l3’ was not declared in this scope
+   92 |     l3.addBack(thing<TEST_TYPE>(50,50));
+      |     ^~
+The code did not compile.  This test failed.
+-----------------------------------------------
+testcase 2 : Testing with LinkedList<std::string>
+...compiling...
+tester.cpp:42:9: error: ‘LinkedList’ does not name a type
+   42 | typedef LinkedList<TEST_TYPE> LLTy;
+      |         ^~~~~~~~~~
+tester.cpp:44:22: error: ‘LinkedList’ does not name a type
+   44 | void printList(const LinkedList<T> & lst) {
+      |                      ^~~~~~~~~~
+tester.cpp:44:32: error: expected ‘,’ or ‘...’ before ‘<’ token
+   44 | void printList(const LinkedList<T> & lst) {
+      |                                ^
+tester.cpp: In function ‘void printList(int)’:
+tester.cpp:45:28: error: ‘lst’ was not declared in this scope
+   45 |   for (int i =0 ; i < (int)lst.getSize(); i++) {
+      |                            ^~~
+tester.cpp: In function ‘int main()’:
+tester.cpp:62:3: error: ‘LLTy’ was not declared in this scope
+   62 |   LLTy lst;
+      |   ^~~~
+tester.cpp:65:7: error: ‘lst’ was not declared in this scope
+   65 |       lst.addFront(thing<TEST_TYPE>(i,j));
+      |       ^~~
+tester.cpp:69:13: error: ‘lst’ was not declared in this scope
+   69 |   printList(lst);
+      |             ^~~
+tester.cpp:77:7: error: expected ‘;’ before ‘lst2’
+   77 |   LLTy lst2(lst);
+      |       ^~~~~
+      |       ;
+tester.cpp:78:16: error: ‘lst2’ was not declared in this scope
+   78 |   std::cout << lst2[5] << "\n";
+      |                ^~~~
+tester.cpp:91:9: error: expected ‘;’ before ‘l3’
+   91 |     LLTy l3;
+      |         ^~~
+      |         ;
+tester.cpp:92:5: error: ‘l3’ was not declared in this scope
+   92 |     l3.addBack(thing<TEST_TYPE>(50,50));
+      |     ^~
+The code did not compile.  This test failed.
+-----------------------------------------------
+testcase 3 : Testing with LinkedList<(a custom class we wrote)>
+...compiling...
+tester.cpp:42:9: error: ‘LinkedList’ does not name a type
+   42 | typedef LinkedList<TEST_TYPE> LLTy;
+      |         ^~~~~~~~~~
+tester.cpp:44:22: error: ‘LinkedList’ does not name a type
+   44 | void printList(const LinkedList<T> & lst) {
+      |                      ^~~~~~~~~~
+tester.cpp:44:32: error: expected ‘,’ or ‘...’ before ‘<’ token
+   44 | void printList(const LinkedList<T> & lst) {
+      |                                ^
+tester.cpp: In function ‘void printList(int)’:
+tester.cpp:45:28: error: ‘lst’ was not declared in this scope
+   45 |   for (int i =0 ; i < (int)lst.getSize(); i++) {
+      |                            ^~~
+tester.cpp: In function ‘int main()’:
+tester.cpp:62:3: error: ‘LLTy’ was not declared in this scope
+   62 |   LLTy lst;
+      |   ^~~~
+tester.cpp:65:7: error: ‘lst’ was not declared in this scope
+   65 |       lst.addFront(thing<TEST_TYPE>(i,j));
+      |       ^~~
+tester.cpp:69:13: error: ‘lst’ was not declared in this scope
+   69 |   printList(lst);
+      |             ^~~
+tester.cpp:77:7: error: expected ‘;’ before ‘lst2’
+   77 |   LLTy lst2(lst);
+      |       ^~~~~
+      |       ;
+tester.cpp:78:16: error: ‘lst2’ was not declared in this scope
+   78 |   std::cout << lst2[5] << "\n";
+      |                ^~~~
+tester.cpp:91:9: error: expected ‘;’ before ‘l3’
+   91 |     LLTy l3;
+      |         ^~~
+      |         ;
+tester.cpp:92:5: error: ‘l3’ was not declared in this scope
+   92 |     l3.addBack(thing<TEST_TYPE>(50,50));
+      |     ^~
+The code did not compile.  This test failed.
+
+Overall Grade: F
