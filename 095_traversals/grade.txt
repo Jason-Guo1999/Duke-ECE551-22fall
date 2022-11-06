@@ -1,0 +1,30 @@
+Grading at 11/06/2022:16:08:02.721345
+For commit ID 6a88d0368f112658d518de598e0a23b3c36cdc54
+Grading at Sun Nov  6 11:08:02 AM EST 2022
+Comparing answer1.txt
+Line_1_did_not_match
+Line_2_did_not_match
+Line_3_did_not_match
+Your file did not match the expected ouput
+ answer1.txt is incorrect
+Comparing answer2.txt
+Line_1_did_not_match
+Line_2_did_not_match
+Line_3_did_not_match
+Your file did not match the expected ouput
+ answer2.txt is incorrect
+Comparing answer3.txt to one possible solution
+ (two child delete uses left, then all the way right)
+Line_1_did_not_match
+Line_2_did_not_match
+Line_3_did_not_match
+Your file did not match the expected ouput
+Comparing answer3.txt to the other possible solution
+ (two child delete uses right, then all the way left)
+Line_1_did_not_match
+Line_2_did_not_match
+Line_3_did_not_match
+Your file did not match the expected ouput
+ answer3.txt is incorrect
+
+Overall Grade: FAILED
