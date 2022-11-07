@@ -1,35 +1,21 @@
-Grading at 11/07/2022:23:38:17.893998
-For commit ID 3a26539a91fcc76d650b5306731c4e43a35b3c76
-Grading at Mon Nov  7 06:38:16 PM EST 2022
+Grading at 11/07/2022:23:41:39.545774
+For commit ID c35024eb365954102e6098546dd06970688a71f5
+Grading at Mon Nov  7 06:41:38 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = int]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:46:19: error: invalid conversion from ‘BstMap<int, int>::Node* const*’ to ‘BstMap<int, int>::Node**’ [-fpermissive]
-   46 |     Node ** it = &root;
+bstmap.h:47:19: error: invalid conversion from ‘BstMap<int, int>::Node* const*’ to ‘BstMap<int, int>::Node**’ [-fpermissive]
+   47 |     Node ** it = &root;
       |                   ^~~~
       |                   |
       |                   BstMap<int, int>::Node* const*
-bstmap.h: In instantiation of ‘void BstMap<K, V>::add(const K&, const V&) [with K = int; V = int]’:
-bstmap.h:21:16:   required from here
-bstmap.h:23:20: error: binding reference of type ‘int&’ to ‘const int’ discards qualifiers
-   23 |       this->root = new Node(key, value);
-      |                    ^~~~~~~~~~~~~~~~~~~~
-bstmap.h:14:14: note:   initializing argument 1 of ‘BstMap<K, V>::Node::Node(K&, V&) [with K = int; V = int]’
-   14 |     Node(K & t1, V & t2) : key(t1), value(t2), left(NULL), right(NULL) {}
-      |          ~~~~^~
-bstmap.h:39:11: error: binding reference of type ‘int&’ to ‘const int’ discards qualifiers
-   39 |     *it = new Node(key, value);
-      |           ^~~~~~~~~~~~~~~~~~~~
-bstmap.h:14:14: note:   initializing argument 1 of ‘BstMap<K, V>::Node::Node(K&, V&) [with K = int; V = int]’
-   14 |     Node(K & t1, V & t2) : key(t1), value(t2), left(NULL), right(NULL) {}
-      |          ~~~~^~
 bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = int; V = int]’:
-bstmap.h:61:16:   required from here
-bstmap.h:84:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<int, int>::Node*’ (maybe you meant to use ‘->’ ?)
-   84 |           Node * predecessor = *it->left;
+bstmap.h:62:16:   required from here
+bstmap.h:85:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<int, int>::Node*’ (maybe you meant to use ‘->’ ?)
+   85 |           Node * predecessor = *it->left;
       |                                 ~~~~^~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
@@ -38,29 +24,15 @@ testcase 2 : Testing with BstMap<int,std::string>
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = std::__cxx11::basic_string<char>]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:46:19: error: invalid conversion from ‘BstMap<int, std::__cxx11::basic_string<char> >::Node* const*’ to ‘BstMap<int, std::__cxx11::basic_string<char> >::Node**’ [-fpermissive]
-   46 |     Node ** it = &root;
+bstmap.h:47:19: error: invalid conversion from ‘BstMap<int, std::__cxx11::basic_string<char> >::Node* const*’ to ‘BstMap<int, std::__cxx11::basic_string<char> >::Node**’ [-fpermissive]
+   47 |     Node ** it = &root;
       |                   ^~~~
       |                   |
       |                   BstMap<int, std::__cxx11::basic_string<char> >::Node* const*
-bstmap.h: In instantiation of ‘void BstMap<K, V>::add(const K&, const V&) [with K = int; V = std::__cxx11::basic_string<char>]’:
-bstmap.h:21:16:   required from here
-bstmap.h:23:20: error: binding reference of type ‘int&’ to ‘const int’ discards qualifiers
-   23 |       this->root = new Node(key, value);
-      |                    ^~~~~~~~~~~~~~~~~~~~
-bstmap.h:14:14: note:   initializing argument 1 of ‘BstMap<K, V>::Node::Node(K&, V&) [with K = int; V = std::__cxx11::basic_string<char>]’
-   14 |     Node(K & t1, V & t2) : key(t1), value(t2), left(NULL), right(NULL) {}
-      |          ~~~~^~
-bstmap.h:39:11: error: binding reference of type ‘int&’ to ‘const int’ discards qualifiers
-   39 |     *it = new Node(key, value);
-      |           ^~~~~~~~~~~~~~~~~~~~
-bstmap.h:14:14: note:   initializing argument 1 of ‘BstMap<K, V>::Node::Node(K&, V&) [with K = int; V = std::__cxx11::basic_string<char>]’
-   14 |     Node(K & t1, V & t2) : key(t1), value(t2), left(NULL), right(NULL) {}
-      |          ~~~~^~
 bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = int; V = std::__cxx11::basic_string<char>]’:
-bstmap.h:61:16:   required from here
-bstmap.h:84:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<int, std::__cxx11::basic_string<char> >::Node*’ (maybe you meant to use ‘->’ ?)
-   84 |           Node * predecessor = *it->left;
+bstmap.h:62:16:   required from here
+bstmap.h:85:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<int, std::__cxx11::basic_string<char> >::Node*’ (maybe you meant to use ‘->’ ?)
+   85 |           Node * predecessor = *it->left;
       |                                 ~~~~^~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
@@ -69,29 +41,15 @@ testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = Tester]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:46:19: error: invalid conversion from ‘BstMap<int, Tester>::Node* const*’ to ‘BstMap<int, Tester>::Node**’ [-fpermissive]
-   46 |     Node ** it = &root;
+bstmap.h:47:19: error: invalid conversion from ‘BstMap<int, Tester>::Node* const*’ to ‘BstMap<int, Tester>::Node**’ [-fpermissive]
+   47 |     Node ** it = &root;
       |                   ^~~~
       |                   |
       |                   BstMap<int, Tester>::Node* const*
-bstmap.h: In instantiation of ‘void BstMap<K, V>::add(const K&, const V&) [with K = int; V = Tester]’:
-bstmap.h:21:16:   required from here
-bstmap.h:23:20: error: binding reference of type ‘int&’ to ‘const int’ discards qualifiers
-   23 |       this->root = new Node(key, value);
-      |                    ^~~~~~~~~~~~~~~~~~~~
-bstmap.h:14:14: note:   initializing argument 1 of ‘BstMap<K, V>::Node::Node(K&, V&) [with K = int; V = Tester]’
-   14 |     Node(K & t1, V & t2) : key(t1), value(t2), left(NULL), right(NULL) {}
-      |          ~~~~^~
-bstmap.h:39:11: error: binding reference of type ‘int&’ to ‘const int’ discards qualifiers
-   39 |     *it = new Node(key, value);
-      |           ^~~~~~~~~~~~~~~~~~~~
-bstmap.h:14:14: note:   initializing argument 1 of ‘BstMap<K, V>::Node::Node(K&, V&) [with K = int; V = Tester]’
-   14 |     Node(K & t1, V & t2) : key(t1), value(t2), left(NULL), right(NULL) {}
-      |          ~~~~^~
 bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = int; V = Tester]’:
-bstmap.h:61:16:   required from here
-bstmap.h:84:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<int, Tester>::Node*’ (maybe you meant to use ‘->’ ?)
-   84 |           Node * predecessor = *it->left;
+bstmap.h:62:16:   required from here
+bstmap.h:85:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<int, Tester>::Node*’ (maybe you meant to use ‘->’ ?)
+   85 |           Node * predecessor = *it->left;
       |                                 ~~~~^~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
@@ -100,29 +58,15 @@ testcase 4 : Testing with BstMap<std::string,int>
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = int]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:46:19: error: invalid conversion from ‘BstMap<std::__cxx11::basic_string<char>, int>::Node* const*’ to ‘BstMap<std::__cxx11::basic_string<char>, int>::Node**’ [-fpermissive]
-   46 |     Node ** it = &root;
+bstmap.h:47:19: error: invalid conversion from ‘BstMap<std::__cxx11::basic_string<char>, int>::Node* const*’ to ‘BstMap<std::__cxx11::basic_string<char>, int>::Node**’ [-fpermissive]
+   47 |     Node ** it = &root;
       |                   ^~~~
       |                   |
       |                   BstMap<std::__cxx11::basic_string<char>, int>::Node* const*
-bstmap.h: In instantiation of ‘void BstMap<K, V>::add(const K&, const V&) [with K = std::__cxx11::basic_string<char>; V = int]’:
-bstmap.h:21:16:   required from here
-bstmap.h:23:20: error: binding reference of type ‘std::__cxx11::basic_string<char>&’ to ‘const std::__cxx11::basic_string<char>’ discards qualifiers
-   23 |       this->root = new Node(key, value);
-      |                    ^~~~~~~~~~~~~~~~~~~~
-bstmap.h:14:14: note:   initializing argument 1 of ‘BstMap<K, V>::Node::Node(K&, V&) [with K = std::__cxx11::basic_string<char>; V = int]’
-   14 |     Node(K & t1, V & t2) : key(t1), value(t2), left(NULL), right(NULL) {}
-      |          ~~~~^~
-bstmap.h:39:11: error: binding reference of type ‘std::__cxx11::basic_string<char>&’ to ‘const std::__cxx11::basic_string<char>’ discards qualifiers
-   39 |     *it = new Node(key, value);
-      |           ^~~~~~~~~~~~~~~~~~~~
-bstmap.h:14:14: note:   initializing argument 1 of ‘BstMap<K, V>::Node::Node(K&, V&) [with K = std::__cxx11::basic_string<char>; V = int]’
-   14 |     Node(K & t1, V & t2) : key(t1), value(t2), left(NULL), right(NULL) {}
-      |          ~~~~^~
 bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = std::__cxx11::basic_string<char>; V = int]’:
-bstmap.h:61:16:   required from here
-bstmap.h:84:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<std::__cxx11::basic_string<char>, int>::Node*’ (maybe you meant to use ‘->’ ?)
-   84 |           Node * predecessor = *it->left;
+bstmap.h:62:16:   required from here
+bstmap.h:85:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<std::__cxx11::basic_string<char>, int>::Node*’ (maybe you meant to use ‘->’ ?)
+   85 |           Node * predecessor = *it->left;
       |                                 ~~~~^~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
@@ -131,29 +75,15 @@ testcase 5 : Testing with BstMap<std::string,std::string>
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:46:19: error: invalid conversion from ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node* const*’ to ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node**’ [-fpermissive]
-   46 |     Node ** it = &root;
+bstmap.h:47:19: error: invalid conversion from ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node* const*’ to ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node**’ [-fpermissive]
+   47 |     Node ** it = &root;
       |                   ^~~~
       |                   |
       |                   BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node* const*
-bstmap.h: In instantiation of ‘void BstMap<K, V>::add(const K&, const V&) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
-bstmap.h:21:16:   required from here
-bstmap.h:23:20: error: binding reference of type ‘std::__cxx11::basic_string<char>&’ to ‘const std::__cxx11::basic_string<char>’ discards qualifiers
-   23 |       this->root = new Node(key, value);
-      |                    ^~~~~~~~~~~~~~~~~~~~
-bstmap.h:14:14: note:   initializing argument 1 of ‘BstMap<K, V>::Node::Node(K&, V&) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’
-   14 |     Node(K & t1, V & t2) : key(t1), value(t2), left(NULL), right(NULL) {}
-      |          ~~~~^~
-bstmap.h:39:11: error: binding reference of type ‘std::__cxx11::basic_string<char>&’ to ‘const std::__cxx11::basic_string<char>’ discards qualifiers
-   39 |     *it = new Node(key, value);
-      |           ^~~~~~~~~~~~~~~~~~~~
-bstmap.h:14:14: note:   initializing argument 1 of ‘BstMap<K, V>::Node::Node(K&, V&) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’
-   14 |     Node(K & t1, V & t2) : key(t1), value(t2), left(NULL), right(NULL) {}
-      |          ~~~~^~
 bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
-bstmap.h:61:16:   required from here
-bstmap.h:84:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node*’ (maybe you meant to use ‘->’ ?)
-   84 |           Node * predecessor = *it->left;
+bstmap.h:62:16:   required from here
+bstmap.h:85:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node*’ (maybe you meant to use ‘->’ ?)
+   85 |           Node * predecessor = *it->left;
       |                                 ~~~~^~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
@@ -162,29 +92,15 @@ testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = Tester]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:46:19: error: invalid conversion from ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node* const*’ to ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node**’ [-fpermissive]
-   46 |     Node ** it = &root;
+bstmap.h:47:19: error: invalid conversion from ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node* const*’ to ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node**’ [-fpermissive]
+   47 |     Node ** it = &root;
       |                   ^~~~
       |                   |
       |                   BstMap<std::__cxx11::basic_string<char>, Tester>::Node* const*
-bstmap.h: In instantiation of ‘void BstMap<K, V>::add(const K&, const V&) [with K = std::__cxx11::basic_string<char>; V = Tester]’:
-bstmap.h:21:16:   required from here
-bstmap.h:23:20: error: binding reference of type ‘std::__cxx11::basic_string<char>&’ to ‘const std::__cxx11::basic_string<char>’ discards qualifiers
-   23 |       this->root = new Node(key, value);
-      |                    ^~~~~~~~~~~~~~~~~~~~
-bstmap.h:14:14: note:   initializing argument 1 of ‘BstMap<K, V>::Node::Node(K&, V&) [with K = std::__cxx11::basic_string<char>; V = Tester]’
-   14 |     Node(K & t1, V & t2) : key(t1), value(t2), left(NULL), right(NULL) {}
-      |          ~~~~^~
-bstmap.h:39:11: error: binding reference of type ‘std::__cxx11::basic_string<char>&’ to ‘const std::__cxx11::basic_string<char>’ discards qualifiers
-   39 |     *it = new Node(key, value);
-      |           ^~~~~~~~~~~~~~~~~~~~
-bstmap.h:14:14: note:   initializing argument 1 of ‘BstMap<K, V>::Node::Node(K&, V&) [with K = std::__cxx11::basic_string<char>; V = Tester]’
-   14 |     Node(K & t1, V & t2) : key(t1), value(t2), left(NULL), right(NULL) {}
-      |          ~~~~^~
 bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = std::__cxx11::basic_string<char>; V = Tester]’:
-bstmap.h:61:16:   required from here
-bstmap.h:84:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node*’ (maybe you meant to use ‘->’ ?)
-   84 |           Node * predecessor = *it->left;
+bstmap.h:62:16:   required from here
+bstmap.h:85:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node*’ (maybe you meant to use ‘->’ ?)
+   85 |           Node * predecessor = *it->left;
       |                                 ~~~~^~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
@@ -193,29 +109,15 @@ testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = int]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:46:19: error: invalid conversion from ‘BstMap<Tester, int>::Node* const*’ to ‘BstMap<Tester, int>::Node**’ [-fpermissive]
-   46 |     Node ** it = &root;
+bstmap.h:47:19: error: invalid conversion from ‘BstMap<Tester, int>::Node* const*’ to ‘BstMap<Tester, int>::Node**’ [-fpermissive]
+   47 |     Node ** it = &root;
       |                   ^~~~
       |                   |
       |                   BstMap<Tester, int>::Node* const*
-bstmap.h: In instantiation of ‘void BstMap<K, V>::add(const K&, const V&) [with K = Tester; V = int]’:
-bstmap.h:21:16:   required from here
-bstmap.h:23:20: error: binding reference of type ‘Tester&’ to ‘const Tester’ discards qualifiers
-   23 |       this->root = new Node(key, value);
-      |                    ^~~~~~~~~~~~~~~~~~~~
-bstmap.h:14:14: note:   initializing argument 1 of ‘BstMap<K, V>::Node::Node(K&, V&) [with K = Tester; V = int]’
-   14 |     Node(K & t1, V & t2) : key(t1), value(t2), left(NULL), right(NULL) {}
-      |          ~~~~^~
-bstmap.h:39:11: error: binding reference of type ‘Tester&’ to ‘const Tester’ discards qualifiers
-   39 |     *it = new Node(key, value);
-      |           ^~~~~~~~~~~~~~~~~~~~
-bstmap.h:14:14: note:   initializing argument 1 of ‘BstMap<K, V>::Node::Node(K&, V&) [with K = Tester; V = int]’
-   14 |     Node(K & t1, V & t2) : key(t1), value(t2), left(NULL), right(NULL) {}
-      |          ~~~~^~
 bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = Tester; V = int]’:
-bstmap.h:61:16:   required from here
-bstmap.h:84:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<Tester, int>::Node*’ (maybe you meant to use ‘->’ ?)
-   84 |           Node * predecessor = *it->left;
+bstmap.h:62:16:   required from here
+bstmap.h:85:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<Tester, int>::Node*’ (maybe you meant to use ‘->’ ?)
+   85 |           Node * predecessor = *it->left;
       |                                 ~~~~^~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
@@ -224,29 +126,15 @@ testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = std::__cxx11::basic_string<char>]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:46:19: error: invalid conversion from ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node* const*’ to ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node**’ [-fpermissive]
-   46 |     Node ** it = &root;
+bstmap.h:47:19: error: invalid conversion from ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node* const*’ to ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node**’ [-fpermissive]
+   47 |     Node ** it = &root;
       |                   ^~~~
       |                   |
       |                   BstMap<Tester, std::__cxx11::basic_string<char> >::Node* const*
-bstmap.h: In instantiation of ‘void BstMap<K, V>::add(const K&, const V&) [with K = Tester; V = std::__cxx11::basic_string<char>]’:
-bstmap.h:21:16:   required from here
-bstmap.h:23:20: error: binding reference of type ‘Tester&’ to ‘const Tester’ discards qualifiers
-   23 |       this->root = new Node(key, value);
-      |                    ^~~~~~~~~~~~~~~~~~~~
-bstmap.h:14:14: note:   initializing argument 1 of ‘BstMap<K, V>::Node::Node(K&, V&) [with K = Tester; V = std::__cxx11::basic_string<char>]’
-   14 |     Node(K & t1, V & t2) : key(t1), value(t2), left(NULL), right(NULL) {}
-      |          ~~~~^~
-bstmap.h:39:11: error: binding reference of type ‘Tester&’ to ‘const Tester’ discards qualifiers
-   39 |     *it = new Node(key, value);
-      |           ^~~~~~~~~~~~~~~~~~~~
-bstmap.h:14:14: note:   initializing argument 1 of ‘BstMap<K, V>::Node::Node(K&, V&) [with K = Tester; V = std::__cxx11::basic_string<char>]’
-   14 |     Node(K & t1, V & t2) : key(t1), value(t2), left(NULL), right(NULL) {}
-      |          ~~~~^~
 bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = Tester; V = std::__cxx11::basic_string<char>]’:
-bstmap.h:61:16:   required from here
-bstmap.h:84:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node*’ (maybe you meant to use ‘->’ ?)
-   84 |           Node * predecessor = *it->left;
+bstmap.h:62:16:   required from here
+bstmap.h:85:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node*’ (maybe you meant to use ‘->’ ?)
+   85 |           Node * predecessor = *it->left;
       |                                 ~~~~^~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
@@ -255,29 +143,15 @@ testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wr
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = Tester]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:46:19: error: invalid conversion from ‘BstMap<Tester, Tester>::Node* const*’ to ‘BstMap<Tester, Tester>::Node**’ [-fpermissive]
-   46 |     Node ** it = &root;
+bstmap.h:47:19: error: invalid conversion from ‘BstMap<Tester, Tester>::Node* const*’ to ‘BstMap<Tester, Tester>::Node**’ [-fpermissive]
+   47 |     Node ** it = &root;
       |                   ^~~~
       |                   |
       |                   BstMap<Tester, Tester>::Node* const*
-bstmap.h: In instantiation of ‘void BstMap<K, V>::add(const K&, const V&) [with K = Tester; V = Tester]’:
-bstmap.h:21:16:   required from here
-bstmap.h:23:20: error: binding reference of type ‘Tester&’ to ‘const Tester’ discards qualifiers
-   23 |       this->root = new Node(key, value);
-      |                    ^~~~~~~~~~~~~~~~~~~~
-bstmap.h:14:14: note:   initializing argument 1 of ‘BstMap<K, V>::Node::Node(K&, V&) [with K = Tester; V = Tester]’
-   14 |     Node(K & t1, V & t2) : key(t1), value(t2), left(NULL), right(NULL) {}
-      |          ~~~~^~
-bstmap.h:39:11: error: binding reference of type ‘Tester&’ to ‘const Tester’ discards qualifiers
-   39 |     *it = new Node(key, value);
-      |           ^~~~~~~~~~~~~~~~~~~~
-bstmap.h:14:14: note:   initializing argument 1 of ‘BstMap<K, V>::Node::Node(K&, V&) [with K = Tester; V = Tester]’
-   14 |     Node(K & t1, V & t2) : key(t1), value(t2), left(NULL), right(NULL) {}
-      |          ~~~~^~
 bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = Tester; V = Tester]’:
-bstmap.h:61:16:   required from here
-bstmap.h:84:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<Tester, Tester>::Node*’ (maybe you meant to use ‘->’ ?)
-   84 |           Node * predecessor = *it->left;
+bstmap.h:62:16:   required from here
+bstmap.h:85:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<Tester, Tester>::Node*’ (maybe you meant to use ‘->’ ?)
+   85 |           Node * predecessor = *it->left;
       |                                 ~~~~^~~~
 The code did not compile.  This test failed.
 
