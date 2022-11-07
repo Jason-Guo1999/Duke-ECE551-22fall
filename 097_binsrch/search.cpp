@@ -2,15 +2,20 @@
 
 #include "function.h"
 int binarySearchForZero(Function<int, int> * f, int low, int high) {
-  while (low + 1 < high) {
-    int mid = low + ((high - low) >> 1) + 1;
+  int left = low;
+  int right = high - 1;
+  if (left >= right) {
+    return left;
+  }
+  while (left < right) {
+    int mid = left + ((right - left) >> 1) + 1;
     int temp = f->invoke(mid);
     if (temp <= 0) {
-      low = mid;
+      left = mid;
     }
     else {
-      high = mid;
+      high = mid - 1;
     }
   }
-  return low;
+  return left;
 }
