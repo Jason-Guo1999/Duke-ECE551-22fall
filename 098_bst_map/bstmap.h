@@ -50,10 +50,10 @@ class BstMap : public Map<K, V> {
         return it->value;
       }
       else if (it->key > key) {
-        it = &(it->left);
+        it = (it->left);
       }
       else {
-        it = &(it->right);
+        it = (it->right);
       }
     }
     throw std::invalid_argument("Can't find key!");
