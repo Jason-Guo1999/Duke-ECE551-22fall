@@ -11,7 +11,8 @@ class BstMap : public Map<K, V> {
     V value;
     Node * left;
     Node * right;
-    Node(K & t1, V & t2) : key(t1), value(t2), left(NULL), right(NULL) {}
+    Node(const K & key, const V & value) :
+        key(key), value(value), left(NULL), right(NULL) {}
   };
 
   Node * root;
