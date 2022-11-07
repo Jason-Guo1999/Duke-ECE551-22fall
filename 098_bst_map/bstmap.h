@@ -11,20 +11,20 @@ class BstMap : public Map<K, V> {
     V value;
     Node * left;
     Node * right;
-    Node(K & t1, V & t2) : key(t1), value(t2), left(nullptr), right(nullptr) {}
+    Node(K & t1, V & t2) : key(t1), value(t2), left(NULL), right(NULL) {}
   };
 
   Node * root;
 
  public:
-  BstMap() : root(nullptr) {}
+  BstMap() : root(NULL) {}
   virtual void add(const K & key, const V & value) {
-    if (this->root == nullptr) {
+    if (this->root == NULL) {
       this->root = new Node(key, value);
       return;
     }
     Node ** it = &root;
-    while (*it != nullptr) {
+    while (*it != NULL) {
       if ((*it)->key == key) {
         (*it)->value = value;
         return;
@@ -40,11 +40,11 @@ class BstMap : public Map<K, V> {
   }
 
   virtual const V & lookup(const K & key) const throw(std::invalid_argument) {
-    if (root == nullptr) {
+    if (root == NULL) {
       throw std::invalid_argument("Can't find key!");
     }
     Node ** it = &root;
-    while (*it != nullptr) {
+    while (*it != NULL) {
       if ((*it)->key == key) {
         return (*it)->value;
       }
@@ -59,30 +59,30 @@ class BstMap : public Map<K, V> {
   }
 
   virtual void remove(const K & key) {
-    if (root == nullptr) {
+    if (root == NULL) {
       return;
     }
     Node ** it = &root;
-    while (*it != nullptr) {
+    while (*it != NULL) {
       if ((*it)->key == key) {
         Node * target = *it;
-        if (target->left == nullptr && target->right == nullptr) {
+        if (target->left == NULL && target->right == NULL) {
           delete target;
           return;
         }
-        else if (target->left == nullptr && target->right != nullptr) {
+        else if (target->left == NULL && target->right != NULL) {
           Node * temp = target->right;
           delete target;
           *it = temp;
         }
-        else if (target->left != nullptr && target->right == nullptr) {
+        else if (target->left != NULL && target->right == NULL) {
           Node * temp = target->left;
           delete target;
           *it = temp;
         }
         else {
           Node * predecessor = *it->left;
-          while (predecessor != nullptr) {
+          while (predecessor != NULL) {
             predecessor = predecessor->right;
           }
           Node * temp = target->right;
@@ -102,7 +102,7 @@ class BstMap : public Map<K, V> {
   virtual ~BstMap<K, V>() { deconstructor(root); }
 
   void deconstructor(Node * root) {
-    if (root != nullptr) {
+    if (root != NULL) {
       deconstructor(root->left);
       deconstructor(root->right);
     }
