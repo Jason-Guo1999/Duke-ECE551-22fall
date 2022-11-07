@@ -1,6 +1,6 @@
-Grading at 11/07/2022:23:41:39.545774
-For commit ID c35024eb365954102e6098546dd06970688a71f5
-Grading at Mon Nov  7 06:41:38 PM EST 2022
+Grading at 11/07/2022:23:44:21.245973
+For commit ID 53d86d4b5ce15830ed772eba9407764b26ffae7b
+Grading at Mon Nov  7 06:44:19 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
@@ -12,11 +12,6 @@ bstmap.h:47:19: error: invalid conversion from ‘BstMap<int, int>::Node* const*
       |                   ^~~~
       |                   |
       |                   BstMap<int, int>::Node* const*
-bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = int; V = int]’:
-bstmap.h:62:16:   required from here
-bstmap.h:85:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<int, int>::Node*’ (maybe you meant to use ‘->’ ?)
-   85 |           Node * predecessor = *it->left;
-      |                                 ~~~~^~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 2 : Testing with BstMap<int,std::string>
@@ -29,11 +24,6 @@ bstmap.h:47:19: error: invalid conversion from ‘BstMap<int, std::__cxx11::basi
       |                   ^~~~
       |                   |
       |                   BstMap<int, std::__cxx11::basic_string<char> >::Node* const*
-bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = int; V = std::__cxx11::basic_string<char>]’:
-bstmap.h:62:16:   required from here
-bstmap.h:85:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<int, std::__cxx11::basic_string<char> >::Node*’ (maybe you meant to use ‘->’ ?)
-   85 |           Node * predecessor = *it->left;
-      |                                 ~~~~^~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
@@ -46,11 +36,6 @@ bstmap.h:47:19: error: invalid conversion from ‘BstMap<int, Tester>::Node* con
       |                   ^~~~
       |                   |
       |                   BstMap<int, Tester>::Node* const*
-bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = int; V = Tester]’:
-bstmap.h:62:16:   required from here
-bstmap.h:85:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<int, Tester>::Node*’ (maybe you meant to use ‘->’ ?)
-   85 |           Node * predecessor = *it->left;
-      |                                 ~~~~^~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 4 : Testing with BstMap<std::string,int>
@@ -63,11 +48,6 @@ bstmap.h:47:19: error: invalid conversion from ‘BstMap<std::__cxx11::basic_str
       |                   ^~~~
       |                   |
       |                   BstMap<std::__cxx11::basic_string<char>, int>::Node* const*
-bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = std::__cxx11::basic_string<char>; V = int]’:
-bstmap.h:62:16:   required from here
-bstmap.h:85:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<std::__cxx11::basic_string<char>, int>::Node*’ (maybe you meant to use ‘->’ ?)
-   85 |           Node * predecessor = *it->left;
-      |                                 ~~~~^~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 5 : Testing with BstMap<std::string,std::string>
@@ -80,11 +60,6 @@ bstmap.h:47:19: error: invalid conversion from ‘BstMap<std::__cxx11::basic_str
       |                   ^~~~
       |                   |
       |                   BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node* const*
-bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
-bstmap.h:62:16:   required from here
-bstmap.h:85:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node*’ (maybe you meant to use ‘->’ ?)
-   85 |           Node * predecessor = *it->left;
-      |                                 ~~~~^~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
@@ -97,11 +72,6 @@ bstmap.h:47:19: error: invalid conversion from ‘BstMap<std::__cxx11::basic_str
       |                   ^~~~
       |                   |
       |                   BstMap<std::__cxx11::basic_string<char>, Tester>::Node* const*
-bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = std::__cxx11::basic_string<char>; V = Tester]’:
-bstmap.h:62:16:   required from here
-bstmap.h:85:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node*’ (maybe you meant to use ‘->’ ?)
-   85 |           Node * predecessor = *it->left;
-      |                                 ~~~~^~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 7 : Testing with BstMap<(a custom class we wrote),int>
@@ -114,11 +84,6 @@ bstmap.h:47:19: error: invalid conversion from ‘BstMap<Tester, int>::Node* con
       |                   ^~~~
       |                   |
       |                   BstMap<Tester, int>::Node* const*
-bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = Tester; V = int]’:
-bstmap.h:62:16:   required from here
-bstmap.h:85:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<Tester, int>::Node*’ (maybe you meant to use ‘->’ ?)
-   85 |           Node * predecessor = *it->left;
-      |                                 ~~~~^~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
@@ -131,11 +96,6 @@ bstmap.h:47:19: error: invalid conversion from ‘BstMap<Tester, std::__cxx11::b
       |                   ^~~~
       |                   |
       |                   BstMap<Tester, std::__cxx11::basic_string<char> >::Node* const*
-bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = Tester; V = std::__cxx11::basic_string<char>]’:
-bstmap.h:62:16:   required from here
-bstmap.h:85:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node*’ (maybe you meant to use ‘->’ ?)
-   85 |           Node * predecessor = *it->left;
-      |                                 ~~~~^~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wrote)>
@@ -148,11 +108,6 @@ bstmap.h:47:19: error: invalid conversion from ‘BstMap<Tester, Tester>::Node* 
       |                   ^~~~
       |                   |
       |                   BstMap<Tester, Tester>::Node* const*
-bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = Tester; V = Tester]’:
-bstmap.h:62:16:   required from here
-bstmap.h:85:37: error: request for member ‘left’ in ‘* it’, which is of pointer type ‘BstMap<Tester, Tester>::Node*’ (maybe you meant to use ‘->’ ?)
-   85 |           Node * predecessor = *it->left;
-      |                                 ~~~~^~~~
 The code did not compile.  This test failed.
 
 Overall Grade: F
