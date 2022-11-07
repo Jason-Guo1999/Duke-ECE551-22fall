@@ -9,7 +9,7 @@ int binarySearchForZero(Function<int, int> * f, int low, int high) {
       low = mid;
     }
     else {
-      high = mid - 1;
+      high = mid;
     }
   }
   return low;
