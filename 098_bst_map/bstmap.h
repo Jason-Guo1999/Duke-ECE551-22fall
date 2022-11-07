@@ -19,6 +19,24 @@ class BstMap : public Map<K, V> {
 
  public:
   BstMap() : root(NULL) {}
+  BstMap(const BstMap & rhs) { root = copy(rhs.root); }
+
+  Node * copy(Node * root) {
+    if (root == NULL) {
+      return NULL;
+    }
+    Node * newRoot = new Node(root->key, root->value);
+    root->left = copy(root->left);
+    root->right = copy(root->right);
+    return newRoot;
+  }
+
+  BstMap & operator=(const BstMap & rhs) {
+    deconstructor(root);
+    root = copy(rhs.root);
+    return *this;
+  }
+
   virtual void add(const K & key, const V & value) {
     if (this->root == NULL) {
       this->root = new Node(key, value);
