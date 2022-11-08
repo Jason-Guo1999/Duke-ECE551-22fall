@@ -1,4 +1,3 @@
-
 #include "map.h"
 
 template<typename K, typename V>
@@ -13,7 +12,6 @@ class BstMap : public Map<K, V> {
     Node(const K & k, const V & v) : key(k), value(v), left(NULL), right(NULL) {}
   };
   Node * root;
-  Node ** lookupNode(const K &) const;
 
  public:
   BstMap() : root(NULL) {}
@@ -71,7 +69,7 @@ class BstMap : public Map<K, V> {
   }
 
   Node ** lookupNode(const K & key) {
-    Node ** it = &root;
+    Node ** it = const_cast<Node **>(&root);
     while ((*it) != NULL) {
       if ((*it)->key == key) {
         break;
@@ -85,6 +83,7 @@ class BstMap : public Map<K, V> {
     }
     return it;
   }
+
   virtual void remove(const K & key) {
     if (root == NULL) {
       return;
