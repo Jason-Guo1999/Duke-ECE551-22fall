@@ -68,8 +68,8 @@ class BstMap : public Map<K, V> {
     return temp->value;
   }
 
-  Node ** lookupNode(const K & key) {
-    Node ** it = const_cast<Node **>(&root);
+  Node ** lookupNode(const K & key) const {
+    Node ** it = &root;
     while ((*it) != NULL) {
       if ((*it)->key == key) {
         break;
