@@ -74,7 +74,7 @@ class BstMap : public Map<K, V> {
 
     throw std::invalid_argument("Can't find key!");
   }
-
+  /*
   Node ** lookupNode(const K & key) const {
     Node ** it = const_cast<Node **>(&root);
     while ((*it) != NULL) {
@@ -90,14 +90,12 @@ class BstMap : public Map<K, V> {
     }
     return it;
   }
+  */
   virtual void remove(const K & key) {
     Node ** current = &root;
     Node * temp = NULL;
-    //find key
     while (*current != NULL) {
-      //current Node needs to be removed
       if ((*current)->key == key) {
-        //one node or zero node
         if ((*current)->left == NULL) {
           temp = (*current)->right;
           delete *current;
@@ -109,10 +107,8 @@ class BstMap : public Map<K, V> {
           *current = temp;
         }
         else {
-          //go left once
           Node ** toReplace = current;
           current = &((*current)->left);
-          //follow right
           while ((*current)->right != NULL) {
             current = &((*current)->right);
           }
@@ -132,51 +128,4 @@ class BstMap : public Map<K, V> {
       }
     }
   }
-  /*
-  virtual void remove(const K & key) {
-    if (root == NULL) {
-      return;
-    }
-    Node ** target = &root;
-    Node * temp = NULL;
-    while (*target != NULL) {
-      if ((*target)->key == key) {
-        temp = *target;
-        if (temp == NULL) {
-          return;
-        }
-        if (temp->left == NULL) {
-          Node * t = (*target)->right;
-          delete *target;
-          *target = t;
-        }
-        else if (temp->right == NULL) {
-          Node * t = (*target)->left;
-          delete *target;
-          *target = t;
-        }
-        else {
-          Node ** predecessor = &(temp->left);
-          while ((*predecessor)->right != NULL) {
-            predecessor = &((*predecessor)->right);
-          }
-          (*target)->key = (*predecessor)->key;
-          const V predValue = (*predecessor)->value;
-          Node * t = (*predecessor)->left;
-          delete *predecessor;
-          *predecessor = t;
-          add((*target)->key, predValue);
-        }
-      }
-      else if ((*target)->key > key) {
-        target = &((*target)->left);
-      }
-      else {
-        target = &((*target)->right);
-      }
-    }
-
-    return;
-  }
-  */
 };
