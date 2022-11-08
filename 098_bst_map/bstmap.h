@@ -23,14 +23,14 @@ class BstMap : public Map<K, V> {
   BstMap() : root(NULL) {}
   BstMap(const BstMap & rhs) : root(NULL) { root = copy(rhs.root); }
 
-  Node * copy(Node * current) {
-    if (current == NULL) {
+  Node * copy(Node * target) {
+    if (target == NULL) {
       return NULL;
     }
-    Node * newRoot = new Node(current->key, current->value);
-    newRoot->left = copy(current->left);
-    newRoot->right = copy(current->right);
-    return newRoot;
+    Node * root = new Node(target->key, target->value);
+    root->left = copy(target->left);
+    root->right = copy(target->right);
+    return root;
   }
   void destructor(Node * root) {
     if (root != NULL) {
