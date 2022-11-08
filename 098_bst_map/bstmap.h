@@ -33,6 +33,13 @@ class BstMap : public Map<K, V> {
     root->right = copy(target->right);
     return root;
   }
+  BstMap & operator=(const BstMap & rhs) {
+    if (this != &rhs) {
+      destructor(root);
+      root = copy(rhs.root);
+    }
+    return *this;
+  }
   void destructor(Node * root) {
     if (root != NULL) {
       destructor(root->left);
