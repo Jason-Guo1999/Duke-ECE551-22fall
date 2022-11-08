@@ -91,13 +91,15 @@ class BstMap : public Map<K, V> {
     if (temp == NULL) {
       return;
     }
-    if (temp->left == NULL && temp->right != NULL) {
-      *target = temp->right;
-      free(temp);
+    if (temp->left == NULL) {
+      Node * t = (*target)->right;
+      delete *target;
+      *target = t;
     }
     else if (temp->right == NULL && temp->left != NULL) {
-      *target = temp->left;
-      free(temp);
+      Node * t = (*target)->left;
+      delete *target;
+      *target = t;
     }
     else {
       Node * predecessor = temp->left;
@@ -111,7 +113,7 @@ class BstMap : public Map<K, V> {
       if (predecessor->left != NULL) {
         *target = predecessor->left;
       }
-      free(predecessor);
+      delete predecessor;
     }
     return;
   }
