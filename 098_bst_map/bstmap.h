@@ -59,12 +59,20 @@ class BstMap : public Map<K, V> {
   }
 
   virtual const V & lookup(const K & key) const throw(std::invalid_argument) {
-    Node ** it = lookupNode(key);
-    Node * temp = *it;
-    if (temp == NULL) {
-      throw std::invalid_argument("Can't find key!");
+    Node * temp = root;
+    while (temp != NULL) {
+      if (temp->key == key) {
+        return temp->value;
+      }
+      else if (temp->key > key) {
+        temp = temp->left;
+      }
+      else {
+        temp = temp->right;
+      }
     }
-    return temp->value;
+
+    throw std::invalid_argument("Can't find key!");
   }
 
   Node ** lookupNode(const K & key) const {
