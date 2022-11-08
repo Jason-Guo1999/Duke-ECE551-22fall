@@ -1,68 +1,122 @@
-Grading at 11/08/2022:02:04:35.041813
-For commit ID f6be80e32ddc0758c544e1d4147b564f2647e63c
-Grading at Mon Nov  7 09:04:32 PM EST 2022
+Grading at 11/08/2022:02:06:46.638449
+For commit ID 2545a164e99725a76b7a6d35792f68d4aeb6cd39
+Grading at Mon Nov  7 09:06:45 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
-/usr/bin/ld: /tmp/ccZ7RWu2.o: in function `BstMap<int, int>::lookup(int const&) const':
-89-tester.cpp:(.text._ZNK6BstMapIiiE6lookupERKi[_ZNK6BstMapIiiE6lookupERKi]+0x37): undefined reference to `BstMap<int, int>::lookupNode(int const&) const'
-collect2: error: ld returned 1 exit status
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = int]’:
+89-tester.cpp:119:24:   required from here
+bstmap.h:63:28: error: passing ‘const BstMap<int, int>’ as ‘this’ argument discards qualifiers [-fpermissive]
+   63 |     Node ** it = lookupNode(key);
+      |                  ~~~~~~~~~~^~~~~
+bstmap.h:71:11: note:   in call to ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) [with K = int; V = int]’
+   71 |   Node ** lookupNode(const K & key) {
+      |           ^~~~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 2 : Testing with BstMap<int,std::string>
 ...compiling...
-/usr/bin/ld: /tmp/cc9Yy0Mg.o: in function `BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::lookup(int const&) const':
-89-tester.cpp:(.text._ZNK6BstMapIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE6lookupERKi[_ZNK6BstMapIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE6lookupERKi]+0x37): undefined reference to `BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::lookupNode(int const&) const'
-collect2: error: ld returned 1 exit status
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = std::__cxx11::basic_string<char>]’:
+89-tester.cpp:119:24:   required from here
+bstmap.h:63:28: error: passing ‘const BstMap<int, std::__cxx11::basic_string<char> >’ as ‘this’ argument discards qualifiers [-fpermissive]
+   63 |     Node ** it = lookupNode(key);
+      |                  ~~~~~~~~~~^~~~~
+bstmap.h:71:11: note:   in call to ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) [with K = int; V = std::__cxx11::basic_string<char>]’
+   71 |   Node ** lookupNode(const K & key) {
+      |           ^~~~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 ...compiling...
-/usr/bin/ld: /tmp/ccI8cqZ9.o: in function `BstMap<int, Tester>::lookup(int const&) const':
-89-tester.cpp:(.text._ZNK6BstMapIi6TesterE6lookupERKi[_ZNK6BstMapIi6TesterE6lookupERKi]+0x37): undefined reference to `BstMap<int, Tester>::lookupNode(int const&) const'
-collect2: error: ld returned 1 exit status
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = Tester]’:
+89-tester.cpp:119:24:   required from here
+bstmap.h:63:28: error: passing ‘const BstMap<int, Tester>’ as ‘this’ argument discards qualifiers [-fpermissive]
+   63 |     Node ** it = lookupNode(key);
+      |                  ~~~~~~~~~~^~~~~
+bstmap.h:71:11: note:   in call to ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) [with K = int; V = Tester]’
+   71 |   Node ** lookupNode(const K & key) {
+      |           ^~~~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 4 : Testing with BstMap<std::string,int>
 ...compiling...
-/usr/bin/ld: /tmp/ccpMjwVH.o: in function `BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::lookup(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const':
-89-tester.cpp:(.text._ZNK6BstMapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE6lookupERKS5_[_ZNK6BstMapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiE6lookupERKS5_]+0x37): undefined reference to `BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::lookupNode(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const'
-collect2: error: ld returned 1 exit status
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = int]’:
+89-tester.cpp:119:24:   required from here
+bstmap.h:63:28: error: passing ‘const BstMap<std::__cxx11::basic_string<char>, int>’ as ‘this’ argument discards qualifiers [-fpermissive]
+   63 |     Node ** it = lookupNode(key);
+      |                  ~~~~~~~~~~^~~~~
+bstmap.h:71:11: note:   in call to ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) [with K = std::__cxx11::basic_string<char>; V = int]’
+   71 |   Node ** lookupNode(const K & key) {
+      |           ^~~~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 5 : Testing with BstMap<std::string,std::string>
 ...compiling...
-/usr/bin/ld: /tmp/ccRQ1HSr.o: in function `BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::lookup(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const':
-89-tester.cpp:(.text._ZNK6BstMapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E6lookupERKS5_[_ZNK6BstMapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_E6lookupERKS5_]+0x37): undefined reference to `BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::lookupNode(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const'
-collect2: error: ld returned 1 exit status
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
+89-tester.cpp:119:24:   required from here
+bstmap.h:63:28: error: passing ‘const BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >’ as ‘this’ argument discards qualifiers [-fpermissive]
+   63 |     Node ** it = lookupNode(key);
+      |                  ~~~~~~~~~~^~~~~
+bstmap.h:71:11: note:   in call to ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’
+   71 |   Node ** lookupNode(const K & key) {
+      |           ^~~~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 ...compiling...
-/usr/bin/ld: /tmp/ccTsiZn1.o: in function `BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::lookup(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const':
-89-tester.cpp:(.text._ZNK6BstMapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE6TesterE6lookupERKS5_[_ZNK6BstMapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE6TesterE6lookupERKS5_]+0x37): undefined reference to `BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::lookupNode(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const'
-collect2: error: ld returned 1 exit status
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = Tester]’:
+89-tester.cpp:119:24:   required from here
+bstmap.h:63:28: error: passing ‘const BstMap<std::__cxx11::basic_string<char>, Tester>’ as ‘this’ argument discards qualifiers [-fpermissive]
+   63 |     Node ** it = lookupNode(key);
+      |                  ~~~~~~~~~~^~~~~
+bstmap.h:71:11: note:   in call to ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) [with K = std::__cxx11::basic_string<char>; V = Tester]’
+   71 |   Node ** lookupNode(const K & key) {
+      |           ^~~~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 ...compiling...
-/usr/bin/ld: /tmp/cc1UpwUd.o: in function `BstMap<Tester, int>::lookup(Tester const&) const':
-89-tester.cpp:(.text._ZNK6BstMapI6TesteriE6lookupERKS0_[_ZNK6BstMapI6TesteriE6lookupERKS0_]+0x37): undefined reference to `BstMap<Tester, int>::lookupNode(Tester const&) const'
-collect2: error: ld returned 1 exit status
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = int]’:
+89-tester.cpp:119:24:   required from here
+bstmap.h:63:28: error: passing ‘const BstMap<Tester, int>’ as ‘this’ argument discards qualifiers [-fpermissive]
+   63 |     Node ** it = lookupNode(key);
+      |                  ~~~~~~~~~~^~~~~
+bstmap.h:71:11: note:   in call to ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) [with K = Tester; V = int]’
+   71 |   Node ** lookupNode(const K & key) {
+      |           ^~~~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 ...compiling...
-/usr/bin/ld: /tmp/ccfCIb1r.o: in function `BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::lookup(Tester const&) const':
-89-tester.cpp:(.text._ZNK6BstMapI6TesterNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE6lookupERKS0_[_ZNK6BstMapI6TesterNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE6lookupERKS0_]+0x37): undefined reference to `BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::lookupNode(Tester const&) const'
-collect2: error: ld returned 1 exit status
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = std::__cxx11::basic_string<char>]’:
+89-tester.cpp:119:24:   required from here
+bstmap.h:63:28: error: passing ‘const BstMap<Tester, std::__cxx11::basic_string<char> >’ as ‘this’ argument discards qualifiers [-fpermissive]
+   63 |     Node ** it = lookupNode(key);
+      |                  ~~~~~~~~~~^~~~~
+bstmap.h:71:11: note:   in call to ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) [with K = Tester; V = std::__cxx11::basic_string<char>]’
+   71 |   Node ** lookupNode(const K & key) {
+      |           ^~~~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wrote)>
 ...compiling...
-/usr/bin/ld: /tmp/ccZNY0QL.o: in function `BstMap<Tester, Tester>::lookup(Tester const&) const':
-89-tester.cpp:(.text._ZNK6BstMapI6TesterS0_E6lookupERKS0_[_ZNK6BstMapI6TesterS0_E6lookupERKS0_]+0x37): undefined reference to `BstMap<Tester, Tester>::lookupNode(Tester const&) const'
-collect2: error: ld returned 1 exit status
+In file included from 89-tester.cpp:1:
+bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = Tester]’:
+89-tester.cpp:119:24:   required from here
+bstmap.h:63:28: error: passing ‘const BstMap<Tester, Tester>’ as ‘this’ argument discards qualifiers [-fpermissive]
+   63 |     Node ** it = lookupNode(key);
+      |                  ~~~~~~~~~~^~~~~
+bstmap.h:71:11: note:   in call to ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) [with K = Tester; V = Tester]’
+   71 |   Node ** lookupNode(const K & key) {
+      |           ^~~~~~~~~~
 The code did not compile.  This test failed.
 
 Overall Grade: F
