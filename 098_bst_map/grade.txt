@@ -1,122 +1,122 @@
-Grading at 11/08/2022:02:06:46.638449
-For commit ID 2545a164e99725a76b7a6d35792f68d4aeb6cd39
-Grading at Mon Nov  7 09:06:45 PM EST 2022
+Grading at 11/08/2022:21:29:01.041361
+For commit ID a5b3c8f4bd01ef8dcc32128b8e147c820c8f381f
+Grading at Tue Nov  8 04:28:59 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
 In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = int]’:
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) const [with K = int; V = int]’:
+bstmap.h:63:18:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = int]’
 89-tester.cpp:119:24:   required from here
-bstmap.h:63:28: error: passing ‘const BstMap<int, int>’ as ‘this’ argument discards qualifiers [-fpermissive]
-   63 |     Node ** it = lookupNode(key);
-      |                  ~~~~~~~~~~^~~~~
-bstmap.h:71:11: note:   in call to ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) [with K = int; V = int]’
-   71 |   Node ** lookupNode(const K & key) {
-      |           ^~~~~~~~~~
+bstmap.h:72:19: error: invalid conversion from ‘BstMap<int, int>::Node* const*’ to ‘BstMap<int, int>::Node**’ [-fpermissive]
+   72 |     Node ** it = &root;
+      |                   ^~~~
+      |                   |
+      |                   BstMap<int, int>::Node* const*
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 2 : Testing with BstMap<int,std::string>
 ...compiling...
 In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = std::__cxx11::basic_string<char>]’:
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) const [with K = int; V = std::__cxx11::basic_string<char>]’:
+bstmap.h:63:18:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = std::__cxx11::basic_string<char>]’
 89-tester.cpp:119:24:   required from here
-bstmap.h:63:28: error: passing ‘const BstMap<int, std::__cxx11::basic_string<char> >’ as ‘this’ argument discards qualifiers [-fpermissive]
-   63 |     Node ** it = lookupNode(key);
-      |                  ~~~~~~~~~~^~~~~
-bstmap.h:71:11: note:   in call to ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) [with K = int; V = std::__cxx11::basic_string<char>]’
-   71 |   Node ** lookupNode(const K & key) {
-      |           ^~~~~~~~~~
+bstmap.h:72:19: error: invalid conversion from ‘BstMap<int, std::__cxx11::basic_string<char> >::Node* const*’ to ‘BstMap<int, std::__cxx11::basic_string<char> >::Node**’ [-fpermissive]
+   72 |     Node ** it = &root;
+      |                   ^~~~
+      |                   |
+      |                   BstMap<int, std::__cxx11::basic_string<char> >::Node* const*
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 ...compiling...
 In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = Tester]’:
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) const [with K = int; V = Tester]’:
+bstmap.h:63:18:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = Tester]’
 89-tester.cpp:119:24:   required from here
-bstmap.h:63:28: error: passing ‘const BstMap<int, Tester>’ as ‘this’ argument discards qualifiers [-fpermissive]
-   63 |     Node ** it = lookupNode(key);
-      |                  ~~~~~~~~~~^~~~~
-bstmap.h:71:11: note:   in call to ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) [with K = int; V = Tester]’
-   71 |   Node ** lookupNode(const K & key) {
-      |           ^~~~~~~~~~
+bstmap.h:72:19: error: invalid conversion from ‘BstMap<int, Tester>::Node* const*’ to ‘BstMap<int, Tester>::Node**’ [-fpermissive]
+   72 |     Node ** it = &root;
+      |                   ^~~~
+      |                   |
+      |                   BstMap<int, Tester>::Node* const*
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 4 : Testing with BstMap<std::string,int>
 ...compiling...
 In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = int]’:
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) const [with K = std::__cxx11::basic_string<char>; V = int]’:
+bstmap.h:63:18:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = int]’
 89-tester.cpp:119:24:   required from here
-bstmap.h:63:28: error: passing ‘const BstMap<std::__cxx11::basic_string<char>, int>’ as ‘this’ argument discards qualifiers [-fpermissive]
-   63 |     Node ** it = lookupNode(key);
-      |                  ~~~~~~~~~~^~~~~
-bstmap.h:71:11: note:   in call to ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) [with K = std::__cxx11::basic_string<char>; V = int]’
-   71 |   Node ** lookupNode(const K & key) {
-      |           ^~~~~~~~~~
+bstmap.h:72:19: error: invalid conversion from ‘BstMap<std::__cxx11::basic_string<char>, int>::Node* const*’ to ‘BstMap<std::__cxx11::basic_string<char>, int>::Node**’ [-fpermissive]
+   72 |     Node ** it = &root;
+      |                   ^~~~
+      |                   |
+      |                   BstMap<std::__cxx11::basic_string<char>, int>::Node* const*
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 5 : Testing with BstMap<std::string,std::string>
 ...compiling...
 In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) const [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
+bstmap.h:63:18:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’
 89-tester.cpp:119:24:   required from here
-bstmap.h:63:28: error: passing ‘const BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >’ as ‘this’ argument discards qualifiers [-fpermissive]
-   63 |     Node ** it = lookupNode(key);
-      |                  ~~~~~~~~~~^~~~~
-bstmap.h:71:11: note:   in call to ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’
-   71 |   Node ** lookupNode(const K & key) {
-      |           ^~~~~~~~~~
+bstmap.h:72:19: error: invalid conversion from ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node* const*’ to ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node**’ [-fpermissive]
+   72 |     Node ** it = &root;
+      |                   ^~~~
+      |                   |
+      |                   BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node* const*
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 ...compiling...
 In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = Tester]’:
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) const [with K = std::__cxx11::basic_string<char>; V = Tester]’:
+bstmap.h:63:18:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = Tester]’
 89-tester.cpp:119:24:   required from here
-bstmap.h:63:28: error: passing ‘const BstMap<std::__cxx11::basic_string<char>, Tester>’ as ‘this’ argument discards qualifiers [-fpermissive]
-   63 |     Node ** it = lookupNode(key);
-      |                  ~~~~~~~~~~^~~~~
-bstmap.h:71:11: note:   in call to ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) [with K = std::__cxx11::basic_string<char>; V = Tester]’
-   71 |   Node ** lookupNode(const K & key) {
-      |           ^~~~~~~~~~
+bstmap.h:72:19: error: invalid conversion from ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node* const*’ to ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node**’ [-fpermissive]
+   72 |     Node ** it = &root;
+      |                   ^~~~
+      |                   |
+      |                   BstMap<std::__cxx11::basic_string<char>, Tester>::Node* const*
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 ...compiling...
 In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = int]’:
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) const [with K = Tester; V = int]’:
+bstmap.h:63:18:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = int]’
 89-tester.cpp:119:24:   required from here
-bstmap.h:63:28: error: passing ‘const BstMap<Tester, int>’ as ‘this’ argument discards qualifiers [-fpermissive]
-   63 |     Node ** it = lookupNode(key);
-      |                  ~~~~~~~~~~^~~~~
-bstmap.h:71:11: note:   in call to ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) [with K = Tester; V = int]’
-   71 |   Node ** lookupNode(const K & key) {
-      |           ^~~~~~~~~~
+bstmap.h:72:19: error: invalid conversion from ‘BstMap<Tester, int>::Node* const*’ to ‘BstMap<Tester, int>::Node**’ [-fpermissive]
+   72 |     Node ** it = &root;
+      |                   ^~~~
+      |                   |
+      |                   BstMap<Tester, int>::Node* const*
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 ...compiling...
 In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = std::__cxx11::basic_string<char>]’:
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) const [with K = Tester; V = std::__cxx11::basic_string<char>]’:
+bstmap.h:63:18:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = std::__cxx11::basic_string<char>]’
 89-tester.cpp:119:24:   required from here
-bstmap.h:63:28: error: passing ‘const BstMap<Tester, std::__cxx11::basic_string<char> >’ as ‘this’ argument discards qualifiers [-fpermissive]
-   63 |     Node ** it = lookupNode(key);
-      |                  ~~~~~~~~~~^~~~~
-bstmap.h:71:11: note:   in call to ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) [with K = Tester; V = std::__cxx11::basic_string<char>]’
-   71 |   Node ** lookupNode(const K & key) {
-      |           ^~~~~~~~~~
+bstmap.h:72:19: error: invalid conversion from ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node* const*’ to ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node**’ [-fpermissive]
+   72 |     Node ** it = &root;
+      |                   ^~~~
+      |                   |
+      |                   BstMap<Tester, std::__cxx11::basic_string<char> >::Node* const*
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wrote)>
 ...compiling...
 In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = Tester]’:
+bstmap.h: In instantiation of ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) const [with K = Tester; V = Tester]’:
+bstmap.h:63:18:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = Tester]’
 89-tester.cpp:119:24:   required from here
-bstmap.h:63:28: error: passing ‘const BstMap<Tester, Tester>’ as ‘this’ argument discards qualifiers [-fpermissive]
-   63 |     Node ** it = lookupNode(key);
-      |                  ~~~~~~~~~~^~~~~
-bstmap.h:71:11: note:   in call to ‘BstMap<K, V>::Node** BstMap<K, V>::lookupNode(const K&) [with K = Tester; V = Tester]’
-   71 |   Node ** lookupNode(const K & key) {
-      |           ^~~~~~~~~~
+bstmap.h:72:19: error: invalid conversion from ‘BstMap<Tester, Tester>::Node* const*’ to ‘BstMap<Tester, Tester>::Node**’ [-fpermissive]
+   72 |     Node ** it = &root;
+      |                   ^~~~
+      |                   |
+      |                   BstMap<Tester, Tester>::Node* const*
 The code did not compile.  This test failed.
 
 Overall Grade: F
