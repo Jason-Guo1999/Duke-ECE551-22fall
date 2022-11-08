@@ -111,7 +111,7 @@ class BstMap : public Map<K, V> {
       if (predecessor->left != NULL) {
         *target = predecessor->left;
       }
-      delete predecessor;
+      //delete predecessor;
     }
     return;
   }
