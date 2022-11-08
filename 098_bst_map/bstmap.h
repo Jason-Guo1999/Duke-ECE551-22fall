@@ -124,7 +124,7 @@ class BstMap : public Map<K, V> {
     if (root != NULL) {
       deconstructor(root->left);
       deconstructor(root->right);
+      delete root;
     }
-    delete root;
   }
 };
