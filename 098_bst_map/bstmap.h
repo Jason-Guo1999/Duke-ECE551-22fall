@@ -87,33 +87,45 @@ class BstMap : public Map<K, V> {
     if (root == NULL) {
       return;
     }
-    Node ** target = lookupNode(key);
-    Node * temp = *target;
-    if (temp == NULL) {
-      return;
-    }
-    if (temp->left == NULL) {
-      Node * t = (*target)->right;
-      delete *target;
-      *target = t;
-    }
-    else if (temp->right == NULL) {
-      Node * t = (*target)->left;
-      delete *target;
-      *target = t;
-    }
-    else {
-      Node ** predecessor = &(temp->left);
-      while ((*predecessor)->right != NULL) {
-        predecessor = &((*predecessor)->right);
+    Node ** target = &root;
+    Node * temp = NULL;
+    while (*target != NULL) {
+      if ((*target)->key == key) {
+        temp = *target;
+        if (temp == NULL) {
+          return;
+        }
+        if (temp->left == NULL) {
+          Node * t = (*target)->right;
+          delete *target;
+          *target = t;
+        }
+        else if (temp->right == NULL) {
+          Node * t = (*target)->left;
+          delete *target;
+          *target = t;
+        }
+        else {
+          Node ** predecessor = &(temp->left);
+          while ((*predecessor)->right != NULL) {
+            predecessor = &((*predecessor)->right);
+          }
+          (*target)->key = (*predecessor)->key;
+          const V predValue = (*predecessor)->value;
+          Node * t = (*predecessor)->left;
+          delete *predecessor;
+          *predecessor = t;
+          add((*target)->key, predValue);
+        }
       }
-      (*target)->key = (*predecessor)->key;
-      const V predValue = (*predecessor)->value;
-      Node * t = (*predecessor)->left;
-      delete *predecessor;
-      *predecessor = t;
-      add((*target)->key, predValue);
+      else if ((*target)->key > key) {
+        target = &((*target)->left);
+      }
+      else {
+        target = &((*target)->right);
+      }
     }
+
     return;
   }
 };
