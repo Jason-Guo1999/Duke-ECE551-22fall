@@ -91,20 +91,26 @@ class BstMap : public Map<K, V> {
     if (temp == NULL) {
       return;
     }
-    if (temp->left == NULL) {
+    if (temp->left == NULL && temp->right != NULL) {
       *target = temp->right;
+      delete temp;
+    }
+    else if (temp->right == NULL && temp->left != NULL) {
+      *target = temp->left;
+      delete temp;
     }
     else {
       Node ** predecessor = &(temp->left);
       while ((*predecessor)->right != NULL) {
         predecessor = &((*predecessor)->right);
       }
-      *target = *predecessor;
-      *predecessor = (*predecessor)->left;
-      (*target)->left = temp->left;
-      (*target)->right = temp->right;
+      const V predValue = (*predecessor)->value;
+      const K predKey = (*predecessor)->key;
+      temp->key = predKey;
+      temp->value = predValue;
+      Node * deleteNode = *predecessor;
+      *predecessor = deleteNode->left;
+      delete deleteNode;
     }
-
-    delete temp;
   }
 };
