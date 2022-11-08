@@ -1,19 +1,19 @@
-Grading at 11/08/2022:21:42:52.845506
-For commit ID 1c821af28b46d540e5ff5ed47f4a72ee7d33e0fb
-Grading at Tue Nov  8 04:42:51 PM EST 2022
+Grading at 11/08/2022:21:44:34.539868
+For commit ID 0c6f62b5f5008d43bc4403a2d41cfbfa27fc4ff0
+Grading at Tue Nov  8 04:44:33 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = int]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:63:35: error: cannot convert ‘BstMap<int, int>::Node’ to ‘BstMap<int, int>::Node* const*’ in initialization
-   63 |     Node * const * it = lookupNode(key);
-      |                         ~~~~~~~~~~^~~~~
-      |                                   |
-      |                                   BstMap<int, int>::Node
+bstmap.h:63:28: error: cannot convert ‘BstMap<int, int>::Node’ to ‘BstMap<int, int>::Node**’ in initialization
+   63 |     Node ** it = lookupNode(key);
+      |                  ~~~~~~~~~~^~~~~
+      |                            |
+      |                            BstMap<int, int>::Node
 bstmap.h: In instantiation of ‘BstMap<K, V>::Node BstMap<K, V>::lookupNode(const K&) const [with K = int; V = int]’:
-bstmap.h:63:25:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = int]’
+bstmap.h:63:18:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = int]’
 89-tester.cpp:119:24:   required from here
 bstmap.h:84:12: error: could not convert ‘it’ from ‘BstMap<int, int>::Node**’ to ‘BstMap<int, int>::Node’
    84 |     return it;
@@ -22,17 +22,11 @@ bstmap.h:84:12: error: could not convert ‘it’ from ‘BstMap<int, int>::Node
       |            BstMap<int, int>::Node**
 bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = int; V = int]’:
 bstmap.h:87:16:   required from here
-bstmap.h:91:39: error: cannot convert ‘BstMap<int, int>::Node’ to ‘BstMap<int, int>::Node* const*’ in initialization
-   91 |     Node * const * target = lookupNode(key);
-      |                             ~~~~~~~~~~^~~~~
-      |                                       |
-      |                                       BstMap<int, int>::Node
-bstmap.h:97:15: error: assignment of read-only location ‘* target’
-   97 |       *target = temp->right;
-      |       ~~~~~~~~^~~~~~~~~~~~~
-bstmap.h:104:15: error: assignment of read-only location ‘* target’
-  104 |       *target = *predecessor;
-      |       ~~~~~~~~^~~~~~~~~~~~~~
+bstmap.h:91:32: error: cannot convert ‘BstMap<int, int>::Node’ to ‘BstMap<int, int>::Node**’ in initialization
+   91 |     Node ** target = lookupNode(key);
+      |                      ~~~~~~~~~~^~~~~
+      |                                |
+      |                                BstMap<int, int>::Node
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 2 : Testing with BstMap<int,std::string>
@@ -40,11 +34,11 @@ testcase 2 : Testing with BstMap<int,std::string>
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = std::__cxx11::basic_string<char>]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:63:20: error: cannot convert ‘BstMap<int, std::__cxx11::basic_string<char> >::Node’ to ‘BstMap<int, std::__cxx11::basic_string<char> >::Node* const*’ in initialization
-   63 |     Node * const * it = lookupNode(key);
-      |                    ^~
+bstmap.h:63:13: error: cannot convert ‘BstMap<int, std::__cxx11::basic_string<char> >::Node’ to ‘BstMap<int, std::__cxx11::basic_string<char> >::Node**’ in initialization
+   63 |     Node ** it = lookupNode(key);
+      |             ^~
 bstmap.h: In instantiation of ‘BstMap<K, V>::Node BstMap<K, V>::lookupNode(const K&) const [with K = int; V = std::__cxx11::basic_string<char>]’:
-bstmap.h:63:25:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = std::__cxx11::basic_string<char>]’
+bstmap.h:63:18:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = std::__cxx11::basic_string<char>]’
 89-tester.cpp:119:24:   required from here
 bstmap.h:84:12: error: could not convert ‘it’ from ‘BstMap<int, std::__cxx11::basic_string<char> >::Node**’ to ‘BstMap<int, std::__cxx11::basic_string<char> >::Node’
    84 |     return it;
@@ -53,15 +47,9 @@ bstmap.h:84:12: error: could not convert ‘it’ from ‘BstMap<int, std::__cxx
       |            BstMap<int, std::__cxx11::basic_string<char> >::Node**
 bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = int; V = std::__cxx11::basic_string<char>]’:
 bstmap.h:87:16:   required from here
-bstmap.h:91:20: error: cannot convert ‘BstMap<int, std::__cxx11::basic_string<char> >::Node’ to ‘BstMap<int, std::__cxx11::basic_string<char> >::Node* const*’ in initialization
-   91 |     Node * const * target = lookupNode(key);
-      |                    ^~~~~~
-bstmap.h:97:15: error: assignment of read-only location ‘* target’
-   97 |       *target = temp->right;
-      |       ~~~~~~~~^~~~~~~~~~~~~
-bstmap.h:104:15: error: assignment of read-only location ‘* target’
-  104 |       *target = *predecessor;
-      |       ~~~~~~~~^~~~~~~~~~~~~~
+bstmap.h:91:13: error: cannot convert ‘BstMap<int, std::__cxx11::basic_string<char> >::Node’ to ‘BstMap<int, std::__cxx11::basic_string<char> >::Node**’ in initialization
+   91 |     Node ** target = lookupNode(key);
+      |             ^~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
@@ -69,11 +57,11 @@ testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = Tester]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:63:20: error: cannot convert ‘BstMap<int, Tester>::Node’ to ‘BstMap<int, Tester>::Node* const*’ in initialization
-   63 |     Node * const * it = lookupNode(key);
-      |                    ^~
+bstmap.h:63:13: error: cannot convert ‘BstMap<int, Tester>::Node’ to ‘BstMap<int, Tester>::Node**’ in initialization
+   63 |     Node ** it = lookupNode(key);
+      |             ^~
 bstmap.h: In instantiation of ‘BstMap<K, V>::Node BstMap<K, V>::lookupNode(const K&) const [with K = int; V = Tester]’:
-bstmap.h:63:25:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = Tester]’
+bstmap.h:63:18:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = int; V = Tester]’
 89-tester.cpp:119:24:   required from here
 bstmap.h:84:12: error: could not convert ‘it’ from ‘BstMap<int, Tester>::Node**’ to ‘BstMap<int, Tester>::Node’
    84 |     return it;
@@ -82,15 +70,9 @@ bstmap.h:84:12: error: could not convert ‘it’ from ‘BstMap<int, Tester>::N
       |            BstMap<int, Tester>::Node**
 bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = int; V = Tester]’:
 bstmap.h:87:16:   required from here
-bstmap.h:91:20: error: cannot convert ‘BstMap<int, Tester>::Node’ to ‘BstMap<int, Tester>::Node* const*’ in initialization
-   91 |     Node * const * target = lookupNode(key);
-      |                    ^~~~~~
-bstmap.h:97:15: error: assignment of read-only location ‘* target’
-   97 |       *target = temp->right;
-      |       ~~~~~~~~^~~~~~~~~~~~~
-bstmap.h:104:15: error: assignment of read-only location ‘* target’
-  104 |       *target = *predecessor;
-      |       ~~~~~~~~^~~~~~~~~~~~~~
+bstmap.h:91:13: error: cannot convert ‘BstMap<int, Tester>::Node’ to ‘BstMap<int, Tester>::Node**’ in initialization
+   91 |     Node ** target = lookupNode(key);
+      |             ^~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 4 : Testing with BstMap<std::string,int>
@@ -98,11 +80,11 @@ testcase 4 : Testing with BstMap<std::string,int>
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = int]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:63:20: error: cannot convert ‘BstMap<std::__cxx11::basic_string<char>, int>::Node’ to ‘BstMap<std::__cxx11::basic_string<char>, int>::Node* const*’ in initialization
-   63 |     Node * const * it = lookupNode(key);
-      |                    ^~
+bstmap.h:63:13: error: cannot convert ‘BstMap<std::__cxx11::basic_string<char>, int>::Node’ to ‘BstMap<std::__cxx11::basic_string<char>, int>::Node**’ in initialization
+   63 |     Node ** it = lookupNode(key);
+      |             ^~
 bstmap.h: In instantiation of ‘BstMap<K, V>::Node BstMap<K, V>::lookupNode(const K&) const [with K = std::__cxx11::basic_string<char>; V = int]’:
-bstmap.h:63:25:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = int]’
+bstmap.h:63:18:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = int]’
 89-tester.cpp:119:24:   required from here
 bstmap.h:84:12: error: could not convert ‘it’ from ‘BstMap<std::__cxx11::basic_string<char>, int>::Node**’ to ‘BstMap<std::__cxx11::basic_string<char>, int>::Node’
    84 |     return it;
@@ -111,15 +93,9 @@ bstmap.h:84:12: error: could not convert ‘it’ from ‘BstMap<std::__cxx11::b
       |            BstMap<std::__cxx11::basic_string<char>, int>::Node**
 bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = std::__cxx11::basic_string<char>; V = int]’:
 bstmap.h:87:16:   required from here
-bstmap.h:91:20: error: cannot convert ‘BstMap<std::__cxx11::basic_string<char>, int>::Node’ to ‘BstMap<std::__cxx11::basic_string<char>, int>::Node* const*’ in initialization
-   91 |     Node * const * target = lookupNode(key);
-      |                    ^~~~~~
-bstmap.h:97:15: error: assignment of read-only location ‘* target’
-   97 |       *target = temp->right;
-      |       ~~~~~~~~^~~~~~~~~~~~~
-bstmap.h:104:15: error: assignment of read-only location ‘* target’
-  104 |       *target = *predecessor;
-      |       ~~~~~~~~^~~~~~~~~~~~~~
+bstmap.h:91:13: error: cannot convert ‘BstMap<std::__cxx11::basic_string<char>, int>::Node’ to ‘BstMap<std::__cxx11::basic_string<char>, int>::Node**’ in initialization
+   91 |     Node ** target = lookupNode(key);
+      |             ^~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 5 : Testing with BstMap<std::string,std::string>
@@ -127,11 +103,11 @@ testcase 5 : Testing with BstMap<std::string,std::string>
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:63:20: error: cannot convert ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node’ to ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node* const*’ in initialization
-   63 |     Node * const * it = lookupNode(key);
-      |                    ^~
+bstmap.h:63:13: error: cannot convert ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node’ to ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node**’ in initialization
+   63 |     Node ** it = lookupNode(key);
+      |             ^~
 bstmap.h: In instantiation of ‘BstMap<K, V>::Node BstMap<K, V>::lookupNode(const K&) const [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
-bstmap.h:63:25:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’
+bstmap.h:63:18:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’
 89-tester.cpp:119:24:   required from here
 bstmap.h:84:12: error: could not convert ‘it’ from ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node**’ to ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node’
    84 |     return it;
@@ -140,15 +116,9 @@ bstmap.h:84:12: error: could not convert ‘it’ from ‘BstMap<std::__cxx11::b
       |            BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node**
 bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
 bstmap.h:87:16:   required from here
-bstmap.h:91:20: error: cannot convert ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node’ to ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node* const*’ in initialization
-   91 |     Node * const * target = lookupNode(key);
-      |                    ^~~~~~
-bstmap.h:97:15: error: assignment of read-only location ‘* target’
-   97 |       *target = temp->right;
-      |       ~~~~~~~~^~~~~~~~~~~~~
-bstmap.h:104:15: error: assignment of read-only location ‘* target’
-  104 |       *target = *predecessor;
-      |       ~~~~~~~~^~~~~~~~~~~~~~
+bstmap.h:91:13: error: cannot convert ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node’ to ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::Node**’ in initialization
+   91 |     Node ** target = lookupNode(key);
+      |             ^~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
@@ -156,11 +126,11 @@ testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = Tester]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:63:20: error: cannot convert ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node’ to ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node* const*’ in initialization
-   63 |     Node * const * it = lookupNode(key);
-      |                    ^~
+bstmap.h:63:13: error: cannot convert ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node’ to ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node**’ in initialization
+   63 |     Node ** it = lookupNode(key);
+      |             ^~
 bstmap.h: In instantiation of ‘BstMap<K, V>::Node BstMap<K, V>::lookupNode(const K&) const [with K = std::__cxx11::basic_string<char>; V = Tester]’:
-bstmap.h:63:25:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = Tester]’
+bstmap.h:63:18:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = std::__cxx11::basic_string<char>; V = Tester]’
 89-tester.cpp:119:24:   required from here
 bstmap.h:84:12: error: could not convert ‘it’ from ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node**’ to ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node’
    84 |     return it;
@@ -169,15 +139,9 @@ bstmap.h:84:12: error: could not convert ‘it’ from ‘BstMap<std::__cxx11::b
       |            BstMap<std::__cxx11::basic_string<char>, Tester>::Node**
 bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = std::__cxx11::basic_string<char>; V = Tester]’:
 bstmap.h:87:16:   required from here
-bstmap.h:91:20: error: cannot convert ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node’ to ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node* const*’ in initialization
-   91 |     Node * const * target = lookupNode(key);
-      |                    ^~~~~~
-bstmap.h:97:15: error: assignment of read-only location ‘* target’
-   97 |       *target = temp->right;
-      |       ~~~~~~~~^~~~~~~~~~~~~
-bstmap.h:104:15: error: assignment of read-only location ‘* target’
-  104 |       *target = *predecessor;
-      |       ~~~~~~~~^~~~~~~~~~~~~~
+bstmap.h:91:13: error: cannot convert ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node’ to ‘BstMap<std::__cxx11::basic_string<char>, Tester>::Node**’ in initialization
+   91 |     Node ** target = lookupNode(key);
+      |             ^~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 7 : Testing with BstMap<(a custom class we wrote),int>
@@ -185,11 +149,11 @@ testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = int]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:63:20: error: cannot convert ‘BstMap<Tester, int>::Node’ to ‘BstMap<Tester, int>::Node* const*’ in initialization
-   63 |     Node * const * it = lookupNode(key);
-      |                    ^~
+bstmap.h:63:13: error: cannot convert ‘BstMap<Tester, int>::Node’ to ‘BstMap<Tester, int>::Node**’ in initialization
+   63 |     Node ** it = lookupNode(key);
+      |             ^~
 bstmap.h: In instantiation of ‘BstMap<K, V>::Node BstMap<K, V>::lookupNode(const K&) const [with K = Tester; V = int]’:
-bstmap.h:63:25:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = int]’
+bstmap.h:63:18:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = int]’
 89-tester.cpp:119:24:   required from here
 bstmap.h:84:12: error: could not convert ‘it’ from ‘BstMap<Tester, int>::Node**’ to ‘BstMap<Tester, int>::Node’
    84 |     return it;
@@ -198,15 +162,9 @@ bstmap.h:84:12: error: could not convert ‘it’ from ‘BstMap<Tester, int>::N
       |            BstMap<Tester, int>::Node**
 bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = Tester; V = int]’:
 bstmap.h:87:16:   required from here
-bstmap.h:91:20: error: cannot convert ‘BstMap<Tester, int>::Node’ to ‘BstMap<Tester, int>::Node* const*’ in initialization
-   91 |     Node * const * target = lookupNode(key);
-      |                    ^~~~~~
-bstmap.h:97:15: error: assignment of read-only location ‘* target’
-   97 |       *target = temp->right;
-      |       ~~~~~~~~^~~~~~~~~~~~~
-bstmap.h:104:15: error: assignment of read-only location ‘* target’
-  104 |       *target = *predecessor;
-      |       ~~~~~~~~^~~~~~~~~~~~~~
+bstmap.h:91:13: error: cannot convert ‘BstMap<Tester, int>::Node’ to ‘BstMap<Tester, int>::Node**’ in initialization
+   91 |     Node ** target = lookupNode(key);
+      |             ^~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
@@ -214,11 +172,11 @@ testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = std::__cxx11::basic_string<char>]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:63:20: error: cannot convert ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node’ to ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node* const*’ in initialization
-   63 |     Node * const * it = lookupNode(key);
-      |                    ^~
+bstmap.h:63:13: error: cannot convert ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node’ to ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node**’ in initialization
+   63 |     Node ** it = lookupNode(key);
+      |             ^~
 bstmap.h: In instantiation of ‘BstMap<K, V>::Node BstMap<K, V>::lookupNode(const K&) const [with K = Tester; V = std::__cxx11::basic_string<char>]’:
-bstmap.h:63:25:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = std::__cxx11::basic_string<char>]’
+bstmap.h:63:18:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = std::__cxx11::basic_string<char>]’
 89-tester.cpp:119:24:   required from here
 bstmap.h:84:12: error: could not convert ‘it’ from ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node**’ to ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node’
    84 |     return it;
@@ -227,15 +185,9 @@ bstmap.h:84:12: error: could not convert ‘it’ from ‘BstMap<Tester, std::__
       |            BstMap<Tester, std::__cxx11::basic_string<char> >::Node**
 bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = Tester; V = std::__cxx11::basic_string<char>]’:
 bstmap.h:87:16:   required from here
-bstmap.h:91:20: error: cannot convert ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node’ to ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node* const*’ in initialization
-   91 |     Node * const * target = lookupNode(key);
-      |                    ^~~~~~
-bstmap.h:97:15: error: assignment of read-only location ‘* target’
-   97 |       *target = temp->right;
-      |       ~~~~~~~~^~~~~~~~~~~~~
-bstmap.h:104:15: error: assignment of read-only location ‘* target’
-  104 |       *target = *predecessor;
-      |       ~~~~~~~~^~~~~~~~~~~~~~
+bstmap.h:91:13: error: cannot convert ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node’ to ‘BstMap<Tester, std::__cxx11::basic_string<char> >::Node**’ in initialization
+   91 |     Node ** target = lookupNode(key);
+      |             ^~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wrote)>
@@ -243,11 +195,11 @@ testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wr
 In file included from 89-tester.cpp:1:
 bstmap.h: In instantiation of ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = Tester]’:
 89-tester.cpp:119:24:   required from here
-bstmap.h:63:20: error: cannot convert ‘BstMap<Tester, Tester>::Node’ to ‘BstMap<Tester, Tester>::Node* const*’ in initialization
-   63 |     Node * const * it = lookupNode(key);
-      |                    ^~
+bstmap.h:63:13: error: cannot convert ‘BstMap<Tester, Tester>::Node’ to ‘BstMap<Tester, Tester>::Node**’ in initialization
+   63 |     Node ** it = lookupNode(key);
+      |             ^~
 bstmap.h: In instantiation of ‘BstMap<K, V>::Node BstMap<K, V>::lookupNode(const K&) const [with K = Tester; V = Tester]’:
-bstmap.h:63:25:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = Tester]’
+bstmap.h:63:18:   required from ‘const V& BstMap<K, V>::lookup(const K&) const [with K = Tester; V = Tester]’
 89-tester.cpp:119:24:   required from here
 bstmap.h:84:12: error: could not convert ‘it’ from ‘BstMap<Tester, Tester>::Node**’ to ‘BstMap<Tester, Tester>::Node’
    84 |     return it;
@@ -256,15 +208,9 @@ bstmap.h:84:12: error: could not convert ‘it’ from ‘BstMap<Tester, Tester>
       |            BstMap<Tester, Tester>::Node**
 bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = Tester; V = Tester]’:
 bstmap.h:87:16:   required from here
-bstmap.h:91:20: error: cannot convert ‘BstMap<Tester, Tester>::Node’ to ‘BstMap<Tester, Tester>::Node* const*’ in initialization
-   91 |     Node * const * target = lookupNode(key);
-      |                    ^~~~~~
-bstmap.h:97:15: error: assignment of read-only location ‘* target’
-   97 |       *target = temp->right;
-      |       ~~~~~~~~^~~~~~~~~~~~~
-bstmap.h:104:15: error: assignment of read-only location ‘* target’
-  104 |       *target = *predecessor;
-      |       ~~~~~~~~^~~~~~~~~~~~~~
+bstmap.h:91:13: error: cannot convert ‘BstMap<Tester, Tester>::Node’ to ‘BstMap<Tester, Tester>::Node**’ in initialization
+   91 |     Node ** target = lookupNode(key);
+      |             ^~~~~~
 The code did not compile.  This test failed.
 
 Overall Grade: F
