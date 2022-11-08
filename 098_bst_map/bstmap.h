@@ -100,25 +100,16 @@ class BstMap : public Map<K, V> {
       delete temp;
     }
     else {
-      Node ** predecessor = &((*target)->left);
-      while ((*predecessor)->right != NULL) {
-        predecessor = &((*predecessor)->right);
+      Node * predecessor = temp->left;
+      while (predecessor->right != NULL) {
+        predecessor = predecessor->right;
       }
-      /*
-      const V predValue = (*predecessor)->value;
-      const K predKey = (*predecessor)->key;
+      const V predValue = predecessor->value;
+      const K predKey = *predecessor->key;
       temp->key = predKey;
       temp->value = predValue;
-      Node * deleteNode = *predecessor;
-      *predecessor = deleteNode->left;
-      delete deleteNode;
-      */
-      (*target)->key = (*predecessor)->key;
-      const V value = (*predecessor)->value;
-      Node * t = (*predecessor)->left;
-      delete *predecessor;
-      *predecessor = t;
-      add((*target)->key, value);
+      *target = predecessor->left;
+      delete predecessor;
     }
     return;
   }
