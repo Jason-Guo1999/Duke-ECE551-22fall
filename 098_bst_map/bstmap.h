@@ -90,7 +90,49 @@ class BstMap : public Map<K, V> {
     }
     return it;
   }
-
+  virtual void remove(const K & key) {
+    Node ** current = &root;
+    Node * temp = NULL;
+    //find key
+    while (*current != NULL) {
+      //current Node needs to be removed
+      if ((*current)->key == key) {
+        //one node or zero node
+        if ((*current)->left == NULL) {
+          temp = (*current)->right;
+          delete *current;
+          *current = temp;
+        }
+        else if ((*current)->right == NULL) {
+          temp = (*current)->left;
+          delete *current;
+          *current = temp;
+        }
+        else {
+          //go left once
+          Node ** toReplace = current;
+          current = &((*current)->left);
+          //follow right
+          while ((*current)->right != NULL) {
+            current = &((*current)->right);
+          }
+          (*toReplace)->key = (*current)->key;
+          const V value = (*current)->value;
+          temp = (*current)->left;
+          delete *current;
+          *current = temp;
+          add((*toReplace)->key, value);
+        }
+      }
+      else if (key < (*current)->key) {
+        current = &(*current)->left;
+      }
+      else {
+        current = &(*current)->right;
+      }
+    }
+  }
+  /*
   virtual void remove(const K & key) {
     if (root == NULL) {
       return;
@@ -136,4 +178,5 @@ class BstMap : public Map<K, V> {
 
     return;
   }
+  */
 };
