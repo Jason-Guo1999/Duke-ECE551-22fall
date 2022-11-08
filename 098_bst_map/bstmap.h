@@ -1,3 +1,8 @@
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
+#include <stdexcept>
+
 #include "map.h"
 
 template<typename K, typename V>
@@ -9,6 +14,7 @@ class BstMap : public Map<K, V> {
     V value;
     Node * left;
     Node * right;
+    Node() : key(0), value(0), left(NULL), right(NULL) {}
     Node(const K & k, const V & v) : key(k), value(v), left(NULL), right(NULL) {}
   };
   Node * root;
@@ -16,22 +22,15 @@ class BstMap : public Map<K, V> {
  public:
   BstMap() : root(NULL) {}
   BstMap(const BstMap & rhs) : root(NULL) { root = copy(rhs.root); }
-  Node * copy(Node * root) {
-    if (root == NULL) {
+
+  Node * copy(Node * current) {
+    if (current == NULL) {
       return NULL;
     }
-    Node * newRoot = new Node(root->key, root->value);
-    newRoot->left = copy(root->left);
-    newRoot->right = copy(root->right);
-    return root;
-  }
-
-  BstMap & operator=(const BstMap & rhs) {
-    if (this != &rhs) {
-      destructor(root);
-      root = copy(rhs.root);
-    }
-    return *this;
+    Node * newRoot = new Node(current->key, current->value);
+    newRoot->left = copy(current->left);
+    newRoot->right = copy(current->right);
+    return newRoot;
   }
   void destructor(Node * root) {
     if (root != NULL) {
@@ -41,7 +40,6 @@ class BstMap : public Map<K, V> {
     }
   }
   virtual ~BstMap<K, V>() { destructor(root); }
-
   virtual void add(const K & key, const V & value) {
     Node ** it = &root;
     while (*it != NULL) {
@@ -102,7 +100,7 @@ class BstMap : public Map<K, V> {
         predecessor = &((*predecessor)->right);
       }
       *target = *predecessor;
-      *predecessor = (*predecessor)->right;
+      *predecessor = (*predecessor)->left;
       (*target)->left = temp->left;
       (*target)->right = temp->right;
     }
