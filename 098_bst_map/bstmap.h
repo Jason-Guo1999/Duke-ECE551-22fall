@@ -15,6 +15,7 @@ class BstMap : public Map<K, V> {
   Node * root;
 
  public:
+  BstMap() : root(NULL) {}
   BstMap(const BstMap & rhs) : root(NULL) { root = copy(rhs.root); }
   Node * copy(Node * root) {
     if (root == NULL) {
@@ -28,7 +29,7 @@ class BstMap : public Map<K, V> {
 
   BstMap & operator=(const BstMap & rhs) {
     if (this != &rhs) {
-      destuctor(root);
+      destructor(root);
       root = copy(rhs.root);
     }
     return *this;
