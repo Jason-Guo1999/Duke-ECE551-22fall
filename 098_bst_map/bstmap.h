@@ -213,7 +213,7 @@ class BstMap : public Map<K, V> {
     }
     throw std::invalid_argument("can't find");
   }
-
+  /*
   virtual void remove(const K & key) {
     Node ** current = &root;
     Node * temp = NULL;
@@ -250,5 +250,57 @@ class BstMap : public Map<K, V> {
         current = &(*current)->right;
       }
     }
+  }
+  */
+  Node ** lookupNode(const K & key) const {
+    Node ** it = const_cast<Node **>(&root);
+    while ((*it) != NULL) {
+      if ((*it)->key == key) {
+        break;
+      }
+      else if ((*it)->key > key) {
+        it = &((*it)->left);
+      }
+      else {
+        it = &((*it)->right);
+      }
+    }
+    return it;
+  }
+
+  virtual void remove(const K & key) {
+    if (root == NULL) {
+      return;
+    }
+    Node ** target = lookupNode(key);
+    Node * temp = *target;
+    if (temp == NULL) {
+      return;
+    }
+    if (temp->left == NULL) {
+      Node * t = (*target)->right;
+      delete *target;
+      *target = t;
+    }
+    else if (temp->right == NULL && temp->left != NULL) {
+      Node * t = (*target)->left;
+      delete *target;
+      *target = t;
+    }
+    else {
+      Node * predecessor = temp->left;
+      while (predecessor->right != NULL) {
+        predecessor = predecessor->right;
+      }
+      const V predValue = predecessor->value;
+      const K predKey = predecessor->key;
+      temp->key = predKey;
+      temp->value = predValue;
+      if (predecessor->left != NULL) {
+        *target = predecessor->left;
+      }
+      delete predecessor;
+    }
+    return;
   }
 };
