@@ -1,500 +1,500 @@
-Grading at 11/07/2022:23:58:36.837661
-For commit ID c20345adc873d10ff9c57308c0567d677f1b5887
-Grading at Mon Nov  7 06:58:24 PM EST 2022
+Grading at 11/08/2022:00:02:08.035809
+For commit ID dbffaec81b6f2cc0813a239132bec6abde88898e
+Grading at Mon Nov  7 07:01:57 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==952505== Memcheck, a memory error detector
-==952505== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==952505== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==952505== Command: ./test.1
-==952505== Parent PID: 952504
-==952505== 
-==952505== Invalid write of size 8
-==952505==    at 0x10BEC3: BstMap<int, int>::remove(int const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.1)
-==952505==    by 0x10A951: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.1)
-==952505==  Address 0x10 is not stack'd, malloc'd or (recently) free'd
-==952505== 
-==952505== 
-==952505== Process terminating with default action of signal 11 (SIGSEGV)
-==952505==  Access not within mapped region at address 0x10
-==952505==    at 0x10BEC3: BstMap<int, int>::remove(int const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.1)
-==952505==    by 0x10A951: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.1)
-==952505==  If you believe this happened as a result of a stack
-==952505==  overflow in your program's main thread (unlikely but
-==952505==  possible), you can try to increase the size of the
-==952505==  main thread stack using the --main-stacksize= flag.
-==952505==  The main thread stack size used in this run was 8388608.
-==952505== 
-==952505== HEAP SUMMARY:
-==952505==     in use at exit: 78,008 bytes in 53 blocks
-==952505==   total heap usage: 102 allocs, 49 frees, 82,448 bytes allocated
-==952505== 
-==952505== 24 bytes in 1 blocks are definitely lost in loss record 21 of 25
-==952505==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==952505==    by 0x10BB2C: BstMap<int, int>::copy(BstMap<int, int>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.1)
-==952505==    by 0x10BB61: BstMap<int, int>::copy(BstMap<int, int>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.1)
-==952505==    by 0x10B71D: BstMap<int, int>::BstMap(BstMap<int, int> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.1)
-==952505==    by 0x10A8CF: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.1)
-==952505== 
-==952505== 1,104 (576 direct, 528 indirect) bytes in 24 blocks are definitely lost in loss record 23 of 25
-==952505==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==952505==    by 0x10BD3C: BstMap<int, int>::add(int const&, int const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.1)
-==952505==    by 0x10A75D: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.1)
-==952505== 
-==952505== LEAK SUMMARY:
-==952505==    definitely lost: 600 bytes in 25 blocks
-==952505==    indirectly lost: 528 bytes in 22 blocks
-==952505==      possibly lost: 0 bytes in 0 blocks
-==952505==    still reachable: 76,880 bytes in 6 blocks
-==952505==         suppressed: 0 bytes in 0 blocks
-==952505== Reachable blocks (those to which a pointer was found) are not shown.
-==952505== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==952505== 
-==952505== For lists of detected and suppressed errors, rerun with: -s
-==952505== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
+==953516== Memcheck, a memory error detector
+==953516== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==953516== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==953516== Command: ./test.1
+==953516== Parent PID: 953515
+==953516== 
+==953516== Invalid write of size 8
+==953516==    at 0x10BEC3: BstMap<int, int>::remove(int const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.1)
+==953516==    by 0x10A951: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.1)
+==953516==  Address 0x10 is not stack'd, malloc'd or (recently) free'd
+==953516== 
+==953516== 
+==953516== Process terminating with default action of signal 11 (SIGSEGV)
+==953516==  Access not within mapped region at address 0x10
+==953516==    at 0x10BEC3: BstMap<int, int>::remove(int const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.1)
+==953516==    by 0x10A951: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.1)
+==953516==  If you believe this happened as a result of a stack
+==953516==  overflow in your program's main thread (unlikely but
+==953516==  possible), you can try to increase the size of the
+==953516==  main thread stack using the --main-stacksize= flag.
+==953516==  The main thread stack size used in this run was 8388608.
+==953516== 
+==953516== HEAP SUMMARY:
+==953516==     in use at exit: 78,008 bytes in 53 blocks
+==953516==   total heap usage: 102 allocs, 49 frees, 82,448 bytes allocated
+==953516== 
+==953516== 24 bytes in 1 blocks are definitely lost in loss record 21 of 25
+==953516==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==953516==    by 0x10BB2C: BstMap<int, int>::copy(BstMap<int, int>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.1)
+==953516==    by 0x10BB61: BstMap<int, int>::copy(BstMap<int, int>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.1)
+==953516==    by 0x10B71D: BstMap<int, int>::BstMap(BstMap<int, int> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.1)
+==953516==    by 0x10A8CF: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.1)
+==953516== 
+==953516== 1,104 (576 direct, 528 indirect) bytes in 24 blocks are definitely lost in loss record 23 of 25
+==953516==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==953516==    by 0x10BD3C: BstMap<int, int>::add(int const&, int const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.1)
+==953516==    by 0x10A75D: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.1)
+==953516== 
+==953516== LEAK SUMMARY:
+==953516==    definitely lost: 600 bytes in 25 blocks
+==953516==    indirectly lost: 528 bytes in 22 blocks
+==953516==      possibly lost: 0 bytes in 0 blocks
+==953516==    still reachable: 76,880 bytes in 6 blocks
+==953516==         suppressed: 0 bytes in 0 blocks
+==953516== Reachable blocks (those to which a pointer was found) are not shown.
+==953516== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==953516== 
+==953516== For lists of detected and suppressed errors, rerun with: -s
+==953516== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 2 : Testing with BstMap<int,std::string>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==952518== Memcheck, a memory error detector
-==952518== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==952518== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==952518== Command: ./test.2
-==952518== Parent PID: 952517
-==952518== 
-==952518== Invalid write of size 8
-==952518==    at 0x10C1BE: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(int const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.2)
-==952518==    by 0x10A997: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.2)
-==952518==  Address 0x30 is not stack'd, malloc'd or (recently) free'd
-==952518== 
-==952518== 
-==952518== Process terminating with default action of signal 11 (SIGSEGV)
-==952518==  Access not within mapped region at address 0x30
-==952518==    at 0x10C1BE: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(int const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.2)
-==952518==    by 0x10A997: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.2)
-==952518==  If you believe this happened as a result of a stack
-==952518==  overflow in your program's main thread (unlikely but
-==952518==  possible), you can try to increase the size of the
-==952518==  main thread stack using the --main-stacksize= flag.
-==952518==  The main thread stack size used in this run was 8388608.
-==952518== 
-==952518== HEAP SUMMARY:
-==952518==     in use at exit: 80,376 bytes in 93 blocks
-==952518==   total heap usage: 182 allocs, 89 frees, 85,648 bytes allocated
-==952518== 
-==952518== 56 bytes in 1 blocks are definitely lost in loss record 32 of 38
-==952518==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==952518==    by 0x10BD3D: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.2)
-==952518==    by 0x10BD72: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.2)
-==952518==    by 0x10B929: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::BstMap(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.2)
-==952518==    by 0x10A90F: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.2)
-==952518== 
-==952518== 3,376 (1,344 direct, 2,032 indirect) bytes in 24 blocks are definitely lost in loss record 36 of 38
-==952518==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==952518==    by 0x10BFDB: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.2)
-==952518==    by 0x10A77C: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.2)
-==952518== 
-==952518== LEAK SUMMARY:
-==952518==    definitely lost: 1,400 bytes in 25 blocks
-==952518==    indirectly lost: 2,032 bytes in 62 blocks
-==952518==      possibly lost: 0 bytes in 0 blocks
-==952518==    still reachable: 76,944 bytes in 6 blocks
-==952518==         suppressed: 0 bytes in 0 blocks
-==952518== Reachable blocks (those to which a pointer was found) are not shown.
-==952518== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==952518== 
-==952518== For lists of detected and suppressed errors, rerun with: -s
-==952518== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
+==953526== Memcheck, a memory error detector
+==953526== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==953526== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==953526== Command: ./test.2
+==953526== Parent PID: 953525
+==953526== 
+==953526== Invalid write of size 8
+==953526==    at 0x10C1BE: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(int const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.2)
+==953526==    by 0x10A997: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.2)
+==953526==  Address 0x30 is not stack'd, malloc'd or (recently) free'd
+==953526== 
+==953526== 
+==953526== Process terminating with default action of signal 11 (SIGSEGV)
+==953526==  Access not within mapped region at address 0x30
+==953526==    at 0x10C1BE: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(int const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.2)
+==953526==    by 0x10A997: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.2)
+==953526==  If you believe this happened as a result of a stack
+==953526==  overflow in your program's main thread (unlikely but
+==953526==  possible), you can try to increase the size of the
+==953526==  main thread stack using the --main-stacksize= flag.
+==953526==  The main thread stack size used in this run was 8388608.
+==953526== 
+==953526== HEAP SUMMARY:
+==953526==     in use at exit: 80,376 bytes in 93 blocks
+==953526==   total heap usage: 182 allocs, 89 frees, 85,648 bytes allocated
+==953526== 
+==953526== 56 bytes in 1 blocks are definitely lost in loss record 32 of 38
+==953526==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==953526==    by 0x10BD3D: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.2)
+==953526==    by 0x10BD72: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.2)
+==953526==    by 0x10B929: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::BstMap(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.2)
+==953526==    by 0x10A90F: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.2)
+==953526== 
+==953526== 3,376 (1,344 direct, 2,032 indirect) bytes in 24 blocks are definitely lost in loss record 36 of 38
+==953526==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==953526==    by 0x10BFDB: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.2)
+==953526==    by 0x10A77C: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.2)
+==953526== 
+==953526== LEAK SUMMARY:
+==953526==    definitely lost: 1,400 bytes in 25 blocks
+==953526==    indirectly lost: 2,032 bytes in 62 blocks
+==953526==      possibly lost: 0 bytes in 0 blocks
+==953526==    still reachable: 76,944 bytes in 6 blocks
+==953526==         suppressed: 0 bytes in 0 blocks
+==953526== Reachable blocks (those to which a pointer was found) are not shown.
+==953526== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==953526== 
+==953526== For lists of detected and suppressed errors, rerun with: -s
+==953526== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==952536== Memcheck, a memory error detector
-==952536== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==952536== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==952536== Command: ./test.3
-==952536== Parent PID: 952535
-==952536== 
-==952536== Invalid write of size 8
-==952536==    at 0x10C23E: BstMap<int, Tester>::remove(int const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.3)
-==952536==    by 0x10A997: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.3)
-==952536==  Address 0x38 is not stack'd, malloc'd or (recently) free'd
-==952536== 
-==952536== 
-==952536== Process terminating with default action of signal 11 (SIGSEGV)
-==952536==  Access not within mapped region at address 0x38
-==952536==    at 0x10C23E: BstMap<int, Tester>::remove(int const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.3)
-==952536==    by 0x10A997: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.3)
-==952536==  If you believe this happened as a result of a stack
-==952536==  overflow in your program's main thread (unlikely but
-==952536==  possible), you can try to increase the size of the
-==952536==  main thread stack using the --main-stacksize= flag.
-==952536==  The main thread stack size used in this run was 8388608.
-==952536== 
-==952536== HEAP SUMMARY:
-==952536==     in use at exit: 80,768 bytes in 93 blocks
-==952536==   total heap usage: 202 allocs, 109 frees, 86,448 bytes allocated
-==952536== 
-==952536== 64 bytes in 1 blocks are definitely lost in loss record 31 of 37
-==952536==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==952536==    by 0x10BD7B: BstMap<int, Tester>::copy(BstMap<int, Tester>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.3)
-==952536==    by 0x10BDB0: BstMap<int, Tester>::copy(BstMap<int, Tester>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.3)
-==952536==    by 0x10B967: BstMap<int, Tester>::BstMap(BstMap<int, Tester> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.3)
-==952536==    by 0x10A90F: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.3)
-==952536== 
-==952536== 3,744 (1,536 direct, 2,208 indirect) bytes in 24 blocks are definitely lost in loss record 35 of 37
-==952536==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==952536==    by 0x10C05B: BstMap<int, Tester>::add(int const&, Tester const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.3)
-==952536==    by 0x10A77C: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.3)
-==952536== 
-==952536== LEAK SUMMARY:
-==952536==    definitely lost: 1,600 bytes in 25 blocks
-==952536==    indirectly lost: 2,208 bytes in 62 blocks
-==952536==      possibly lost: 0 bytes in 0 blocks
-==952536==    still reachable: 76,960 bytes in 6 blocks
-==952536==         suppressed: 0 bytes in 0 blocks
-==952536== Reachable blocks (those to which a pointer was found) are not shown.
-==952536== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==952536== 
-==952536== For lists of detected and suppressed errors, rerun with: -s
-==952536== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
+==953536== Memcheck, a memory error detector
+==953536== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==953536== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==953536== Command: ./test.3
+==953536== Parent PID: 953535
+==953536== 
+==953536== Invalid write of size 8
+==953536==    at 0x10C23E: BstMap<int, Tester>::remove(int const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.3)
+==953536==    by 0x10A997: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.3)
+==953536==  Address 0x38 is not stack'd, malloc'd or (recently) free'd
+==953536== 
+==953536== 
+==953536== Process terminating with default action of signal 11 (SIGSEGV)
+==953536==  Access not within mapped region at address 0x38
+==953536==    at 0x10C23E: BstMap<int, Tester>::remove(int const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.3)
+==953536==    by 0x10A997: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.3)
+==953536==  If you believe this happened as a result of a stack
+==953536==  overflow in your program's main thread (unlikely but
+==953536==  possible), you can try to increase the size of the
+==953536==  main thread stack using the --main-stacksize= flag.
+==953536==  The main thread stack size used in this run was 8388608.
+==953536== 
+==953536== HEAP SUMMARY:
+==953536==     in use at exit: 80,768 bytes in 93 blocks
+==953536==   total heap usage: 202 allocs, 109 frees, 86,448 bytes allocated
+==953536== 
+==953536== 64 bytes in 1 blocks are definitely lost in loss record 31 of 37
+==953536==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==953536==    by 0x10BD7B: BstMap<int, Tester>::copy(BstMap<int, Tester>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.3)
+==953536==    by 0x10BDB0: BstMap<int, Tester>::copy(BstMap<int, Tester>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.3)
+==953536==    by 0x10B967: BstMap<int, Tester>::BstMap(BstMap<int, Tester> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.3)
+==953536==    by 0x10A90F: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.3)
+==953536== 
+==953536== 3,744 (1,536 direct, 2,208 indirect) bytes in 24 blocks are definitely lost in loss record 35 of 37
+==953536==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==953536==    by 0x10C05B: BstMap<int, Tester>::add(int const&, Tester const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.3)
+==953536==    by 0x10A77C: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.3)
+==953536== 
+==953536== LEAK SUMMARY:
+==953536==    definitely lost: 1,600 bytes in 25 blocks
+==953536==    indirectly lost: 2,208 bytes in 62 blocks
+==953536==      possibly lost: 0 bytes in 0 blocks
+==953536==    still reachable: 76,960 bytes in 6 blocks
+==953536==         suppressed: 0 bytes in 0 blocks
+==953536== Reachable blocks (those to which a pointer was found) are not shown.
+==953536== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==953536== 
+==953536== For lists of detected and suppressed errors, rerun with: -s
+==953536== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 4 : Testing with BstMap<std::string,int>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==952546== Memcheck, a memory error detector
-==952546== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==952546== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==952546== Command: ./test.4
-==952546== Parent PID: 952545
-==952546== 
-==952546== Invalid write of size 8
-==952546==    at 0x10C206: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.4)
-==952546==    by 0x10A9E5: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.4)
-==952546==  Address 0x30 is not stack'd, malloc'd or (recently) free'd
-==952546== 
-==952546== 
-==952546== Process terminating with default action of signal 11 (SIGSEGV)
-==952546==  Access not within mapped region at address 0x30
-==952546==    at 0x10C206: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.4)
-==952546==    by 0x10A9E5: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.4)
-==952546==  If you believe this happened as a result of a stack
-==952546==  overflow in your program's main thread (unlikely but
-==952546==  possible), you can try to increase the size of the
-==952546==  main thread stack using the --main-stacksize= flag.
-==952546==  The main thread stack size used in this run was 8388608.
-==952546== 
-==952546== HEAP SUMMARY:
-==952546==     in use at exit: 79,576 bytes in 53 blocks
-==952546==   total heap usage: 102 allocs, 49 frees, 84,048 bytes allocated
-==952546== 
-==952546== 56 bytes in 1 blocks are definitely lost in loss record 27 of 30
-==952546==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==952546==    by 0x10BD49: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.4)
-==952546==    by 0x10BD7E: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.4)
-==952546==    by 0x10B927: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::BstMap(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.4)
-==952546==    by 0x10A961: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.4)
-==952546== 
-==952546== 2,576 (1,344 direct, 1,232 indirect) bytes in 24 blocks are definitely lost in loss record 28 of 30
-==952546==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==952546==    by 0x10C019: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::add(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.4)
-==952546==    by 0x10A7DC: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.4)
-==952546== 
-==952546== LEAK SUMMARY:
-==952546==    definitely lost: 1,400 bytes in 25 blocks
-==952546==    indirectly lost: 1,232 bytes in 22 blocks
-==952546==      possibly lost: 0 bytes in 0 blocks
-==952546==    still reachable: 76,944 bytes in 6 blocks
-==952546==         suppressed: 0 bytes in 0 blocks
-==952546== Reachable blocks (those to which a pointer was found) are not shown.
-==952546== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==952546== 
-==952546== For lists of detected and suppressed errors, rerun with: -s
-==952546== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
+==953547== Memcheck, a memory error detector
+==953547== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==953547== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==953547== Command: ./test.4
+==953547== Parent PID: 953546
+==953547== 
+==953547== Invalid write of size 8
+==953547==    at 0x10C206: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.4)
+==953547==    by 0x10A9E5: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.4)
+==953547==  Address 0x30 is not stack'd, malloc'd or (recently) free'd
+==953547== 
+==953547== 
+==953547== Process terminating with default action of signal 11 (SIGSEGV)
+==953547==  Access not within mapped region at address 0x30
+==953547==    at 0x10C206: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.4)
+==953547==    by 0x10A9E5: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.4)
+==953547==  If you believe this happened as a result of a stack
+==953547==  overflow in your program's main thread (unlikely but
+==953547==  possible), you can try to increase the size of the
+==953547==  main thread stack using the --main-stacksize= flag.
+==953547==  The main thread stack size used in this run was 8388608.
+==953547== 
+==953547== HEAP SUMMARY:
+==953547==     in use at exit: 79,576 bytes in 53 blocks
+==953547==   total heap usage: 102 allocs, 49 frees, 84,048 bytes allocated
+==953547== 
+==953547== 56 bytes in 1 blocks are definitely lost in loss record 27 of 30
+==953547==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==953547==    by 0x10BD49: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.4)
+==953547==    by 0x10BD7E: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.4)
+==953547==    by 0x10B927: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::BstMap(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.4)
+==953547==    by 0x10A961: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.4)
+==953547== 
+==953547== 2,576 (1,344 direct, 1,232 indirect) bytes in 24 blocks are definitely lost in loss record 28 of 30
+==953547==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==953547==    by 0x10C019: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::add(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.4)
+==953547==    by 0x10A7DC: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.4)
+==953547== 
+==953547== LEAK SUMMARY:
+==953547==    definitely lost: 1,400 bytes in 25 blocks
+==953547==    indirectly lost: 1,232 bytes in 22 blocks
+==953547==      possibly lost: 0 bytes in 0 blocks
+==953547==    still reachable: 76,944 bytes in 6 blocks
+==953547==         suppressed: 0 bytes in 0 blocks
+==953547== Reachable blocks (those to which a pointer was found) are not shown.
+==953547== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==953547== 
+==953547== For lists of detected and suppressed errors, rerun with: -s
+==953547== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 5 : Testing with BstMap<std::string,std::string>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==952564== Memcheck, a memory error detector
-==952564== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==952564== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==952564== Command: ./test.5
-==952564== Parent PID: 952563
-==952564== 
-==952564== Invalid write of size 8
-==952564==    at 0x10C44C: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.5)
-==952564==    by 0x10AA2B: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.5)
-==952564==  Address 0x48 is not stack'd, malloc'd or (recently) free'd
-==952564== 
-==952564== 
-==952564== Process terminating with default action of signal 11 (SIGSEGV)
-==952564==  Access not within mapped region at address 0x48
-==952564==    at 0x10C44C: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.5)
-==952564==    by 0x10AA2B: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.5)
-==952564==  If you believe this happened as a result of a stack
-==952564==  overflow in your program's main thread (unlikely but
-==952564==  possible), you can try to increase the size of the
-==952564==  main thread stack using the --main-stacksize= flag.
-==952564==  The main thread stack size used in this run was 8388608.
-==952564== 
-==952564== HEAP SUMMARY:
-==952564==     in use at exit: 81,552 bytes in 93 blocks
-==952564==   total heap usage: 182 allocs, 89 frees, 86,848 bytes allocated
-==952564== 
-==952564== 80 bytes in 1 blocks are definitely lost in loss record 47 of 51
-==952564==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==952564==    by 0x10BF1F: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.5)
-==952564==    by 0x10BF54: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.5)
-==952564==    by 0x10BAFD: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::BstMap(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.5)
-==952564==    by 0x10A99E: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.5)
-==952564== 
-==952564== 4,480 (1,920 direct, 2,560 indirect) bytes in 24 blocks are definitely lost in loss record 50 of 51
-==952564==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==952564==    by 0x10C25F: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.5)
-==952564==    by 0x10A7F8: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.5)
-==952564== 
-==952564== LEAK SUMMARY:
-==952564==    definitely lost: 2,000 bytes in 25 blocks
-==952564==    indirectly lost: 2,560 bytes in 62 blocks
-==952564==      possibly lost: 0 bytes in 0 blocks
-==952564==    still reachable: 76,992 bytes in 6 blocks
-==952564==         suppressed: 0 bytes in 0 blocks
-==952564== Reachable blocks (those to which a pointer was found) are not shown.
-==952564== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==952564== 
-==952564== For lists of detected and suppressed errors, rerun with: -s
-==952564== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
+==953559== Memcheck, a memory error detector
+==953559== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==953559== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==953559== Command: ./test.5
+==953559== Parent PID: 953558
+==953559== 
+==953559== Invalid write of size 8
+==953559==    at 0x10C44C: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.5)
+==953559==    by 0x10AA2B: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.5)
+==953559==  Address 0x48 is not stack'd, malloc'd or (recently) free'd
+==953559== 
+==953559== 
+==953559== Process terminating with default action of signal 11 (SIGSEGV)
+==953559==  Access not within mapped region at address 0x48
+==953559==    at 0x10C44C: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.5)
+==953559==    by 0x10AA2B: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.5)
+==953559==  If you believe this happened as a result of a stack
+==953559==  overflow in your program's main thread (unlikely but
+==953559==  possible), you can try to increase the size of the
+==953559==  main thread stack using the --main-stacksize= flag.
+==953559==  The main thread stack size used in this run was 8388608.
+==953559== 
+==953559== HEAP SUMMARY:
+==953559==     in use at exit: 81,552 bytes in 93 blocks
+==953559==   total heap usage: 182 allocs, 89 frees, 86,848 bytes allocated
+==953559== 
+==953559== 80 bytes in 1 blocks are definitely lost in loss record 47 of 51
+==953559==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==953559==    by 0x10BF1F: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.5)
+==953559==    by 0x10BF54: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.5)
+==953559==    by 0x10BAFD: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::BstMap(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.5)
+==953559==    by 0x10A99E: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.5)
+==953559== 
+==953559== 4,480 (1,920 direct, 2,560 indirect) bytes in 24 blocks are definitely lost in loss record 50 of 51
+==953559==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==953559==    by 0x10C25F: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.5)
+==953559==    by 0x10A7F8: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.5)
+==953559== 
+==953559== LEAK SUMMARY:
+==953559==    definitely lost: 2,000 bytes in 25 blocks
+==953559==    indirectly lost: 2,560 bytes in 62 blocks
+==953559==      possibly lost: 0 bytes in 0 blocks
+==953559==    still reachable: 76,992 bytes in 6 blocks
+==953559==         suppressed: 0 bytes in 0 blocks
+==953559== Reachable blocks (those to which a pointer was found) are not shown.
+==953559== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==953559== 
+==953559== For lists of detected and suppressed errors, rerun with: -s
+==953559== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==952581== Memcheck, a memory error detector
-==952581== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==952581== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==952581== Command: ./test.6
-==952581== Parent PID: 952580
-==952581== 
-==952581== Invalid write of size 8
-==952581==    at 0x10C4CC: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.6)
-==952581==    by 0x10AA2B: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.6)
-==952581==  Address 0x50 is not stack'd, malloc'd or (recently) free'd
-==952581== 
-==952581== 
-==952581== Process terminating with default action of signal 11 (SIGSEGV)
-==952581==  Access not within mapped region at address 0x50
-==952581==    at 0x10C4CC: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.6)
-==952581==    by 0x10AA2B: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.6)
-==952581==  If you believe this happened as a result of a stack
-==952581==  overflow in your program's main thread (unlikely but
-==952581==  possible), you can try to increase the size of the
-==952581==  main thread stack using the --main-stacksize= flag.
-==952581==  The main thread stack size used in this run was 8388608.
-==952581== 
-==952581== HEAP SUMMARY:
-==952581==     in use at exit: 81,944 bytes in 93 blocks
-==952581==   total heap usage: 202 allocs, 109 frees, 87,648 bytes allocated
-==952581== 
-==952581== 88 bytes in 1 blocks are definitely lost in loss record 47 of 51
-==952581==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==952581==    by 0x10BF5D: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.6)
-==952581==    by 0x10BF92: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.6)
-==952581==    by 0x10BB3B: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::BstMap(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.6)
-==952581==    by 0x10A99E: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.6)
-==952581== 
-==952581== 4,848 (2,112 direct, 2,736 indirect) bytes in 24 blocks are definitely lost in loss record 50 of 51
-==952581==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==952581==    by 0x10C2DF: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::add(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Tester const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.6)
-==952581==    by 0x10A7F8: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.6)
-==952581== 
-==952581== LEAK SUMMARY:
-==952581==    definitely lost: 2,200 bytes in 25 blocks
-==952581==    indirectly lost: 2,736 bytes in 62 blocks
-==952581==      possibly lost: 0 bytes in 0 blocks
-==952581==    still reachable: 77,008 bytes in 6 blocks
-==952581==         suppressed: 0 bytes in 0 blocks
-==952581== Reachable blocks (those to which a pointer was found) are not shown.
-==952581== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==952581== 
-==952581== For lists of detected and suppressed errors, rerun with: -s
-==952581== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
+==953586== Memcheck, a memory error detector
+==953586== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==953586== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==953586== Command: ./test.6
+==953586== Parent PID: 953585
+==953586== 
+==953586== Invalid write of size 8
+==953586==    at 0x10C4CC: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.6)
+==953586==    by 0x10AA2B: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.6)
+==953586==  Address 0x50 is not stack'd, malloc'd or (recently) free'd
+==953586== 
+==953586== 
+==953586== Process terminating with default action of signal 11 (SIGSEGV)
+==953586==  Access not within mapped region at address 0x50
+==953586==    at 0x10C4CC: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.6)
+==953586==    by 0x10AA2B: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.6)
+==953586==  If you believe this happened as a result of a stack
+==953586==  overflow in your program's main thread (unlikely but
+==953586==  possible), you can try to increase the size of the
+==953586==  main thread stack using the --main-stacksize= flag.
+==953586==  The main thread stack size used in this run was 8388608.
+==953586== 
+==953586== HEAP SUMMARY:
+==953586==     in use at exit: 81,944 bytes in 93 blocks
+==953586==   total heap usage: 202 allocs, 109 frees, 87,648 bytes allocated
+==953586== 
+==953586== 88 bytes in 1 blocks are definitely lost in loss record 47 of 51
+==953586==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==953586==    by 0x10BF5D: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.6)
+==953586==    by 0x10BF92: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.6)
+==953586==    by 0x10BB3B: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::BstMap(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.6)
+==953586==    by 0x10A99E: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.6)
+==953586== 
+==953586== 4,848 (2,112 direct, 2,736 indirect) bytes in 24 blocks are definitely lost in loss record 50 of 51
+==953586==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==953586==    by 0x10C2DF: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::add(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Tester const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.6)
+==953586==    by 0x10A7F8: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.6)
+==953586== 
+==953586== LEAK SUMMARY:
+==953586==    definitely lost: 2,200 bytes in 25 blocks
+==953586==    indirectly lost: 2,736 bytes in 62 blocks
+==953586==      possibly lost: 0 bytes in 0 blocks
+==953586==    still reachable: 77,008 bytes in 6 blocks
+==953586==         suppressed: 0 bytes in 0 blocks
+==953586== Reachable blocks (those to which a pointer was found) are not shown.
+==953586== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==953586== 
+==953586== For lists of detected and suppressed errors, rerun with: -s
+==953586== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==952606== Memcheck, a memory error detector
-==952606== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==952606== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==952606== Command: ./test.7
-==952606== Parent PID: 952605
-==952606== 
-==952606== Invalid write of size 8
-==952606==    at 0x10C26C: BstMap<Tester, int>::remove(Tester const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.7)
-==952606==    by 0x10A9C5: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.7)
-==952606==  Address 0x38 is not stack'd, malloc'd or (recently) free'd
-==952606== 
-==952606== 
-==952606== Process terminating with default action of signal 11 (SIGSEGV)
-==952606==  Access not within mapped region at address 0x38
-==952606==    at 0x10C26C: BstMap<Tester, int>::remove(Tester const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.7)
-==952606==    by 0x10A9C5: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.7)
-==952606==  If you believe this happened as a result of a stack
-==952606==  overflow in your program's main thread (unlikely but
-==952606==  possible), you can try to increase the size of the
-==952606==  main thread stack using the --main-stacksize= flag.
-==952606==  The main thread stack size used in this run was 8388608.
-==952606== 
-==952606== HEAP SUMMARY:
-==952606==     in use at exit: 79,968 bytes in 53 blocks
-==952606==   total heap usage: 102 allocs, 49 frees, 84,448 bytes allocated
-==952606== 
-==952606== 64 bytes in 1 blocks are definitely lost in loss record 21 of 25
-==952606==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==952606==    by 0x10BDDD: BstMap<Tester, int>::copy(BstMap<Tester, int>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.7)
-==952606==    by 0x10BE12: BstMap<Tester, int>::copy(BstMap<Tester, int>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.7)
-==952606==    by 0x10B9BB: BstMap<Tester, int>::BstMap(BstMap<Tester, int> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.7)
-==952606==    by 0x10A941: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.7)
-==952606== 
-==952606== 2,944 (1,536 direct, 1,408 indirect) bytes in 24 blocks are definitely lost in loss record 23 of 25
-==952606==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==952606==    by 0x10C07F: BstMap<Tester, int>::add(Tester const&, int const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.7)
-==952606==    by 0x10A7BC: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.7)
-==952606== 
-==952606== LEAK SUMMARY:
-==952606==    definitely lost: 1,600 bytes in 25 blocks
-==952606==    indirectly lost: 1,408 bytes in 22 blocks
-==952606==      possibly lost: 0 bytes in 0 blocks
-==952606==    still reachable: 76,960 bytes in 6 blocks
-==952606==         suppressed: 0 bytes in 0 blocks
-==952606== Reachable blocks (those to which a pointer was found) are not shown.
-==952606== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==952606== 
-==952606== For lists of detected and suppressed errors, rerun with: -s
-==952606== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
+==953597== Memcheck, a memory error detector
+==953597== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==953597== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==953597== Command: ./test.7
+==953597== Parent PID: 953596
+==953597== 
+==953597== Invalid write of size 8
+==953597==    at 0x10C26C: BstMap<Tester, int>::remove(Tester const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.7)
+==953597==    by 0x10A9C5: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.7)
+==953597==  Address 0x38 is not stack'd, malloc'd or (recently) free'd
+==953597== 
+==953597== 
+==953597== Process terminating with default action of signal 11 (SIGSEGV)
+==953597==  Access not within mapped region at address 0x38
+==953597==    at 0x10C26C: BstMap<Tester, int>::remove(Tester const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.7)
+==953597==    by 0x10A9C5: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.7)
+==953597==  If you believe this happened as a result of a stack
+==953597==  overflow in your program's main thread (unlikely but
+==953597==  possible), you can try to increase the size of the
+==953597==  main thread stack using the --main-stacksize= flag.
+==953597==  The main thread stack size used in this run was 8388608.
+==953597== 
+==953597== HEAP SUMMARY:
+==953597==     in use at exit: 79,968 bytes in 53 blocks
+==953597==   total heap usage: 102 allocs, 49 frees, 84,448 bytes allocated
+==953597== 
+==953597== 64 bytes in 1 blocks are definitely lost in loss record 21 of 25
+==953597==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==953597==    by 0x10BDDD: BstMap<Tester, int>::copy(BstMap<Tester, int>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.7)
+==953597==    by 0x10BE12: BstMap<Tester, int>::copy(BstMap<Tester, int>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.7)
+==953597==    by 0x10B9BB: BstMap<Tester, int>::BstMap(BstMap<Tester, int> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.7)
+==953597==    by 0x10A941: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.7)
+==953597== 
+==953597== 2,944 (1,536 direct, 1,408 indirect) bytes in 24 blocks are definitely lost in loss record 23 of 25
+==953597==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==953597==    by 0x10C07F: BstMap<Tester, int>::add(Tester const&, int const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.7)
+==953597==    by 0x10A7BC: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.7)
+==953597== 
+==953597== LEAK SUMMARY:
+==953597==    definitely lost: 1,600 bytes in 25 blocks
+==953597==    indirectly lost: 1,408 bytes in 22 blocks
+==953597==      possibly lost: 0 bytes in 0 blocks
+==953597==    still reachable: 76,960 bytes in 6 blocks
+==953597==         suppressed: 0 bytes in 0 blocks
+==953597== Reachable blocks (those to which a pointer was found) are not shown.
+==953597== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==953597== 
+==953597== For lists of detected and suppressed errors, rerun with: -s
+==953597== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==952622== Memcheck, a memory error detector
-==952622== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==952622== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==952622== Command: ./test.8
-==952622== Parent PID: 952621
-==952622== 
-==952622== Invalid write of size 8
-==952622==    at 0x10C4B2: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(Tester const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.8)
-==952622==    by 0x10AA0B: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.8)
-==952622==  Address 0x50 is not stack'd, malloc'd or (recently) free'd
-==952622== 
-==952622== 
-==952622== Process terminating with default action of signal 11 (SIGSEGV)
-==952622==  Access not within mapped region at address 0x50
-==952622==    at 0x10C4B2: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(Tester const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.8)
-==952622==    by 0x10AA0B: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.8)
-==952622==  If you believe this happened as a result of a stack
-==952622==  overflow in your program's main thread (unlikely but
-==952622==  possible), you can try to increase the size of the
-==952622==  main thread stack using the --main-stacksize= flag.
-==952622==  The main thread stack size used in this run was 8388608.
-==952622== 
-==952622== HEAP SUMMARY:
-==952622==     in use at exit: 81,944 bytes in 93 blocks
-==952622==   total heap usage: 182 allocs, 89 frees, 87,248 bytes allocated
-==952622== 
-==952622== 88 bytes in 1 blocks are definitely lost in loss record 32 of 38
-==952622==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==952622==    by 0x10BFB3: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.8)
-==952622==    by 0x10BFE8: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.8)
-==952622==    by 0x10BB91: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::BstMap(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.8)
-==952622==    by 0x10A97E: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.8)
-==952622== 
-==952622== 4,848 (2,112 direct, 2,736 indirect) bytes in 24 blocks are definitely lost in loss record 37 of 38
-==952622==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==952622==    by 0x10C2C5: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.8)
-==952622==    by 0x10A7D8: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.8)
-==952622== 
-==952622== LEAK SUMMARY:
-==952622==    definitely lost: 2,200 bytes in 25 blocks
-==952622==    indirectly lost: 2,736 bytes in 62 blocks
-==952622==      possibly lost: 0 bytes in 0 blocks
-==952622==    still reachable: 77,008 bytes in 6 blocks
-==952622==         suppressed: 0 bytes in 0 blocks
-==952622== Reachable blocks (those to which a pointer was found) are not shown.
-==952622== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==952622== 
-==952622== For lists of detected and suppressed errors, rerun with: -s
-==952622== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
+==953637== Memcheck, a memory error detector
+==953637== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==953637== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==953637== Command: ./test.8
+==953637== Parent PID: 953636
+==953637== 
+==953637== Invalid write of size 8
+==953637==    at 0x10C4B2: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(Tester const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.8)
+==953637==    by 0x10AA0B: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.8)
+==953637==  Address 0x50 is not stack'd, malloc'd or (recently) free'd
+==953637== 
+==953637== 
+==953637== Process terminating with default action of signal 11 (SIGSEGV)
+==953637==  Access not within mapped region at address 0x50
+==953637==    at 0x10C4B2: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(Tester const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.8)
+==953637==    by 0x10AA0B: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.8)
+==953637==  If you believe this happened as a result of a stack
+==953637==  overflow in your program's main thread (unlikely but
+==953637==  possible), you can try to increase the size of the
+==953637==  main thread stack using the --main-stacksize= flag.
+==953637==  The main thread stack size used in this run was 8388608.
+==953637== 
+==953637== HEAP SUMMARY:
+==953637==     in use at exit: 81,944 bytes in 93 blocks
+==953637==   total heap usage: 182 allocs, 89 frees, 87,248 bytes allocated
+==953637== 
+==953637== 88 bytes in 1 blocks are definitely lost in loss record 32 of 38
+==953637==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==953637==    by 0x10BFB3: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.8)
+==953637==    by 0x10BFE8: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.8)
+==953637==    by 0x10BB91: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::BstMap(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.8)
+==953637==    by 0x10A97E: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.8)
+==953637== 
+==953637== 4,848 (2,112 direct, 2,736 indirect) bytes in 24 blocks are definitely lost in loss record 37 of 38
+==953637==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==953637==    by 0x10C2C5: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.8)
+==953637==    by 0x10A7D8: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.8)
+==953637== 
+==953637== LEAK SUMMARY:
+==953637==    definitely lost: 2,200 bytes in 25 blocks
+==953637==    indirectly lost: 2,736 bytes in 62 blocks
+==953637==      possibly lost: 0 bytes in 0 blocks
+==953637==    still reachable: 77,008 bytes in 6 blocks
+==953637==         suppressed: 0 bytes in 0 blocks
+==953637== Reachable blocks (those to which a pointer was found) are not shown.
+==953637== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==953637== 
+==953637== For lists of detected and suppressed errors, rerun with: -s
+==953637== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wrote)>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==952645== Memcheck, a memory error detector
-==952645== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==952645== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==952645== Command: ./test.9
-==952645== Parent PID: 952644
-==952645== 
-==952645== Invalid write of size 8
-==952645==    at 0x10C506: BstMap<Tester, Tester>::remove(Tester const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.9)
-==952645==    by 0x10AA1D: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.9)
-==952645==  Address 0x58 is not stack'd, malloc'd or (recently) free'd
-==952645== 
-==952645== 
-==952645== Process terminating with default action of signal 11 (SIGSEGV)
-==952645==  Access not within mapped region at address 0x58
-==952645==    at 0x10C506: BstMap<Tester, Tester>::remove(Tester const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.9)
-==952645==    by 0x10AA1D: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.9)
-==952645==  If you believe this happened as a result of a stack
-==952645==  overflow in your program's main thread (unlikely but
-==952645==  possible), you can try to increase the size of the
-==952645==  main thread stack using the --main-stacksize= flag.
-==952645==  The main thread stack size used in this run was 8388608.
-==952645== 
-==952645== HEAP SUMMARY:
-==952645==     in use at exit: 82,336 bytes in 93 blocks
-==952645==   total heap usage: 202 allocs, 109 frees, 88,048 bytes allocated
-==952645== 
-==952645== 96 bytes in 1 blocks are definitely lost in loss record 31 of 37
-==952645==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==952645==    by 0x10BFC5: BstMap<Tester, Tester>::copy(BstMap<Tester, Tester>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.9)
-==952645==    by 0x10BFFA: BstMap<Tester, Tester>::copy(BstMap<Tester, Tester>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.9)
-==952645==    by 0x10BBA3: BstMap<Tester, Tester>::BstMap(BstMap<Tester, Tester> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.9)
-==952645==    by 0x10A990: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.9)
-==952645== 
-==952645== 5,216 (2,304 direct, 2,912 indirect) bytes in 24 blocks are definitely lost in loss record 36 of 37
-==952645==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==952645==    by 0x10C319: BstMap<Tester, Tester>::add(Tester const&, Tester const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.9)
-==952645==    by 0x10A7EA: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.iwgPfo/test.9)
-==952645== 
-==952645== LEAK SUMMARY:
-==952645==    definitely lost: 2,400 bytes in 25 blocks
-==952645==    indirectly lost: 2,912 bytes in 62 blocks
-==952645==      possibly lost: 0 bytes in 0 blocks
-==952645==    still reachable: 77,024 bytes in 6 blocks
-==952645==         suppressed: 0 bytes in 0 blocks
-==952645== Reachable blocks (those to which a pointer was found) are not shown.
-==952645== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==952645== 
-==952645== For lists of detected and suppressed errors, rerun with: -s
-==952645== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
+==953663== Memcheck, a memory error detector
+==953663== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==953663== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==953663== Command: ./test.9
+==953663== Parent PID: 953662
+==953663== 
+==953663== Invalid write of size 8
+==953663==    at 0x10C506: BstMap<Tester, Tester>::remove(Tester const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.9)
+==953663==    by 0x10AA1D: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.9)
+==953663==  Address 0x58 is not stack'd, malloc'd or (recently) free'd
+==953663== 
+==953663== 
+==953663== Process terminating with default action of signal 11 (SIGSEGV)
+==953663==  Access not within mapped region at address 0x58
+==953663==    at 0x10C506: BstMap<Tester, Tester>::remove(Tester const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.9)
+==953663==    by 0x10AA1D: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.9)
+==953663==  If you believe this happened as a result of a stack
+==953663==  overflow in your program's main thread (unlikely but
+==953663==  possible), you can try to increase the size of the
+==953663==  main thread stack using the --main-stacksize= flag.
+==953663==  The main thread stack size used in this run was 8388608.
+==953663== 
+==953663== HEAP SUMMARY:
+==953663==     in use at exit: 82,336 bytes in 93 blocks
+==953663==   total heap usage: 202 allocs, 109 frees, 88,048 bytes allocated
+==953663== 
+==953663== 96 bytes in 1 blocks are definitely lost in loss record 31 of 37
+==953663==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==953663==    by 0x10BFC5: BstMap<Tester, Tester>::copy(BstMap<Tester, Tester>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.9)
+==953663==    by 0x10BFFA: BstMap<Tester, Tester>::copy(BstMap<Tester, Tester>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.9)
+==953663==    by 0x10BBA3: BstMap<Tester, Tester>::BstMap(BstMap<Tester, Tester> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.9)
+==953663==    by 0x10A990: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.9)
+==953663== 
+==953663== 5,216 (2,304 direct, 2,912 indirect) bytes in 24 blocks are definitely lost in loss record 36 of 37
+==953663==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==953663==    by 0x10C319: BstMap<Tester, Tester>::add(Tester const&, Tester const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.9)
+==953663==    by 0x10A7EA: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.V5gehe/test.9)
+==953663== 
+==953663== LEAK SUMMARY:
+==953663==    definitely lost: 2,400 bytes in 25 blocks
+==953663==    indirectly lost: 2,912 bytes in 62 blocks
+==953663==      possibly lost: 0 bytes in 0 blocks
+==953663==    still reachable: 77,024 bytes in 6 blocks
+==953663==         suppressed: 0 bytes in 0 blocks
+==953663== Reachable blocks (those to which a pointer was found) are not shown.
+==953663== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==953663== 
+==953663== For lists of detected and suppressed errors, rerun with: -s
+==953663== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
 
 Overall Grade: F
