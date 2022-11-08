@@ -13,6 +13,7 @@ class BstMap : public Map<K, V> {
     Node(const K & k, const V & v) : key(k), value(v), left(NULL), right(NULL) {}
   };
   Node * root;
+  Node ** lookupNode(const K &) const;
 
  public:
   BstMap() : root(NULL) {}
