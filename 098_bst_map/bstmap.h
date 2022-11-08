@@ -108,7 +108,9 @@ class BstMap : public Map<K, V> {
       const K predKey = predecessor->key;
       temp->key = predKey;
       temp->value = predValue;
-      *target = predecessor->left;
+      if (predecessor->left != NULL) {
+        *target = predecessor->left;
+      }
       delete predecessor;
     }
     return;
