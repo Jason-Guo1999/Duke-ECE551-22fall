@@ -105,7 +105,7 @@ class BstMap : public Map<K, V> {
         predecessor = predecessor->right;
       }
       const V predValue = predecessor->value;
-      const K predKey = *predecessor->key;
+      const K predKey = predecessor->key;
       temp->key = predKey;
       temp->value = predValue;
       *target = predecessor->left;
