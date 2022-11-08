@@ -1,293 +1,293 @@
-Grading at 11/08/2022:23:52:05.626799
-For commit ID f498a31c7923c97bee931dbf0be76f22c7e879ed
-Grading at Tue Nov  8 06:51:55 PM EST 2022
+Grading at 11/08/2022:23:56:15.973368
+For commit ID 02496af8de9e96685d58f1fd195068777f2772ee
+Grading at Tue Nov  8 06:56:05 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==1405988== Memcheck, a memory error detector
-==1405988== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1405988== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1405988== Command: ./test.1
-==1405988== Parent PID: 1405987
-==1405988== 
-==1405988== 
-==1405988== HEAP SUMMARY:
-==1405988==     in use at exit: 312 bytes in 13 blocks
-==1405988==   total heap usage: 327 allocs, 314 frees, 102,664 bytes allocated
-==1405988== 
-==1405988== 312 (24 direct, 288 indirect) bytes in 1 blocks are definitely lost in loss record 11 of 11
-==1405988==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1405988==    by 0x10BA70: BstMap<int, int>::copy(BstMap<int, int>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.1)
-==1405988==    by 0x10B771: BstMap<int, int>::BstMap(BstMap<int, int> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.1)
-==1405988==    by 0x10A8CF: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.1)
-==1405988== 
-==1405988== LEAK SUMMARY:
-==1405988==    definitely lost: 24 bytes in 1 blocks
-==1405988==    indirectly lost: 288 bytes in 12 blocks
-==1405988==      possibly lost: 0 bytes in 0 blocks
-==1405988==    still reachable: 0 bytes in 0 blocks
-==1405988==         suppressed: 0 bytes in 0 blocks
-==1405988== 
-==1405988== For lists of detected and suppressed errors, rerun with: -s
-==1405988== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==1409145== Memcheck, a memory error detector
+==1409145== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1409145== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1409145== Command: ./test.1
+==1409145== Parent PID: 1409144
+==1409145== 
+==1409145== 
+==1409145== HEAP SUMMARY:
+==1409145==     in use at exit: 312 bytes in 13 blocks
+==1409145==   total heap usage: 327 allocs, 314 frees, 102,664 bytes allocated
+==1409145== 
+==1409145== 312 (24 direct, 288 indirect) bytes in 1 blocks are definitely lost in loss record 11 of 11
+==1409145==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1409145==    by 0x10BA70: BstMap<int, int>::copy(BstMap<int, int>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.1)
+==1409145==    by 0x10B771: BstMap<int, int>::BstMap(BstMap<int, int> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.1)
+==1409145==    by 0x10A8CF: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.1)
+==1409145== 
+==1409145== LEAK SUMMARY:
+==1409145==    definitely lost: 24 bytes in 1 blocks
+==1409145==    indirectly lost: 288 bytes in 12 blocks
+==1409145==      possibly lost: 0 bytes in 0 blocks
+==1409145==    still reachable: 0 bytes in 0 blocks
+==1409145==         suppressed: 0 bytes in 0 blocks
+==1409145== 
+==1409145== For lists of detected and suppressed errors, rerun with: -s
+==1409145== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 2 : Testing with BstMap<int,std::string>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==1406010== Memcheck, a memory error detector
-==1406010== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1406010== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1406010== Command: ./test.2
-==1406010== Parent PID: 1406009
-==1406010== 
-==1406010== 
-==1406010== HEAP SUMMARY:
-==1406010==     in use at exit: 947 bytes in 24 blocks
-==1406010==   total heap usage: 455 allocs, 431 frees, 107,160 bytes allocated
-==1406010== 
-==1406010== 947 (56 direct, 891 indirect) bytes in 1 blocks are definitely lost in loss record 19 of 19
-==1406010==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1406010==    by 0x10BC81: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.2)
-==1406010==    by 0x10B97D: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::BstMap(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.2)
-==1406010==    by 0x10A90F: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.2)
-==1406010== 
-==1406010== LEAK SUMMARY:
-==1406010==    definitely lost: 56 bytes in 1 blocks
-==1406010==    indirectly lost: 891 bytes in 23 blocks
-==1406010==      possibly lost: 0 bytes in 0 blocks
-==1406010==    still reachable: 0 bytes in 0 blocks
-==1406010==         suppressed: 0 bytes in 0 blocks
-==1406010== 
-==1406010== For lists of detected and suppressed errors, rerun with: -s
-==1406010== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==1409173== Memcheck, a memory error detector
+==1409173== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1409173== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1409173== Command: ./test.2
+==1409173== Parent PID: 1409172
+==1409173== 
+==1409173== 
+==1409173== HEAP SUMMARY:
+==1409173==     in use at exit: 947 bytes in 24 blocks
+==1409173==   total heap usage: 455 allocs, 431 frees, 107,160 bytes allocated
+==1409173== 
+==1409173== 947 (56 direct, 891 indirect) bytes in 1 blocks are definitely lost in loss record 19 of 19
+==1409173==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1409173==    by 0x10BC81: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.2)
+==1409173==    by 0x10B97D: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::BstMap(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.2)
+==1409173==    by 0x10A90F: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.2)
+==1409173== 
+==1409173== LEAK SUMMARY:
+==1409173==    definitely lost: 56 bytes in 1 blocks
+==1409173==    indirectly lost: 891 bytes in 23 blocks
+==1409173==      possibly lost: 0 bytes in 0 blocks
+==1409173==    still reachable: 0 bytes in 0 blocks
+==1409173==         suppressed: 0 bytes in 0 blocks
+==1409173== 
+==1409173== For lists of detected and suppressed errors, rerun with: -s
+==1409173== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==1406033== Memcheck, a memory error detector
-==1406033== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1406033== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1406033== Command: ./test.3
-==1406033== Parent PID: 1406032
-==1406033== 
-==1406033== 
-==1406033== HEAP SUMMARY:
-==1406033==     in use at exit: 1,051 bytes in 24 blocks
-==1406033==   total heap usage: 481 allocs, 457 frees, 108,164 bytes allocated
-==1406033== 
-==1406033== 1,051 (64 direct, 987 indirect) bytes in 1 blocks are definitely lost in loss record 18 of 18
-==1406033==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1406033==    by 0x10BCBF: BstMap<int, Tester>::copy(BstMap<int, Tester>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.3)
-==1406033==    by 0x10B9BB: BstMap<int, Tester>::BstMap(BstMap<int, Tester> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.3)
-==1406033==    by 0x10A90F: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.3)
-==1406033== 
-==1406033== LEAK SUMMARY:
-==1406033==    definitely lost: 64 bytes in 1 blocks
-==1406033==    indirectly lost: 987 bytes in 23 blocks
-==1406033==      possibly lost: 0 bytes in 0 blocks
-==1406033==    still reachable: 0 bytes in 0 blocks
-==1406033==         suppressed: 0 bytes in 0 blocks
-==1406033== 
-==1406033== For lists of detected and suppressed errors, rerun with: -s
-==1406033== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==1409192== Memcheck, a memory error detector
+==1409192== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1409192== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1409192== Command: ./test.3
+==1409192== Parent PID: 1409191
+==1409192== 
+==1409192== 
+==1409192== HEAP SUMMARY:
+==1409192==     in use at exit: 1,051 bytes in 24 blocks
+==1409192==   total heap usage: 481 allocs, 457 frees, 108,164 bytes allocated
+==1409192== 
+==1409192== 1,051 (64 direct, 987 indirect) bytes in 1 blocks are definitely lost in loss record 18 of 18
+==1409192==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1409192==    by 0x10BCBF: BstMap<int, Tester>::copy(BstMap<int, Tester>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.3)
+==1409192==    by 0x10B9BB: BstMap<int, Tester>::BstMap(BstMap<int, Tester> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.3)
+==1409192==    by 0x10A90F: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.3)
+==1409192== 
+==1409192== LEAK SUMMARY:
+==1409192==    definitely lost: 64 bytes in 1 blocks
+==1409192==    indirectly lost: 987 bytes in 23 blocks
+==1409192==      possibly lost: 0 bytes in 0 blocks
+==1409192==    still reachable: 0 bytes in 0 blocks
+==1409192==         suppressed: 0 bytes in 0 blocks
+==1409192== 
+==1409192== For lists of detected and suppressed errors, rerun with: -s
+==1409192== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 4 : Testing with BstMap<std::string,int>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==1406063== Memcheck, a memory error detector
-==1406063== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1406063== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1406063== Command: ./test.4
-==1406063== Parent PID: 1406062
-==1406063== 
-==1406063== 
-==1406063== HEAP SUMMARY:
-==1406063==     in use at exit: 728 bytes in 13 blocks
-==1406063==   total heap usage: 345 allocs, 332 frees, 104,774 bytes allocated
-==1406063== 
-==1406063== 728 (56 direct, 672 indirect) bytes in 1 blocks are definitely lost in loss record 13 of 13
-==1406063==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1406063==    by 0x10BCAD: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.4)
-==1406063==    by 0x10B99B: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::BstMap(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.4)
-==1406063==    by 0x10A981: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.4)
-==1406063== 
-==1406063== LEAK SUMMARY:
-==1406063==    definitely lost: 56 bytes in 1 blocks
-==1406063==    indirectly lost: 672 bytes in 12 blocks
-==1406063==      possibly lost: 0 bytes in 0 blocks
-==1406063==    still reachable: 0 bytes in 0 blocks
-==1406063==         suppressed: 0 bytes in 0 blocks
-==1406063== 
-==1406063== For lists of detected and suppressed errors, rerun with: -s
-==1406063== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==1409229== Memcheck, a memory error detector
+==1409229== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1409229== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1409229== Command: ./test.4
+==1409229== Parent PID: 1409228
+==1409229== 
+==1409229== 
+==1409229== HEAP SUMMARY:
+==1409229==     in use at exit: 728 bytes in 13 blocks
+==1409229==   total heap usage: 345 allocs, 332 frees, 104,774 bytes allocated
+==1409229== 
+==1409229== 728 (56 direct, 672 indirect) bytes in 1 blocks are definitely lost in loss record 13 of 13
+==1409229==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1409229==    by 0x10BCAD: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.4)
+==1409229==    by 0x10B99B: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::BstMap(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.4)
+==1409229==    by 0x10A981: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.4)
+==1409229== 
+==1409229== LEAK SUMMARY:
+==1409229==    definitely lost: 56 bytes in 1 blocks
+==1409229==    indirectly lost: 672 bytes in 12 blocks
+==1409229==      possibly lost: 0 bytes in 0 blocks
+==1409229==    still reachable: 0 bytes in 0 blocks
+==1409229==         suppressed: 0 bytes in 0 blocks
+==1409229== 
+==1409229== For lists of detected and suppressed errors, rerun with: -s
+==1409229== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 5 : Testing with BstMap<std::string,std::string>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==1406089== Memcheck, a memory error detector
-==1406089== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1406089== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1406089== Command: ./test.5
-==1406089== Parent PID: 1406088
-==1406089== 
-==1406089== 
-==1406089== HEAP SUMMARY:
-==1406089==     in use at exit: 1,301 bytes in 24 blocks
-==1406089==   total heap usage: 479 allocs, 455 frees, 108,982 bytes allocated
-==1406089== 
-==1406089== 1,301 (80 direct, 1,221 indirect) bytes in 1 blocks are definitely lost in loss record 22 of 22
-==1406089==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1406089==    by 0x10BE63: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.5)
-==1406089==    by 0x10BB51: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::BstMap(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.5)
-==1406089==    by 0x10A99E: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.5)
-==1406089== 
-==1406089== LEAK SUMMARY:
-==1406089==    definitely lost: 80 bytes in 1 blocks
-==1406089==    indirectly lost: 1,221 bytes in 23 blocks
-==1406089==      possibly lost: 0 bytes in 0 blocks
-==1406089==    still reachable: 0 bytes in 0 blocks
-==1406089==         suppressed: 0 bytes in 0 blocks
-==1406089== 
-==1406089== For lists of detected and suppressed errors, rerun with: -s
-==1406089== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==1409263== Memcheck, a memory error detector
+==1409263== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1409263== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1409263== Command: ./test.5
+==1409263== Parent PID: 1409262
+==1409263== 
+==1409263== 
+==1409263== HEAP SUMMARY:
+==1409263==     in use at exit: 1,301 bytes in 24 blocks
+==1409263==   total heap usage: 479 allocs, 455 frees, 108,982 bytes allocated
+==1409263== 
+==1409263== 1,301 (80 direct, 1,221 indirect) bytes in 1 blocks are definitely lost in loss record 22 of 22
+==1409263==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1409263==    by 0x10BE63: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.5)
+==1409263==    by 0x10BB51: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::BstMap(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.5)
+==1409263==    by 0x10A99E: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.5)
+==1409263== 
+==1409263== LEAK SUMMARY:
+==1409263==    definitely lost: 80 bytes in 1 blocks
+==1409263==    indirectly lost: 1,221 bytes in 23 blocks
+==1409263==      possibly lost: 0 bytes in 0 blocks
+==1409263==    still reachable: 0 bytes in 0 blocks
+==1409263==         suppressed: 0 bytes in 0 blocks
+==1409263== 
+==1409263== For lists of detected and suppressed errors, rerun with: -s
+==1409263== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==1406120== Memcheck, a memory error detector
-==1406120== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1406120== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1406120== Command: ./test.6
-==1406120== Parent PID: 1406119
-==1406120== 
-==1406120== 
-==1406120== HEAP SUMMARY:
-==1406120==     in use at exit: 1,405 bytes in 24 blocks
-==1406120==   total heap usage: 505 allocs, 481 frees, 109,986 bytes allocated
-==1406120== 
-==1406120== 1,405 (88 direct, 1,317 indirect) bytes in 1 blocks are definitely lost in loss record 22 of 22
-==1406120==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1406120==    by 0x10BEA1: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.6)
-==1406120==    by 0x10BB8F: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::BstMap(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.6)
-==1406120==    by 0x10A99E: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.6)
-==1406120== 
-==1406120== LEAK SUMMARY:
-==1406120==    definitely lost: 88 bytes in 1 blocks
-==1406120==    indirectly lost: 1,317 bytes in 23 blocks
-==1406120==      possibly lost: 0 bytes in 0 blocks
-==1406120==    still reachable: 0 bytes in 0 blocks
-==1406120==         suppressed: 0 bytes in 0 blocks
-==1406120== 
-==1406120== For lists of detected and suppressed errors, rerun with: -s
-==1406120== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==1409300== Memcheck, a memory error detector
+==1409300== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1409300== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1409300== Command: ./test.6
+==1409300== Parent PID: 1409299
+==1409300== 
+==1409300== 
+==1409300== HEAP SUMMARY:
+==1409300==     in use at exit: 1,405 bytes in 24 blocks
+==1409300==   total heap usage: 505 allocs, 481 frees, 109,986 bytes allocated
+==1409300== 
+==1409300== 1,405 (88 direct, 1,317 indirect) bytes in 1 blocks are definitely lost in loss record 22 of 22
+==1409300==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1409300==    by 0x10BEA1: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.6)
+==1409300==    by 0x10BB8F: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::BstMap(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.6)
+==1409300==    by 0x10A99E: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.6)
+==1409300== 
+==1409300== LEAK SUMMARY:
+==1409300==    definitely lost: 88 bytes in 1 blocks
+==1409300==    indirectly lost: 1,317 bytes in 23 blocks
+==1409300==      possibly lost: 0 bytes in 0 blocks
+==1409300==    still reachable: 0 bytes in 0 blocks
+==1409300==         suppressed: 0 bytes in 0 blocks
+==1409300== 
+==1409300== For lists of detected and suppressed errors, rerun with: -s
+==1409300== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==1406157== Memcheck, a memory error detector
-==1406157== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1406157== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1406157== Command: ./test.7
-==1406157== Parent PID: 1406156
-==1406157== 
-==1406157== 
-==1406157== HEAP SUMMARY:
-==1406157==     in use at exit: 832 bytes in 13 blocks
-==1406157==   total heap usage: 360 allocs, 347 frees, 105,489 bytes allocated
-==1406157== 
-==1406157== 832 (64 direct, 768 indirect) bytes in 1 blocks are definitely lost in loss record 11 of 11
-==1406157==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1406157==    by 0x10BD65: BstMap<Tester, int>::copy(BstMap<Tester, int>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.7)
-==1406157==    by 0x10BA53: BstMap<Tester, int>::BstMap(BstMap<Tester, int> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.7)
-==1406157==    by 0x10A961: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.7)
-==1406157== 
-==1406157== LEAK SUMMARY:
-==1406157==    definitely lost: 64 bytes in 1 blocks
-==1406157==    indirectly lost: 768 bytes in 12 blocks
-==1406157==      possibly lost: 0 bytes in 0 blocks
-==1406157==    still reachable: 0 bytes in 0 blocks
-==1406157==         suppressed: 0 bytes in 0 blocks
-==1406157== 
-==1406157== For lists of detected and suppressed errors, rerun with: -s
-==1406157== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==1409349== Memcheck, a memory error detector
+==1409349== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1409349== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1409349== Command: ./test.7
+==1409349== Parent PID: 1409348
+==1409349== 
+==1409349== 
+==1409349== HEAP SUMMARY:
+==1409349==     in use at exit: 832 bytes in 13 blocks
+==1409349==   total heap usage: 360 allocs, 347 frees, 105,489 bytes allocated
+==1409349== 
+==1409349== 832 (64 direct, 768 indirect) bytes in 1 blocks are definitely lost in loss record 11 of 11
+==1409349==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1409349==    by 0x10BD65: BstMap<Tester, int>::copy(BstMap<Tester, int>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.7)
+==1409349==    by 0x10BA53: BstMap<Tester, int>::BstMap(BstMap<Tester, int> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.7)
+==1409349==    by 0x10A961: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.7)
+==1409349== 
+==1409349== LEAK SUMMARY:
+==1409349==    definitely lost: 64 bytes in 1 blocks
+==1409349==    indirectly lost: 768 bytes in 12 blocks
+==1409349==      possibly lost: 0 bytes in 0 blocks
+==1409349==    still reachable: 0 bytes in 0 blocks
+==1409349==         suppressed: 0 bytes in 0 blocks
+==1409349== 
+==1409349== For lists of detected and suppressed errors, rerun with: -s
+==1409349== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==1406217== Memcheck, a memory error detector
-==1406217== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1406217== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1406217== Command: ./test.8
-==1406217== Parent PID: 1406216
-==1406217== 
-==1406217== 
-==1406217== HEAP SUMMARY:
-==1406217==     in use at exit: 1,363 bytes in 24 blocks
-==1406217==   total heap usage: 488 allocs, 464 frees, 109,537 bytes allocated
-==1406217== 
-==1406217== 1,363 (88 direct, 1,275 indirect) bytes in 1 blocks are definitely lost in loss record 19 of 19
-==1406217==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1406217==    by 0x10BF1B: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.8)
-==1406217==    by 0x10BC09: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::BstMap(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.8)
-==1406217==    by 0x10A97E: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.8)
-==1406217== 
-==1406217== LEAK SUMMARY:
-==1406217==    definitely lost: 88 bytes in 1 blocks
-==1406217==    indirectly lost: 1,275 bytes in 23 blocks
-==1406217==      possibly lost: 0 bytes in 0 blocks
-==1406217==    still reachable: 0 bytes in 0 blocks
-==1406217==         suppressed: 0 bytes in 0 blocks
-==1406217== 
-==1406217== For lists of detected and suppressed errors, rerun with: -s
-==1406217== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==1409401== Memcheck, a memory error detector
+==1409401== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1409401== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1409401== Command: ./test.8
+==1409401== Parent PID: 1409400
+==1409401== 
+==1409401== 
+==1409401== HEAP SUMMARY:
+==1409401==     in use at exit: 1,363 bytes in 24 blocks
+==1409401==   total heap usage: 488 allocs, 464 frees, 109,537 bytes allocated
+==1409401== 
+==1409401== 1,363 (88 direct, 1,275 indirect) bytes in 1 blocks are definitely lost in loss record 19 of 19
+==1409401==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1409401==    by 0x10BF1B: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.8)
+==1409401==    by 0x10BC09: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::BstMap(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.8)
+==1409401==    by 0x10A97E: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.8)
+==1409401== 
+==1409401== LEAK SUMMARY:
+==1409401==    definitely lost: 88 bytes in 1 blocks
+==1409401==    indirectly lost: 1,275 bytes in 23 blocks
+==1409401==      possibly lost: 0 bytes in 0 blocks
+==1409401==    still reachable: 0 bytes in 0 blocks
+==1409401==         suppressed: 0 bytes in 0 blocks
+==1409401== 
+==1409401== For lists of detected and suppressed errors, rerun with: -s
+==1409401== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wrote)>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==1406267== Memcheck, a memory error detector
-==1406267== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1406267== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1406267== Command: ./test.9
-==1406267== Parent PID: 1406266
-==1406267== 
-==1406267== 
-==1406267== HEAP SUMMARY:
-==1406267==     in use at exit: 1,467 bytes in 24 blocks
-==1406267==   total heap usage: 514 allocs, 490 frees, 110,541 bytes allocated
-==1406267== 
-==1406267== 1,467 (96 direct, 1,371 indirect) bytes in 1 blocks are definitely lost in loss record 18 of 18
-==1406267==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1406267==    by 0x10BF2D: BstMap<Tester, Tester>::copy(BstMap<Tester, Tester>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.9)
-==1406267==    by 0x10BC1B: BstMap<Tester, Tester>::BstMap(BstMap<Tester, Tester> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.9)
-==1406267==    by 0x10A990: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.uenapJ/test.9)
-==1406267== 
-==1406267== LEAK SUMMARY:
-==1406267==    definitely lost: 96 bytes in 1 blocks
-==1406267==    indirectly lost: 1,371 bytes in 23 blocks
-==1406267==      possibly lost: 0 bytes in 0 blocks
-==1406267==    still reachable: 0 bytes in 0 blocks
-==1406267==         suppressed: 0 bytes in 0 blocks
-==1406267== 
-==1406267== For lists of detected and suppressed errors, rerun with: -s
-==1406267== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==1409450== Memcheck, a memory error detector
+==1409450== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1409450== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1409450== Command: ./test.9
+==1409450== Parent PID: 1409449
+==1409450== 
+==1409450== 
+==1409450== HEAP SUMMARY:
+==1409450==     in use at exit: 1,467 bytes in 24 blocks
+==1409450==   total heap usage: 514 allocs, 490 frees, 110,541 bytes allocated
+==1409450== 
+==1409450== 1,467 (96 direct, 1,371 indirect) bytes in 1 blocks are definitely lost in loss record 18 of 18
+==1409450==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1409450==    by 0x10BF2D: BstMap<Tester, Tester>::copy(BstMap<Tester, Tester>::Node*) (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.9)
+==1409450==    by 0x10BC1B: BstMap<Tester, Tester>::BstMap(BstMap<Tester, Tester> const&) (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.9)
+==1409450==    by 0x10A990: main (in /home/ece551db/graderbase/work/zg105.098_bst_map.xZscAg/test.9)
+==1409450== 
+==1409450== LEAK SUMMARY:
+==1409450==    definitely lost: 96 bytes in 1 blocks
+==1409450==    indirectly lost: 1,371 bytes in 23 blocks
+==1409450==      possibly lost: 0 bytes in 0 blocks
+==1409450==    still reachable: 0 bytes in 0 blocks
+==1409450==         suppressed: 0 bytes in 0 blocks
+==1409450== 
+==1409450== For lists of detected and suppressed errors, rerun with: -s
+==1409450== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 
 Overall Grade: F
