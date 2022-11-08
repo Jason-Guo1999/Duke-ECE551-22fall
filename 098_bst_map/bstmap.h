@@ -1,5 +1,4 @@
 
-
 #include "map.h"
 
 template<typename K, typename V>
@@ -11,44 +10,46 @@ class BstMap : public Map<K, V> {
     V value;
     Node * left;
     Node * right;
-    Node(const K & key, const V & value) :
-        key(key), value(value), left(NULL), right(NULL) {}
+    Node(const K & k, const V & v) : key(k), value(v), left(NULL), right(NULL) {}
   };
-
   Node * root;
 
  public:
-  BstMap() : root(NULL) {}
-  BstMap(const BstMap & rhs) { root = copy(rhs.root); }
-
+  BstMap(const BstMap & rhs) : root(NULL) { root = copy(rhs.root); }
   Node * copy(Node * root) {
     if (root == NULL) {
       return NULL;
     }
     Node * newRoot = new Node(root->key, root->value);
-    root->left = copy(root->left);
-    root->right = copy(root->right);
-    return newRoot;
+    newRoot->left = copy(root->left);
+    newRoot->right = copy(root->right);
+    return root;
   }
 
   BstMap & operator=(const BstMap & rhs) {
-    deconstructor(root);
-    root = copy(rhs.root);
+    if (this != &rhs) {
+      destuctor(root);
+      root = copy(rhs.root);
+    }
     return *this;
   }
+  void destructor(Node * root) {
+    if (root != NULL) {
+      destructor(root->left);
+      destructor(root->right);
+      delete root;
+    }
+  }
+  virtual ~BstMap<K, V>() { destructor(root); }
 
   virtual void add(const K & key, const V & value) {
-    if (this->root == NULL) {
-      this->root = new Node(key, value);
-      return;
-    }
     Node ** it = &root;
     while (*it != NULL) {
-      if ((*it)->key == key) {
+      if (key == (*it)->key) {
         (*it)->value = value;
         return;
       }
-      else if ((*it)->key > key) {
+      else if (key < (*it)->key) {
         it = &((*it)->left);
       }
       else {
@@ -59,55 +60,19 @@ class BstMap : public Map<K, V> {
   }
 
   virtual const V & lookup(const K & key) const throw(std::invalid_argument) {
-    if (root == NULL) {
+    Node ** it = lookupNode(key);
+    Node * temp = *it;
+    if (temp == NULL) {
       throw std::invalid_argument("Can't find key!");
     }
-    Node * it = root;
-    while (it != NULL) {
-      if (it->key == key) {
-        return it->value;
-      }
-      else if (it->key > key) {
-        it = (it->left);
-      }
-      else {
-        it = (it->right);
-      }
-    }
-    throw std::invalid_argument("Can't find key!");
+    return temp->value;
   }
 
-  virtual void remove(const K & key) {
-    if (root == NULL) {
-      return;
-    }
+  Node ** lookupNode(const K & key) {
     Node ** it = &root;
-    while (*it != NULL) {
+    while ((*it) != NULL) {
       if ((*it)->key == key) {
-        Node * target = *it;
-        if (target->left == NULL && target->right == NULL) {
-          delete target;
-          return;
-        }
-        else if (target->left == NULL && target->right != NULL) {
-          Node * temp = target->right;
-          delete target;
-          *it = temp;
-        }
-        else if (target->left != NULL && target->right == NULL) {
-          Node * temp = target->left;
-          delete target;
-          *it = temp;
-        }
-        else {
-          Node * predecessor = (*it)->left;
-          while (predecessor != NULL) {
-            predecessor = predecessor->right;
-          }
-          Node * temp = target->right;
-          delete target;
-          predecessor->right = temp;
-        }
+        break;
       }
       else if ((*it)->key > key) {
         it = &((*it)->left);
@@ -116,15 +81,31 @@ class BstMap : public Map<K, V> {
         it = &((*it)->right);
       }
     }
+    return it;
   }
-
-  virtual ~BstMap<K, V>() { deconstructor(root); }
-
-  void deconstructor(Node * root) {
-    if (root != NULL) {
-      deconstructor(root->left);
-      deconstructor(root->right);
-      delete root;
+  virtual void remove(const K & key) {
+    if (root == NULL) {
+      return;
     }
+    Node ** target = lookupNode(key);
+    Node * temp = *target;
+    if (temp == NULL) {
+      return;
+    }
+    if (temp->left == NULL) {
+      *target = temp->right;
+    }
+    else {
+      Node ** predecessor = &(temp->left);
+      while ((*predecessor)->right != NULL) {
+        predecessor = &((*predecessor)->right);
+      }
+      *target = *predecessor;
+      *predecessor = (*predecessor)->right;
+      (*target)->left = temp->left;
+      (*target)->right = temp->right;
+    }
+
+    delete temp;
   }
 };
