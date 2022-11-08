@@ -100,10 +100,11 @@ class BstMap : public Map<K, V> {
       delete temp;
     }
     else {
-      Node ** predecessor = &(temp->left);
+      Node ** predecessor = &((*target)->left);
       while ((*predecessor)->right != NULL) {
         predecessor = &((*predecessor)->right);
       }
+      /*
       const V predValue = (*predecessor)->value;
       const K predKey = (*predecessor)->key;
       temp->key = predKey;
@@ -111,6 +112,14 @@ class BstMap : public Map<K, V> {
       Node * deleteNode = *predecessor;
       *predecessor = deleteNode->left;
       delete deleteNode;
+      */
+      (*target)->key = (*predecessor)->key;
+      const V value = (*predecessor)->value;
+      Node * t = (*predecessor)->left;
+      delete *predecessor;
+      *predecessor = t;
+      add((*target)->key, value);
     }
+    return;
   }
 };
