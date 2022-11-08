@@ -103,7 +103,7 @@ class BstMap : public Map<K, V> {
       *target = t;
     }
     else {
-      Node ** predecessor = temp->left;
+      Node ** predecessor = &(temp->left);
       while ((*predecessor)->right != NULL) {
         predecessor = &((*predecessor)->right);
       }
