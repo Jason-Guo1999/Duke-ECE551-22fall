@@ -10,9 +10,9 @@ class BstSet : public Set<T> {
   BstMap<T, int> mybst;
 
  public:
-  virtual void add(const T & key) { mybst.add(key, 0); }
+  void add(const T & key) { mybst.add(key, 0); }
 
-  virtual bool contains(const T & key) {
+  bool contains(const T & key) const {
     bool ans;
     try {
       ans = mybst.lookup(key);
@@ -24,7 +24,7 @@ class BstSet : public Set<T> {
     return ans;
   }
 
-  virtual void remove(const T & key) { mybst.remove(key); }
+  void remove(const T & key) { mybst.remove(key); }
 
-  virtual ~BstSet() {}
+  ~BstSet() {}
 };
