@@ -1,23 +1,35 @@
-Grading at 11/09/2022:19:46:14.911714
-For commit ID 8549cd1f786c65ec02a553b7b28a6dcf8064a0fe
-Grading at Wed Nov  9 02:46:10 PM EST 2022
+Grading at 11/09/2022:19:47:25.767476
+For commit ID 13b78104761c18402b21162f982ba1238aeb3323
+Grading at Wed Nov  9 02:47:25 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstSet<int>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
+In file included from 90-tester.cpp:1:
+bstset.h: In instantiation of ‘BstSet<T>::~BstSet() [with T = int]’:
+90-tester.cpp:149:10:   required from here
+bstset.h:29:22: error: type ‘class BstMap<int, int>’ argument given to ‘delete’, expected pointer
+   29 |   ~BstSet() { delete mybst; }
+      |                      ^~~~~
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 2 : Testing with BstSet<std::string>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
+In file included from 90-tester.cpp:1:
+bstset.h: In instantiation of ‘BstSet<T>::~BstSet() [with T = std::__cxx11::basic_string<char>]’:
+90-tester.cpp:149:10:   required from here
+bstset.h:29:22: error: type ‘class BstMap<std::__cxx11::basic_string<char>, int>’ argument given to ‘delete’, expected pointer
+   29 |   ~BstSet() { delete mybst; }
+      |                      ^~~~~
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 3 : Testing with BstSet<(a custom class we wrote)>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
+In file included from 90-tester.cpp:1:
+bstset.h: In instantiation of ‘BstSet<T>::~BstSet() [with T = Tester]’:
+90-tester.cpp:149:10:   required from here
+bstset.h:29:22: error: type ‘class BstMap<Tester, int>’ argument given to ‘delete’, expected pointer
+   29 |   ~BstSet() { delete mybst; }
+      |                      ^~~~~
+The code did not compile.  This test failed.
 
 Overall Grade: F
