@@ -112,11 +112,13 @@ class BstMap : public Map<K, V> {
             current = &((*current)->right);
           }
           (*toReplace)->key = (*current)->key;
+          (*toReplace)->value = (*current)->key;
           const V value = (*current)->value;
           temp = (*current)->left;
           delete *current;
           *current = temp;
-          add((*toReplace)->key, value);
+
+          //add((*toReplace)->key, value);
         }
       }
       else if (key < (*current)->key) {
