@@ -1,17 +1,13 @@
-Grading at 11/09/2022:01:31:41.459053
-For commit ID 263aee98f3beafc1fc98ae67897d7e885f4daac6
-Grading at Tue Nov  8 08:31:33 PM EST 2022
+Grading at 11/09/2022:01:33:42.236202
+For commit ID 97f73682a3c9519f6c54e57abcd6942ed1c29da6
+Grading at Tue Nov  8 08:33:31 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = int; V = int]’:
-bstmap.h:93:16:   required from here
-bstmap.h:116:19: error: unused variable ‘value’ [-Werror=unused-variable]
-  116 |           const V value = (*current)->value;
-      |                   ^~~~~
-cc1plus: all warnings being treated as errors
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 2 : Testing with BstMap<int,std::string>
 ...compiling...
@@ -29,14 +25,10 @@ Testcase passed
 -----------------------------------------------
 testcase 4 : Testing with BstMap<std::string,int>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = std::__cxx11::basic_string<char>; V = int]’:
-bstmap.h:93:16:   required from here
-bstmap.h:116:19: error: unused variable ‘value’ [-Werror=unused-variable]
-  116 |           const V value = (*current)->value;
-      |                   ^~~~~
-cc1plus: all warnings being treated as errors
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 5 : Testing with BstMap<std::string,std::string>
 ...compiling...
@@ -54,14 +46,10 @@ Testcase passed
 -----------------------------------------------
 testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 ...compiling...
-In file included from 89-tester.cpp:1:
-bstmap.h: In instantiation of ‘void BstMap<K, V>::remove(const K&) [with K = Tester; V = int]’:
-bstmap.h:93:16:   required from here
-bstmap.h:116:19: error: unused variable ‘value’ [-Werror=unused-variable]
-  116 |           const V value = (*current)->value;
-      |                   ^~~~~
-cc1plus: all warnings being treated as errors
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 ...compiling...
@@ -77,4 +65,4 @@ The code compiled.
 Your file matched the expected output
 Testcase passed 
 
-Overall Grade: D
+Overall Grade: A
