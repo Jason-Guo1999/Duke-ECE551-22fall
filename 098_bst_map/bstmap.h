@@ -112,7 +112,7 @@ class BstMap : public Map<K, V> {
             current = &((*current)->right);
           }
           (*toReplace)->key = (*current)->key;
-          (*toReplace)->value = (*current)->key;
+          (*toReplace)->value = (*current)->value;
           const V value = (*current)->value;
           temp = (*current)->left;
           delete *current;
