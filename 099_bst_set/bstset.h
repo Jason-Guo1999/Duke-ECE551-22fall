@@ -62,7 +62,7 @@ class BstSet : public Set<K> {
     *it = new Node(key);
   }
 
-  virtual bool contain(const K & key) const {
+  bool contain(const K & key) const {
     Node ** target = lookupNode(key);
     Node * temp = *target;
     try {
