@@ -12,7 +12,17 @@ class BstSet : public Set<T> {
  public:
   void add(const T & key) { mybst.add(key, 0); }
 
-  bool contains(const T & key) { return mybst.lookup(key); }
+  bool contains(const T & key) {
+    bool ans;
+    try {
+      ans = mybst.lookup(key);
+    }
+    catch (std::invalid_argument & re) {
+      std::cerr << re.what() << std::endl;
+      exit(EXIT_FAILURE);
+    }
+    return ans;
+  }
 
   void remove(const T & key) { mybst.remove(key); }
 
