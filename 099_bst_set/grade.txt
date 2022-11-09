@@ -1,50 +1,23 @@
-Grading at 11/09/2022:19:48:56.556368
-For commit ID db753a2e199b28f3f6ab1a83e862c33941734367
-Grading at Wed Nov  9 02:48:55 PM EST 2022
+Grading at 11/09/2022:19:53:13.887990
+For commit ID 2ce80e68e0fa7964ac6bdcbbbe232cce2f392bb8
+Grading at Wed Nov  9 02:53:10 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstSet<int>
 ...compiling...
-In file included from 90-tester.cpp:1:
-bstset.h: In instantiation of ‘BstSet<T>::~BstSet() [with T = int]’:
-90-tester.cpp:149:10:   required from here
-bstset.h:29:38: error: ‘BstMap<int, int>::Node* BstMap<int, int>::root’ is private within this context
-   29 |   ~BstSet() { mybst.destructor(mybst.root); }
-      |                                ~~~~~~^~~~
-In file included from bstset.h:3,
-                 from 90-tester.cpp:1:
-bstmap.h:21:10: note: declared private here
-   21 |   Node * root;
-      |          ^~~~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
 -----------------------------------------------
 testcase 2 : Testing with BstSet<std::string>
 ...compiling...
-In file included from 90-tester.cpp:1:
-bstset.h: In instantiation of ‘BstSet<T>::~BstSet() [with T = std::__cxx11::basic_string<char>]’:
-90-tester.cpp:149:10:   required from here
-bstset.h:29:38: error: ‘BstMap<std::__cxx11::basic_string<char>, int>::Node* BstMap<std::__cxx11::basic_string<char>, int>::root’ is private within this context
-   29 |   ~BstSet() { mybst.destructor(mybst.root); }
-      |                                ~~~~~~^~~~
-In file included from bstset.h:3,
-                 from 90-tester.cpp:1:
-bstmap.h:21:10: note: declared private here
-   21 |   Node * root;
-      |          ^~~~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
 -----------------------------------------------
 testcase 3 : Testing with BstSet<(a custom class we wrote)>
 ...compiling...
-In file included from 90-tester.cpp:1:
-bstset.h: In instantiation of ‘BstSet<T>::~BstSet() [with T = Tester]’:
-90-tester.cpp:149:10:   required from here
-bstset.h:29:38: error: ‘BstMap<Tester, int>::Node* BstMap<Tester, int>::root’ is private within this context
-   29 |   ~BstSet() { mybst.destructor(mybst.root); }
-      |                                ~~~~~~^~~~
-In file included from bstset.h:3,
-                 from 90-tester.cpp:1:
-bstmap.h:21:10: note: declared private here
-   21 |   Node * root;
-      |          ^~~~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
 
 Overall Grade: F
