@@ -106,19 +106,15 @@ class BstMap : public Map<K, V> {
           *current = temp;
         }
         else {
-          Node ** toReplace = current;
-          current = &((*current)->left);
-          while ((*current)->right != NULL) {
-            current = &((*current)->right);
+          Node ** predecessor = &((*current)->left);
+          while ((*predecessor)->right != NULL) {
+            predecessor = &((*predecessor)->right);
           }
-          (*toReplace)->key = (*current)->key;
-          (*toReplace)->value = (*current)->value;
-          //const V value = (*current)->value;
-          temp = (*current)->left;
-          delete *current;
+          (*current)->key = (*predecessor)->key;
+          (*current)->value = (*predecessor)->value;
+          temp = (*predecessor)->left;
+          delete *predecessor;
           *current = temp;
-
-          //add((*toReplace)->key, value);
         }
       }
       else if (key < (*current)->key) {
