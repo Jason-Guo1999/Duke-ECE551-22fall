@@ -26,5 +26,8 @@ class BstSet : public Set<T> {
 
   void remove(const T & key) { mybst.remove(key); }
 
-  ~BstSet() { mybst.destructor(mybst.root); }
+  ~BstSet() {
+    mybst.destructor(mybst.root);
+    mybst.root = NULL;
+  }
 };
