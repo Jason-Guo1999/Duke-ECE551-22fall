@@ -1,68 +1,74 @@
-Grading at 11/09/2022:19:22:35.676677
-For commit ID e93616cfef17c6a06a5501635df23e82cfb9779a
-Grading at Wed Nov  9 02:22:35 PM EST 2022
+Grading at 11/09/2022:19:26:16.456311
+For commit ID 6316430d9fcabf01bf706a383cef5cd99693b5c8
+Grading at Wed Nov  9 02:26:15 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstSet<int>
 ...compiling...
 90-tester.cpp: In function ‘int main()’:
-90-tester.cpp:71:15: error: cannot convert ‘BSTSetTy*’ {aka ‘BstSet<int>*’} to ‘SetTy*’ {aka ‘Set<int>*’} in initialization
-   71 |   SetTy * m = bmt;
-      |               ^~~
-      |               |
-      |               BSTSetTy* {aka BstSet<int>*}
-90-tester.cpp:96:34: error: conditional expression between distinct pointer types ‘SetTy*’ {aka ‘Set<int>*’} and ‘BSTSetTy*’ {aka ‘BstSet<int>*’} lacks a cast
-   96 |       SetTy* ptr = (((i+j)&1)==0)? m : m2;
-      |                    ~~~~~~~~~~~~~~^~~~~~~~
-90-tester.cpp:125:34: error: conditional expression between distinct pointer types ‘SetTy*’ {aka ‘Set<int>*’} and ‘BSTSetTy*’ {aka ‘BstSet<int>*’} lacks a cast
-  125 |       SetTy* ptr = (((i+j)&1)==0)? m : m2;
-      |                    ~~~~~~~~~~~~~~^~~~~~~~
-90-tester.cpp:151:11: error: cannot convert ‘BSTSetTy*’ {aka ‘BstSet<int>*’} to ‘SetTy*’ {aka ‘Set<int>*’} in assignment
+90-tester.cpp:70:33: error: invalid new-expression of abstract class type ‘BstSet<int>’
+   70 |   BSTSetTy * bmt = new BSTSetTy();
+      |                                 ^
+In file included from 90-tester.cpp:1:
+bstset.h:8:7: note:   because the following virtual functions are pure within ‘BstSet<int>’:
+    8 | class BstSet : public Set<T> {
+      |       ^~~~~~
+In file included from bstset.h:5,
+                 from 90-tester.cpp:1:
+set.h:9:16: note:     ‘bool Set<T>::contains(const T&) const [with T = int]’
+    9 |   virtual bool contains(const T& key) const = 0;
+      |                ^~~~~~~~
+90-tester.cpp:92:36: error: invalid new-expression of abstract class type ‘BstSet<int>’
+   92 |   BSTSetTy * m2 = new BSTSetTy(*bmt);
+      |                                    ^
+90-tester.cpp:151:26: error: invalid new-expression of abstract class type ‘BstSet<int>’
   151 |   m = bmt = new BSTSetTy();
-      |       ~~~~^~~~~~~~~~~~~~~~
-      |           |
-      |           BSTSetTy* {aka BstSet<int>*}
+      |                          ^
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 2 : Testing with BstSet<std::string>
 ...compiling...
 90-tester.cpp: In function ‘int main()’:
-90-tester.cpp:71:15: error: cannot convert ‘BSTSetTy*’ {aka ‘BstSet<std::__cxx11::basic_string<char> >*’} to ‘SetTy*’ {aka ‘Set<std::__cxx11::basic_string<char> >*’} in initialization
-   71 |   SetTy * m = bmt;
-      |               ^~~
-      |               |
-      |               BSTSetTy* {aka BstSet<std::__cxx11::basic_string<char> >*}
-90-tester.cpp:96:34: error: conditional expression between distinct pointer types ‘SetTy*’ {aka ‘Set<std::__cxx11::basic_string<char> >*’} and ‘BSTSetTy*’ {aka ‘BstSet<std::__cxx11::basic_string<char> >*’} lacks a cast
-   96 |       SetTy* ptr = (((i+j)&1)==0)? m : m2;
-      |                    ~~~~~~~~~~~~~~^~~~~~~~
-90-tester.cpp:125:34: error: conditional expression between distinct pointer types ‘SetTy*’ {aka ‘Set<std::__cxx11::basic_string<char> >*’} and ‘BSTSetTy*’ {aka ‘BstSet<std::__cxx11::basic_string<char> >*’} lacks a cast
-  125 |       SetTy* ptr = (((i+j)&1)==0)? m : m2;
-      |                    ~~~~~~~~~~~~~~^~~~~~~~
-90-tester.cpp:151:11: error: cannot convert ‘BSTSetTy*’ {aka ‘BstSet<std::__cxx11::basic_string<char> >*’} to ‘SetTy*’ {aka ‘Set<std::__cxx11::basic_string<char> >*’} in assignment
+90-tester.cpp:70:33: error: invalid new-expression of abstract class type ‘BstSet<std::__cxx11::basic_string<char> >’
+   70 |   BSTSetTy * bmt = new BSTSetTy();
+      |                                 ^
+In file included from 90-tester.cpp:1:
+bstset.h:8:7: note:   because the following virtual functions are pure within ‘BstSet<std::__cxx11::basic_string<char> >’:
+    8 | class BstSet : public Set<T> {
+      |       ^~~~~~
+In file included from bstset.h:5,
+                 from 90-tester.cpp:1:
+set.h:9:16: note:     ‘bool Set<T>::contains(const T&) const [with T = std::__cxx11::basic_string<char>]’
+    9 |   virtual bool contains(const T& key) const = 0;
+      |                ^~~~~~~~
+90-tester.cpp:92:36: error: invalid new-expression of abstract class type ‘BstSet<std::__cxx11::basic_string<char> >’
+   92 |   BSTSetTy * m2 = new BSTSetTy(*bmt);
+      |                                    ^
+90-tester.cpp:151:26: error: invalid new-expression of abstract class type ‘BstSet<std::__cxx11::basic_string<char> >’
   151 |   m = bmt = new BSTSetTy();
-      |       ~~~~^~~~~~~~~~~~~~~~
-      |           |
-      |           BSTSetTy* {aka BstSet<std::__cxx11::basic_string<char> >*}
+      |                          ^
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 3 : Testing with BstSet<(a custom class we wrote)>
 ...compiling...
 90-tester.cpp: In function ‘int main()’:
-90-tester.cpp:71:15: error: cannot convert ‘BSTSetTy*’ {aka ‘BstSet<Tester>*’} to ‘SetTy*’ {aka ‘Set<Tester>*’} in initialization
-   71 |   SetTy * m = bmt;
-      |               ^~~
-      |               |
-      |               BSTSetTy* {aka BstSet<Tester>*}
-90-tester.cpp:96:34: error: conditional expression between distinct pointer types ‘SetTy*’ {aka ‘Set<Tester>*’} and ‘BSTSetTy*’ {aka ‘BstSet<Tester>*’} lacks a cast
-   96 |       SetTy* ptr = (((i+j)&1)==0)? m : m2;
-      |                    ~~~~~~~~~~~~~~^~~~~~~~
-90-tester.cpp:125:34: error: conditional expression between distinct pointer types ‘SetTy*’ {aka ‘Set<Tester>*’} and ‘BSTSetTy*’ {aka ‘BstSet<Tester>*’} lacks a cast
-  125 |       SetTy* ptr = (((i+j)&1)==0)? m : m2;
-      |                    ~~~~~~~~~~~~~~^~~~~~~~
-90-tester.cpp:151:11: error: cannot convert ‘BSTSetTy*’ {aka ‘BstSet<Tester>*’} to ‘SetTy*’ {aka ‘Set<Tester>*’} in assignment
+90-tester.cpp:70:33: error: invalid new-expression of abstract class type ‘BstSet<Tester>’
+   70 |   BSTSetTy * bmt = new BSTSetTy();
+      |                                 ^
+In file included from 90-tester.cpp:1:
+bstset.h:8:7: note:   because the following virtual functions are pure within ‘BstSet<Tester>’:
+    8 | class BstSet : public Set<T> {
+      |       ^~~~~~
+In file included from bstset.h:5,
+                 from 90-tester.cpp:1:
+set.h:9:16: note:     ‘bool Set<T>::contains(const T&) const [with T = Tester]’
+    9 |   virtual bool contains(const T& key) const = 0;
+      |                ^~~~~~~~
+90-tester.cpp:92:36: error: invalid new-expression of abstract class type ‘BstSet<Tester>’
+   92 |   BSTSetTy * m2 = new BSTSetTy(*bmt);
+      |                                    ^
+90-tester.cpp:151:26: error: invalid new-expression of abstract class type ‘BstSet<Tester>’
   151 |   m = bmt = new BSTSetTy();
-      |       ~~~~^~~~~~~~~~~~~~~~
-      |           |
-      |           BSTSetTy* {aka BstSet<Tester>*}
+      |                          ^
 The code did not compile.  This test failed.
 
 Overall Grade: F
