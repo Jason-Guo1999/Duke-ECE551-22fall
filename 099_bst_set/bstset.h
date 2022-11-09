@@ -10,6 +10,7 @@ class BstSet : public Set<T> {
   BstMap<T, int> mybst;
 
  public:
+  BstSet() { mybst(); }
   void add(const T & key) { mybst.add(key, 0); }
 
   bool contains(const T & key) { return mybst.lookup(key); }
