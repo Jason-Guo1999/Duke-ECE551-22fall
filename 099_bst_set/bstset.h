@@ -5,7 +5,7 @@
 #include "set.h"
 
 template<typename T>
-class BstSet {
+class BstSet : public Set<T> {
  private:
   BstMap<T, int> mybst;
 
