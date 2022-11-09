@@ -106,14 +106,15 @@ class BstMap : public Map<K, V> {
           *current = temp;
         }
         else {
-          Node ** predecessor = &((*current)->left);
-          while ((*predecessor)->right != NULL) {
-            predecessor = &((*predecessor)->right);
+          Node ** target = current;
+          current = &((*current)->left);
+          while ((*current)->right != NULL) {
+            current = &((*current)->right);
           }
-          (*current)->key = (*predecessor)->key;
-          (*current)->value = (*predecessor)->value;
-          temp = (*predecessor)->left;
-          delete *predecessor;
+          (*target)->key = (*current)->key;
+          (*target)->value = (*current)->value;
+          temp = (*current)->left;
+          delete *current;
           *current = temp;
         }
       }
