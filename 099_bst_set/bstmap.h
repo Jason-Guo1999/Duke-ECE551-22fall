@@ -8,7 +8,7 @@
 
 template<typename K, typename V>
 class BstMap : public Map<K, V> {
- private:
+ public:
   class Node {
    public:
     K key;
@@ -20,7 +20,6 @@ class BstMap : public Map<K, V> {
   };
   Node * root;
 
- public:
   BstMap() : root(NULL) {}
   BstMap(const BstMap & rhs) { root = copy(rhs.root); }
 
