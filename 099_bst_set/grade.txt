@@ -1,23 +1,74 @@
-Grading at 11/09/2022:19:55:47.574930
-For commit ID 3391a3a36652708decd1837de598bb00d88e39fc
-Grading at Wed Nov  9 02:55:44 PM EST 2022
+Grading at 11/09/2022:20:52:05.374539
+For commit ID 801cb2717e242c01d5834775ab4e2ee619f373bc
+Grading at Wed Nov  9 03:52:04 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstSet<int>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
+90-tester.cpp: In function ‘int main()’:
+90-tester.cpp:70:33: error: invalid new-expression of abstract class type ‘BstSet<int>’
+   70 |   BSTSetTy * bmt = new BSTSetTy();
+      |                                 ^
+In file included from 90-tester.cpp:1:
+bstset.h:10:7: note:   because the following virtual functions are pure within ‘BstSet<int>’:
+   10 | class BstSet : public Set<K> {
+      |       ^~~~~~
+In file included from bstset.h:7,
+                 from 90-tester.cpp:1:
+set.h:9:16: note:     ‘bool Set<T>::contains(const T&) const [with T = int]’
+    9 |   virtual bool contains(const T& key) const = 0;
+      |                ^~~~~~~~
+90-tester.cpp:92:36: error: invalid new-expression of abstract class type ‘BstSet<int>’
+   92 |   BSTSetTy * m2 = new BSTSetTy(*bmt);
+      |                                    ^
+90-tester.cpp:151:26: error: invalid new-expression of abstract class type ‘BstSet<int>’
+  151 |   m = bmt = new BSTSetTy();
+      |                          ^
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 2 : Testing with BstSet<std::string>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
+90-tester.cpp: In function ‘int main()’:
+90-tester.cpp:70:33: error: invalid new-expression of abstract class type ‘BstSet<std::__cxx11::basic_string<char> >’
+   70 |   BSTSetTy * bmt = new BSTSetTy();
+      |                                 ^
+In file included from 90-tester.cpp:1:
+bstset.h:10:7: note:   because the following virtual functions are pure within ‘BstSet<std::__cxx11::basic_string<char> >’:
+   10 | class BstSet : public Set<K> {
+      |       ^~~~~~
+In file included from bstset.h:7,
+                 from 90-tester.cpp:1:
+set.h:9:16: note:     ‘bool Set<T>::contains(const T&) const [with T = std::__cxx11::basic_string<char>]’
+    9 |   virtual bool contains(const T& key) const = 0;
+      |                ^~~~~~~~
+90-tester.cpp:92:36: error: invalid new-expression of abstract class type ‘BstSet<std::__cxx11::basic_string<char> >’
+   92 |   BSTSetTy * m2 = new BSTSetTy(*bmt);
+      |                                    ^
+90-tester.cpp:151:26: error: invalid new-expression of abstract class type ‘BstSet<std::__cxx11::basic_string<char> >’
+  151 |   m = bmt = new BSTSetTy();
+      |                          ^
+The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 3 : Testing with BstSet<(a custom class we wrote)>
 ...compiling...
-The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
+90-tester.cpp: In function ‘int main()’:
+90-tester.cpp:70:33: error: invalid new-expression of abstract class type ‘BstSet<Tester>’
+   70 |   BSTSetTy * bmt = new BSTSetTy();
+      |                                 ^
+In file included from 90-tester.cpp:1:
+bstset.h:10:7: note:   because the following virtual functions are pure within ‘BstSet<Tester>’:
+   10 | class BstSet : public Set<K> {
+      |       ^~~~~~
+In file included from bstset.h:7,
+                 from 90-tester.cpp:1:
+set.h:9:16: note:     ‘bool Set<T>::contains(const T&) const [with T = Tester]’
+    9 |   virtual bool contains(const T& key) const = 0;
+      |                ^~~~~~~~
+90-tester.cpp:92:36: error: invalid new-expression of abstract class type ‘BstSet<Tester>’
+   92 |   BSTSetTy * m2 = new BSTSetTy(*bmt);
+      |                                    ^
+90-tester.cpp:151:26: error: invalid new-expression of abstract class type ‘BstSet<Tester>’
+  151 |   m = bmt = new BSTSetTy();
+      |                          ^
+The code did not compile.  This test failed.
 
 Overall Grade: F
