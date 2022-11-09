@@ -1,74 +1,23 @@
-Grading at 11/09/2022:19:40:40.502850
-For commit ID f93b35f7de8dc3fcd92bd6f7165abd921acda2c8
-Grading at Wed Nov  9 02:40:39 PM EST 2022
+Grading at 11/09/2022:19:46:14.911714
+For commit ID 8549cd1f786c65ec02a553b7b28a6dcf8064a0fe
+Grading at Wed Nov  9 02:46:10 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstSet<int>
 ...compiling...
-90-tester.cpp: In function ‘int main()’:
-90-tester.cpp:70:33: error: invalid new-expression of abstract class type ‘BstSet<int>’
-   70 |   BSTSetTy * bmt = new BSTSetTy();
-      |                                 ^
-In file included from 90-tester.cpp:1:
-bstset.h:8:7: note:   because the following virtual functions are pure within ‘BstSet<int>’:
-    8 | class BstSet : public Set<T> {
-      |       ^~~~~~
-In file included from bstset.h:5,
-                 from 90-tester.cpp:1:
-set.h:9:16: note:     ‘bool Set<T>::contains(const T&) const [with T = int]’
-    9 |   virtual bool contains(const T& key) const = 0;
-      |                ^~~~~~~~
-90-tester.cpp:92:36: error: invalid new-expression of abstract class type ‘BstSet<int>’
-   92 |   BSTSetTy * m2 = new BSTSetTy(*bmt);
-      |                                    ^
-90-tester.cpp:151:26: error: invalid new-expression of abstract class type ‘BstSet<int>’
-  151 |   m = bmt = new BSTSetTy();
-      |                          ^
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
 -----------------------------------------------
 testcase 2 : Testing with BstSet<std::string>
 ...compiling...
-90-tester.cpp: In function ‘int main()’:
-90-tester.cpp:70:33: error: invalid new-expression of abstract class type ‘BstSet<std::__cxx11::basic_string<char> >’
-   70 |   BSTSetTy * bmt = new BSTSetTy();
-      |                                 ^
-In file included from 90-tester.cpp:1:
-bstset.h:8:7: note:   because the following virtual functions are pure within ‘BstSet<std::__cxx11::basic_string<char> >’:
-    8 | class BstSet : public Set<T> {
-      |       ^~~~~~
-In file included from bstset.h:5,
-                 from 90-tester.cpp:1:
-set.h:9:16: note:     ‘bool Set<T>::contains(const T&) const [with T = std::__cxx11::basic_string<char>]’
-    9 |   virtual bool contains(const T& key) const = 0;
-      |                ^~~~~~~~
-90-tester.cpp:92:36: error: invalid new-expression of abstract class type ‘BstSet<std::__cxx11::basic_string<char> >’
-   92 |   BSTSetTy * m2 = new BSTSetTy(*bmt);
-      |                                    ^
-90-tester.cpp:151:26: error: invalid new-expression of abstract class type ‘BstSet<std::__cxx11::basic_string<char> >’
-  151 |   m = bmt = new BSTSetTy();
-      |                          ^
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
 -----------------------------------------------
 testcase 3 : Testing with BstSet<(a custom class we wrote)>
 ...compiling...
-90-tester.cpp: In function ‘int main()’:
-90-tester.cpp:70:33: error: invalid new-expression of abstract class type ‘BstSet<Tester>’
-   70 |   BSTSetTy * bmt = new BSTSetTy();
-      |                                 ^
-In file included from 90-tester.cpp:1:
-bstset.h:8:7: note:   because the following virtual functions are pure within ‘BstSet<Tester>’:
-    8 | class BstSet : public Set<T> {
-      |       ^~~~~~
-In file included from bstset.h:5,
-                 from 90-tester.cpp:1:
-set.h:9:16: note:     ‘bool Set<T>::contains(const T&) const [with T = Tester]’
-    9 |   virtual bool contains(const T& key) const = 0;
-      |                ^~~~~~~~
-90-tester.cpp:92:36: error: invalid new-expression of abstract class type ‘BstSet<Tester>’
-   92 |   BSTSetTy * m2 = new BSTSetTy(*bmt);
-      |                                    ^
-90-tester.cpp:151:26: error: invalid new-expression of abstract class type ‘BstSet<Tester>’
-  151 |   m = bmt = new BSTSetTy();
-      |                          ^
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
 
 Overall Grade: F
