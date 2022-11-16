@@ -39,13 +39,15 @@ class Story {
       if (line.size() == 0) {
         continue;
       }
-      size_t findAt = line.find('@');
+      // decide line mode : choice or content
+      int lineMode = decideLineMode(line);
       // we can find a '@'
-      if (findAt != std::string::npos) {
+      if (lineMode == 1) {
+        size_t findAt = line.find('@');
         pageNum = std::strtoull(line.substr(0, findAt).c_str(), NULL, 10);
         // if we don;t start from page0, throw an exception
         try {
-          // test valid number
+          // test valid number and valid line format
           if (!validNumber(line.substr(0, findAt))) {
             throw myException("Invalid PageNum type1");
           }
@@ -54,6 +56,9 @@ class Story {
           }
           if (pageNum != totalPages) {
             throw myException("Invalid pageNum! uncontigous page initialization!");
+          }
+          if (line.find(':') == std::string::npos) {
+            throw myException("Invalid line format: missing ':' in content line!");
           }
         }
         catch (myException & re) {
@@ -71,7 +76,7 @@ class Story {
         totalPages++;
       }
       // read choices
-      else {
+      else if (lineMode == 2) {
         size_t firstColon = line.find(':');
         if (firstColon == std::string::npos) {
           std::cerr << "Invalid input format : can't find first ':' in choices line"
@@ -98,6 +103,10 @@ class Story {
         }
         // get choices for corresponding page
         pageMap[pageNum].getChoices(line.substr(firstColon + 1));
+      }
+      else {
+        std::cerr << "Invalid line: can't find line mdoe!" << std::endl;
+        exit(EXIT_FAILURE);
       }
     }
   }

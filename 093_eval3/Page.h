@@ -24,11 +24,14 @@ class Page {
   // initialize thorugh a given page.txt
   Page(std::string s, std::string directory) {
     size_t findAt = s.find('@');
+    /*
     // validate pageNum and file name
-    size_t pageNum = std::stoll(s.substr(0, findAt));
+    size_t pageNum = std::strtoll(s.substr(0, findAt).c_str(), NULL, 10);
+    
     size_t findDot = s.find('.');
-    size_t findDigit = findAt + 7;
-    size_t fileNameNumber = std::stoll(s.substr(findDigit, findDot - findDigit));
+    size_t findE = s.find('e');
+    size_t fileNameNumber =
+        std::strtoll(s.substr(findE + 1, findDot - findE - 1).c_str(), NULL, 10);
     try {
       if (pageNum != fileNameNumber) {
         throw myException("Uncompatible pageNum and filename!");
@@ -38,7 +41,7 @@ class Page {
       std::cerr << re.what() << std::endl;
       exit(EXIT_FAILURE);
     }
-
+    */
     std::string tempFilePath = directory + "/" + s.substr(findAt + 3);
     const char * filePath = tempFilePath.c_str();
     std::ifstream file;
