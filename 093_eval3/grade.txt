@@ -1,12 +1,694 @@
-Grading at 11/16/2022:17:07:33.844494
-For commit ID 66e9cf86bb356de4a1e97f4d1e7290542be17dae
-Grading at Wed Nov 16 12:07:33 PM EST 2022
+Grading at 11/16/2022:17:26:41.443028
+For commit ID c0032611af4ac75fe1a3fe47591e45fe947ab853
+Grading at Wed Nov 16 12:26:17 PM EST 2022
 Doing some basic checking for your submission
 
 Step 1
 Checking that cyoa-step1 compiles
-rm -f *~ cyoa-step1 cyoa-step2  cyoa-step1.o cyoa-step2.o Page.h Story.h myException.h helperFunction.h
-g++     cyoa-step1.cpp   -o cyoa-step1
+rm -f *~ cyoa-step1 cyoa-step2   cyoa-step1.o cyoa-step2.o cyoa-step1.o story.o page.o helperFunction.o myException.o
+g++    -c -o cyoa-step1.o cyoa-step1.cpp
+g++ -o cyoa-step1 cyoa-step1.o
+The code compiled (good)
+Executable cyoa-step1 exists (good)
+------------------------------------
+Now running YOUR tests for step 1
+------------------------------------
+No request to check for intermediate deadline completion on step 1
+
+Step 2
+Checking that cyoa-step2 compiles
+rm -f *~ cyoa-step1 cyoa-step2   cyoa-step1.o cyoa-step2.o cyoa-step1.o story.o page.o helperFunction.o myException.o
+g++    -c -o cyoa-step2.o cyoa-step2.cpp
+g++ -o cyoa-step2 cyoa-step2.o
+The code compiled (good)
+Executable cyoa-step2 exists (good)
+------------------------------------
+Now running YOUR tests for step 2
+------------------------------------
+------------------------------------
+You have requested that we check for intermediate deadline completion on step 2
+------------------------------------
+
+Step 2 EC intermediate deadline test 1
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input0.txt
+  - Valgrind showed memory leaks
+Valgrind reported errors or memory leaks
+==2990718== Memcheck, a memory error detector
+==2990718== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2990718== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2990718== Command: ./cyoa-step2 /usr/local/ece551/cyoa/story1
+==2990718== Parent PID: 2990717
+==2990718== 
+==2990718== 
+==2990718== HEAP SUMMARY:
+==2990718==     in use at exit: 24,112 bytes in 268 blocks
+==2990718==   total heap usage: 757 allocs, 489 frees, 422,398 bytes allocated
+==2990718== 
+==2990718== LEAK SUMMARY:
+==2990718==    definitely lost: 0 bytes in 0 blocks
+==2990718==    indirectly lost: 0 bytes in 0 blocks
+==2990718==      possibly lost: 0 bytes in 0 blocks
+==2990718==    still reachable: 24,112 bytes in 268 blocks
+==2990718==         suppressed: 0 bytes in 0 blocks
+==2990718== Reachable blocks (those to which a pointer was found) are not shown.
+==2990718== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2990718== 
+==2990718== For lists of detected and suppressed errors, rerun with: -s
+==2990718== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Step 2 EC intermediate deadline test 2
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input10.txt
+  - Valgrind showed memory leaks
+Valgrind reported errors or memory leaks
+==2990727== Memcheck, a memory error detector
+==2990727== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2990727== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2990727== Command: ./cyoa-step2 /usr/local/ece551/cyoa/story1
+==2990727== Parent PID: 2990726
+==2990727== 
+==2990727== 
+==2990727== HEAP SUMMARY:
+==2990727==     in use at exit: 24,112 bytes in 268 blocks
+==2990727==   total heap usage: 757 allocs, 489 frees, 422,398 bytes allocated
+==2990727== 
+==2990727== LEAK SUMMARY:
+==2990727==    definitely lost: 0 bytes in 0 blocks
+==2990727==    indirectly lost: 0 bytes in 0 blocks
+==2990727==      possibly lost: 0 bytes in 0 blocks
+==2990727==    still reachable: 24,112 bytes in 268 blocks
+==2990727==         suppressed: 0 bytes in 0 blocks
+==2990727== Reachable blocks (those to which a pointer was found) are not shown.
+==2990727== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2990727== 
+==2990727== For lists of detected and suppressed errors, rerun with: -s
+==2990727== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Step 2 EC intermediate deadline test 3
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input11.txt
+  - Valgrind showed memory leaks
+Valgrind reported errors or memory leaks
+==2990749== Memcheck, a memory error detector
+==2990749== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2990749== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2990749== Command: ./cyoa-step2 /usr/local/ece551/cyoa/story1
+==2990749== Parent PID: 2990748
+==2990749== 
+==2990749== 
+==2990749== HEAP SUMMARY:
+==2990749==     in use at exit: 24,112 bytes in 268 blocks
+==2990749==   total heap usage: 757 allocs, 489 frees, 422,398 bytes allocated
+==2990749== 
+==2990749== LEAK SUMMARY:
+==2990749==    definitely lost: 0 bytes in 0 blocks
+==2990749==    indirectly lost: 0 bytes in 0 blocks
+==2990749==      possibly lost: 0 bytes in 0 blocks
+==2990749==    still reachable: 24,112 bytes in 268 blocks
+==2990749==         suppressed: 0 bytes in 0 blocks
+==2990749== Reachable blocks (those to which a pointer was found) are not shown.
+==2990749== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2990749== 
+==2990749== For lists of detected and suppressed errors, rerun with: -s
+==2990749== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Step 2 EC intermediate deadline test 4
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input12.txt
+  - Valgrind showed memory leaks
+Valgrind reported errors or memory leaks
+==2990771== Memcheck, a memory error detector
+==2990771== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2990771== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2990771== Command: ./cyoa-step2 /usr/local/ece551/cyoa/story1
+==2990771== Parent PID: 2990770
+==2990771== 
+==2990771== 
+==2990771== HEAP SUMMARY:
+==2990771==     in use at exit: 24,112 bytes in 268 blocks
+==2990771==   total heap usage: 757 allocs, 489 frees, 422,398 bytes allocated
+==2990771== 
+==2990771== LEAK SUMMARY:
+==2990771==    definitely lost: 0 bytes in 0 blocks
+==2990771==    indirectly lost: 0 bytes in 0 blocks
+==2990771==      possibly lost: 0 bytes in 0 blocks
+==2990771==    still reachable: 24,112 bytes in 268 blocks
+==2990771==         suppressed: 0 bytes in 0 blocks
+==2990771== Reachable blocks (those to which a pointer was found) are not shown.
+==2990771== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2990771== 
+==2990771== For lists of detected and suppressed errors, rerun with: -s
+==2990771== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Step 2 EC intermediate deadline test 5
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input1.txt
+  - Valgrind showed memory leaks
+Valgrind reported errors or memory leaks
+==2990792== Memcheck, a memory error detector
+==2990792== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2990792== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2990792== Command: ./cyoa-step2 /usr/local/ece551/cyoa/story1
+==2990792== Parent PID: 2990791
+==2990792== 
+==2990792== 
+==2990792== HEAP SUMMARY:
+==2990792==     in use at exit: 24,112 bytes in 268 blocks
+==2990792==   total heap usage: 757 allocs, 489 frees, 422,398 bytes allocated
+==2990792== 
+==2990792== LEAK SUMMARY:
+==2990792==    definitely lost: 0 bytes in 0 blocks
+==2990792==    indirectly lost: 0 bytes in 0 blocks
+==2990792==      possibly lost: 0 bytes in 0 blocks
+==2990792==    still reachable: 24,112 bytes in 268 blocks
+==2990792==         suppressed: 0 bytes in 0 blocks
+==2990792== Reachable blocks (those to which a pointer was found) are not shown.
+==2990792== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2990792== 
+==2990792== For lists of detected and suppressed errors, rerun with: -s
+==2990792== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Step 2 EC intermediate deadline test 6
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input2.txt
+  - Valgrind showed memory leaks
+Valgrind reported errors or memory leaks
+==2990813== Memcheck, a memory error detector
+==2990813== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2990813== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2990813== Command: ./cyoa-step2 /usr/local/ece551/cyoa/story1
+==2990813== Parent PID: 2990812
+==2990813== 
+==2990813== 
+==2990813== HEAP SUMMARY:
+==2990813==     in use at exit: 24,112 bytes in 268 blocks
+==2990813==   total heap usage: 757 allocs, 489 frees, 422,398 bytes allocated
+==2990813== 
+==2990813== LEAK SUMMARY:
+==2990813==    definitely lost: 0 bytes in 0 blocks
+==2990813==    indirectly lost: 0 bytes in 0 blocks
+==2990813==      possibly lost: 0 bytes in 0 blocks
+==2990813==    still reachable: 24,112 bytes in 268 blocks
+==2990813==         suppressed: 0 bytes in 0 blocks
+==2990813== Reachable blocks (those to which a pointer was found) are not shown.
+==2990813== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2990813== 
+==2990813== For lists of detected and suppressed errors, rerun with: -s
+==2990813== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Step 2 EC intermediate deadline test 7
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input3.txt
+  - Valgrind showed memory leaks
+Valgrind reported errors or memory leaks
+==2990832== Memcheck, a memory error detector
+==2990832== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2990832== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2990832== Command: ./cyoa-step2 /usr/local/ece551/cyoa/story1
+==2990832== Parent PID: 2990831
+==2990832== 
+==2990832== 
+==2990832== HEAP SUMMARY:
+==2990832==     in use at exit: 24,112 bytes in 268 blocks
+==2990832==   total heap usage: 757 allocs, 489 frees, 422,398 bytes allocated
+==2990832== 
+==2990832== LEAK SUMMARY:
+==2990832==    definitely lost: 0 bytes in 0 blocks
+==2990832==    indirectly lost: 0 bytes in 0 blocks
+==2990832==      possibly lost: 0 bytes in 0 blocks
+==2990832==    still reachable: 24,112 bytes in 268 blocks
+==2990832==         suppressed: 0 bytes in 0 blocks
+==2990832== Reachable blocks (those to which a pointer was found) are not shown.
+==2990832== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2990832== 
+==2990832== For lists of detected and suppressed errors, rerun with: -s
+==2990832== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Step 2 EC intermediate deadline test 8
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input4.txt
+  - Valgrind showed memory leaks
+Valgrind reported errors or memory leaks
+==2990854== Memcheck, a memory error detector
+==2990854== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2990854== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2990854== Command: ./cyoa-step2 /usr/local/ece551/cyoa/story1
+==2990854== Parent PID: 2990853
+==2990854== 
+==2990854== 
+==2990854== HEAP SUMMARY:
+==2990854==     in use at exit: 24,112 bytes in 268 blocks
+==2990854==   total heap usage: 757 allocs, 489 frees, 422,398 bytes allocated
+==2990854== 
+==2990854== LEAK SUMMARY:
+==2990854==    definitely lost: 0 bytes in 0 blocks
+==2990854==    indirectly lost: 0 bytes in 0 blocks
+==2990854==      possibly lost: 0 bytes in 0 blocks
+==2990854==    still reachable: 24,112 bytes in 268 blocks
+==2990854==         suppressed: 0 bytes in 0 blocks
+==2990854== Reachable blocks (those to which a pointer was found) are not shown.
+==2990854== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2990854== 
+==2990854== For lists of detected and suppressed errors, rerun with: -s
+==2990854== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Step 2 EC intermediate deadline test 9
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input5.txt
+  - Valgrind showed memory leaks
+Valgrind reported errors or memory leaks
+==2990865== Memcheck, a memory error detector
+==2990865== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2990865== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2990865== Command: ./cyoa-step2 /usr/local/ece551/cyoa/story1
+==2990865== Parent PID: 2990864
+==2990865== 
+==2990865== 
+==2990865== HEAP SUMMARY:
+==2990865==     in use at exit: 24,112 bytes in 268 blocks
+==2990865==   total heap usage: 757 allocs, 489 frees, 422,398 bytes allocated
+==2990865== 
+==2990865== LEAK SUMMARY:
+==2990865==    definitely lost: 0 bytes in 0 blocks
+==2990865==    indirectly lost: 0 bytes in 0 blocks
+==2990865==      possibly lost: 0 bytes in 0 blocks
+==2990865==    still reachable: 24,112 bytes in 268 blocks
+==2990865==         suppressed: 0 bytes in 0 blocks
+==2990865== Reachable blocks (those to which a pointer was found) are not shown.
+==2990865== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2990865== 
+==2990865== For lists of detected and suppressed errors, rerun with: -s
+==2990865== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Step 2 EC intermediate deadline test 10
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input6.txt
+  - Valgrind showed memory leaks
+Valgrind reported errors or memory leaks
+==2990892== Memcheck, a memory error detector
+==2990892== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2990892== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2990892== Command: ./cyoa-step2 /usr/local/ece551/cyoa/story1
+==2990892== Parent PID: 2990891
+==2990892== 
+==2990892== 
+==2990892== HEAP SUMMARY:
+==2990892==     in use at exit: 24,112 bytes in 268 blocks
+==2990892==   total heap usage: 757 allocs, 489 frees, 422,398 bytes allocated
+==2990892== 
+==2990892== LEAK SUMMARY:
+==2990892==    definitely lost: 0 bytes in 0 blocks
+==2990892==    indirectly lost: 0 bytes in 0 blocks
+==2990892==      possibly lost: 0 bytes in 0 blocks
+==2990892==    still reachable: 24,112 bytes in 268 blocks
+==2990892==         suppressed: 0 bytes in 0 blocks
+==2990892== Reachable blocks (those to which a pointer was found) are not shown.
+==2990892== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2990892== 
+==2990892== For lists of detected and suppressed errors, rerun with: -s
+==2990892== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Step 2 EC intermediate deadline test 11
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input7.txt
+  - Valgrind showed memory leaks
+Valgrind reported errors or memory leaks
+==2990911== Memcheck, a memory error detector
+==2990911== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2990911== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2990911== Command: ./cyoa-step2 /usr/local/ece551/cyoa/story1
+==2990911== Parent PID: 2990910
+==2990911== 
+==2990911== 
+==2990911== HEAP SUMMARY:
+==2990911==     in use at exit: 24,112 bytes in 268 blocks
+==2990911==   total heap usage: 757 allocs, 489 frees, 422,398 bytes allocated
+==2990911== 
+==2990911== LEAK SUMMARY:
+==2990911==    definitely lost: 0 bytes in 0 blocks
+==2990911==    indirectly lost: 0 bytes in 0 blocks
+==2990911==      possibly lost: 0 bytes in 0 blocks
+==2990911==    still reachable: 24,112 bytes in 268 blocks
+==2990911==         suppressed: 0 bytes in 0 blocks
+==2990911== Reachable blocks (those to which a pointer was found) are not shown.
+==2990911== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2990911== 
+==2990911== For lists of detected and suppressed errors, rerun with: -s
+==2990911== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Step 2 EC intermediate deadline test 12
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input8.txt
+  - Valgrind showed memory leaks
+Valgrind reported errors or memory leaks
+==2990930== Memcheck, a memory error detector
+==2990930== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2990930== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2990930== Command: ./cyoa-step2 /usr/local/ece551/cyoa/story1
+==2990930== Parent PID: 2990929
+==2990930== 
+==2990930== 
+==2990930== HEAP SUMMARY:
+==2990930==     in use at exit: 24,112 bytes in 268 blocks
+==2990930==   total heap usage: 757 allocs, 489 frees, 422,398 bytes allocated
+==2990930== 
+==2990930== LEAK SUMMARY:
+==2990930==    definitely lost: 0 bytes in 0 blocks
+==2990930==    indirectly lost: 0 bytes in 0 blocks
+==2990930==      possibly lost: 0 bytes in 0 blocks
+==2990930==    still reachable: 24,112 bytes in 268 blocks
+==2990930==         suppressed: 0 bytes in 0 blocks
+==2990930== Reachable blocks (those to which a pointer was found) are not shown.
+==2990930== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2990930== 
+==2990930== For lists of detected and suppressed errors, rerun with: -s
+==2990930== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Step 2 EC intermediate deadline test 13
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input9.txt
+  - Valgrind showed memory leaks
+Valgrind reported errors or memory leaks
+==2990950== Memcheck, a memory error detector
+==2990950== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2990950== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2990950== Command: ./cyoa-step2 /usr/local/ece551/cyoa/story1
+==2990950== Parent PID: 2990949
+==2990950== 
+==2990950== 
+==2990950== HEAP SUMMARY:
+==2990950==     in use at exit: 24,112 bytes in 268 blocks
+==2990950==   total heap usage: 757 allocs, 489 frees, 422,398 bytes allocated
+==2990950== 
+==2990950== LEAK SUMMARY:
+==2990950==    definitely lost: 0 bytes in 0 blocks
+==2990950==    indirectly lost: 0 bytes in 0 blocks
+==2990950==      possibly lost: 0 bytes in 0 blocks
+==2990950==    still reachable: 24,112 bytes in 268 blocks
+==2990950==         suppressed: 0 bytes in 0 blocks
+==2990950== Reachable blocks (those to which a pointer was found) are not shown.
+==2990950== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2990950== 
+==2990950== For lists of detected and suppressed errors, rerun with: -s
+==2990950== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Step 2 EC intermediate deadline test 14
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story2 < /usr/local/ece551/cyoa/story2/inputs/input0.txt
+  - Valgrind showed memory leaks
+Valgrind reported errors or memory leaks
+==2990969== Memcheck, a memory error detector
+==2990969== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2990969== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2990969== Command: ./cyoa-step2 /usr/local/ece551/cyoa/story2
+==2990969== Parent PID: 2990968
+==2990969== 
+==2990969== 
+==2990969== HEAP SUMMARY:
+==2990969==     in use at exit: 8,512 bytes in 116 blocks
+==2990969==   total heap usage: 380 allocs, 264 frees, 326,841 bytes allocated
+==2990969== 
+==2990969== LEAK SUMMARY:
+==2990969==    definitely lost: 0 bytes in 0 blocks
+==2990969==    indirectly lost: 0 bytes in 0 blocks
+==2990969==      possibly lost: 0 bytes in 0 blocks
+==2990969==    still reachable: 8,512 bytes in 116 blocks
+==2990969==         suppressed: 0 bytes in 0 blocks
+==2990969== Reachable blocks (those to which a pointer was found) are not shown.
+==2990969== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2990969== 
+==2990969== For lists of detected and suppressed errors, rerun with: -s
+==2990969== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Step 2 EC intermediate deadline test 15
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story2 < /usr/local/ece551/cyoa/story2/inputs/input1.txt
+  - Valgrind showed memory leaks
+Valgrind reported errors or memory leaks
+==2990999== Memcheck, a memory error detector
+==2990999== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2990999== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2990999== Command: ./cyoa-step2 /usr/local/ece551/cyoa/story2
+==2990999== Parent PID: 2990998
+==2990999== 
+==2990999== 
+==2990999== HEAP SUMMARY:
+==2990999==     in use at exit: 8,512 bytes in 116 blocks
+==2990999==   total heap usage: 380 allocs, 264 frees, 326,841 bytes allocated
+==2990999== 
+==2990999== LEAK SUMMARY:
+==2990999==    definitely lost: 0 bytes in 0 blocks
+==2990999==    indirectly lost: 0 bytes in 0 blocks
+==2990999==      possibly lost: 0 bytes in 0 blocks
+==2990999==    still reachable: 8,512 bytes in 116 blocks
+==2990999==         suppressed: 0 bytes in 0 blocks
+==2990999== Reachable blocks (those to which a pointer was found) are not shown.
+==2990999== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2990999== 
+==2990999== For lists of detected and suppressed errors, rerun with: -s
+==2990999== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Step 2 EC intermediate deadline test 16
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story2 < /usr/local/ece551/cyoa/story2/inputs/input2.txt
+  - Valgrind showed memory leaks
+Valgrind reported errors or memory leaks
+==2991006== Memcheck, a memory error detector
+==2991006== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2991006== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2991006== Command: ./cyoa-step2 /usr/local/ece551/cyoa/story2
+==2991006== Parent PID: 2991005
+==2991006== 
+==2991006== 
+==2991006== HEAP SUMMARY:
+==2991006==     in use at exit: 8,512 bytes in 116 blocks
+==2991006==   total heap usage: 380 allocs, 264 frees, 326,841 bytes allocated
+==2991006== 
+==2991006== LEAK SUMMARY:
+==2991006==    definitely lost: 0 bytes in 0 blocks
+==2991006==    indirectly lost: 0 bytes in 0 blocks
+==2991006==      possibly lost: 0 bytes in 0 blocks
+==2991006==    still reachable: 8,512 bytes in 116 blocks
+==2991006==         suppressed: 0 bytes in 0 blocks
+==2991006== Reachable blocks (those to which a pointer was found) are not shown.
+==2991006== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2991006== 
+==2991006== For lists of detected and suppressed errors, rerun with: -s
+==2991006== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Step 2 EC intermediate deadline test 17
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story2 < /usr/local/ece551/cyoa/story2/inputs/input3.txt
+  - Valgrind showed memory leaks
+Valgrind reported errors or memory leaks
+==2991026== Memcheck, a memory error detector
+==2991026== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2991026== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2991026== Command: ./cyoa-step2 /usr/local/ece551/cyoa/story2
+==2991026== Parent PID: 2991025
+==2991026== 
+==2991026== 
+==2991026== HEAP SUMMARY:
+==2991026==     in use at exit: 8,512 bytes in 116 blocks
+==2991026==   total heap usage: 380 allocs, 264 frees, 326,841 bytes allocated
+==2991026== 
+==2991026== LEAK SUMMARY:
+==2991026==    definitely lost: 0 bytes in 0 blocks
+==2991026==    indirectly lost: 0 bytes in 0 blocks
+==2991026==      possibly lost: 0 bytes in 0 blocks
+==2991026==    still reachable: 8,512 bytes in 116 blocks
+==2991026==         suppressed: 0 bytes in 0 blocks
+==2991026== Reachable blocks (those to which a pointer was found) are not shown.
+==2991026== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2991026== 
+==2991026== For lists of detected and suppressed errors, rerun with: -s
+==2991026== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Step 2 EC intermediate deadline test 18
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story2 < /usr/local/ece551/cyoa/story2/inputs/input4.txt
+  - Valgrind showed memory leaks
+Valgrind reported errors or memory leaks
+==2991049== Memcheck, a memory error detector
+==2991049== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2991049== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2991049== Command: ./cyoa-step2 /usr/local/ece551/cyoa/story2
+==2991049== Parent PID: 2991048
+==2991049== 
+==2991049== 
+==2991049== HEAP SUMMARY:
+==2991049==     in use at exit: 8,512 bytes in 116 blocks
+==2991049==   total heap usage: 380 allocs, 264 frees, 326,841 bytes allocated
+==2991049== 
+==2991049== LEAK SUMMARY:
+==2991049==    definitely lost: 0 bytes in 0 blocks
+==2991049==    indirectly lost: 0 bytes in 0 blocks
+==2991049==      possibly lost: 0 bytes in 0 blocks
+==2991049==    still reachable: 8,512 bytes in 116 blocks
+==2991049==         suppressed: 0 bytes in 0 blocks
+==2991049== Reachable blocks (those to which a pointer was found) are not shown.
+==2991049== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2991049== 
+==2991049== For lists of detected and suppressed errors, rerun with: -s
+==2991049== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Step 2 EC intermediate deadline test 19
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story2 < /usr/local/ece551/cyoa/story2/inputs/input5.txt
+  - Valgrind showed memory leaks
+Valgrind reported errors or memory leaks
+==2991068== Memcheck, a memory error detector
+==2991068== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2991068== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2991068== Command: ./cyoa-step2 /usr/local/ece551/cyoa/story2
+==2991068== Parent PID: 2991067
+==2991068== 
+==2991068== 
+==2991068== HEAP SUMMARY:
+==2991068==     in use at exit: 8,512 bytes in 116 blocks
+==2991068==   total heap usage: 380 allocs, 264 frees, 326,841 bytes allocated
+==2991068== 
+==2991068== LEAK SUMMARY:
+==2991068==    definitely lost: 0 bytes in 0 blocks
+==2991068==    indirectly lost: 0 bytes in 0 blocks
+==2991068==      possibly lost: 0 bytes in 0 blocks
+==2991068==    still reachable: 8,512 bytes in 116 blocks
+==2991068==         suppressed: 0 bytes in 0 blocks
+==2991068== Reachable blocks (those to which a pointer was found) are not shown.
+==2991068== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2991068== 
+==2991068== For lists of detected and suppressed errors, rerun with: -s
+==2991068== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Step 2 EC intermediate deadline test 20
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story2 < /usr/local/ece551/cyoa/story2/inputs/input6.txt
+  - Valgrind showed memory leaks
+Valgrind reported errors or memory leaks
+==2991089== Memcheck, a memory error detector
+==2991089== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2991089== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2991089== Command: ./cyoa-step2 /usr/local/ece551/cyoa/story2
+==2991089== Parent PID: 2991088
+==2991089== 
+==2991089== 
+==2991089== HEAP SUMMARY:
+==2991089==     in use at exit: 8,512 bytes in 116 blocks
+==2991089==   total heap usage: 380 allocs, 264 frees, 326,841 bytes allocated
+==2991089== 
+==2991089== LEAK SUMMARY:
+==2991089==    definitely lost: 0 bytes in 0 blocks
+==2991089==    indirectly lost: 0 bytes in 0 blocks
+==2991089==      possibly lost: 0 bytes in 0 blocks
+==2991089==    still reachable: 8,512 bytes in 116 blocks
+==2991089==         suppressed: 0 bytes in 0 blocks
+==2991089== Reachable blocks (those to which a pointer was found) are not shown.
+==2991089== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2991089== 
+==2991089== For lists of detected and suppressed errors, rerun with: -s
+==2991089== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Step 2 EC intermediate deadline test 21
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story2 < /usr/local/ece551/cyoa/story2/inputs/input7.txt
+  - Valgrind showed memory leaks
+Valgrind reported errors or memory leaks
+==2991110== Memcheck, a memory error detector
+==2991110== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2991110== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2991110== Command: ./cyoa-step2 /usr/local/ece551/cyoa/story2
+==2991110== Parent PID: 2991109
+==2991110== 
+==2991110== 
+==2991110== HEAP SUMMARY:
+==2991110==     in use at exit: 8,512 bytes in 116 blocks
+==2991110==   total heap usage: 380 allocs, 264 frees, 326,841 bytes allocated
+==2991110== 
+==2991110== LEAK SUMMARY:
+==2991110==    definitely lost: 0 bytes in 0 blocks
+==2991110==    indirectly lost: 0 bytes in 0 blocks
+==2991110==      possibly lost: 0 bytes in 0 blocks
+==2991110==    still reachable: 8,512 bytes in 116 blocks
+==2991110==         suppressed: 0 bytes in 0 blocks
+==2991110== Reachable blocks (those to which a pointer was found) are not shown.
+==2991110== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2991110== 
+==2991110== For lists of detected and suppressed errors, rerun with: -s
+==2991110== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Step 2 EC intermediate deadline test 22
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story2 < /usr/local/ece551/cyoa/story2/inputs/input8.txt
+  - Valgrind showed memory leaks
+Valgrind reported errors or memory leaks
+==2991131== Memcheck, a memory error detector
+==2991131== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2991131== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2991131== Command: ./cyoa-step2 /usr/local/ece551/cyoa/story2
+==2991131== Parent PID: 2991130
+==2991131== 
+==2991131== 
+==2991131== HEAP SUMMARY:
+==2991131==     in use at exit: 8,512 bytes in 116 blocks
+==2991131==   total heap usage: 380 allocs, 264 frees, 326,841 bytes allocated
+==2991131== 
+==2991131== LEAK SUMMARY:
+==2991131==    definitely lost: 0 bytes in 0 blocks
+==2991131==    indirectly lost: 0 bytes in 0 blocks
+==2991131==      possibly lost: 0 bytes in 0 blocks
+==2991131==    still reachable: 8,512 bytes in 116 blocks
+==2991131==         suppressed: 0 bytes in 0 blocks
+==2991131== Reachable blocks (those to which a pointer was found) are not shown.
+==2991131== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2991131== 
+==2991131== For lists of detected and suppressed errors, rerun with: -s
+==2991131== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Step 2 EC intermediate deadline test 23
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story2 < /usr/local/ece551/cyoa/story2/inputs/input9.txt
+  - Valgrind showed memory leaks
+Valgrind reported errors or memory leaks
+==2991140== Memcheck, a memory error detector
+==2991140== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2991140== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2991140== Command: ./cyoa-step2 /usr/local/ece551/cyoa/story2
+==2991140== Parent PID: 2991139
+==2991140== 
+==2991140== 
+==2991140== HEAP SUMMARY:
+==2991140==     in use at exit: 8,512 bytes in 116 blocks
+==2991140==   total heap usage: 380 allocs, 264 frees, 326,841 bytes allocated
+==2991140== 
+==2991140== LEAK SUMMARY:
+==2991140==    definitely lost: 0 bytes in 0 blocks
+==2991140==    indirectly lost: 0 bytes in 0 blocks
+==2991140==      possibly lost: 0 bytes in 0 blocks
+==2991140==    still reachable: 8,512 bytes in 116 blocks
+==2991140==         suppressed: 0 bytes in 0 blocks
+==2991140== Reachable blocks (those to which a pointer was found) are not shown.
+==2991140== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2991140== 
+==2991140== For lists of detected and suppressed errors, rerun with: -s
+==2991140== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Step 3
+Checking that cyoa-step3 compiles
+rm -f *~ cyoa-step1 cyoa-step2   cyoa-step1.o cyoa-step2.o cyoa-step1.o story.o page.o helperFunction.o myException.o
+g++    -c -o cyoa-step3.o cyoa-step3.cpp
+g++ -o cyoa-step3 cyoa-step3.o
+rm cyoa-step3.o
+The code compiled (good)
+Executable cyoa-step3 exists (good)
+------------------------------------
+Now running YOUR tests for step 3
+------------------------------------
+No request to check for intermediate deadline completion on step 3
+
+Step 4
+Checking that cyoa-step4 compiles
+rm -f *~ cyoa-step1 cyoa-step2   cyoa-step1.o cyoa-step2.o cyoa-step1.o story.o page.o helperFunction.o myException.o
 The code did not compile!
 
 Overall Grade: NO GRADE YET
