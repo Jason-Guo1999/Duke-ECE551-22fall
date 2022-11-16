@@ -10,6 +10,7 @@ cyoa-step%: cyoa-step%.o
 .PHONY: clean
 clean:
 	rm -f *~ $(PROGS) $(OBJS)
+	rm -f *.o
 
 cyoa-step1.o: cyoa-step1.cpp
 cyoa-step2.o: cyoa-step2.cpp

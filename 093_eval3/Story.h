@@ -224,7 +224,12 @@ class Story {
     // if reach a win page
     if (currentPage.getStatus() == 1) {
       tempAns.push_back(std::to_string(currentPageNumber) + "(win)");
+
       ans.push_back(tempAns);
+      tempAns.pop_back();
+      return;
+    }
+    if (currentPage.getStatus() == 2) {
       return;
     }
     // if we have visited before : circle
@@ -235,10 +240,11 @@ class Story {
     visited.insert(currentPageNumber);
     for (size_t i = 0; i < currentPage.choices.size(); i++) {
       size_t targetPage = currentPage.choicesMap[currentPage.choices[i]];
+
       tempAns.push_back(std::to_string(currentPageNumber) + "(" + std::to_string(i + 1) +
                         ")");
       findWinPath(ans, tempAns, visited, targetPage);
-      tempAns.erase(tempAns.end());
+      tempAns.pop_back();
     }
     visited.erase(currentPageNumber);
   }
