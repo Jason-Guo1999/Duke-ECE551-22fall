@@ -27,5 +27,5 @@ int main(int argc, char ** argv) {
   std::unordered_set<size_t> visited;
   myStory.findWinPath(ans, tempAns, visited, 0);
   printWinPath(ans);
-  exit(EXIT_SUCCESS);
+  return EXIT_SUCCESS;
 }
