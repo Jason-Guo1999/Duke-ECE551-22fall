@@ -1,6 +1,6 @@
-Grading at 11/16/2022:02:41:23.873496
-For commit ID f6f697c027d7e98c4039d018ce058bc47e8658a5
-Grading at Tue Nov 15 09:41:20 PM EST 2022
+Grading at 11/16/2022:02:43:18.028869
+For commit ID 77ca03514f294c5df2cc2546a3b66f02d1916251
+Grading at Tue Nov 15 09:43:14 PM EST 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -51,7 +51,7 @@ Only you can decide....						Only you can decide....
 
 What would you like to do?					What would you like to do?
 
-1. :I am ready for this story!				      |	 1. I am ready for this story!
+1. am ready for this story!				      |	 1. I am ready for this story!
 Page 1								Page 1
 ==========							==========
 One day, a strange old wizard comes to your village and tells	One day, a strange old wizard comes to your village and tells
@@ -75,9 +75,9 @@ and/or jam). 							and/or jam).
 
 What would you like to do?					What would you like to do?
 
-1. :Choose the magic whistle.				      |	 1. Choose the magic whistle.
-2. :Choose the magic shoes.				      |	 2. Choose the magic shoes.
-3. :Choose the magic toaster.				      |	 3. Choose the magic toaster.
+1.hoose the magic whistle.				      |	 1. Choose the magic whistle.
+2.hoose the magic shoes.				      |	 2. Choose the magic shoes.
+3.hoose the magic toaster.				      |	 3. Choose the magic toaster.
 Page 2								Page 2
 ==========							==========
 As you take the magic whistle from the wizard's hand, he disa	As you take the magic whistle from the wizard's hand, he disa
@@ -101,9 +101,9 @@ decide whom to go to for help.					decide whom to go to for help.
 
 What would you like to do?					What would you like to do?
 
-1. :Go to Denevieve for help.				      |	 1. Go to Denevieve for help.
-2. :Go to Grew for help.				      |	 2. Go to Grew for help.
-3. :Go alone.						      |	 3. Go alone.
+1.o to Denevieve for help.				      |	 1. Go to Denevieve for help.
+2.o to Grew for help.					      |	 2. Go to Grew for help.
+3.o alone.						      |	 3. Go alone.
 Page 3								Page 3
 ==========							==========
 As you take the magic shoes from the wizard's hand, he disapp	As you take the magic shoes from the wizard's hand, he disapp
@@ -127,9 +127,9 @@ decide whom to go to for help.					decide whom to go to for help.
 
 What would you like to do?					What would you like to do?
 
-1. :Go to Denevieve for help.				      |	 1. Go to Denevieve for help.
-2. :Go to Grew for help.				      |	 2. Go to Grew for help.
-3. :Go alone.						      |	 3. Go alone.
+1.o to Denevieve for help.				      |	 1. Go to Denevieve for help.
+2.o to Grew for help.					      |	 2. Go to Grew for help.
+3.o alone.						      |	 3. Go alone.
 Page 4								Page 4
 ==========							==========
 As you take the magic toaster from the wizard's hand, he disa	As you take the magic toaster from the wizard's hand, he disa
@@ -157,9 +157,9 @@ decide whom to go to for help.					decide whom to go to for help.
 
 What would you like to do?					What would you like to do?
 
-1. :Go to Denevieve for help.				      |	 1. Go to Denevieve for help.
-2. :Go to Grew for help.				      |	 2. Go to Grew for help.
-3. :Go alone.						      |	 3. Go alone.
+1.o to Denevieve for help.				      |	 1. Go to Denevieve for help.
+2.o to Grew for help.					      |	 2. Go to Grew for help.
+3.o alone.						      |	 3. Go alone.
 Page 5								Page 5
 ==========							==========
 After thinking about it a bit, you decide that Denevieve is p	After thinking about it a bit, you decide that Denevieve is p
@@ -179,9 +179,9 @@ list of three possible combinations to tame the dragon. 	list of three possible 
 
 What would you like to do?					What would you like to do?
 
-1. :Silent Night, accompanied by raven calls		      |	 1. Silent Night, accompanied by raven calls
-2. :Angels We Have Heard on High, accompanied by roosters cro |	 2. Angels We Have Heard on High, accompanied by roosters cro
-3. :Bohemian Rhapsody, accompanied by the magestic call of a  |	 3. Bohemian Rhapsody, accompanied by the magestic call of a 
+1.ilent Night, accompanied by raven calls		      |	 1. Silent Night, accompanied by raven calls
+2.ngels We Have Heard on High, accompanied by roosters crowin |	 2. Angels We Have Heard on High, accompanied by roosters cro
+3.ohemian Rhapsody, accompanied by the magestic call of a bal |	 3. Bohemian Rhapsody, accompanied by the magestic call of a 
 Page 6								Page 6
 ==========							==========
 After thinking about it for a bit, you decide that Grew is th	After thinking about it for a bit, you decide that Grew is th
@@ -383,9 +383,9 @@ You encounter a dragon.						You encounter a dragon.
 
 What would you like to do?					What would you like to do?
 
-1. :Try to sneak past the sleeping dragon		      |	1.Try to sneak past the sleeping dragon
-2. :Leave the dragon's cave and go home			      |	2.Leave the dragon's cave and go home
-3. :Stab the dragon in the neck				      |	3.Stab the dragon in the neck
+1.ry to sneak past the sleeping dragon			      |	1.Try to sneak past the sleeping dragon
+2.eave the dragon's cave and go home			      |	2.Leave the dragon's cave and go home
+3.tab the dragon in the neck				      |	3.Stab the dragon in the neck
 Page 1								Page 1
 ==========							==========
 As you tiptoe past the sleeping dragon, steam rising from her	As you tiptoe past the sleeping dragon, steam rising from her
@@ -395,8 +395,8 @@ An enormous, rare Scythian ruby gleams atop a pedestal, becko	An enormous, rare 
 
 What would you like to do?					What would you like to do?
 
-1. :Pick up the ruby					      |	1.Pick up the ruby
-2. :Pass the ruby to explore the rest of the hoard	      |	2.Pass the ruby to explore the rest of the hoard
+1.ick up the ruby					      |	1.Pick up the ruby
+2.ass the ruby to explore the rest of the hoard		      |	2.Pass the ruby to explore the rest of the hoard
 Page 2								Page 2
 ==========							==========
 You enjoy a quiet evening at home with a mug of herbal tea an	You enjoy a quiet evening at home with a mug of herbal tea an
@@ -427,8 +427,8 @@ grand marble desk, lies an ancient book with gold-leaf trim. 	grand marble desk,
 
 What would you like to do?					What would you like to do?
 
-1. :Put on the cloak					      |	1.Put on the cloak
-2. :Open the book					      |	2.Open the book
+1.ut on the cloak					      |	1.Put on the cloak
+2.pen the book						      |	2.Open the book
 Page 6								Page 6
 ==========							==========
 It appears to be a cloak of invisibility! You pass what shoul	It appears to be a cloak of invisibility! You pass what shoul
@@ -438,8 +438,8 @@ Emboldened, you explore the treasure hoard further.		Emboldened, you explore the
 
 What would you like to do?					What would you like to do?
 
-1. :Go back and take the ruby				      |	1.Go back and take the ruby
-2. :Go back and open the book				      |	2.Go back and open the book
+1.o back and take the ruby				      |	1.Go back and take the ruby
+2.o back and open the book				      |	2.Go back and open the book
 Page 7								Page 7
 ==========							==========
 The book is the original copy of All of Programming. You pore	The book is the original copy of All of Programming. You pore
@@ -450,8 +450,8 @@ sleeping. 							sleeping.
 
 What would you like to do?					What would you like to do?
 
-1. :Exult in your skillset and go home			      |	1.Exult in your skillset and go home
-2. :Stab the dragon in the neck				      |	2.Stab the dragon in the neck
+1.xult in your skillset and go home			      |	1.Exult in your skillset and go home
+2.tab the dragon in the neck				      |	2.Stab the dragon in the neck
 Page 8								Page 8
 ==========							==========
 You wrap the Scythian ruby in the cloak, and sneak back to wh	You wrap the Scythian ruby in the cloak, and sneak back to wh
@@ -459,8 +459,8 @@ slumbers. 							slumbers.
 
 What would you like to do?					What would you like to do?
 
-1. :Take your prize and go home				      |	1.Take your prize and go home
-2. :Stab the dragon in the neck				      |	2.Stab the dragon in the neck
+1.ake your prize and go home				      |	1.Take your prize and go home
+2.tab the dragon in the neck				      |	2.Stab the dragon in the neck
 Page 9								Page 9
 ==========							==========
 The book is the original copy of All of Programming, but the 	The book is the original copy of All of Programming, but the 
