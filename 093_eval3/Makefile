@@ -1,18 +1,20 @@
-CFLAGS=-std=gnu++11 -pedantic -Wall -Werror -ggdb3
-PROGS=cyoa-step1 cyoa-step2 #cyoa-step3 cyoa-step4
-OBJS=$(patsubst %,%.o,$(PROGS)) Page.h Story.h myException.h helperFunction.h
+CFLAGS=-std=gnu++98 -pedantic -Wall -Werror -ggdb3
+PROGS=cyoa-step1 cyoa-step2  #cyoa-step3 cyoa-step4
+OBJS=$(patsubst %,%.o,$(PROGS)) cyoa-step1.o story.o page.o helperFunction.o myException.o
 all: $(PROGS)
-story-step%: story-step%.o Page.o Story.o myException.o helperFunction.o
-	gcc -o $@ $^
+cyoa-step%: cyoa-step%.o 
+	g++ -o $@ $^
 %.o: %.c
-	gcc $(CFLAGS) -c $<
+	g++ $(CFLAGS) -c $<
 
 .PHONY: clean
 clean:
 	rm -f *~ $(PROGS) $(OBJS)
 
-Page.o: Page.h
-Story.o: Story.h
+cyoa-step1.o: cyoa-step1.cpp
+cyoa-step2.o: cyoa-step2.cpp
+story.o: Story.h
+page.o: Page.h
 myException.o: myException.h
 helperFunction.o: helperFunction.h
 
