@@ -118,16 +118,16 @@ class Story {
     // store pages that be referenced
     std::unordered_set<int> validate;
     // page1 may not be referenced
-    validate.insert(1);
-    for (size_t i = 0; i < totalPages + 1; i++) {
+    validate.insert(0);
+    for (size_t i = 0; i < pageMap.size(); i++) {
       Page & page = pageMap[i];
       // get a win page
-      if (page.win) {
+      if (page.getStatus() == 1) {
         haveWin = true;
         continue;
       }
       // get a lose page
-      if (page.lose) {
+      if (page.getStatus() == 2) {
         haveLose = true;
         continue;
       }
@@ -135,7 +135,7 @@ class Story {
       for (std::string & choice : page.choices) {
         size_t targetPage = page.choicesMap[choice];
         try {
-          if (targetPage < 1 || targetPage > totalPages) {
+          if (targetPage < 0 || targetPage >= pageMap.size()) {
             throw(myException("Invalid choice! error target pageNum"));
           }
         }
@@ -151,7 +151,7 @@ class Story {
     }
     // every page is referenced at least once
     try {
-      if (validate.size() != totalPages) {
+      if (validate.size() != pageMap.size()) {
         throw(myException("Found unreferenced page!"));
       }
     }
@@ -191,11 +191,11 @@ class Story {
   }
 
   // display story
-  void displayStory(int currentPage) {
+  void displayStory(size_t currentPage) {
     Page & page = pageMap[currentPage];
     page.printPage();
     // if win or lose
-    if (page.win || page.lose) {
+    if (page.getStatus() == 1 || page.getStatus() == 2) {
       exit(EXIT_SUCCESS);
     }
     // make a choice
@@ -203,7 +203,7 @@ class Story {
     while (true) {
       size_t temp;
       std::cin >> temp;
-      if (temp <= 0 || temp >= page.choices.size()) {
+      if (temp <= 0 || temp > page.choices.size()) {
         std::cout << "That is not a valid choice, please try again" << std::endl;
       }
       else {
@@ -212,8 +212,36 @@ class Story {
       }
     }
     // transfer to reader's choice
-    int targetPage = page.choicesMap[page.choices[readerChoice]];
+    size_t targetPage = page.choicesMap[page.choices[readerChoice - 1]];
     displayStory(targetPage);
+  }
+
+  void findWinPath(std::vector<std::vector<std::string> > & ans,
+                   std::vector<std::string> & tempAns,
+                   std::unordered_set<size_t> & visited,
+                   size_t currentPageNumber) {
+    // backtrace algo
+    Page & currentPage = pageMap[currentPageNumber];
+    // if reach a win page
+    if (currentPage.getStatus() == 1) {
+      tempAns.push_back(std::to_string(currentPageNumber) + "(win)");
+      ans.push_back(tempAns);
+      return;
+    }
+    // if we have visited before : circle
+    if (visited.count(currentPageNumber)) {
+      return;
+    }
+    // try to do dfs
+    visited.insert(currentPageNumber);
+    for (size_t i = 0; i < currentPage.choices.size(); i++) {
+      size_t targetPage = currentPage.choicesMap[currentPage.choices[i]];
+      tempAns.push_back(std::to_string(currentPageNumber) + "(" + std::to_string(i + 1) +
+                        ")");
+      findWinPath(ans, tempAns, visited, targetPage);
+      tempAns.erase(tempAns.end());
+    }
+    visited.erase(currentPageNumber);
   }
 };
 

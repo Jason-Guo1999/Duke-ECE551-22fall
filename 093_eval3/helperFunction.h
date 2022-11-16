@@ -63,4 +63,21 @@ int decideLineMode(std::string line) {
   }
   return 0;
 }
+
+void printWinPath(std::vector<std::vector<std::string> > & winPath) {
+  if (winPath.size() == 0) {
+    std::cout << "This story is unwinnable!" << std::endl;
+    return;
+  }
+  for (auto it1 : winPath) {
+    for (auto it2 : it1) {
+      if (it2 != it1.back()) {
+        std::cout << it2 << ",";
+      }
+      else {
+        std::cout << it2 << std::endl;
+      }
+    }
+  }
+}
 #endif

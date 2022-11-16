@@ -1,3 +1,2 @@
 ec:step1
-cyoa-step1 story1
-cyoa-step1 story2
+ec:step2

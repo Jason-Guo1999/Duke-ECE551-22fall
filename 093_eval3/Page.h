@@ -135,7 +135,7 @@ class Page {
     choices.push_back(choice);
   }
 
-  int gatStatus() {
+  int getStatus() {
     if (win) {
       return 1;
     }
