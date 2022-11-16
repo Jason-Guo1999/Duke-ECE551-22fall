@@ -23,5 +23,5 @@ int main(int argc, char ** argv) {
   }
   // start from page 0
   myStory.displayStory(0);
-  exit(EXIT_SUCCESS);
+  return EXIT_SUCCESS;
 }

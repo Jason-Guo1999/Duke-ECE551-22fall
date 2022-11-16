@@ -120,20 +120,19 @@ class Story {
     // page1 may not be referenced
     validate.insert(0);
     for (size_t i = 0; i < pageMap.size(); i++) {
-      Page & page = pageMap[i];
       // get a win page
-      if (page.getStatus() == 1) {
+      if (pageMap[i].getStatus() == 1) {
         haveWin = true;
         continue;
       }
       // get a lose page
-      if (page.getStatus() == 2) {
+      if (pageMap[i].getStatus() == 2) {
         haveLose = true;
         continue;
       }
       // get a normal page
-      for (std::string & choice : page.choices) {
-        size_t targetPage = page.choicesMap[choice];
+      for (std::string & choice : pageMap[i].choices) {
+        size_t targetPage = pageMap[i].choicesMap[choice];
         try {
           if (targetPage < 0 || targetPage >= pageMap.size()) {
             throw(myException("Invalid choice! error target pageNum"));
@@ -196,7 +195,7 @@ class Story {
     page.printPage();
     // if win or lose
     if (page.getStatus() == 1 || page.getStatus() == 2) {
-      exit(EXIT_SUCCESS);
+      return;
     }
     // make a choice
     int readerChoice;
