@@ -1,57 +1,12 @@
-Grading at 11/16/2022:02:45:53.054800
-For commit ID b9814642d461e24ce97e4599db9f1bf8366a30ca
-Grading at Tue Nov 15 09:45:48 PM EST 2022
+Grading at 11/16/2022:17:05:53.131023
+For commit ID ce152d2e975674cd8be163f218d9cffc2e82065a
+Grading at Wed Nov 16 12:05:52 PM EST 2022
 Doing some basic checking for your submission
 
 Step 1
 Checking that cyoa-step1 compiles
-g++ -o cyoa-step1 -Wall -Werror -std=gnu++11 cyoa-step1.cpp
-The code compiled (good)
-Executable cyoa-step1 exists (good)
-------------------------------------
-Now running YOUR tests for step 1
-------------------------------------
-
-
-1.1: Current test is ./cyoa-step1 story1 < /dev/null
------------------------------
-Great: we both considered this an error
-----here is what you printed on stderr---
-Can't find story.txt in this directory!
------------------------------------------
-Lets check if it valgrinds:
-Valgrind was clean
-
-
-1.2: Current test is ./cyoa-step1 story2 < /dev/null
------------------------------
-Great: we both considered this an error
-----here is what you printed on stderr---
-Can't find story.txt in this directory!
------------------------------------------
-Lets check if it valgrinds:
-Valgrind was clean
-------------------------------------
-You have requested that we check for intermediate deadline completion on step 1
-------------------------------------
-
-Step 1 EC intermediate deadline test 1
-===========================================================
-./cyoa-step1 /usr/local/ece551/cyoa/story1
-  - Valgrind was clean (no errors, no memory leaks)
-Valgrind was clean for this testcase
-You have passed this test case
-
-Step 1 EC intermediate deadline test 2
-===========================================================
-./cyoa-step1 /usr/local/ece551/cyoa/story2
-  - Valgrind was clean (no errors, no memory leaks)
-Valgrind was clean for this testcase
-You have passed this test case
-Intermediate deadline requirements for Step 1 passed at Tue Nov 15 09:45:53 PM EST 2022
-
-Step 2
-Checking that cyoa-step2 compiles
+rm -f *~ cyoa-step1 cyoa-step2  cyoa-step1.o cyoa-step2.o Page.h Story.h myException.h helperFunction.h
+g++     cyoa-step1.cpp   -o cyoa-step1
 The code did not compile!
 
 Overall Grade: NO GRADE YET
