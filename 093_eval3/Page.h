@@ -130,7 +130,7 @@ class Page {
       exit(EXIT_FAILURE);
     }
     // store choice
-    std::string choice = target.substr(findColon);
+    std::string choice = target.substr(findColon + 2);
     choicesMap.insert(std::make_pair(choice, targetPage));
     choices.push_back(choice);
   }
