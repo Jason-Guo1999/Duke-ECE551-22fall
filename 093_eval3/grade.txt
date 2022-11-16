@@ -1,11 +1,11 @@
-Grading at 11/16/2022:17:40:41.860274
-For commit ID bee756f383003c02d7afca35fa7ac0b6ac6ce152
-Grading at Wed Nov 16 12:40:17 PM EST 2022
+Grading at 11/16/2022:17:55:59.967012
+For commit ID 17c2645ee4133db72eaab7d5af4b22d3e0a92fb7
+Grading at Wed Nov 16 12:55:32 PM EST 2022
 Doing some basic checking for your submission
 
 Step 1
 Checking that cyoa-step1 compiles
-rm -f *~ cyoa-step1 cyoa-step2   cyoa-step1.o cyoa-step2.o cyoa-step1.o story.o page.o helperFunction.o myException.o
+rm -f *~ cyoa-step1 cyoa-step2  cyoa-step3  cyoa-step1.o cyoa-step2.o cyoa-step3.o cyoa-step1.o cyoa-step2.o cyoa-step3.o story.o page.o helperFunction.o myException.o
 g++    -c -o cyoa-step1.o cyoa-step1.cpp
 g++ -o cyoa-step1 cyoa-step1.o
 The code compiled (good)
@@ -13,11 +13,28 @@ Executable cyoa-step1 exists (good)
 ------------------------------------
 Now running YOUR tests for step 1
 ------------------------------------
-No request to check for intermediate deadline completion on step 1
+------------------------------------
+You have requested that we check for intermediate deadline completion on step 1
+------------------------------------
+
+Step 1 EC intermediate deadline test 1
+===========================================================
+./cyoa-step1 /usr/local/ece551/cyoa/story1
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
+
+Step 1 EC intermediate deadline test 2
+===========================================================
+./cyoa-step1 /usr/local/ece551/cyoa/story2
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
+Intermediate deadline requirements for Step 1 passed at Wed Nov 16 12:55:35 PM EST 2022
 
 Step 2
 Checking that cyoa-step2 compiles
-rm -f *~ cyoa-step1 cyoa-step2   cyoa-step1.o cyoa-step2.o cyoa-step1.o story.o page.o helperFunction.o myException.o
+rm -f *~ cyoa-step1 cyoa-step2  cyoa-step3  cyoa-step1.o cyoa-step2.o cyoa-step3.o cyoa-step1.o cyoa-step2.o cyoa-step3.o story.o page.o helperFunction.o myException.o
 g++    -c -o cyoa-step2.o cyoa-step2.cpp
 g++ -o cyoa-step2 cyoa-step2.o
 The code compiled (good)
@@ -189,24 +206,44 @@ Step 2 EC intermediate deadline test 23
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean for this testcase
 You have passed this test case
-Intermediate deadline requirements for Step 2 passed at Wed Nov 16 12:40:40 PM EST 2022
+Intermediate deadline requirements for Step 2 passed at Wed Nov 16 12:55:56 PM EST 2022
 
 Step 3
 Checking that cyoa-step3 compiles
-rm -f *~ cyoa-step1 cyoa-step2   cyoa-step1.o cyoa-step2.o cyoa-step1.o story.o page.o helperFunction.o myException.o
+rm -f *~ cyoa-step1 cyoa-step2  cyoa-step3  cyoa-step1.o cyoa-step2.o cyoa-step3.o cyoa-step1.o cyoa-step2.o cyoa-step3.o story.o page.o helperFunction.o myException.o
 g++    -c -o cyoa-step3.o cyoa-step3.cpp
 g++ -o cyoa-step3 cyoa-step3.o
-rm cyoa-step3.o
 The code compiled (good)
 Executable cyoa-step3 exists (good)
 ------------------------------------
 Now running YOUR tests for step 3
 ------------------------------------
-No request to check for intermediate deadline completion on step 3
+------------------------------------
+You have requested that we check for intermediate deadline completion on step 3
+------------------------------------
+
+Step 3 EC intermediate deadline test 1
+===========================================================
+./cyoa-step3 /usr/local/ece551/cyoa/story1
+Your output differs from ours.
+Below is the diff (yours left/ours right)
+0(1),1(2),3(1),8(win)						0(1),1(2),3(1),8(win)
+0(1),1(2),1(3),4(2),12(win)				      |	0(1),1(3),4(2),12(win)
+Your file did not match the expected ouput
+
+Step 3 EC intermediate deadline test 2
+===========================================================
+./cyoa-step3 /usr/local/ece551/cyoa/story2
+Your output differs from ours.
+Below is the diff (yours left/ours right)
+0(1),1(2),5(1),6(1),8(1),11(win)				0(1),1(2),5(1),6(1),8(1),11(win)
+0(1),1(2),5(1),5(2),7(1),10(win)			      |	0(1),1(2),5(2),7(1),10(win)
+0(1),1(2),0(2),2(win)					      |	0(2),2(win)
+Your file did not match the expected ouput
 
 Step 4
 Checking that cyoa-step4 compiles
-rm -f *~ cyoa-step1 cyoa-step2   cyoa-step1.o cyoa-step2.o cyoa-step1.o story.o page.o helperFunction.o myException.o
+rm -f *~ cyoa-step1 cyoa-step2  cyoa-step3  cyoa-step1.o cyoa-step2.o cyoa-step3.o cyoa-step1.o cyoa-step2.o cyoa-step3.o story.o page.o helperFunction.o myException.o
 The code did not compile!
 
 Overall Grade: NO GRADE YET
