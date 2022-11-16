@@ -101,7 +101,7 @@ class Page {
       std::cout << "What would you like to do?" << std::endl;
       std::cout << std::endl;
       for (size_t i = 1; i < choices.size() + 1; i++) {
-        std::cout << i << ". " << choices[i - 1] << std::endl;
+        std::cout << i << "." << choices[i - 1] << std::endl;
       }
     }
   }
