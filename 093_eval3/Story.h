@@ -11,13 +11,13 @@
 #include "helperFunction.h"
 #include "myException.h"
 class Story {
- public:
+ private:
   std::unordered_map<int, Page> pageMap;
   size_t totalPages;
   // store the item get form each page, update when reading a new page
   std::unordered_map<std::string, long> itemList;
   // build story thorugh a directory
-
+ public:
   Story(const char * directory) {
     // item list is empty at the beginning
     //itemList = std::unordered_map<std::string, long>();
@@ -183,8 +183,8 @@ class Story {
         continue;
       }
       // get a normal page
-      for (size_t j = 0; j < pageMap[i].choices.size(); j++) {
-        size_t targetPage = pageMap[i].choicesMap[j + 1];
+      for (size_t j = 0; j < pageMap[i].getChoicesSize(); j++) {
+        size_t targetPage = pageMap[i].getTargetPage(j + 1);
         try {
           if (targetPage < 0 || targetPage >= pageMap.size()) {
             throw(myException("Invalid choice! error target pageNum"));
@@ -246,9 +246,8 @@ class Story {
         std::cout << "Sorry, you have lost. Better luck next time!" << std::endl;
       }
       else {
-        for (size_t j = 0; j < pageMap[i].choices.size(); j++) {
-          std::cout << j + 1 << "." << pageMap[i].choices[j].getChoiceContent()
-                    << std::endl;
+        for (size_t j = 0; j < pageMap[i].getChoicesSize(); j++) {
+          std::cout << j + 1 << "." << pageMap[i].getContent(j) << std::endl;
         }
       }
     }
@@ -276,13 +275,13 @@ class Story {
     else {
       std::cout << "What would you like to do?" << std::endl;
       std::cout << std::endl;
-      for (size_t i = 1; i < page.choices.size() + 1; i++) {
-        if (!validChoiceStatus(page.choices[i - 1])) {
+      for (size_t i = 1; i < page.getChoicesSize() + 1; i++) {
+        if (!validChoiceStatus(page.getChoice(i - 1))) {
           std::cout << i << "."
                     << "<UNAVAILABLE>" << std::endl;
         }
         else {
-          std::cout << i << "." << page.choices[i - 1].getChoiceContent() << std::endl;
+          std::cout << i << "." << page.getContent(i - 1) << std::endl;
         }
       }
     }
@@ -292,10 +291,10 @@ class Story {
     while (true) {
       size_t temp;
       std::cin >> temp;
-      if (temp <= 0 || temp > page.choices.size()) {
+      if (temp <= 0 || temp > page.getChoicesSize()) {
         std::cout << "That is not a valid choice, please try again" << std::endl;
       }
-      else if (!validChoiceStatus(page.choices[temp - 1])) {
+      else if (!validChoiceStatus(page.getChoice(temp - 1))) {
         std::cout << "That choice is not available at this time, please try again"
                   << std::endl;
       }
@@ -305,7 +304,7 @@ class Story {
       }
     }
     // transfer to reader's choice
-    size_t targetPage = page.choicesMap[readerChoice];
+    size_t targetPage = page.getTargetPage(readerChoice);
     displayStory(targetPage);
   }
 
@@ -332,8 +331,8 @@ class Story {
     }
     // try to do dfs
     visited.insert(currentPageNumber);
-    for (size_t i = 0; i < currentPage.choices.size(); i++) {
-      size_t targetPage = currentPage.choicesMap[i + 1];
+    for (size_t i = 0; i < currentPage.getChoicesSize(); i++) {
+      size_t targetPage = currentPage.getTargetPage(i + 1);
 
       tempAns.push_back(std::to_string(currentPageNumber) + "(" + std::to_string(i + 1) +
                         ")");

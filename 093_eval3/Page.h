@@ -11,7 +11,7 @@
 #include "helperFunction.h"
 
 class Page {
- public:
+ private:
   // indicate if we get win or lose state
   bool win;
   bool lose;
@@ -20,6 +20,8 @@ class Page {
   std::vector<Choice> choices;
   // store contents
   std::vector<std::string> contents;
+
+ public:
   // step4 : item list change when reach this page
   std::unordered_map<std::string, long> itemListChange;
   Page() : win(false), lose(false) {}
@@ -150,6 +152,13 @@ class Page {
     }
     itemListChange.insert({item, number});
   }
+
+  size_t getChoicesSize() { return choices.size(); }
+
+  std::string getContent(size_t index) { return choices[index].getChoiceContent(); }
+
+  size_t getTargetPage(size_t key) { return choicesMap[key]; }
+  Choice & getChoice(size_t index) { return choices[index]; }
 };
 
 #endif
