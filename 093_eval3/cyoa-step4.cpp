@@ -1,8 +1,9 @@
 #include <cstdlib>
 #include <iostream>
 
-#include "Story.h"
-#include "myException.h"
+#include "Story.cpp"
+#include "Story.hpp"
+#include "myException.hpp"
 
 int main(int argc, char ** argv) {
   if (argc != 2) {

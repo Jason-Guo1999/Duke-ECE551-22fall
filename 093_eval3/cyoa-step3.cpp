@@ -1,9 +1,10 @@
 #include <cstdlib>
 #include <iostream>
 
-#include "Story.h"
-#include "helperFunction.h"
-#include "myException.h"
+#include "Story.cpp"
+#include "Story.hpp"
+#include "helperFunction.hpp"
+#include "myException.hpp"
 int main(int argc, char ** argv) {
   if (argc != 2) {
     std::cerr << "Error command!" << std::endl;

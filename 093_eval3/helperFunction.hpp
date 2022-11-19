@@ -1,5 +1,5 @@
-#ifndef _HELPERFUNCTIONH_
-#define _HELPERFUNCTIONH_
+#ifndef _HELPERFUNCTIONHPP_
+#define _HELPERFUNCTIONHPP_
 
 #include <fstream>
 #include <iostream>
@@ -9,7 +9,7 @@
 #include <unordered_map>
 #include <vector>
 
-#include "myException.h"
+#include "myException.hpp"
 
 bool findFile(const char * path) {
   std::ifstream file;

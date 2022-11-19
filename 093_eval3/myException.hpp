@@ -1,5 +1,5 @@
-#ifndef _MYEXCEPTIONH_
-#define _MYEXCEPTIONH_
+#ifndef _MYEXCEPTIONHPP_
+#define _MYEXCEPTIONHPP_
 
 #include <exception>
 class myException : public std::exception {
