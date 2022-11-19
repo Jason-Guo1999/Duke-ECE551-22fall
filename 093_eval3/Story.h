@@ -279,7 +279,7 @@ class Story {
       for (size_t i = 1; i < page.choices.size() + 1; i++) {
         if (!validChoiceStatus(page.choices[i - 1])) {
           std::cout << i << "."
-                    << "<UNAVAILIABLE>" << std::endl;
+                    << "<UNAVAILABLE>" << std::endl;
         }
         else {
           std::cout << i << "." << page.choices[i - 1].getChoiceContent() << std::endl;
