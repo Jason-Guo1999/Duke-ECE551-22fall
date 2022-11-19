@@ -1,8 +1,6 @@
 #include "Page.hpp"
 
-//#include "Choice.cpp"
-//#include "Choice.hpp"
-Page::Page(std::string s, std::string directory) {
+Page::Page(std::string & s, std::string & directory) {
   size_t findAt = s.find('@');
   size_t findColon = s.find(':');
   std::string tempFilePath = directory + "/" + s.substr(findAt + 3);
@@ -50,7 +48,7 @@ void Page::printPageContent() {
   }
 }
 
-void Page::getChoices(std::string target, int mode) {
+void Page::getChoices(std::string & target, int mode) {
   // win or lose page can't have any choices
   try {
     if (win || lose) {

@@ -26,13 +26,13 @@ class Page {
   Page() : win(false), lose(false) {}
 
   // initialize thorugh a given page.txt
-  Page(std::string s, std::string directory);
+  Page(std::string & s, std::string & directory);
 
   // print page according to different states
   void printPageContent();
 
   // read choice from given string
-  void getChoices(std::string target, int mode);
+  void getChoices(std::string & target, int mode);
 
   // get Page status
   int getStatus();

@@ -63,7 +63,8 @@ Story::Story(const char * directory) {
         at = true;
       }
       // create a new page
-      Page newPage(line, directory);
+      std::string temp(directory);
+      Page newPage(line, temp);
       // add it to hashmap
       pageMap.insert({totalPages, newPage});
       totalPages++;
@@ -95,7 +96,8 @@ Story::Story(const char * directory) {
         exit(EXIT_FAILURE);
       }
       // get choices for corresponding page -> mode1
-      pageMap[pageNum].getChoices(line.substr(firstColon + 1), 1);
+      std::string tempLine = line.substr(firstColon + 1);
+      pageMap[pageNum].getChoices(tempLine, 1);
     }
     else if (lineMode == 3) {
       // item change in corresponding page
@@ -135,7 +137,8 @@ Story::Story(const char * directory) {
         exit(EXIT_FAILURE);
       }
       // get choices from current line -> mode2
-      pageMap[pageNum].getChoices(line.substr(findLeftParenthese), 2);
+      std::string tempLine = line.substr(findLeftParenthese);
+      pageMap[pageNum].getChoices(tempLine, 2);
     }
     else {
       // can't find proper line mode
