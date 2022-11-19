@@ -246,6 +246,9 @@ class Story {
         std::cout << "Sorry, you have lost. Better luck next time!" << std::endl;
       }
       else {
+        std::cout << std::endl;
+        std::cout << "What would you like to do?" << std::endl;
+        std::cout << std::endl;
         for (size_t j = 0; j < pageMap[i].getChoicesSize(); j++) {
           std::cout << j + 1 << "." << pageMap[i].getContent(j) << std::endl;
         }
