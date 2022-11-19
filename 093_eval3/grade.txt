@@ -1,6 +1,6 @@
-Grading at 11/19/2022:17:01:50.790574
-For commit ID 508cd30ef09dbc65be258a06793e4e2629dd14a6
-Grading at Sat Nov 19 12:00:55 PM EST 2022
+Grading at 11/19/2022:18:57:59.928654
+For commit ID 42aa7dade1499c3df8f93b32f37ad417818ef869
+Grading at Sat Nov 19 01:57:04 PM EST 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -652,7 +652,7 @@ Step 2 EC intermediate deadline test 23
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean for this testcase
 You have passed this test case
-Intermediate deadline requirements for Step 2 passed at Sat Nov 19 12:01:21 PM EST 2022
+Intermediate deadline requirements for Step 2 passed at Sat Nov 19 01:57:30 PM EST 2022
 
 Step 3
 Checking that cyoa-step3 compiles
@@ -682,7 +682,7 @@ Step 3 EC intermediate deadline test 2
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean for this testcase
 You have passed this test case
-Intermediate deadline requirements for Step 3 passed at Sat Nov 19 12:01:24 PM EST 2022
+Intermediate deadline requirements for Step 3 passed at Sat Nov 19 01:57:33 PM EST 2022
 
 Step 4
 Checking that cyoa-step4 compiles
@@ -880,7 +880,7 @@ Step 4 EC intermediate deadline test 26
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean for this testcase
 You have passed this test case
-Intermediate deadline requirements for Step 4 passed at Sat Nov 19 12:01:50 PM EST 2022
+Intermediate deadline requirements for Step 4 passed at Sat Nov 19 01:57:59 PM EST 2022
 
 It looks like you did not provide any test cases
 
