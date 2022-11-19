@@ -7,6 +7,7 @@
 #include <unordered_map>
 #include <vector>
 
+#include "Choice.h"
 #include "helperFunction.h"
 
 class Page {
@@ -16,32 +17,17 @@ class Page {
   bool lose;
   // store choices
   std::unordered_map<std::string, size_t> choicesMap;
-  std::vector<std::string> choices;
+  std::vector<Choice> choices;
   // store contents
   std::vector<std::string> contents;
-
+  // step4 : item list change when reach this page
+  std::unordered_map<std::string, long> itemListChange;
   Page() : win(false), lose(false) {}
+
   // initialize thorugh a given page.txt
   Page(std::string s, std::string directory) {
     size_t findAt = s.find('@');
-    /*
-    // validate pageNum and file name
-    size_t pageNum = std::strtoll(s.substr(0, findAt).c_str(), NULL, 10);
-    
-    size_t findDot = s.find('.');
-    size_t findE = s.find('e');
-    size_t fileNameNumber =
-        std::strtoll(s.substr(findE + 1, findDot - findE - 1).c_str(), NULL, 10);
-    try {
-      if (pageNum != fileNameNumber) {
-        throw myException("Uncompatible pageNum and filename!");
-      }
-    }
-    catch (myException & re) {
-      std::cerr << re.what() << std::endl;
-      exit(EXIT_FAILURE);
-    }
-    */
+    size_t findColon = s.find(':');
     std::string tempFilePath = directory + "/" + s.substr(findAt + 3);
     const char * filePath = tempFilePath.c_str();
     std::ifstream file;
@@ -57,17 +43,17 @@ class Page {
       contents.push_back(line);
 
       // read a normal page
-      if (s[findAt + 1] == 'N') {
+      if (s[findAt + 1] == 'N' && findColon - findAt == 2) {
         win = false;
         lose = false;
       }
       // read a win page
-      else if (s[findAt + 1] == 'W') {
+      else if (s[findAt + 1] == 'W' && findColon - findAt == 2) {
         win = true;
         lose = false;
       }
       //read a lose page
-      else if (s[findAt + 1] == 'L') {
+      else if (s[findAt + 1] == 'L' && findColon - findAt == 2) {
         win = false;
         lose = true;
       }
@@ -76,37 +62,20 @@ class Page {
         exit(EXIT_FAILURE);
       }
     }
-    choices = std::vector<std::string>();
+    choices = std::vector<Choice>();
     choicesMap = std::unordered_map<std::string, size_t>();
   }
 
   // print page according to different states
-  void printPage() {
+  void printPageContent() {
     // print contents firstly
     for (size_t i = 0; i < contents.size(); i++) {
       std::cout << contents[i] << std::endl;
     }
-    // if we win or lose, print result
-    std::cout << std::endl;
-    if (win || lose) {
-      if (win) {
-        std::cout << "Congratulations! You have won. Hooray!" << std::endl;
-      }
-      else {
-        std::cout << "Sorry, you have lost. Better luck next time!" << std::endl;
-      }
-    }
-    // else, print choices
-    else {
-      std::cout << "What would you like to do?" << std::endl;
-      std::cout << std::endl;
-      for (size_t i = 1; i < choices.size() + 1; i++) {
-        std::cout << i << "." << choices[i - 1] << std::endl;
-      }
-    }
   }
+
   // read choice from given string
-  void getChoices(std::string target) {
+  void getChoices(std::string target, int mode) {
     // win or lose page can't have any choices
     try {
       if (win || lose) {
@@ -117,22 +86,42 @@ class Page {
       std::cout << re.what() << std::endl;
       exit(EXIT_FAILURE);
     }
-    size_t findColon = target.find(':');
-    size_t targetPage = std::strtoull(target.substr(0, findColon).c_str(), NULL, 10);
-    // validate page number
-    try {
-      if (!validNumber(target.substr(0, findColon))) {
-        throw myException("Invalid Target Page Number!");
+    if (mode == 1) {
+      size_t findColon = target.find(':');
+      size_t targetPage = std::strtoll(target.substr(0, findColon).c_str(), NULL, 10);
+      // validate page number
+      try {
+        if (!validNumber(target.substr(0, findColon))) {
+          throw myException("Invalid Target Page Number: page.getchoices mode1");
+        }
       }
+      catch (myException & re) {
+        std::cout << re.what() << std::endl;
+        exit(EXIT_FAILURE);
+      }
+      // store choice
+      Choice newChoice = Choice(target.substr(findColon + 1), mode);
+      choicesMap.insert({newChoice.getChoiceContent(), targetPage});
+      choices.push_back(newChoice);
     }
-    catch (myException & re) {
-      std::cout << re.what() << std::endl;
-      exit(EXIT_FAILURE);
+    else if (mode == 2) {
+      size_t findFirstColon = target.find(':');
+      size_t findSecondColon = target.substr(findFirstColon + 1).find(':');
+      size_t targetPage = std::strtoll(
+          target.substr(findFirstColon + 1, findSecondColon).c_str(), nullptr, 10);
+      try {
+        if (!validNumber(target.substr(findFirstColon + 1, findSecondColon))) {
+          throw myException("Invalid Target Page Number: page.getchoices mode2!");
+        }
+      }
+      catch (myException & re) {
+        std::cout << re.what() << std::endl;
+        exit(EXIT_FAILURE);
+      }
+      Choice newChoice = Choice(target, mode);
+      choicesMap.insert(std::make_pair(newChoice.getChoiceContent(), targetPage));
+      choices.push_back(newChoice);
     }
-    // store choice
-    std::string choice = target.substr(findColon + 1);
-    choicesMap.insert(std::make_pair(choice, targetPage));
-    choices.push_back(choice);
   }
 
   int getStatus() {
@@ -143,6 +132,23 @@ class Page {
       return 2;
     }
     return 3;
+  }
+
+  void storeItemChange(std::string s) {
+    // format : xxx=number
+    size_t findEqual = s.find('=');
+    std::string item = s.substr(0, findEqual);
+    std::size_t number = std::strtol(s.substr(findEqual + 1).c_str(), nullptr, 10);
+    try {
+      if (!validNumber(s.substr(findEqual + 1))) {
+        throw myException("Invalid number in item change ,line mode 3");
+      }
+    }
+    catch (myException & re) {
+      std::cout << re.what() << std::endl;
+      exit(EXIT_FAILURE);
+    }
+    itemListChange.insert({item, number});
   }
 };
 

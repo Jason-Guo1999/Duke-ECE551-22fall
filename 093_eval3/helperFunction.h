@@ -59,6 +59,14 @@ int decideLineMode(std::string line) {
         // mode 2, choices
         return 2;
       }
+      else if (line[i] == '$') {
+        // mode 3, item change
+        return 3;
+      }
+      else if (line[i] == '[') {
+        // mode 4, special choices
+        return 4;
+      }
     }
   }
   return 0;
