@@ -16,7 +16,7 @@ class Page {
   bool win;
   bool lose;
   // store choices
-  std::unordered_map<std::string, size_t> choicesMap;
+  std::unordered_map<size_t, size_t> choicesMap;
   std::vector<Choice> choices;
   // store contents
   std::vector<std::string> contents;
@@ -63,7 +63,7 @@ class Page {
       }
     }
     choices = std::vector<Choice>();
-    choicesMap = std::unordered_map<std::string, size_t>();
+    choicesMap = std::unordered_map<size_t, size_t>();
   }
 
   // print page according to different states
@@ -101,8 +101,8 @@ class Page {
       }
       // store choice
       Choice newChoice = Choice(target.substr(findColon + 1), mode);
-      choicesMap.insert({newChoice.getChoiceContent(), targetPage});
       choices.push_back(newChoice);
+      choicesMap.insert({choices.size(), targetPage});
     }
     else if (mode == 2) {
       size_t findFirstColon = target.find(':');
@@ -119,8 +119,8 @@ class Page {
         exit(EXIT_FAILURE);
       }
       Choice newChoice = Choice(target, mode);
-      choicesMap.insert(std::make_pair(newChoice.getChoiceContent(), targetPage));
       choices.push_back(newChoice);
+      choicesMap.insert({choices.size(), targetPage});
     }
   }
 

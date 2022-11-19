@@ -183,8 +183,8 @@ class Story {
         continue;
       }
       // get a normal page
-      for (Choice & choice : pageMap[i].choices) {
-        size_t targetPage = pageMap[i].choicesMap[choice.getChoiceContent()];
+      for (size_t j = 0; j < pageMap[i].choices.size(); j++) {
+        size_t targetPage = pageMap[i].choicesMap[j + 1];
         try {
           if (targetPage < 0 || targetPage >= pageMap.size()) {
             throw(myException("Invalid choice! error target pageNum"));
@@ -305,8 +305,7 @@ class Story {
       }
     }
     // transfer to reader's choice
-    size_t targetPage =
-        page.choicesMap[page.choices[readerChoice - 1].getChoiceContent()];
+    size_t targetPage = page.choicesMap[readerChoice];
     displayStory(targetPage);
   }
 
@@ -334,8 +333,7 @@ class Story {
     // try to do dfs
     visited.insert(currentPageNumber);
     for (size_t i = 0; i < currentPage.choices.size(); i++) {
-      size_t targetPage =
-          currentPage.choicesMap[currentPage.choices[i].getChoiceContent()];
+      size_t targetPage = currentPage.choicesMap[i + 1];
 
       tempAns.push_back(std::to_string(currentPageNumber) + "(" + std::to_string(i + 1) +
                         ")");

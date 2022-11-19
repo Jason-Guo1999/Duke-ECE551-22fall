@@ -54,10 +54,10 @@ class Choice {
   // valid items in itemList
   bool validPrerequisite(std::unordered_map<std::string, long> & itemList) {
     for (auto it : prerequisites) {
-      if (!itemList.count(it.first) && prerequisites[it.first] != 0) {
+      if (!itemList.count(it.first) && it.second != 0) {
         return false;
       }
-      if (prerequisites[it.first] != itemList[it.first]) {
+      if (it.second != itemList[it.first]) {
         return false;
       }
     }
