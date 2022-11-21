@@ -27,15 +27,12 @@ uint64_t * readFrequencies(const char * fname) {
   //WRITE ME!
   std::ifstream f;
   f.open(fname);
-  std::string line;
+  char ch;
   uint64_t * fre = new uint64_t[257]();
   // eof == 1
   fre[256] = 1;
-  while (!f.eof()) {
-    std::getline(f, line);
-    for (size_t i = 0; i < line.size(); i++) {
-      fre[(int)line[i]]++;
-    }
+  while (f.get(ch)) {
+    fre[(int)ch]++;
   }
   f.close();
   return fre;
