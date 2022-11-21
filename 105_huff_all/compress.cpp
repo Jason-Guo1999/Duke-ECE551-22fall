@@ -63,14 +63,12 @@ int main(int argc, char ** argv) {
   const char * inFile = argv[1];
   const char * outFile = argv[2];
   uint64_t * counts = readFrequencies(inFile);
-  assert(counts != NULL);
   Node * myTree = buildTree(counts);
-  delete[] counts;
   BitString bs;
   std::map<unsigned, BitString> theMap;
   myTree->buildMap(bs, theMap);
   writeCompressedOutput(inFile, outFile, theMap);
   delete myTree;
-
+  delete[] counts;
   return EXIT_SUCCESS;
 }
