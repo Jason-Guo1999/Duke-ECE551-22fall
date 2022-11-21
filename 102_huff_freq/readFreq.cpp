@@ -32,7 +32,7 @@ uint64_t * readFrequencies(const char * fname) {
   // eof == 1
   fre[256] = 1;
   while (f.get(ch)) {
-    fre[(size_t)ch]++;
+    fre[(unsigned char)ch]++;
   }
   f.close();
   return fre;
