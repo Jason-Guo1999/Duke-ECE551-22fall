@@ -1,6 +1,6 @@
-Grading at 11/21/2022:19:39:55.040571
-For commit ID e8c3771d175ea78ce7120872e81af268c4913a0d
-Grading at Mon Nov 21 02:39:50 PM EST 2022
+Grading at 11/21/2022:19:47:20.609102
+For commit ID f66b58bcaad8db58724b61256475e546c064a9a9
+Grading at Mon Nov 21 02:47:15 PM EST 2022
 compiling
 g++ -ggdb3 -Wall -Werror -pedantic -o testFreq testFreq.cpp readFreq.cpp
 Make succeed, testFreq created
@@ -8,14 +8,14 @@ Testcase 1
 -----------------------
   - Valgrind was clean (no errors, no memory leaks)
 Checking output:
-Your file did not match the expected ouput
-**Testcase failed **
+Your file matched the expected output
+Testcase passed 
 Testcase 2
 -----------------------
   - Valgrind was clean (no errors, no memory leaks)
 Checking output:
-Your file did not match the expected ouput
-**Testcase failed **
+Your file matched the expected output
+Testcase passed 
 Testcase 3
 -----------------------
   - Valgrind was clean (no errors, no memory leaks)
@@ -29,14 +29,14 @@ Line_6_did_not_match
 Line_7_did_not_match
 Line_8_did_not_match
 Line_9_did_not_match
-Line_12_did_not_match
-Line_14_did_not_match
-Line_20_did_not_match
-Line_22_did_not_match
-Line_28_did_not_match
-Line_30_did_not_match
-Line_32_did_not_match
-Line_36_did_not_match
+Line_10_did_not_match
+Line_13_did_not_match
+Line_15_did_not_match
+Line_21_did_not_match
+Line_23_did_not_match
+Line_29_did_not_match
+Line_31_did_not_match
+Line_33_did_not_match
 Line_37_did_not_match
 Line_38_did_not_match
 Line_39_did_not_match
@@ -49,27 +49,28 @@ Line_45_did_not_match
 Line_46_did_not_match
 Line_47_did_not_match
 Line_48_did_not_match
-Line_50_did_not_match
+Line_49_did_not_match
 Line_51_did_not_match
 Line_52_did_not_match
 Line_53_did_not_match
 Line_54_did_not_match
 Line_55_did_not_match
 Line_56_did_not_match
-Line_58_did_not_match
+Line_57_did_not_match
 Line_59_did_not_match
 Line_60_did_not_match
 Line_61_did_not_match
 Line_62_did_not_match
 Line_63_did_not_match
 Line_64_did_not_match
+Line_65_did_not_match
 Your file did not match the expected ouput
 **Testcase failed **
 Testcase 4
 -----------------------
   - Valgrind was clean (no errors, no memory leaks)
 Checking output:
-Your file did not match the expected ouput
-**Testcase failed **
+Your file matched the expected output
+Testcase passed 
 
-Overall Grade: F
+Overall Grade: C
