@@ -34,7 +34,7 @@ uint64_t * readFrequencies(const char * fname) {
   while (!f.eof()) {
     std::getline(f, line);
     for (size_t i = 0; i < line.size(); i++) {
-      fre[uint(line[i])]++;
+      fre[(int)line[i]]++;
     }
   }
   f.close();
