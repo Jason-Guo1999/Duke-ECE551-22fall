@@ -33,8 +33,7 @@ void writeCompressedOutput(const char * inFile,
 
   //WRITE YOUR CODE HERE!
   //open the input file for reading
-  std::fstream f;
-  f.open(inFile);
+  std::ifstream f(inFile);
   //You need to read the input file, lookup the characters in the map,
   //and write the proper bit string with the BitFileWriter
   char ch;
@@ -64,6 +63,7 @@ int main(int argc, char ** argv) {
   const char * inFile = argv[1];
   const char * outFile = argv[2];
   uint64_t * counts = readFrequencies(inFile);
+  assert(counts != NULL);
   Node * myTree = buildTree(counts);
   delete[] counts;
   BitString bs;
