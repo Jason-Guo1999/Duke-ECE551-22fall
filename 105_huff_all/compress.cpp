@@ -49,6 +49,7 @@ void writeCompressedOutput(const char * inFile,
 
   //BitFileWriter will close the output file in its destructor
   //but you probably need to close your input file.
+  f.close();
 }
 
 int main(int argc, char ** argv) {
@@ -64,12 +65,11 @@ int main(int argc, char ** argv) {
   const char * outFile = argv[2];
   uint64_t * counts = readFrequencies(inFile);
   Node * myTree = buildTree(counts);
+  delete[] counts;
   BitString bs;
   std::map<unsigned, BitString> theMap;
   myTree->buildMap(bs, theMap);
   writeCompressedOutput(inFile, outFile, theMap);
-
-  delete[] counts;
   delete myTree;
 
   return EXIT_SUCCESS;
