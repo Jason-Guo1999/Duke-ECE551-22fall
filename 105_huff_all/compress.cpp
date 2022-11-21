@@ -39,11 +39,12 @@ void writeCompressedOutput(const char * inFile,
   //and write the proper bit string with the BitFileWriter
   char ch;
   while (f.get(ch)) {
-    if (theMap.find((unsigned char)ch) == theMap.end()) {
+    std::map<unsigned, BitString>::const_iterator it = theMap.find((unsigned char)ch);
+    if (it == theMap.end()) {
       exit(EXIT_FAILURE);
     }
     else {
-      bfw.writeBitString(theMap.find((unsigned char)ch)->second);
+      bfw.writeBitString(it->second);
     }
   }
   //dont forget to lookup 256 for the EOF marker, and write it out.
