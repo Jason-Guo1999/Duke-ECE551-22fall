@@ -1,8 +1,7 @@
-Grading at 11/21/2022:23:01:18.855935
-For commit ID 2adf5013adf3a30e1433c7143c63daab44127806
-Grading at Mon Nov 21 06:01:15 PM EST 2022
+Grading at 11/21/2022:23:03:35.826351
+For commit ID a5c6a65d412b3db4fde01fa2bf2abf828ec1f1b6
+Grading at Mon Nov 21 06:03:32 PM EST 2022
 compiling
-g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++98 -c compress.cpp
 g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++98 -o compress  bitstring.o  buildTree.o  compress.o  node.o  readFreq.o
 Make succeed, compress created
 Testcase 1
