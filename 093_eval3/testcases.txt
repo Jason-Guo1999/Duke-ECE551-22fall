@@ -1,14 +1,6 @@
-ec:step1
-ec:step2
-ec:step3
-ec:step4
-cyoa-step4 story3 < story3/inputs/input1.txt
-cyoa-step4 story3 < story3/inputs/input2.txt
-cyoa-step4 story3 < story3/inputs/input3.txt
-cyoa-step4 story3 < story3/inputs/input4.txt
-cyoa-step4 story3 < story3/inputs/input5.txt
-cyoa-step4 story3 < story3/inputs/input6.txt
-cyoa-step4 story3 < story3/inputs/input7.txt
-cyoa-step4 story3 < story3/inputs/input8.txt
-cyoa-step4 story3 < story3/inputs/input9.txt
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input1.txt
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input1.txt
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input1.txt
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input1.txt
+
 
