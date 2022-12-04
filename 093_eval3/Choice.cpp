@@ -31,8 +31,10 @@ Choice::Choice(std::string s, int mode) {
     std::pair<std::string, long> tempPrerequisite;
     tempPrerequisite.first =
         s.substr(findLeftParenthese + 1, findEqual - findLeftParenthese - 1);
-    tempPrerequisite.second = strtol(
-        s.substr(findEqual + 1, findRightParenthese - findEqual - 1).c_str(), NULL, 10);
+    tempPrerequisite.second =
+        strtol(s.substr(findEqual + 1, findRightParenthese - findEqual - 1).c_str(),
+               nullptr,
+               10);
     prerequisites.insert(tempPrerequisite);
   }
 }

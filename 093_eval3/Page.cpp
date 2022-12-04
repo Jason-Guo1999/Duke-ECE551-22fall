@@ -61,7 +61,7 @@ void Page::getChoices(std::string & target, int mode) {
   }
   if (mode == 1) {
     size_t findColon = target.find(':');
-    size_t targetPage = std::strtoll(target.substr(0, findColon).c_str(), NULL, 10);
+    size_t targetPage = std::strtoll(target.substr(0, findColon).c_str(), nullptr, 10);
     // validate page number
     try {
       if (!validNumber(target.substr(0, findColon))) {

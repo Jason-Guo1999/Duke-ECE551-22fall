@@ -2,7 +2,7 @@
 
 Story::Story(const char * directory) {
   // item list is empty at the beginning
-  //itemList = std::unordered_map<std::string, long>();
+  // itemList = std::unordered_map<std::string, long>();
   // find the story.txt file
   const std::string storyFile = "/story.txt";
   const std::string tempStoryPath = directory + storyFile;
@@ -34,10 +34,10 @@ Story::Story(const char * directory) {
 	2: : page normal choice
 	3: $ item change 
 	4: [ page special choice
-       */
+    */
     if (lineMode == 1) {
       size_t findAt = line.find('@');
-      pageNum = std::strtoull(line.substr(0, findAt).c_str(), NULL, 10);
+      pageNum = std::strtoull(line.substr(0, findAt).c_str(), nullptr, 10);
       // if we don't start from page0, throw an exception
       try {
         // test valid number and valid line format
@@ -45,7 +45,7 @@ Story::Story(const char * directory) {
           throw myException("Invalid PageNum type1");
         }
         if (pageNum != 0 && !at) {
-          throw myException("Story don't start at page 0!");
+          throw myException("Story doesn't start at page 0!");
         }
         if (pageNum != totalPages) {
           throw myException("Invalid pageNum! uncontigous page initialization!");
@@ -69,6 +69,7 @@ Story::Story(const char * directory) {
       pageMap.insert({totalPages, newPage});
       totalPages++;
     }
+
     // read choices
     else if (lineMode == 2) {
       size_t firstColon = line.find(':');
@@ -81,7 +82,7 @@ Story::Story(const char * directory) {
         std::cerr << "Invalid input format : can't find second ':' in choices line"
                   << std::endl;
       }
-      pageNum = strtoull(line.substr(0, firstColon).c_str(), NULL, 10);
+      pageNum = strtoull(line.substr(0, firstColon).c_str(), nullptr, 10);
       // if we trying to visit an uninitilized page, throw exception
       try {
         if (!validNumber(line.substr(0, firstColon))) {
@@ -99,10 +100,11 @@ Story::Story(const char * directory) {
       std::string tempLine = line.substr(firstColon + 1);
       pageMap[pageNum].getChoices(tempLine, 1);
     }
+
     else if (lineMode == 3) {
       // item change in corresponding page
       size_t findDollar = line.find('$');
-      pageNum = strtoll(line.substr(0, findDollar).c_str(), NULL, 10);
+      pageNum = strtoll(line.substr(0, findDollar).c_str(), nullptr, 10);
       // if we trying to visit an uninitilized page, throw exception
       try {
         if (!validNumber(line.substr(0, findDollar))) {
@@ -122,7 +124,7 @@ Story::Story(const char * directory) {
     else if (lineMode == 4) {
       // get special choice form line
       size_t findLeftParenthese = line.find('[');
-      pageNum = strtoll(line.substr(0, findLeftParenthese).c_str(), NULL, 10);
+      pageNum = strtoll(line.substr(0, findLeftParenthese).c_str(), nullptr, 10);
       // if we trying to visit an uninitilized page, throw exception
       try {
         if (!validNumber(line.substr(0, findLeftParenthese))) {
@@ -142,7 +144,7 @@ Story::Story(const char * directory) {
     }
     else {
       // can't find proper line mode
-      std::cerr << "Invalid line: can't find line mdoe!" << std::endl;
+      std::cerr << "Invalid line: can't find line mode!" << std::endl;
       exit(EXIT_FAILURE);
     }
   }
@@ -152,7 +154,7 @@ bool Story::checkStory() {
   bool haveWin = false;
   bool haveLose = false;
   // store pages that be referenced
-  std::unordered_set<int> validate;
+  std::unordered_set<size_t> validate;
   // page1 may not be referenced
   validate.insert(0);
   for (size_t i = 0; i < pageMap.size(); i++) {
@@ -218,6 +220,7 @@ bool Story::checkStory() {
 }
 
 void Story::printPages() {
+  // step1, simply print the content of pages
   for (size_t i = 0; i < pageMap.size(); i++) {
     std::cout << "Page " << i << std::endl;
     std::cout << "==========" << std::endl;
@@ -240,6 +243,7 @@ void Story::printPages() {
 }
 
 void Story::displayStory(size_t currentPage) {
+  // step2 and step4, play this story recurrsively
   Page & page = pageMap[currentPage];
   updateItemList(page);
   page.printPageContent();
@@ -274,9 +278,10 @@ void Story::displayStory(size_t currentPage) {
   // make a choice
   size_t readerChoice;
   while (true) {
-    size_t temp;
-    std::cin >> temp;
-    if (temp <= 0 || temp > page.getChoicesSize()) {
+    std::string tempString;
+    std::cin >> tempString;
+    size_t temp = strtoll(tempString.c_str(), nullptr, 10);
+    if (!validNumber(tempString) || temp <= 0 || temp > page.getChoicesSize()) {
       std::cout << "That is not a valid choice, please try again" << std::endl;
     }
     else if (!validChoiceStatus(page.getChoice(temp - 1))) {
