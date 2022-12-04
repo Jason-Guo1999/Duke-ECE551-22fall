@@ -1,6 +1,6 @@
-Grading at 12/04/2022:17:15:41.026934
-For commit ID 66121f380fc2def09806a80faeb604780bd1f615
-Grading at Sun Dec  4 12:15:34 PM EST 2022
+Grading at 12/04/2022:17:23:27.909556
+For commit ID 8f459708935a147885df5ad844d264cbfe2054d6
+Grading at Sun Dec  4 12:23:21 PM EST 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -55,7 +55,37 @@ Now running YOUR tests for step 4
 ------------------------------------
 
 
-4.1: Current test is ./cyoa-step4 story3  <  story3/inputs/input4.txt
+4.1: Current test is ./cyoa-step4 story3  <  story3/inputs/input1.txt
+-----------------------------
+Great: we both considered this an error
+----here is what you printed on stderr---
+/dev/fd/3: line 528: story3/inputs/input1.txt: No such file or directory
+-----------------------------------------
+Lets check if it valgrinds:
+Valgrind reported errors:
+
+
+4.2: Current test is ./cyoa-step4 story3  <  story3/inputs/input2.txt
+-----------------------------
+Great: we both considered this an error
+----here is what you printed on stderr---
+/dev/fd/3: line 528: story3/inputs/input2.txt: No such file or directory
+-----------------------------------------
+Lets check if it valgrinds:
+Valgrind reported errors:
+
+
+4.3: Current test is ./cyoa-step4 story3  <  story3/inputs/input3.txt
+-----------------------------
+Great: we both considered this an error
+----here is what you printed on stderr---
+/dev/fd/3: line 528: story3/inputs/input3.txt: No such file or directory
+-----------------------------------------
+Lets check if it valgrinds:
+Valgrind reported errors:
+
+
+4.4: Current test is ./cyoa-step4 story3  <  story3/inputs/input4.txt
 -----------------------------
 Great: we both considered this an error
 ----here is what you printed on stderr---
@@ -65,7 +95,7 @@ Lets check if it valgrinds:
 Valgrind reported errors:
 
 
-4.2: Current test is ./cyoa-step4 story3  <  story3/inputs/input5.txt
+4.5: Current test is ./cyoa-step4 story3  <  story3/inputs/input5.txt
 -----------------------------
 Great: we both considered this an error
 ----here is what you printed on stderr---
@@ -75,7 +105,7 @@ Lets check if it valgrinds:
 Valgrind reported errors:
 
 
-4.3: Current test is ./cyoa-step4 story3  <  story3/inputs/input6.txt
+4.6: Current test is ./cyoa-step4 story3  <  story3/inputs/input6.txt
 -----------------------------
 Great: we both considered this an error
 ----here is what you printed on stderr---
@@ -85,7 +115,7 @@ Lets check if it valgrinds:
 Valgrind reported errors:
 
 
-4.4: Current test is ./cyoa-step4 story3  <  story3/inputs/input7.txt
+4.7: Current test is ./cyoa-step4 story3  <  story3/inputs/input7.txt
 -----------------------------
 Great: we both considered this an error
 ----here is what you printed on stderr---
@@ -95,7 +125,7 @@ Lets check if it valgrinds:
 Valgrind reported errors:
 
 
-4.5: Current test is ./cyoa-step4 story3  <  story3/inputs/input8.txt
+4.8: Current test is ./cyoa-step4 story3  <  story3/inputs/input8.txt
 -----------------------------
 Great: we both considered this an error
 ----here is what you printed on stderr---
@@ -105,7 +135,7 @@ Lets check if it valgrinds:
 Valgrind reported errors:
 
 
-4.6: Current test is ./cyoa-step4 story3  <  story3/inputs/input9.txt
+4.9: Current test is ./cyoa-step4 story3  <  story3/inputs/input9.txt
 -----------------------------
 Great: we both considered this an error
 ----here is what you printed on stderr---
