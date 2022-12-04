@@ -1,6 +1,6 @@
-Grading at 12/04/2022:17:30:09.933668
-For commit ID 1036b3b6749d6d8692dc1f6e93fc422ba3031d81
-Grading at Sun Dec  4 12:30:03 PM EST 2022
+Grading at 12/04/2022:17:32:01.107612
+For commit ID 1a36afa165c7b276f99400f09f013084269d7649
+Grading at Sun Dec  4 12:31:50 PM EST 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -53,8 +53,38 @@ Executable cyoa-step4 exists (good)
 ------------------------------------
 Now running YOUR tests for step 4
 ------------------------------------
+
+
+4.1: Current test is ./cyoa-step4 /usr/local/ece551/cyoa/story3  <  /usr/local/ece551/cyoa/story3/inputs/input1.txt
+-----------------------------
+Your output looks good. Lets check valgrind
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean
+
+
+4.2: Current test is ./cyoa-step4 /usr/local/ece551/cyoa/story3  <  /usr/local/ece551/cyoa/story3/inputs/input1.txt
+-----------------------------
+Your output looks good. Lets check valgrind
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean
+
+
+4.3: Current test is ./cyoa-step4 /usr/local/ece551/cyoa/story3  <  /usr/local/ece551/cyoa/story3/inputs/input1.txt
+-----------------------------
+Your output looks good. Lets check valgrind
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean
+
+
+4.4: Current test is ./cyoa-step4 /usr/local/ece551/cyoa/story3  <  /usr/local/ece551/cyoa/story3/inputs/input1.txt
+-----------------------------
+Your output looks good. Lets check valgrind
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean
 No request to check for intermediate deadline completion on step 4
 
-It looks like you did not provide any test cases
+You have passed the test cases YOU provided
+If your tests are good, this is great. 
+If your tests are insufficient, you should do much more testing
 
 Overall Grade: NO GRADE YET
