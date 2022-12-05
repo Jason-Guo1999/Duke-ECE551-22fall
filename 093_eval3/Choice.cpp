@@ -35,6 +35,16 @@ Choice::Choice(std::string s, int mode) {
         strtol(s.substr(findEqual + 1, findRightParenthese - findEqual - 1).c_str(),
                nullptr,
                10);
+    try {
+      if (!validNumber(s.substr(findEqual + 1, findRightParenthese - findEqual - 1))) {
+        throw myException("Invalid Prerequisites : Invalid number");
+      }
+    }
+    catch (myException & re) {
+      std::cerr << re.what() << std::endl;
+      exit(EXIT_FAILURE);
+    }
+
     prerequisites.insert(tempPrerequisite);
   }
 }
