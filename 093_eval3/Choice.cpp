@@ -48,7 +48,7 @@ Choice::Choice(std::string s, int mode) {
 }
 
 bool Choice::validPrerequisite(std::map<std::string, long> & itemList) {
-  std::map<std::string, long>::iterator it = itemList.begin();
+  std::map<std::string, long>::iterator it = prerequisites.begin();
   while (it != prerequisites.end()) {
     if (!itemList.count((*it).first) && (*it).second != 0) {
       return false;
