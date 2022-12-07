@@ -1,52 +1,207 @@
-Grading at 12/05/2022:17:17:55.688920
-For commit ID 78b05b4b053101696cf19e0edd6845142266c232
-Grading at Mon Dec  5 12:17:44 PM EST 2022
+Grading at 12/07/2022:19:23:57.952462
+For commit ID 9d40d15831b8972e06dbbfa62184e9715180f475
+Grading at Wed Dec  7 02:19:34 PM EST 2022
 Doing some basic checking for your submission
 
 Step 1
 Checking that cyoa-step1 compiles
 rm -f *~ cyoa-step1 cyoa-step2  cyoa-step3 cyoa-step4 cyoa-step1.o cyoa-step2.o cyoa-step3.o cyoa-step4.o Story.o Page.o Choice.o helperFunction.o myException.o
-g++  -std=gnu++11 -pedantic -Wall -Werror -ggdb3  -c -o cyoa-step1.o cyoa-step1.cpp
-g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -o cyoa-step1 cyoa-step1.o
+g++  -std=gnu++98 -pedantic -Wall -Werror -ggdb3  -c -o cyoa-step1.o cyoa-step1.cpp
+g++ -std=gnu++98 -pedantic -Wall -Werror -ggdb3 -o cyoa-step1 cyoa-step1.o
 rm cyoa-step1.o
 The code compiled (good)
 Executable cyoa-step1 exists (good)
 ------------------------------------
 Now running YOUR tests for step 1
 ------------------------------------
-No request to check for intermediate deadline completion on step 1
+------------------------------------
+You have requested that we check for intermediate deadline completion on step 1
+------------------------------------
+
+Step 1 EC intermediate deadline test 1
+===========================================================
+./cyoa-step1 /usr/local/ece551/cyoa/story1
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
+
+Step 1 EC intermediate deadline test 2
+===========================================================
+./cyoa-step1 /usr/local/ece551/cyoa/story2
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
+Intermediate deadline requirements for Step 1 passed at Wed Dec  7 02:19:37 PM EST 2022
 
 Step 2
 Checking that cyoa-step2 compiles
 rm -f *~ cyoa-step1 cyoa-step2  cyoa-step3 cyoa-step4 cyoa-step1.o cyoa-step2.o cyoa-step3.o cyoa-step4.o Story.o Page.o Choice.o helperFunction.o myException.o
-g++  -std=gnu++11 -pedantic -Wall -Werror -ggdb3  -c -o cyoa-step2.o cyoa-step2.cpp
-g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -o cyoa-step2 cyoa-step2.o
+g++  -std=gnu++98 -pedantic -Wall -Werror -ggdb3  -c -o cyoa-step2.o cyoa-step2.cpp
+g++ -std=gnu++98 -pedantic -Wall -Werror -ggdb3 -o cyoa-step2 cyoa-step2.o
 rm cyoa-step2.o
 The code compiled (good)
 Executable cyoa-step2 exists (good)
 ------------------------------------
 Now running YOUR tests for step 2
 ------------------------------------
-No request to check for intermediate deadline completion on step 2
+------------------------------------
+You have requested that we check for intermediate deadline completion on step 2
+------------------------------------
+
+Step 2 EC intermediate deadline test 1
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input0.txt
+You indicated this was a failure, but it was not
+
+Step 2 EC intermediate deadline test 2
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input10.txt
+You indicated this was a failure, but it was not
+
+Step 2 EC intermediate deadline test 3
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input11.txt
+You indicated this was a failure, but it was not
+
+Step 2 EC intermediate deadline test 4
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input12.txt
+You indicated this was a failure, but it was not
+
+Step 2 EC intermediate deadline test 5
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input1.txt
+You indicated this was a failure, but it was not
+
+Step 2 EC intermediate deadline test 6
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input2.txt
+You indicated this was a failure, but it was not
+
+Step 2 EC intermediate deadline test 7
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input3.txt
+You indicated this was a failure, but it was not
+
+Step 2 EC intermediate deadline test 8
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input4.txt
+You indicated this was a failure, but it was not
+
+Step 2 EC intermediate deadline test 9
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input5.txt
+You indicated this was a failure, but it was not
+
+Step 2 EC intermediate deadline test 10
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input6.txt
+You indicated this was a failure, but it was not
+
+Step 2 EC intermediate deadline test 11
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input7.txt
+You indicated this was a failure, but it was not
+
+Step 2 EC intermediate deadline test 12
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input8.txt
+You indicated this was a failure, but it was not
+
+Step 2 EC intermediate deadline test 13
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story1 < /usr/local/ece551/cyoa/story1/inputs/input9.txt
+You indicated this was a failure, but it was not
+
+Step 2 EC intermediate deadline test 14
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story2 < /usr/local/ece551/cyoa/story2/inputs/input0.txt
+You indicated this was a failure, but it was not
+
+Step 2 EC intermediate deadline test 15
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story2 < /usr/local/ece551/cyoa/story2/inputs/input1.txt
+You indicated this was a failure, but it was not
+
+Step 2 EC intermediate deadline test 16
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story2 < /usr/local/ece551/cyoa/story2/inputs/input2.txt
+You indicated this was a failure, but it was not
+
+Step 2 EC intermediate deadline test 17
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story2 < /usr/local/ece551/cyoa/story2/inputs/input3.txt
+You indicated this was a failure, but it was not
+
+Step 2 EC intermediate deadline test 18
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story2 < /usr/local/ece551/cyoa/story2/inputs/input4.txt
+You indicated this was a failure, but it was not
+
+Step 2 EC intermediate deadline test 19
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story2 < /usr/local/ece551/cyoa/story2/inputs/input5.txt
+You indicated this was a failure, but it was not
+
+Step 2 EC intermediate deadline test 20
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story2 < /usr/local/ece551/cyoa/story2/inputs/input6.txt
+You indicated this was a failure, but it was not
+
+Step 2 EC intermediate deadline test 21
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story2 < /usr/local/ece551/cyoa/story2/inputs/input7.txt
+You indicated this was a failure, but it was not
+
+Step 2 EC intermediate deadline test 22
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story2 < /usr/local/ece551/cyoa/story2/inputs/input8.txt
+You indicated this was a failure, but it was not
+
+Step 2 EC intermediate deadline test 23
+===========================================================
+./cyoa-step2 /usr/local/ece551/cyoa/story2 < /usr/local/ece551/cyoa/story2/inputs/input9.txt
+You indicated this was a failure, but it was not
 
 Step 3
 Checking that cyoa-step3 compiles
 rm -f *~ cyoa-step1 cyoa-step2  cyoa-step3 cyoa-step4 cyoa-step1.o cyoa-step2.o cyoa-step3.o cyoa-step4.o Story.o Page.o Choice.o helperFunction.o myException.o
-g++  -std=gnu++11 -pedantic -Wall -Werror -ggdb3  -c -o cyoa-step3.o cyoa-step3.cpp
-g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -o cyoa-step3 cyoa-step3.o
+g++  -std=gnu++98 -pedantic -Wall -Werror -ggdb3  -c -o cyoa-step3.o cyoa-step3.cpp
+g++ -std=gnu++98 -pedantic -Wall -Werror -ggdb3 -o cyoa-step3 cyoa-step3.o
 rm cyoa-step3.o
 The code compiled (good)
 Executable cyoa-step3 exists (good)
 ------------------------------------
 Now running YOUR tests for step 3
 ------------------------------------
-No request to check for intermediate deadline completion on step 3
+------------------------------------
+You have requested that we check for intermediate deadline completion on step 3
+------------------------------------
+
+Step 3 EC intermediate deadline test 1
+===========================================================
+./cyoa-step3 /usr/local/ece551/cyoa/story1
+Your output differs from ours.
+Below is the diff (yours left/ours right)
+(1),1(2),3(1),8(win)					      |	0(1),1(2),3(1),8(win)
+(1),1(3),4(2),12(win)					      |	0(1),1(3),4(2),12(win)
+Your file did not match the expected output
+
+Step 3 EC intermediate deadline test 2
+===========================================================
+./cyoa-step3 /usr/local/ece551/cyoa/story2
+Your output differs from ours.
+Below is the diff (yours left/ours right)
+(1),1(2),5(1),6(1),8(1),11(win)				      |	0(1),1(2),5(1),6(1),8(1),11(win)
+(1),1(2),5(2),7(1),10(win)				      |	0(1),1(2),5(2),7(1),10(win)
+(2),2(win)						      |	0(2),2(win)
+Your file did not match the expected output
 
 Step 4
 Checking that cyoa-step4 compiles
 rm -f *~ cyoa-step1 cyoa-step2  cyoa-step3 cyoa-step4 cyoa-step1.o cyoa-step2.o cyoa-step3.o cyoa-step4.o Story.o Page.o Choice.o helperFunction.o myException.o
-g++  -std=gnu++11 -pedantic -Wall -Werror -ggdb3  -c -o cyoa-step4.o cyoa-step4.cpp
-g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -o cyoa-step4 cyoa-step4.o
+g++  -std=gnu++98 -pedantic -Wall -Werror -ggdb3  -c -o cyoa-step4.o cyoa-step4.cpp
+g++ -std=gnu++98 -pedantic -Wall -Werror -ggdb3 -o cyoa-step4 cyoa-step4.o
 rm cyoa-step4.o
 The code compiled (good)
 Executable cyoa-step4 exists (good)
@@ -57,30 +212,30 @@ Now running YOUR tests for step 4
 
 4.1: Current test is ./cyoa-step4 /usr/local/ece551/cyoa/story3  <  /usr/local/ece551/cyoa/story3/inputs/input1.txt
 -----------------------------
-Your output looks good. Lets check valgrind
-  - Valgrind was clean (no errors, no memory leaks)
-Valgrind was clean
+You considered this a failure case:
+timeout: the monitored command dumped core
+But we did not.
 
 
 4.2: Current test is ./cyoa-step4 /usr/local/ece551/cyoa/story3  <  /usr/local/ece551/cyoa/story3/inputs/input1.txt
 -----------------------------
-Your output looks good. Lets check valgrind
-  - Valgrind was clean (no errors, no memory leaks)
-Valgrind was clean
+You considered this a failure case:
+timeout: the monitored command dumped core
+But we did not.
 
 
 4.3: Current test is ./cyoa-step4 /usr/local/ece551/cyoa/story3  <  /usr/local/ece551/cyoa/story3/inputs/input1.txt
 -----------------------------
-Your output looks good. Lets check valgrind
-  - Valgrind was clean (no errors, no memory leaks)
-Valgrind was clean
+You considered this a failure case:
+timeout: the monitored command dumped core
+But we did not.
 
 
 4.4: Current test is ./cyoa-step4 /usr/local/ece551/cyoa/story3  <  /usr/local/ece551/cyoa/story3/inputs/input1.txt
 -----------------------------
-Your output looks good. Lets check valgrind
-  - Valgrind was clean (no errors, no memory leaks)
-Valgrind was clean
+You considered this a failure case:
+timeout: the monitored command dumped core
+But we did not.
 
 
 4.5: Current test is ./cyoa-step4 /st3  <  input.txt
@@ -88,7 +243,139 @@ Valgrind was clean
 You considered this a failure case:
 /dev/fd/3: line 528: input.txt: No such file or directory
 But we did not.
-No request to check for intermediate deadline completion on step 4
+------------------------------------
+You have requested that we check for intermediate deadline completion on step 4
+------------------------------------
+
+Step 4 EC intermediate deadline test 1
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input0.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 2
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input10.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 3
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input11.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 4
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input12.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 5
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input13.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 6
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input14.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 7
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input15.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 8
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input16.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 9
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input17.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 10
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input18.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 11
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input19.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 12
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input1.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 13
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input20.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 14
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input21.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 15
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input22.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 16
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input23.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 17
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input24.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 18
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input25.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 19
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input2.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 20
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input3.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 21
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input4.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 22
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input5.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 23
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input6.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 24
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input7.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 25
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input8.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 26
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input9.txt
+You indicated this was a failure, but it was not
 
 You have NOT passed your test cases!
 You should go and figure out/understand where thing went wrong
