@@ -1,6 +1,6 @@
-Grading at 12/07/2022:19:30:00.405651
-For commit ID 4e31f629b98ca15f668d467905f941901866acb6
-Grading at Wed Dec  7 02:29:08 PM EST 2022
+Grading at 12/07/2022:19:37:06.398118
+For commit ID 5deb615a731c07b67e7e3840256d183b6c3289e3
+Grading at Wed Dec  7 02:36:12 PM EST 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -31,7 +31,7 @@ Step 1 EC intermediate deadline test 2
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean for this testcase
 You have passed this test case
-Intermediate deadline requirements for Step 1 passed at Wed Dec  7 02:29:11 PM EST 2022
+Intermediate deadline requirements for Step 1 passed at Wed Dec  7 02:36:16 PM EST 2022
 
 Step 2
 Checking that cyoa-step2 compiles
@@ -208,7 +208,7 @@ Step 2 EC intermediate deadline test 23
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean for this testcase
 You have passed this test case
-Intermediate deadline requirements for Step 2 passed at Wed Dec  7 02:29:32 PM EST 2022
+Intermediate deadline requirements for Step 2 passed at Wed Dec  7 02:36:37 PM EST 2022
 
 Step 3
 Checking that cyoa-step3 compiles
@@ -228,21 +228,17 @@ You have requested that we check for intermediate deadline completion on step 3
 Step 3 EC intermediate deadline test 1
 ===========================================================
 ./cyoa-step3 /usr/local/ece551/cyoa/story1
-Your output differs from ours.
-Below is the diff (yours left/ours right)
-(1),1(2),3(1),8(win)					      |	0(1),1(2),3(1),8(win)
-(1),1(3),4(2),12(win)					      |	0(1),1(3),4(2),12(win)
-Your file did not match the expected output
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
 
 Step 3 EC intermediate deadline test 2
 ===========================================================
 ./cyoa-step3 /usr/local/ece551/cyoa/story2
-Your output differs from ours.
-Below is the diff (yours left/ours right)
-(1),1(2),5(1),6(1),8(1),11(win)				      |	0(1),1(2),5(1),6(1),8(1),11(win)
-(1),1(2),5(2),7(1),10(win)				      |	0(1),1(2),5(2),7(1),10(win)
-(2),2(win)						      |	0(2),2(win)
-Your file did not match the expected output
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
+Intermediate deadline requirements for Step 3 passed at Wed Dec  7 02:36:40 PM EST 2022
 
 Step 4
 Checking that cyoa-step4 compiles
@@ -440,7 +436,7 @@ Step 4 EC intermediate deadline test 26
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean for this testcase
 You have passed this test case
-Intermediate deadline requirements for Step 4 passed at Wed Dec  7 02:30:00 PM EST 2022
+Intermediate deadline requirements for Step 4 passed at Wed Dec  7 02:37:06 PM EST 2022
 
 It looks like you did not provide any test cases
 
