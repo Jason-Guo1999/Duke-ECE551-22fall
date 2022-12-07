@@ -1,6 +1,7 @@
 #ifndef _CHOICEHPP_
 #define _CHOICEHPP_
 
+#include <map>
 #include <vector>
 
 #include "helperFunction.hpp"
@@ -12,7 +13,7 @@ class Choice {
   std::string content;
 
   // suppose choice have single prerequisites
-  std::unordered_map<std::string, long> prerequisites;
+  std::map<std::string, long> prerequisites;
 
  public:
   // choice initializr
@@ -22,7 +23,7 @@ class Choice {
   std::string getChoiceContent() { return this->content; }
 
   // valid items in itemList
-  bool validPrerequisite(std::unordered_map<std::string, long> & itemList);
+  bool validPrerequisite(std::map<std::string, long> & itemList);
 };
 
 #endif

@@ -31,10 +31,8 @@ Choice::Choice(std::string s, int mode) {
     std::pair<std::string, long> tempPrerequisite;
     tempPrerequisite.first =
         s.substr(findLeftParenthese + 1, findEqual - findLeftParenthese - 1);
-    tempPrerequisite.second =
-        strtol(s.substr(findEqual + 1, findRightParenthese - findEqual - 1).c_str(),
-               nullptr,
-               10);
+    tempPrerequisite.second = strtol(
+        s.substr(findEqual + 1, findRightParenthese - findEqual - 1).c_str(), NULL, 10);
     try {
       if (!validNumber(s.substr(findEqual + 1, findRightParenthese - findEqual - 1))) {
         throw myException("Invalid Prerequisites : Invalid number");
@@ -49,13 +47,17 @@ Choice::Choice(std::string s, int mode) {
   }
 }
 
-bool Choice::validPrerequisite(std::unordered_map<std::string, long> & itemList) {
-  for (auto it : prerequisites) {
-    if (!itemList.count(it.first) && it.second != 0) {
+bool Choice::validPrerequisite(std::map<std::string, long> & itemList) {
+  std::map<std::string, long>::iterator it = itemList.begin();
+  while (it != prerequisites.end()) {
+    if (!itemList.count((*it).first) && (*it).second != 0) {
       return false;
     }
-    if (it.second != itemList[it.first]) {
+    else if ((*it).second != itemList[(*it).first]) {
       return false;
+    }
+    else {
+      ++it;
     }
   }
   return true;

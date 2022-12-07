@@ -2,9 +2,9 @@
 #define _STORYHPP_
 #include <cstdlib>
 #include <iostream>
+#include <map>
+#include <set>
 #include <string>
-#include <unordered_map>
-#include <unordered_set>
 #include <vector>
 
 #include "Page.cpp"
@@ -12,13 +12,13 @@
 class Story {
  private:
   // a pageMap is used to store key-value relation between pageNum and page
-  std::unordered_map<int, Page> pageMap;
+  std::map<int, Page> pageMap;
 
   // total pageNum
   size_t totalPages;
 
   // store the item get form each page, update when reading a new page
-  std::unordered_map<std::string, long> itemList;
+  std::map<std::string, long> itemList;
 
  public:
   // build story thorugh a directory
@@ -36,7 +36,7 @@ class Story {
   // step3: find win path
   void findWinPath(std::vector<std::vector<std::string> > & ans,
                    std::vector<std::string> & tempAns,
-                   std::unordered_set<size_t> & visited,
+                   std::set<size_t> & visited,
                    size_t currentPageNumber);
 
   // valid choice status

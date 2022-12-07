@@ -2,7 +2,7 @@
 
 Story::Story(const char * directory) {
   // item list is empty at the beginning
-  // itemList = std::unordered_map<std::string, long>();
+  // itemList = std::map<std::string, long>();
   // find the story.txt file
   const std::string storyFile = "/story.txt";
   const std::string tempStoryPath = directory + storyFile;
@@ -37,7 +37,7 @@ Story::Story(const char * directory) {
     */
     if (lineMode == 1) {
       size_t findAt = line.find('@');
-      pageNum = std::strtoull(line.substr(0, findAt).c_str(), nullptr, 10);
+      pageNum = std::strtoull(line.substr(0, findAt).c_str(), NULL, 10);
       // if we don't start from page0, throw an exception
       try {
         // test valid number and valid line format
@@ -66,7 +66,7 @@ Story::Story(const char * directory) {
       std::string temp(directory);
       Page newPage(line, temp);
       // add it to hashmap
-      pageMap.insert({totalPages, newPage});
+      pageMap.insert(std::pair<size_t, Page>(totalPages, newPage));
       totalPages++;
     }
 
@@ -82,7 +82,7 @@ Story::Story(const char * directory) {
         std::cerr << "Invalid input format : can't find second ':' in choices line"
                   << std::endl;
       }
-      pageNum = strtoull(line.substr(0, firstColon).c_str(), nullptr, 10);
+      pageNum = strtoull(line.substr(0, firstColon).c_str(), NULL, 10);
       // if we trying to visit an uninitilized page, throw exception
       try {
         if (!validNumber(line.substr(0, firstColon))) {
@@ -104,7 +104,7 @@ Story::Story(const char * directory) {
     else if (lineMode == 3) {
       // item change in corresponding page
       size_t findDollar = line.find('$');
-      pageNum = strtoll(line.substr(0, findDollar).c_str(), nullptr, 10);
+      pageNum = strtoll(line.substr(0, findDollar).c_str(), NULL, 10);
       // if we trying to visit an uninitilized page, throw exception
       try {
         if (!validNumber(line.substr(0, findDollar))) {
@@ -124,7 +124,7 @@ Story::Story(const char * directory) {
     else if (lineMode == 4) {
       // get special choice form line
       size_t findLeftParenthese = line.find('[');
-      pageNum = strtoll(line.substr(0, findLeftParenthese).c_str(), nullptr, 10);
+      pageNum = strtoll(line.substr(0, findLeftParenthese).c_str(), NULL, 10);
       // if we trying to visit an uninitilized page, throw exception
       try {
         if (!validNumber(line.substr(0, findLeftParenthese))) {
@@ -154,7 +154,7 @@ bool Story::checkStory() {
   bool haveWin = false;
   bool haveLose = false;
   // store pages that be referenced
-  std::unordered_set<size_t> validate;
+  std::set<size_t> validate;
   // page1 may not be referenced
   validate.insert(0);
   for (size_t i = 0; i < pageMap.size(); i++) {
@@ -280,7 +280,7 @@ void Story::displayStory(size_t currentPage) {
   while (true) {
     std::string tempString;
     std::cin >> tempString;
-    size_t temp = strtoll(tempString.c_str(), nullptr, 10);
+    size_t temp = strtoll(tempString.c_str(), NULL, 10);
     if (!validNumber(tempString) || temp <= 0 || temp > page.getChoicesSize()) {
       std::cout << "That is not a valid choice, please try again" << std::endl;
     }
@@ -300,13 +300,13 @@ void Story::displayStory(size_t currentPage) {
 
 void Story::findWinPath(std::vector<std::vector<std::string> > & ans,
                         std::vector<std::string> & tempAns,
-                        std::unordered_set<size_t> & visited,
+                        std::set<size_t> & visited,
                         size_t currentPageNumber) {
   // backtrace algo
   Page & currentPage = pageMap[currentPageNumber];
   // if reach a win page
   if (currentPage.getStatus() == 1) {
-    tempAns.push_back(std::to_string(currentPageNumber) + "(win)");
+    tempAns.push_back(toString(currentPageNumber) + "(win)");
 
     ans.push_back(tempAns);
     tempAns.pop_back();
@@ -324,8 +324,7 @@ void Story::findWinPath(std::vector<std::vector<std::string> > & ans,
   for (size_t i = 0; i < currentPage.getChoicesSize(); i++) {
     size_t targetPage = currentPage.getTargetPage(i + 1);
 
-    tempAns.push_back(std::to_string(currentPageNumber) + "(" + std::to_string(i + 1) +
-                      ")");
+    tempAns.push_back(toString(currentPageNumber) + "(" + toString(i + 1) + ")");
     findWinPath(ans, tempAns, visited, targetPage);
     tempAns.pop_back();
   }
@@ -333,12 +332,16 @@ void Story::findWinPath(std::vector<std::vector<std::string> > & ans,
 }
 
 void Story::updateItemList(Page & page) {
-  for (auto it : page.getItemListChange()) {
-    if (itemList.count(it.first)) {
-      itemList[it.first] = it.second;
+  std::map<std::string, long> temp = page.getItemListChange();
+  std::map<std::string, long>::iterator it = temp.begin();
+  while (it != temp.end()) {
+    if (itemList.count((*it).first)) {
+      itemList[(*it).first] = (*it).second;
     }
     else {
-      itemList.insert(it);
+      itemList.insert(*it);
     }
+    ++it;
   }
+  return;
 }

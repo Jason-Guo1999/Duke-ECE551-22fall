@@ -25,7 +25,7 @@ int main(int argc, char ** argv) {
   // start from page 0
   std::vector<std::vector<std::string> > ans;
   std::vector<std::string> tempAns;
-  std::unordered_set<size_t> visited;
+  std::set<size_t> visited;
   myStory.findWinPath(ans, tempAns, visited, 0);
   printWinPath(ans);
   return EXIT_SUCCESS;

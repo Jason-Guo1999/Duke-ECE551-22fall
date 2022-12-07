@@ -1,4 +1,4 @@
-CPPFLAGS=-std=gnu++11 -pedantic -Wall -Werror -ggdb3
+CPPFLAGS=-std=gnu++98 -pedantic -Wall -Werror -ggdb3
 PROGS=cyoa-step1 cyoa-step2  cyoa-step3 cyoa-step4
 OBJS=$(patsubst %,%.o,$(PROGS)) Story.o Page.o Choice.o helperFunction.o myException.o
 all: $(PROGS)

@@ -1,12 +1,13 @@
 #ifndef _HELPERFUNCTIONHPP_
 #define _HELPERFUNCTIONHPP_
 
+#include <algorithm>
+#include <cstdlib>
 #include <fstream>
 #include <iostream>
 #include <queue>
 #include <set>
 #include <string>
-#include <unordered_map>
 #include <vector>
 
 #include "myException.hpp"
@@ -81,15 +82,25 @@ void printWinPath(std::vector<std::vector<std::string> > & winPath) {
     std::cout << "This story is unwinnable!" << std::endl;
     return;
   }
-  for (auto it1 : winPath) {
-    for (auto it2 : it1) {
-      if (it2 != it1.back()) {
-        std::cout << it2 << ",";
+  for (size_t i = 0; i < winPath.size(); i++) {
+    for (size_t j = 0; j < winPath[i].size(); j++) {
+      if (winPath[i][j] != winPath[i].back()) {
+        std::cout << winPath[i][j] << ",";
       }
       else {
-        std::cout << it2 << std::endl;
+        std::cout << winPath[i][j] << std::endl;
       }
     }
   }
+}
+
+std::string toString(size_t target) {
+  std::string ans;
+  while (target != 0) {
+    ans.push_back('0' + (target % 10));
+    target = target / 10;
+  }
+  std::reverse(ans.begin(), ans.end());
+  return ans;
 }
 #endif

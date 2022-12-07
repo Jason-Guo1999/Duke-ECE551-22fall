@@ -38,7 +38,7 @@ Page::Page(std::string & s, std::string & directory) {
     }
   }
   choices = std::vector<Choice>();
-  choicesMap = std::unordered_map<size_t, size_t>();
+  choicesMap = std::map<size_t, size_t>();
 }
 
 void Page::printPageContent() {
@@ -61,7 +61,7 @@ void Page::getChoices(std::string & target, int mode) {
   }
   if (mode == 1) {
     size_t findColon = target.find(':');
-    size_t targetPage = std::strtoll(target.substr(0, findColon).c_str(), nullptr, 10);
+    size_t targetPage = std::strtoll(target.substr(0, findColon).c_str(), NULL, 10);
     // validate page number
     try {
       if (!validNumber(target.substr(0, findColon))) {
@@ -75,13 +75,13 @@ void Page::getChoices(std::string & target, int mode) {
     // store choice
     Choice newChoice = Choice(target.substr(findColon + 1), mode);
     choices.push_back(newChoice);
-    choicesMap.insert({choices.size(), targetPage});
+    choicesMap.insert(std::pair<size_t, size_t>(choices.size(), targetPage));
   }
   else if (mode == 2) {
     size_t findFirstColon = target.find(':');
     size_t findSecondColon = target.substr(findFirstColon + 1).find(':');
     size_t targetPage = std::strtoll(
-        target.substr(findFirstColon + 1, findSecondColon).c_str(), nullptr, 10);
+        target.substr(findFirstColon + 1, findSecondColon).c_str(), NULL, 10);
     try {
       if (!validNumber(target.substr(findFirstColon + 1, findSecondColon))) {
         throw myException("Invalid Target Page Number: page.getchoices mode2!");
@@ -93,7 +93,7 @@ void Page::getChoices(std::string & target, int mode) {
     }
     Choice newChoice = Choice(target, mode);
     choices.push_back(newChoice);
-    choicesMap.insert({choices.size(), targetPage});
+    choicesMap.insert(std::pair<size_t, size_t>(choices.size(), targetPage));
   }
 }
 
@@ -111,7 +111,7 @@ void Page::storeItemChange(std::string s) {
   // format : xxx=number
   size_t findEqual = s.find('=');
   std::string item = s.substr(0, findEqual);
-  std::size_t number = std::strtol(s.substr(findEqual + 1).c_str(), nullptr, 10);
+  size_t number = std::strtol(s.substr(findEqual + 1).c_str(), NULL, 10);
   try {
     if (!validNumber(s.substr(findEqual + 1))) {
       throw myException("Invalid number in item change ,line mode 3");
@@ -121,5 +121,5 @@ void Page::storeItemChange(std::string s) {
     std::cout << re.what() << std::endl;
     exit(EXIT_FAILURE);
   }
-  itemListChange.insert({item, number});
+  itemListChange.insert(std::pair<std::string, size_t>(item, number));
 }

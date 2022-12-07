@@ -3,8 +3,8 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <map>
 #include <string>
-#include <unordered_map>
 #include <vector>
 
 #include "Choice.cpp"
@@ -15,12 +15,12 @@ class Page {
   bool win;
   bool lose;
   // store choices
-  std::unordered_map<size_t, size_t> choicesMap;
+  std::map<size_t, size_t> choicesMap;
   std::vector<Choice> choices;
   // store contents
   std::vector<std::string> contents;
   // step4 : item list change when reach this page
-  std::unordered_map<std::string, long> itemListChange;
+  std::map<std::string, long> itemListChange;
 
  public:
   Page() : win(false), lose(false) {}
@@ -52,7 +52,7 @@ class Page {
   Choice & getChoice(size_t index) { return choices[index]; }
 
   // get item change list
-  std::unordered_map<std::string, long> & getItemListChange() { return itemListChange; }
+  std::map<std::string, long> & getItemListChange() { return itemListChange; }
 };
 
 #endif
