@@ -96,6 +96,9 @@ void printWinPath(std::vector<std::vector<std::string> > & winPath) {
 
 std::string toString(size_t target) {
   std::string ans;
+  if (target == 0) {
+    ans.push_back('0');
+  }
   while (target != 0) {
     ans.push_back('0' + (target % 10));
     target = target / 10;
