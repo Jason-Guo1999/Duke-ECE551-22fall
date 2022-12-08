@@ -20,6 +20,18 @@ class Story {
   // store the item get form each page, update when reading a new page
   std::map<std::string, long> itemList;
 
+  // get line content : line mode 1
+  void getPageContent(std::string & line, const char * directory);
+
+  // get normal choice : line mode 2
+  void getNormalChoice(std::string & line);
+
+  // get Item Change : line mode 3
+  void getItemChange(std::string & line);
+
+  // get special choice : line mode 4
+  void getSpecialChoice(std::string & line);
+
  public:
   // build story thorugh a directory
   Story(const char * directory);

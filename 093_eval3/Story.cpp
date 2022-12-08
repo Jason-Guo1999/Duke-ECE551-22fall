@@ -17,10 +17,10 @@ Story::Story(const char * directory) {
   std::string line;
   // read story.txt to fill each pages
   // indicate we read a "@"
-  bool at = false;
+  //bool at = false;
   totalPages = 0;
   while (!st.eof()) {
-    size_t pageNum = 0;
+    //size_t pageNum = 0;
     std::getline(st, line);
     // blank line : ignore
     if (line.size() == 0) {
@@ -35,112 +35,24 @@ Story::Story(const char * directory) {
 	3: $ item change 
 	4: [ page special choice
     */
+    // read content
     if (lineMode == 1) {
-      size_t findAt = line.find('@');
-      pageNum = std::strtoull(line.substr(0, findAt).c_str(), NULL, 10);
-      // if we don't start from page0, throw an exception
-      try {
-        // test valid number and valid line format
-        if (!validNumber(line.substr(0, findAt))) {
-          throw myException("Invalid PageNum type1");
-        }
-        if (pageNum != 0 && !at) {
-          throw myException("Story doesn't start at page 0!");
-        }
-        if (pageNum != totalPages) {
-          throw myException("Invalid pageNum! uncontigous page initialization!");
-        }
-        if (line.find(':') == std::string::npos) {
-          throw myException("Invalid line format: missing ':' in content line!");
-        }
-      }
-      catch (myException & re) {
-        std::cout << re.what() << std::endl;
-        exit(EXIT_FAILURE);
-      }
-      // if we start from page0, turn at to true
-      if (pageNum == 0) {
-        at = true;
-      }
-      // create a new page
-      std::string temp(directory);
-      Page newPage(line, temp);
-      // add it to hashmap
-      pageMap.insert(std::pair<size_t, Page>(totalPages, newPage));
-      totalPages++;
+      getPageContent(line, directory);
     }
 
     // read choices
     else if (lineMode == 2) {
-      size_t firstColon = line.find(':');
-      if (firstColon == std::string::npos) {
-        std::cerr << "Invalid input format : can't find first ':' in choices line"
-                  << std::endl;
-      }
-      size_t secondColon = line.substr(firstColon + 1).find(':');
-      if (secondColon == std::string::npos) {
-        std::cerr << "Invalid input format : can't find second ':' in choices line"
-                  << std::endl;
-      }
-      pageNum = strtoull(line.substr(0, firstColon).c_str(), NULL, 10);
-      // if we trying to visit an uninitilized page, throw exception
-      try {
-        if (!validNumber(line.substr(0, firstColon))) {
-          throw myException("Invalid Pagenum type2");
-        }
-        if (!pageMap.count(pageNum)) {
-          throw myException("Page undeclared!");
-        }
-      }
-      catch (myException & re) {
-        std::cerr << re.what() << std::endl;
-        exit(EXIT_FAILURE);
-      }
-      // get choices for corresponding page -> mode1
-      std::string tempLine = line.substr(firstColon + 1);
-      pageMap[pageNum].getChoices(tempLine, 1);
+      getNormalChoice(line);
     }
 
+    // read item
     else if (lineMode == 3) {
-      // item change in corresponding page
-      size_t findDollar = line.find('$');
-      pageNum = strtoll(line.substr(0, findDollar).c_str(), NULL, 10);
-      // if we trying to visit an uninitilized page, throw exception
-      try {
-        if (!validNumber(line.substr(0, findDollar))) {
-          throw myException("Invalid Pagenum type3");
-        }
-        if (!pageMap.count(pageNum)) {
-          throw myException("Page undeclared!");
-        }
-      }
-      catch (myException & re) {
-        std::cerr << re.what() << std::endl;
-        exit(EXIT_FAILURE);
-      }
-      // store item change to corresponding page
-      pageMap[pageNum].storeItemChange(line.substr(findDollar + 1));
+      getItemChange(line);
     }
+
+    // read special choice
     else if (lineMode == 4) {
-      // get special choice form line
-      size_t findLeftParenthese = line.find('[');
-      pageNum = strtoll(line.substr(0, findLeftParenthese).c_str(), NULL, 10);
-      // if we trying to visit an uninitilized page, throw exception
-      try {
-        if (!validNumber(line.substr(0, findLeftParenthese))) {
-          throw myException("Invalid Pagenum type4!");
-        }
-        if (!pageMap.count(pageNum)) {
-          throw myException("Page undeclared!");
-        }
-      }
-      catch (myException & re) {
-        std::cerr << re.what() << std::endl;
-        exit(EXIT_FAILURE);
-      }
-      // get choices from current line -> mode2
-      std::string tempLine = line.substr(findLeftParenthese);
-      pageMap[pageNum].getChoices(tempLine, 2);
+      getSpecialChoice(line);
     }
     else {
       // can't find proper line mode
@@ -148,6 +60,114 @@ Story::Story(const char * directory) {
       exit(EXIT_FAILURE);
     }
   }
+}
+
+void Story::getPageContent(std::string & line, const char * directory) {
+  size_t findAt = line.find('@');
+  size_t pageNum = std::strtoull(line.substr(0, findAt).c_str(), NULL, 10);
+  // if we don't start from page0, throw an exception
+  try {
+    // test valid number and valid line format
+    if (!validNumber(line.substr(0, findAt))) {
+      throw myException("Invalid PageNum type1");
+    }
+    //if (pageNum != 0 && !at) {
+    //throw myException("Story doesn't start at page 0!");
+    //}
+    if (pageNum != totalPages) {
+      throw myException("Invalid pageNum! uncontigous page initialization!");
+    }
+    if (line.find(':') == std::string::npos) {
+      throw myException("Invalid line format: missing ':' in content line!");
+    }
+  }
+  catch (myException & re) {
+    std::cout << re.what() << std::endl;
+    exit(EXIT_FAILURE);
+  }
+  // if we start from page0, turn at to true
+  //if (pageNum == 0) {
+  //at = true;
+  //}
+  // create a new page
+  std::string temp(directory);
+  Page newPage(line, temp);
+  // add it to hashmap
+  pageMap.insert(std::pair<size_t, Page>(totalPages, newPage));
+  totalPages++;
+}
+
+void Story::getNormalChoice(std::string & line) {
+  size_t firstColon = line.find(':');
+  if (firstColon == std::string::npos) {
+    std::cerr << "Invalid input format : can't find first ':' in choices line"
+              << std::endl;
+  }
+  size_t secondColon = line.substr(firstColon + 1).find(':');
+  if (secondColon == std::string::npos) {
+    std::cerr << "Invalid input format : can't find second ':' in choices line"
+              << std::endl;
+  }
+  size_t pageNum = strtoull(line.substr(0, firstColon).c_str(), NULL, 10);
+  // if we trying to visit an uninitilized page, throw exception
+  try {
+    if (!validNumber(line.substr(0, firstColon))) {
+      throw myException("Invalid Pagenum type2");
+    }
+    if (!pageMap.count(pageNum)) {
+      throw myException("Page undeclared!");
+    }
+  }
+  catch (myException & re) {
+    std::cerr << re.what() << std::endl;
+    exit(EXIT_FAILURE);
+  }
+  // get choices for corresponding page -> mode1
+  std::string tempLine = line.substr(firstColon + 1);
+  pageMap[pageNum].getChoices(tempLine, 1);
+}
+
+void Story::getItemChange(std::string & line) {
+  // item change in corresponding page
+  size_t findDollar = line.find('$');
+  size_t pageNum = strtoll(line.substr(0, findDollar).c_str(), NULL, 10);
+  // if we trying to visit an uninitilized page, throw exception
+  try {
+    if (!validNumber(line.substr(0, findDollar))) {
+      throw myException("Invalid Pagenum type3");
+    }
+    if (!pageMap.count(pageNum)) {
+      throw myException("Page undeclared!");
+    }
+  }
+  catch (myException & re) {
+    std::cerr << re.what() << std::endl;
+    exit(EXIT_FAILURE);
+  }
+  // store item change to corresponding page
+  pageMap[pageNum].storeItemChange(line.substr(findDollar + 1));
+}
+
+void Story::getSpecialChoice(std::string & line) {
+  // get special choice form line
+  size_t findLeftParenthese = line.find('[');
+  size_t pageNum = strtoll(line.substr(0, findLeftParenthese).c_str(), NULL, 10);
+  // if we trying to visit an uninitilized page, throw exception
+  try {
+    if (!validNumber(line.substr(0, findLeftParenthese))) {
+      throw myException("Invalid Pagenum type4!");
+    }
+    if (!pageMap.count(pageNum)) {
+      throw myException("Page undeclared!");
+    }
+  }
+  catch (myException & re) {
+    std::cerr << re.what() << std::endl;
+    exit(EXIT_FAILURE);
+  }
+  // get choices from current line -> mode2
+  std::string tempLine = line.substr(findLeftParenthese);
+  pageMap[pageNum].getChoices(tempLine, 2);
 }
 
 bool Story::checkStory() {

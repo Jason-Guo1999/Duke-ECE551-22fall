@@ -1,17 +1,17 @@
-0@N:start.txt
-0:1:Purchase a chocolate croissant.
-0:2:Purchase an eclair.
-0:3:Purchase a muffin.
-1@N:croissant.txt
-2@N:eclair.txt
-3@N:muffin.txt
-1$pastry=1
-2$pastry=2
-3$pastry=3
-1:4:Leave the store
-2:4:Leave the store
-3:4:Leave the store
-4@N:direction.txt
+ 0@N:start.txt
+ 1@N:croissant.txt
+ 0: 1:Purchase a chocolate croissant.
+ 0: 2:Purchase an eclair.
+ 0: 3:Purchase a muffin.
+ 2@N:eclair.txt
+ 3@N:muffin.txt
+ 1$pastry=1
+ 2$pastry=2
+ 3$pastry=3
+ 1: 4:Leave the store
+ 2: 4:Leave the store
+ 3: 4:Leave the store
+ 4@N:direction.txt
 4:5:Go east, out of town
 4:6:Go west, into town
 5@N:outoftown.txt
@@ -25,11 +25,11 @@
 7$broke=1
 7:5:Now that you have a sword, head out of town
 8@N:dragon.txt
-8[broke=0]:10:Offer the dragon your last coins.
-8[sword=1]:11:Charge the dragon with your sword.
-8[pastry=1]:12:Offer the dragon the chocolate croissant.
-8[pastry=2]:13:Squirt the eclair filling in the dragon's eye.
-8[pastry=3]:14:Throw the muffin at the dragon's nose and run for it!
+8[broke=  0]:10:Offer the dragon your last coins.
+8[sword= 1]:11:Charge the dragon with your sword.
+8[pastry= 1]:12:Offer the dragon the chocolate croissant.
+8[pastry= 2]:13:Squirt the eclair filling in the dragon's eye.
+8[pastry= 3]:14:Throw the muffin at the dragon's nose and run for it!
 8:15:Ask the dragon if he has heard any good jokes lately.
 9@L:dragonsnack.txt
 10@W:coins.txt
