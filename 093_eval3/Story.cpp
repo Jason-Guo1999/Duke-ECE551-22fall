@@ -300,6 +300,10 @@ void Story::displayStory(size_t currentPage) {
   while (true) {
     std::string tempString;
     std::cin >> tempString;
+    if (std::cin.eof()) {
+      std::cerr << "Reach end of file";
+      exit(EXIT_FAILURE);
+    }
     size_t temp = strtoll(tempString.c_str(), NULL, 10);
     if (!validNumber(tempString) || temp <= 0 || temp > page.getChoicesSize()) {
       std::cout << "That is not a valid choice, please try again" << std::endl;
